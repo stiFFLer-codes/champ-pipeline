@@ -1,0 +1,7 @@
+{
+  "name": "champ-pipeline-viewer",
+  "version": "0.0.1",
+  "description": "Web viewer for CHAMP-Pipeline (Vite + React + Tailwind). App scaffolding in Phase 5.",
+  "private": true,
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below.
+title: "CHAMP-Pipeline: Chat History Archival & Merge Pipeline (Reference Implementation of the CARTA Framework)"
+authors:
+  - given-names: ""
+    family-names: ""
+    orcid: ""
+version: "0.0.1"
+date-released: ""
+repository-code: ""
+license: MIT

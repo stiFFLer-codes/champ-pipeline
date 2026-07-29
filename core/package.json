@@ -1,0 +1,6 @@
+{
+  "name": "champ-pipeline-core",
+  "version": "0.0.1",
+  "description": "Core pipeline for CHAMP-Pipeline: ingestion, normalization, and synthesis of fragmented chat archives.",
+  "license": "MIT"
+}
