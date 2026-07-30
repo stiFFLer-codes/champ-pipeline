@@ -66,7 +66,13 @@ framework: a platform-agnostic specification for recovering a unified,
 trustworthy communication history from two or more fragmented archives 
 produced by TCF.
 
-### 3.1 NotationF → R → R' → (U, Ω)  Let **F = {F₁, F₂, ..., Fₙ}** be the raw fragment exports (n ≥ 2).
+### 3.1 Notation
+
+```
+F → R → R' → (U, Ω)
+```
+
+Let **F = {F₁, F₂, ..., Fₙ}** be the raw fragment exports (n ≥ 2).
 
 ### 3.2 The Three Phases
 
