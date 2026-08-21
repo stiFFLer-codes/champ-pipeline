@@ -30,3 +30,9 @@ $RECYCLE.BIN/
 *.swp
 *.swo
 *~
+
+# --- Reference-only local data (never commit) ---
+/Real WhatsApp Data/
+
+# --- Command Code ---
+.commandcode/

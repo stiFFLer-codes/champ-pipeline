@@ -1,0 +1,82 @@
+{
+  "seed": 1,
+  "count": 5,
+  "fixtures": [
+    {
+      "file": "fixture-01-self-chat-encryption-notice.txt",
+      "quirks": [
+        "attachment-standard",
+        "date-format-ddmmyy",
+        "emoji",
+        "empty-body-message",
+        "encryption-notice-self",
+        "multi-line-message",
+        "rich-text-markup",
+        "senderless-system-line",
+        "standard-sender-line",
+        "time-12h"
+      ]
+    },
+    {
+      "file": "fixture-02-double-filename-attachment.txt",
+      "quirks": [
+        "attachment-double-filename",
+        "attachment-standard",
+        "attachment-trailing-period",
+        "date-format-mmddyy",
+        "empty-body-message",
+        "multi-line-message",
+        "rich-text-markup",
+        "standard-sender-line",
+        "time-24h"
+      ]
+    },
+    {
+      "file": "fixture-03-group-chat-encryption-and-membership.txt",
+      "quirks": [
+        "attachment-standard",
+        "date-format-ddmmyy",
+        "emoji",
+        "empty-body-message",
+        "encryption-notice-group",
+        "group-creation",
+        "membership-added",
+        "membership-you-were-added",
+        "multi-line-message",
+        "rich-text-markup",
+        "senderless-system-line",
+        "standard-sender-line",
+        "time-24h"
+      ]
+    },
+    {
+      "file": "fixture-04-multiline-and-rich-text.txt",
+      "quirks": [
+        "attachment-standard",
+        "date-format-mmddyy",
+        "emoji",
+        "empty-body-message",
+        "multi-line-message",
+        "standard-sender-line",
+        "time-12h"
+      ]
+    },
+    {
+      "file": "fixture-05-early-creation-then-recent.txt",
+      "quirks": [
+        "attachment-standard",
+        "date-format-ddmmyy",
+        "early-year-system-line",
+        "emoji",
+        "encryption-notice-group",
+        "group-creation",
+        "membership-added",
+        "multi-line-message",
+        "rich-text-markup",
+        "senderless-system-line",
+        "standard-sender-line",
+        "time-12h"
+      ]
+    }
+  ]
+}
