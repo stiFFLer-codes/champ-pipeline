@@ -70,10 +70,7 @@ None of the above is required for this paper. Do not schedule engineering work a
 
 **Determinism re-verified 2026-08-24**: regenerating twice with `--seed 1 --count 5` produced byte-identical `manifest.json` both times.
 
-4. `.gitignore` contains uncommitted changes:
-
-   * `Real WhatsApp Data/`
-   * `.commandcode/`
+4. ~~`.gitignore` contains uncommitted changes.~~ **RESOLVED 2026-08-25** — committed in `be92a41`. `.gitignore` now also excludes `.claude/` and `paper/` build artefacts (aux, bbl, blg, log, out, and the compiled PDF), so only LaTeX source is tracked. Note for submission: arXiv wants `main.bbl` uploaded with the source even though it is ignored here.
 
 5. Real WhatsApp exports exist locally under `Real WhatsApp Data/` but are ignored and must never enter the repository, fixtures, tests, documentation, generated artifacts, or Git history.
 
@@ -118,15 +115,33 @@ Do not commit until the result has been reviewed and explicitly approved.
 
 No research checkpoint pushed yet.
 
-### Last Pushed Commit
+### Last Local Commit
 
-`8e9eb8b28080915944da704fa73fd558d3e4183e` — verified via `git rev-parse HEAD` 2026-08-24. (Previously recorded as `6484f6a`, which was stale — corrected same pass as the other fixes above.) A substantial amount of uncommitted work sits on top of this (fast-path decision, math fixes, fixture bug fixes, title change, this consistency pass) — none of it has been reviewed/approved as a checkpoint yet.
+**`be92a41` — "docs: sync project trackers and repo metadata to current state", 2026-08-25.** Phase L/W/R work was committed the same day in five scoped commits on `main`:
+
+| Commit | Contents |
+|---|---|
+| `87e489b` | fix: two synthetic fixture bugs, corpus regenerated |
+| `5884c6d` | docs: paper blueprint + literature survey; CARTA specification revised |
+| `7e9b08d` | docs: full manuscript draft ("When Chats Split Apart") |
+| `6957a98` | build: LaTeX source for the arXiv manuscript |
+| `be92a41` | docs: project trackers and repo metadata synced |
+
+Working tree is clean apart from `grill-me-output.txt`, which is deliberately untracked session scratch.
+
+> **Note on this section.** Do not record a bare SHA as "current HEAD" — a commit cannot contain its own hash, so any such line is stale the moment it is written, which is exactly how the earlier `6484f6a` and `8e9eb8b` entries went wrong twice. Record the last *reviewed checkpoint* instead, and re-derive HEAD with `git rev-parse HEAD` when it is actually needed.
+
+### Verification performed 2026-08-25 (independent Opus session, post-commit)
+
+* **Hard rule 1 holds.** Every commit on every ref was walked with `git ls-tree`: `Real WhatsApp Data/` has never entered the tree. A scan of all committed content for phone numbers, E.164 patterns, 10+ digit runs and email addresses returned only a git SHA fragment, the PRNG's `4294967296`, WhatsApp FAQ article IDs and Wayback timestamps. Fixtures use synthetic senders only ("You", "Contact A").
+* **`paper/` tracks exactly 12 source files**, no build artefacts, `.claude/` correctly excluded.
+* **HEAD's tree builds standalone.** `paper/` exported from HEAD via `git archive` and compiled in isolation: 19 pages, 0 LaTeX warnings, 0 overfull/underfull boxes, 0 BibTeX warnings, no `[CITE-T2]`. The committed file set is necessary and sufficient.
 
 ### GitHub Verification
 
-Verified previously: repository is `stiFFLer-codes/champ-pipeline`, branch `main`.
+Repository is `stiFFLer-codes/champ-pipeline`, branch `main`. **Nothing has been pushed yet** — `git status -sb` reports `main...origin/main [ahead 5]`, so all five commits above are local only.
 
-The current uncommitted work has NOT yet been approved as a checkpoint.
+Committing is not the same as an approved checkpoint. See "Next Checkpoint" below.
 
 ### Next Checkpoint
 
