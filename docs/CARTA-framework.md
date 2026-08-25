@@ -8,10 +8,12 @@
 communication history for a single logical account becomes partitioned across 
 two or more device-bound application instances, arising from (1) primary-device 
 unavailability, (2) continued account use on a secondary device during that 
-window, and (3) primary-device recovery followed by a backup-write event that — 
-due to the platform's single-slot, last-write-wins backup semantics — silently 
-and irreversibly supersedes the secondary archive, with no user-facing warning 
-and no native reconciliation path.
+window, and (3) primary-device recovery followed by a restore action that 
+replaces rather than merges — the platform offers no native path to combine 
+the two archives, no user-facing warning that a competing archive exists, and 
+no diff or reconciliation attempt. *(One plausible backend explanation is a 
+single-slot, last-write-wins cloud backup architecture; this is an unverified 
+hypothesis, not a claim of this document — see §1.2, condition 3.)*
 
 ### 1.2 Necessary Conditions
 
@@ -26,14 +28,18 @@ TCF requires all three of the following to hold simultaneously:
 3. **Asymmetric reconciliation on merge** — when the primary device recovers, 
    the primary and secondary archives briefly coexist without conflict: the 
    primary's resumption does not, by itself, threaten the secondary's 
-   independently-accumulated archive. Fragmentation crystallizes only at the 
-   next backup-write event on the primary — because the platform's cloud 
-   backup destination is a single, last-write-wins slot per account (not per 
-   device), that write silently and irreversibly supersedes the secondary's 
-   most recent cloud snapshot. No warning is surfaced, no diff is attempted, 
-   and no indication is given that a competing archive existed. The 
-   secondary's data survives only in whatever un-synced local form remains on 
-   the secondary device itself.
+   independently-accumulated archive. Fragmentation crystallizes only when a 
+   restore action is taken — the platform's restore operation replaces the 
+   current chat state rather than merging into it. No warning is surfaced, no 
+   diff is attempted, and no indication is given that a competing archive 
+   existed. The secondary's data survives only in whatever un-synced local 
+   form remains on the secondary device itself. **[Unverified, not asserted 
+   here]:** a plausible backend explanation is that the platform's cloud 
+   backup destination is a single, last-write-wins slot per account, so the 
+   next backup-write silently supersedes the secondary's most recent cloud 
+   snapshot — no citation or controlled experiment currently backs this 
+   specific architectural claim; only the observable destructive-restore 
+   behavior above is part of this definition.
 
 ### 1.3 Distinction from Backup Staleness
 
@@ -57,7 +63,7 @@ platform-enforced inaccessibility of one archive.
 
 **Closing thesis:** TCF's distinguishing signature is not the loss of data, 
 but the platform-enforced inaccessibility of a fully-intact archive, caused 
-by single-slot backup semantics with no reconciliation path.
+by destructive (merge-free) restore semantics with no reconciliation path.
 
 ## 3. The CARTA Framework
 
@@ -69,27 +75,30 @@ produced by TCF.
 ### 3.1 Notation
 
 ```
-F → R → R' → (U, Ω)
+F → R → (R', Q) → (U, Ω)
 ```
 
-Let **F = {F₁, F₂, ..., Fₙ}** be the raw fragment exports (n ≥ 2).
+Let **F = {F₁, F₂, ..., Fₙ}** be the raw fragment exports (n ≥ 2). *(TCF itself, as defined in §1, is inherently a two-way split — one primary device pauses, one secondary continues — so the founding case and Definition 1's formalization are both n=2. CARTA's algebra is deliberately specified more generally for n ≥ 2, since nothing about the reconstruction problem requires exactly two fragments; a user could plausibly accumulate more than two independently-persistent archives across repeated failures. This is a deliberate generalization, not an inconsistency — but it should be read as CARTA generalizing beyond TCF's minimal case, not as TCF itself being n-ary.)*
 
 ### 3.2 The Three Phases
 
 | Phase | Function | Input | Output |
 |---|---|---|---|
 | **Ingestion** | I: F → R | Raw, heterogeneous platform exports (one per fragment) | Structured, provenance-tagged per-fragment records Rᵢ |
-| **Normalization** | N: R → R' | Structured per-fragment records | Canonically-timestamped, schema-valid records R'ᵢ, with provenance carried forward, plus a quarantine set Qᵢ of records that failed validation |
+| **Normalization** | N: R → (R', Q) | Structured per-fragment records | Canonically-timestamped, schema-valid records R'ᵢ, with provenance carried forward, plus a quarantine set Qᵢ of records that failed validation |
 | **Synthesis** | S: {R'₁, ..., R'ₙ} → (U, Ω) | All normalized fragment sets together | A unified, deduplicated, chronologically-ordered archive **U**, plus **Ω**, a structured reconstruction report |
 
 **Ingestion** never attempts reconciliation across fragments — its only 
 responsibility is faithfully parsing each fragment, preserving raw values 
 for auditability, and tagging provenance.
 
-**Normalization** converts each fragment into a shared canonical schema 
+**Normalization** is required to preserve every record's provenance from R through to R' or Q — this is an explicit guarantee of N, not an incidental side effect assumed by Synthesis. It converts each fragment into a shared canonical schema 
 (UTC timestamps, resolved sender identity, a fixed message-type taxonomy). 
-Anything that fails validation is never silently dropped — it moves into 
-an explicit quarantine set.
+Anything that fails validation — or is syntactically valid but ambiguous, 
+such as a date string valid under more than one locale convention with 
+nothing in the record itself to disambiguate — is never silently dropped 
+or silently resolved by guessing. Both cases move into an explicit 
+quarantine set. Ambiguity is never silently converted into certainty.
 
 **Synthesis** is reconstruction, not merge: ordering, deduplication, 
 provenance preservation, and conflict detection across all normalized 
