@@ -1,0 +1,177 @@
+%% Section 4 -- Reconstruction & Reconciliation Algorithms
+%% Ported from docs/DRAFT_PAPER.md Section 4. The algorithm body follows
+%% docs/PAPER_BLUEPRINT.md 5 verbatim.
+%%
+%% LOCKED: the procedure is GroupIntoReconciliationClusters. The retired name
+%% PartitionIntoEquivalenceClasses must never reappear here -- ~_dedup is a
+%% similarity relation, not an equivalence relation, and it yields clusters,
+%% not classes.
+
+\section{Reconstruction \& Reconciliation Algorithms}
+\label{sec:algorithms}
+
+\subsection{Ordering and timestamp granularity}
+\label{sec:algorithms:ordering}
+
+Two distinct timestamp tolerances operate in Synthesis, and conflating them is
+the easiest way to misread the specification.
+
+The first is the \textbf{deduplication window} $\Delta t_{\text{granularity}}$,
+which governs whether two records may describe the same message. Exports quantise
+time. A platform that writes minute-resolution timestamps into one export and
+second-resolution into another will represent one message with two different
+values, so an exact timestamp match would fail to group records that plainly
+belong together.
+
+The second is the \textbf{coarse resolution} used for conflict detection, fixed
+at one minute. This is a deliberately blunter bucket, used to decide which record
+pairs are close enough that a contradiction between them is worth reporting.
+
+Ordering comes before either. Records are sorted primarily by $t_{\text{utc}}$
+ascending and secondarily by source sequence index. The secondary key is what
+makes Invariant 3 attainable: records sharing a timestamp would otherwise be
+ordered by whatever the runtime happened to do, and two runs could disagree.
+Determinism here is bought by a tie-break rule, not assumed.
+
+\subsection{The similarity criterion}
+\label{sec:algorithms:similarity}
+
+Two normalised records are related by $\sim_{\text{dedup}}$ when they agree on
+sender, body, and attachment, and their timestamps fall within the deduplication
+window:
+
+\begin{equation}
+  \begin{split}
+    r'_a \sim_{\text{dedup}} r'_b \iff{}
+      &|t_{\text{utc}}(r'_a) - t_{\text{utc}}(r'_b)|
+        \le \Delta t_{\text{granularity}} \\
+      &{}\land\; s(r'_a) = s(r'_b)
+       \;\land\; b(r'_a) = b(r'_b)
+       \;\land\; a(r'_a) \cong a(r'_b)
+  \end{split}
+  \label{eq:dedup}
+\end{equation}
+
+This is a \textbf{similarity relation} and we do not claim it is an equivalence
+relation. Proximity criteria are not generally transitive. Three records spaced
+just under $\Delta t_{\text{granularity}}$ apart in sequence will satisfy the
+relation pairwise along the chain while the outer two fall outside each other's
+window. Treating the relation as an equivalence and speaking of equivalence
+classes or a quotient set would assert a partition that the criterion does not
+deliver.
+
+Records satisfying the criterion are therefore grouped into
+\textbf{reconciliation clusters}, and the specification fixes the criterion while
+leaving the clustering procedure open. Transitive closure with a bounded cluster
+diameter and connected components over a similarity graph are both admissible,
+and they can disagree on the chain case above. Choosing between them is an
+implementation decision deferred to the implementation phase, and a conforming
+implementation must state which rule it applies, since Invariant 3 constrains a
+given implementation to behave the same way twice rather than requiring all
+implementations to agree with each other.
+
+For each cluster $C$, one canonical record $u$ is synthesised, and its provenance
+is the union of the provenance of every record in the cluster:
+
+\begin{equation}
+  \mathrm{prov}(u) = \bigcup_{r' \in C} \mathrm{prov}(r')
+  \label{eq:provunion}
+\end{equation}
+
+The union is what preserves Invariant 2 across deduplication. Collapsing three
+observations into one record without unioning their provenance would discard two
+of the three origins and leave the archive claiming a single source for something
+seen three times.
+
+\subsection{The Synthesis procedure}
+\label{sec:algorithms:procedure}
+
+\begin{algorithm}[htbp]
+\caption{CARTA Synthesis and Audit Report Construction}
+\label{alg:carta_synthesis}
+\begin{algorithmic}[1]
+\Require Normalized fragment record sets
+  $\mathcal{R}' = \{R'_1, R'_2, \dots, R'_n\}$,
+  quarantine sets $\mathcal{Q} = \{Q_1, \dots, Q_n\}$,
+  deduplication window $\Delta t$
+\Ensure Unified archive $\mathcal{U}$, reconstruction report $\Omega$
+\State $\mathcal{U} \leftarrow \emptyset$,
+       $\mathcal{C}_{\text{conflicts}} \leftarrow \emptyset$,
+       $\mathcal{P}_{\text{map}} \leftarrow \emptyset$
+\State $\mathcal{R}'_{\text{all}} \leftarrow \bigcup_{k=1}^n R'_k$
+\State Sort $\mathcal{R}'_{\text{all}}$ primarily by $t_{\text{utc}}$ ascending,
+       secondarily by source sequence index
+\State $\mathcal{B}_{\text{clusters}} \leftarrow
+       \textsc{GroupIntoReconciliationClusters}(
+         \mathcal{R}'_{\text{all}}, \sim_{\text{dedup}}, \Delta t)$
+\For{\textbf{each} cluster $C \in \mathcal{B}_{\text{clusters}}$}
+    \State $u \leftarrow \textsc{SynthesizeCanonicalMessage}(C)$
+    \State $u.\text{provenance} \leftarrow
+           \bigcup_{r' \in C} r'.\text{provenance}$
+    \State $\mathcal{P}_{\text{map}}[u.\text{id}] \leftarrow u.\text{provenance}$
+    \If{$\textsc{IsAmbiguous}(C)$}
+        \State $\mathcal{C}_{\text{conflicts}}.\text{append}(
+               \textsc{CreateConflictDescriptor}(C))$
+    \EndIf
+    \State $\mathcal{U}.\text{append}(u)$
+\EndFor
+\State $\Omega \leftarrow \big\langle
+       \text{provenance\_map}: \mathcal{P}_{\text{map}},\;
+       \text{quarantine}: \bigcup \mathcal{Q},\;
+       \text{conflicts}: \mathcal{C}_{\text{conflicts}},\;
+       \text{stats}: \textsc{ComputeStats}(
+         \mathcal{U}, \mathcal{R}'_{\text{all}}, \mathcal{Q}) \big\rangle$
+\State \Return $(\mathcal{U}, \Omega)$
+\end{algorithmic}
+\end{algorithm}
+
+Line 2 is where reconstruction becomes possible at all, and it is the first point
+in the pipeline at which fragments meet. Everything before it treats each fragment
+in isolation.
+
+Line 3 establishes the total order, with the secondary key supplying determinism
+as described above.
+
+Line 4 applies the similarity criterion. The procedure name matters: it groups
+records into clusters, and it does not partition them into classes.
+
+Lines 6 to 8 build one canonical record per cluster and union the provenance, then
+index it in the map that becomes $\Omega_{\text{provenance}}$. A cluster of one is
+the ordinary case, a message that appeared in a single fragment, and it passes
+through with its single provenance entry intact.
+
+Lines 9 to 11 handle a cluster whose members are grouped by the similarity
+criterion yet disagree in some respect the criterion does not cover. Such a
+cluster still yields a canonical record, and it also yields a conflict descriptor.
+Detection and reporting are separated from resolution, which is the same
+discipline the quarantine rule applies in Normalization: the procedure records
+what it could not settle instead of settling it silently.
+
+Line 14 assembles the report. The quarantine sets arrive at this line untouched,
+having been carried through from Normalization for exactly this purpose.
+
+\subsection{Conflict detection}
+\label{sec:algorithms:conflicts}
+
+Conflict detection has a second aspect that Algorithm~\ref{alg:carta_synthesis}'s
+cluster loop does not reach. Two records may describe genuinely different
+messages, and so belong to different clusters, while still standing in
+contradiction. The specification's criterion applies to records sharing a coarse
+timestamp at one-minute resolution but carrying incompatible sender or ordering
+constraints:
+
+\begin{equation}
+  \mathrm{Conflict}(u_i, u_j) \implies \text{flag in } \Omega_{\text{conflicts}}
+  \label{eq:conflict}
+\end{equation}
+
+Coarse buckets are used here because export timestamp precision is itself
+unreliable, and demanding exact equality before considering a contradiction would
+miss the cases most likely to matter. The consequence of flagging is a report
+entry. Neither record is dropped, neither is rewritten, and both remain in
+$\mathcal{U}$ with their provenance intact, which is what Invariant 1 requires.
+
+We fold this into the same exposition rather than giving it a separate algorithm
+block because it shares Algorithm~\ref{alg:carta_synthesis}'s inputs and writes to
+the same conflict log, and because presenting it separately would suggest a second
+pass over the data that the specification does not require.

@@ -1,0 +1,152 @@
+%% ============================================================================
+%%  When Chats Split Apart: Formalizing Temporal Communication Fragmentation
+%%  and the CARTA Reconstruction Framework
+%%
+%%  Source of truth for prose: docs/DRAFT_PAPER.md
+%%  Source of truth for notation/outline: docs/PAPER_BLUEPRINT.md
+%%
+%%  Build:  pdflatex main -> bibtex main -> pdflatex main -> pdflatex main
+%%
+%%  NOTE ON DOCUMENT CLASS: no venue beyond arXiv has been chosen, and the
+%%  arXiv category itself is still open (docs/PAPER_BLUEPRINT.md line 4 lists
+%%  cs.DL / cs.SE / cs.DC, unresolved). This uses a plain `article` class on
+%%  purpose. Do NOT swap in IEEEtran/acmart until a venue is actually decided.
+%% ============================================================================
+\documentclass[11pt,a4paper]{article}
+
+%% inputenc/fontenc are what pdflatex needs and what a Unicode engine
+%% (xelatex, lualatex, tectonic) warns about. Guarding on the engine keeps the
+%% build warning-free either way; the documented build is still pdflatex.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\fi
+\usepackage[margin=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+%% Figures 1 and 2 are drawn in TikZ rather than shipped as image files, so the
+%% paper source stays self-contained and the diagrams stay editable alongside
+%% the prose they illustrate. No external image is used anywhere.
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds,patterns,
+                decorations.pathreplacing}
+
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+
+%% British spelling is deliberate in running prose (see docs/DRAFT_PAPER.md
+%% drafting note 9). No spell-checking or hyphenation package may be added
+%% that would Americanise it. `babel` with `british` is loaded for correct
+%% hyphenation ONLY -- it does not alter spelling.
+\usepackage[british]{babel}
+
+%% Long code identifiers (e.g. AMBIGUOUS_DATE_FORMAT, owner/repo-name) cannot
+%% be hyphenated without inserting a character that is not part of the
+%% identifier, which would mislead in a paper whose subject is exact record
+%% fidelity. emergencystretch relaxes interword spacing instead and inserts
+%% nothing. Do not replace this with a \texttt hyphenation package.
+\setlength{\emergencystretch}{3em}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+%% The archived-snapshot URL in the WhatsApp reference is long enough that it
+%% cannot break at default settings, which leaves a badness-10000 line in the
+%% bibliography. This lets TeX break inside a URL without inserting any
+%% character into it -- the same rule applied to code identifiers above.
+\Urlmuskip=0mu plus 1mu\relax
+
+%% ---------------------------------------------------------------------------
+%%  UNRESOLVED CITATION MARKER -- currently UNUSED, kept on purpose.
+%%
+%%  \citeTODO renders a loud inline marker AND emits a LaTeX warning at every
+%%  build, so an unresolved citation cannot survive a final read-through
+%%  unnoticed. Its one use, [CITE-T2] in Section 1, was resolved on 2026-08-25
+%%  and the call removed; the mechanism earned its keep by catching a claim
+%%  that outran its source (docs/DRAFT_PAPER.md drafting note 1).
+%%
+%%  Kept so the next unsourced claim has somewhere to go. Use it rather than
+%%  letting a placeholder citation compile quietly.
+%% ---------------------------------------------------------------------------
+\newcommand{\citeTODO}[1]{%
+  \GenericWarning{}{%
+    LaTeX Warning: UNRESOLVED CITATION -- #1 -- must be resolved before submission%
+  }%
+  \textbf{[\,UNRESOLVED CITATION: #1\,]}%
+}
+
+%% Shorthand for the CARTA reconstruction algebra, so the notation cannot
+%% drift between sections.
+\newcommand{\carta}{\ensuremath{%
+  \mathcal{F} \rightarrow \mathcal{R} \rightarrow (\mathcal{R}', \mathcal{Q})
+  \rightarrow (\mathcal{U}, \Omega)}}
+
+%% NB: the line break below is \\ (two backslashes). A single trailing
+%% backslash is a control space, not a break -- it compiles without error and
+%% silently runs the title onto one line.
+\title{When Chats Split Apart: Formalizing Temporal Communication\\
+Fragmentation and the CARTA Reconstruction Framework}
+
+\author{%
+  Maitreya Sapariya\\
+  Independent Researcher\\
+  \href{https://orcid.org/0009-0003-9346-3775}{ORCID: 0009-0003-9346-3775}%
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+%% Abstract written 2026-08-25, after Sections 1--9 were final, from those
+%% sections. Every claim in it is one the body already makes and sources:
+%% the three conditions are Section 2.2, the contract and Q/Omega are
+%% Sections 3.1/3.3/3.5, the "claim priority over none of them" sentence is
+%% Section 8's opening argument, and the deferred-implementation scope is
+%% Sections 5 and 6. It states no result, because the paper reports none.
+\begin{abstract}
+A single messaging account's history can end up split across two archives that
+are each internally complete and that the platform will not recombine. We
+characterise this state as Temporal Communication Fragmentation and give three
+necessary conditions for it: a timeline that bifurcates when the primary device
+becomes unavailable, both branches persisting and accumulating with no
+synchronisation between them, and a restore that replaces rather than merges,
+which makes the split permanent. Nothing is destroyed. An intact archive simply
+becomes unreachable through the platform holding it.
+
+We then specify CARTA, a platform-agnostic three-stage reconstruction contract,
+\carta. Records that cannot be interpreted unambiguously are routed to a
+quarantine set $\mathcal{Q}$ under typed reason codes instead of being resolved
+by guessing, and every reconstruction emits a report $\Omega$ carrying
+provenance, quarantine carryover, conflicts and counts.
+
+Merging chat archives is not new, and neither is staging forensic
+reconstruction nor per-record provenance; we claim priority over none of them.
+$\mathcal{Q}$ and $\Omega$ are what the tools and literature surveyed here do
+not supply. This is a specification paper: the reference implementation is
+deferred, and no evaluation is reported.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_tcf}
+\input{sections/03_carta}
+\input{sections/04_algorithms}
+\input{sections/05_implementation}
+\input{sections/06_evaluation}
+\input{sections/07_discussion}
+\input{sections/08_related_work}
+\input{sections/09_conclusion}
+
+\bibliography{main}
+
+\end{document}

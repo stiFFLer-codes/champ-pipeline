@@ -1,0 +1,221 @@
+%% Section 8 -- Related Work
+%% Ported from docs/DRAFT_PAPER.md Section 8.
+%%
+%% Four in-text tags in the Markdown draft were topic labels rather than
+%% author-year (docs/DRAFT_PAPER.md drafting note 16). Converted here to real
+%% citation keys, which resolves note 16 for the LaTeX source:
+%%   [SoK 2025]          -> breitinger2025sok
+%%   [SLR 2025]          -> onik2025slr
+%%   [Resilience 2025]   -> wunder2025resilience
+%%   [Preprocessing 2026]-> chaudhary2026preprocessing
+%%
+%% Section 8.2's final paragraph is CONTINGENT (docs/DRAFT_PAPER.md drafting
+%% note 3). It is written so that narrowing removes a sentence rather than
+%% restructuring the section. Keep it that way.
+
+\section{Related Work}
+\label{sec:related}
+
+CARTA sits at the meeting point of four bodies of work, none of which addresses
+the reconstruction of consumer chat archives after a destructive restore, and all
+of which supply pieces of the machinery. The argument of this section is narrow
+and worth stating up front. Merging chat archives is not an open problem; working
+tools do it today. Staging forensic reconstruction as a pipeline is not new; it
+was published in 2014. Per-record provenance is not new either; forensics
+formalised it in the same year. What has not been specified is the contract such a
+reconstruction owes its reader: what enters and leaves each stage, what becomes of
+a record that cannot be safely interpreted, and what the procedure must report
+about its own behaviour.
+
+\subsection{Optimistic replication and replicated data types}
+\label{sec:related:replication}
+
+Divergent replicas are the founding concern of optimistic replication. Parker and
+colleagues formalised the detection of mutual inconsistency between copies as
+early as 1983~\citep{parker1983mutual}, and Coda supplies the closest structural
+analogue to TCF's sequence: a client works disconnected, both sides advance, and
+the system reintegrates on reconnection, naming and flagging the conflicts it
+cannot resolve~\citep{kistler1992coda}. Coda attempts reintegration. Condition 3
+describes a platform that does not.
+
+Convergent and commutative replicated data types give conditions under which
+divergent replicas provably converge. It is worth being precise about what those
+conditions are, because the obvious reading of them is wrong for our purposes.
+Shapiro and colleagues define state-based merge as a least upper bound over a join
+semilattice, taking two states and no ancestor at all~\citep{shapiro2011crdt}.
+Ancestry enters elsewhere: the mergeable replicated data types line models state
+as versions that ``trace their origin to a common ancestor version'' and merges via
+three-way merge against a lowest common ancestor~\citep{kaki2019mergeable}, and the
+certified treatment makes the existence of that ancestor a store precondition,
+assuming execution begins with a single branch so that any two branches have an
+LCA~\citep{soundarapandian2022certified}. Reconciliation literatures beyond CRDTs
+share the assumption. Log-based reconciliation takes a common initial state plus
+per-replica action logs, and the formal treatment of filesystem synchronisation
+requires the update sequence to be applicable to the original filesystem
+state~\citep{csirmaz2022sync}.
+
+What excludes TCF from the CRDT guarantee is therefore Condition 2, not ancestry.
+Convergence in the state-based model holds on the assumption that the system
+transmits payloads between replicas infinitely often over eventually reliable
+channels, and only so long as all replicas receive all
+updates~\citep{shapiro2011crdt}. TCF's branches exchange nothing during the
+divergence window. Nothing prevents a message set from being treated as a join
+semilattice under union after the fact; the difficulty is historical rather than
+algebraic, in that no synchronising representation existed while the two branches
+were diverging, so no convergence guarantee was ever purchased. Kleppmann and
+colleagues put the design premise directly, describing CRDTs as multi-user from the
+ground up, and note that side-by-side document versions and branches remain an
+area with little work behind it~\citep{kleppmann2019localfirst}.
+
+Retrofitting reconciliation onto systems not built for it has been addressed in one
+direction only. Conflict-free replicated relations augment conventional relational
+schemas with causal metadata so that existing applications gain multi-synchronous
+access with little modification~\citep{yu2020crr}. That retrofit is prospective:
+the metadata is in place before divergence begins. CARTA addresses the
+retrospective case, in which the artefacts already exist and no such metadata was
+ever recorded. \citet{csirmaz2022sync} characterise why this regime resists the OT
+and CRDT framings, contrasting their constant low-latency communication and small
+deltas with synchronisation that happens in a single exchange after structural
+differences have accumulated over an extended period. TCF is that regime without
+the original state their model still assumes.
+
+\subsection{Timeline reconstruction in digital forensics}
+\label{sec:related:forensics}
+
+Forensic timeline reconstruction is the closest neighbour by problem shape, and the
+field's own systematisation describes a four-stage process of extraction,
+normalisation, arrangement and analysis, with multi-source combination handled
+informally~\citep{breitinger2025sok}. Provenance, quarantine, conflict detection,
+determinism and invariants do not appear there as formally defined terms.
+
+Chabot and colleagues supply the most developed formal apparatus in this lineage,
+and two of their contributions bound our claim. The knowledge-representation paper
+defines a relation of support linking a footprint to the entity it was used to
+deduce, carried through the analysis and materialised in the output fact
+base~\citep{chabot2014knowledge}. Per-record provenance is thus formalised in
+forensics, and we do not claim otherwise. The relation is an
+identifier-to-identifier derivation edge; CARTA's provenance additionally binds a
+byte range and a content hash to each record and states an invariant requiring
+every synthesised record to carry at least one provenance entry
+(Section~\ref{sec:carta}). The architecture paper published the same year defines a
+four-layer pipeline running from extraction through semantic interpretation and
+reasoning to an investigator-facing interface, covering the path ``from the
+extraction of data to the analysis of the timeline
+produced''~\citep{chabot2014timeline}. Staging a reconstruction process is
+therefore established prior art, and CARTA claims no priority over it.
+
+The distinctions that remain are specific. That architecture describes its
+inter-stage relationship in prose, saying that normalisation translates
+extraction-layer data into the format the upper layer uses, without naming or
+typing that format; no stage carries a signature or a pre- and post-condition, and
+the completeness requirement is attributed to earlier work rather than discharged.
+Records that are irrelevant or unusable are filtered out to reduce downstream
+volume, which is the opposite disposition from quarantine. The correlation operator
+quantifies relatedness between two events in order to surface investigative links,
+and does not collapse two observations of one event into a canonical record; we
+flag the resemblance to CARTA's similarity-based deduplication explicitly because
+the two operate on similar inputs toward opposite ends. The outputs are a queryable
+triple store and a visualisation interface rather than a generated report.
+
+\subsection{Timeline tooling and chat-archive tooling}
+\label{sec:related:tooling}
+
+Plaso, with its predecessor log2timeline, is the reference open-source
+super-timeline engine, originally presented as an automation framework for
+producing a combined timeline from heterogeneous
+sources~\citep{gudjonsson2010log2timeline}. Its treatment of failure is more
+developed than a summary dismissal would suggest: it defines five typed warning
+containers covering analysis, extraction, preprocessing, recovery and timelining,
+serialises them into the storage file, exposes them through \texttt{pinfo}, and
+flags event data in-band as corrupted or recovered. Records that fail are retained
+and inspectable. What they are not is part of the timeline output contract, since
+the export path iterates sorted events alone, so the artefact an analyst reads
+carries no representation of what failed. Plaso's documentation states no
+determinism, correctness or completeness property, and describes its own event
+model as currently free form with formal specification tracked as open work.
+
+Its multi-source behaviour is concatenation followed by exact-duplicate
+suppression, and the suppression key incorporates the source data stream's path
+specification, so the same event observed in two independent sources is by
+construction never collapsed into one record. Conflicting observations across
+sources are not detected. Suppressed events are reported as an aggregate count,
+without recording which events were dropped or which surviving record absorbed
+them.
+
+Chat-specific forensic work is abundant and single-acquisition. Anglano's analysis
+of WhatsApp on Android is the canonical reference, and its reconstruction claim is
+explicitly the correlation of artefacts within one device to recover contacts and
+message chronology~\citep{anglano2014whatsapp}; a recent systematic review of
+secure instant-messaging forensics shows a taxonomy organised around acquisition,
+decryption and artefact interpretation, with no category for reconciling multiple
+archives~\citep{onik2025slr}.
+
+The strongest prior art is not in the literature at all. Working tools merge chat
+archives today. \texttt{bepaald/\allowbreak signalbackup-tools}, at 1,392 stars and under
+active development, imports one Signal backup into
+another~\citep{repo_signalbackuptools}; its documentation declines to deduplicate,
+advising users whose backups partly overlap to crop the source by date before
+merging. \texttt{natario1/\allowbreak whatsapp-database-merger} merges decrypted WhatsApp
+message databases with attention to referential integrity, deduplicating only
+incidentally through database uniqueness constraints, and drops media it cannot
+copy~\citep{repo_wadbmerger}. Smaller projects come closer to CARTA's stated
+target: \texttt{tarikab7/\allowbreak whatsapp-chat-merger} merges plain-text WhatsApp exports
+into a unified timeline with claimed automatic deduplication and per-source colour
+tagging~\citep{repo_wachatmerger}, and \texttt{frozenspider/\allowbreak chat-history-manager}
+normalises Telegram, WhatsApp, Signal and several other formats into one schema,
+whose author notes candidly that duplicate removal may also discard legitimate
+repeated messages~\citep{repo_chathistorymanager}. \texttt{EkriirkE/\allowbreak WAMerge} exists
+solely because its author encountered the TCF sequence and wrote a tool for
+it~\citep{repo_wamerge}. Commercial products advertise the same capability.
+
+These tools bound the contribution in a way the academic record does not. Merging
+is available, the problem is recognised, and neither can be claimed. What they
+establish instead is the gap. The tools differ in how they treat input they cannot
+parse, from silent discard through a printed per-record diagnostic to aborting the
+load outright, and none of them retains rejected input as an inspectable output.
+None couples merging with per-record provenance:
+\texttt{SecurityRonin/\allowbreak chat4n6} tags every recovered record with its evidence source
+and a confidence score but works on one acquisition and performs no
+merge~\citep{repo_chat4n6}, while the tools that merge carry no provenance. No
+merging tool found reports conflicts or states a determinism property, and the one
+deduplication predicate we examined in source ---
+\texttt{tarikab7/\allowbreak whatsapp-chat-merger}'s --- keys on timestamps floored into
+two-second buckets, which makes detection depend on where a pair falls relative to
+a bucket boundary rather than on how far apart the pair is. Adjacent formats have
+better-developed deduplication semantics, notably
+\texttt{ragibson/\allowbreak SMS-MMS-deduplication}, which enumerates attachment presence,
+country-code variance, timestamp precision and malformed encodings while taking
+care to avoid false positives, and which a reviewer may reasonably read as the
+closest existing analogue to CARTA's deduplication
+criterion~\citep{repo_smsmmsdedup}.
+
+Work of similar shape is appearing in adjacent domains. A deterministic
+preprocessing framework for heterogeneous network forensic datasets addresses
+incompatible schemas and timestamp formats and offers a mechanism for verifying
+consistency across runs~\citep{chaudhary2026preprocessing}. The problem statement
+is close enough that the difference is worth stating rather than assuming: that
+work canonicalises datasets for correlation, while CARTA specifies reconciliation
+of overlapping archives of one conversation, with quarantine and reporting as part
+of the output contract.
+
+\subsection{Personal information management and multi-device practice}
+\label{sec:related:pim}
+
+Personal archiving research describes the conditions in which TCF becomes possible.
+\citet{marshall2008archiving} observes that individuals' digital belongings are
+distributed across many stores, some overlapping and some independent, and
+identifies device replacement as a point where local files are lost for good. That
+divergence is derivational, between edited variants of one artefact, and the loss
+is genuine destruction, so it is a different configuration from the one defined
+here.
+
+Two survey studies support the motivation without evidencing the phenomenon. A
+three-country survey of 1,423 participants found that 46\% had experienced at least
+one data-loss incident and that, among those who recovered using backups, over half
+had backups that were outdated or incomplete~\citep{wunder2025resilience};
+incomplete restores are the common case rather than the exception. An earlier panel
+study reports that fewer than half of young adults back up regularly, though it
+models backup frequency as a protective behaviour rather than studying device
+replacement~\citep{redmiles2019phone}. Neither describes two independently
+persistent archives of one account, and we have found no HCI or CSCW study that
+does.

@@ -1,0 +1,104 @@
+%% Section 5 -- CHAMP-Pipeline: Planned Implementation
+%% Ported from docs/DRAFT_PAPER.md Section 5.
+%%
+%% FRAMING RULE (do not blur): CHAMP-Pipeline DOES NOT EXIST. Every edge-case
+%% sentence here says "the specification must account for X, illustrated by the
+%% synthetic corpus" -- never "CHAMP-Pipeline handles X". Preserve that on any
+%% future edit.
+
+\section{CHAMP-Pipeline: Planned Implementation}
+\label{sec:implementation}
+
+CHAMP-Pipeline is the intended WhatsApp-specific reference implementation of
+CARTA. It does not exist. At the time of writing,
+\texttt{core/src/ingestion/}, \texttt{core/src/normalization/} and
+\texttt{core/src/synthesis/} contain no implementation, and nothing in this
+section describes running code. The section states a design intention and the
+input range that design would have to cover, so that a reader can judge whether
+the specification in Sections~\ref{sec:carta} and~\ref{sec:algorithms} is
+implementable and what implementing it would involve.
+
+The distinction between CARTA and CHAMP-Pipeline is load-bearing throughout this
+paper. CARTA is the platform-agnostic specification. CHAMP-Pipeline would be one
+conforming implementation of it for one platform's export format. Nothing about
+CARTA depends on CHAMP-Pipeline being built, and a second implementation targeting
+a different platform would be equally conforming.
+
+\subsection{Intended architecture}
+\label{sec:implementation:architecture}
+
+The planned package, \texttt{champ-pipeline-core}, mirrors the three phases
+directly: one module per stage, with the stage signatures of
+Section~\ref{sec:carta} as the module boundaries. The intended design carries no
+runtime dependencies, for two reasons that matter to the specification rather than
+to engineering taste. A reconstruction that a reader cannot re-run in ten years is
+not auditable in any useful sense, and dependency drift is the most common reason
+such re-runs fail. Invariant 3 also constrains an implementation to reproduce its
+own output exactly, and every dependency is a surface through which behaviour can
+change underneath that guarantee.
+
+A separate viewer package, \texttt{champ-pipeline-viewer}, is planned for
+inspecting a reconstruction and its report. It is presentation over
+$(\mathcal{U}, \Omega)$ and contributes nothing to the specification.
+
+\subsection{The input range a conforming implementation must account for}
+\label{sec:implementation:inputs}
+
+WhatsApp text exports vary in ways that Ingestion and Normalization have to
+absorb. The specification must account for regional date orderings, since the same
+eight-character date string is valid under both day-month-year and month-day-year
+conventions and the export carries no locale marker to settle it. It must account
+for both 12-hour and 24-hour time. It must account for message bodies that run
+across several lines, for bodies that are empty, and for lines carrying no sender
+at all, which is how encryption notices, group creation, and membership changes
+appear. Attachment references vary in form, including a doubled-filename variant
+and one with a trailing period. Bodies carry emoji and rich-text markup. System
+lines can bear dates far earlier than the surrounding conversation.
+
+These categories are illustrated by a synthetic corpus in
+\texttt{data/synthetic\_fixtures/}: five fixture files spanning 19 distinct
+edge-case categories, each fixture's categories recorded in
+\texttt{manifest.json}. The corpus is generated, and it contains no real personal
+message data of any kind.
+
+The corpus and the implementation are separate claims, and the separation matters.
+The generator produces examples of these input forms. It does not parse them,
+reconcile them, or reconstruct anything, and the existence of a fixture exhibiting
+a doubled-filename attachment establishes that such inputs occur and must be
+specified for. It establishes nothing about any software's ability to read one.
+Where Section~\ref{sec:implementation:inputs} says the specification must account
+for a case, the corpus is offered as an illustration of what that case looks like
+in practice, and no more.
+
+The ambiguous-date case is the one that reaches back into the specification rather
+than merely stressing a parser. Two fixtures use day-month-year ordering and two
+use month-day-year, and a record whose date is valid under both, with nothing in
+the record to disambiguate, is exactly the input
+Section~\ref{sec:carta:normalization} routes to quarantine under
+\texttt{AMBIGUOUS\_DATE\_FORMAT}. The corpus makes that class of input concrete.
+
+\subsection{What exists and reproduces today}
+\label{sec:implementation:reproduces}
+
+One artefact in the repository runs, and it is the fixture generator,
+%% \allowbreak marks break opportunities at characters already present in the
+%% path. Nothing is inserted, so the identifier a reader copies stays exact.
+\texttt{scripts/\allowbreak generate-\allowbreak synthetic-\allowbreak fixtures.js}.
+Invoking
+
+\begin{quote}
+\texttt{node scripts/generate-synthetic-fixtures.js -{}-seed 1 -{}-count 5}
+\end{quote}
+
+reproduces the five committed fixtures and their manifest byte for byte. We ran it
+twice in succession and compared checksums across both runs and against the
+committed files; all three states are identical.
+
+The scope of that result should be read narrowly. It establishes that synthetic
+input generation is seed-deterministic and therefore that the corpus is
+reproducible from a clean checkout. It establishes nothing about CARTA
+reconstruction, because no reconstruction code exists to run. There is no
+$\mathcal{U}$, no $\Omega$, and no deduplication or conflict count anywhere in this
+repository, and any claim drawn from this artefact is properly scoped to the
+generation of a deterministic synthetic corpus across a stated set of edge-case
+categories.

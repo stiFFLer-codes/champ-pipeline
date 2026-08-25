@@ -1,0 +1,102 @@
+%% Section 7 -- Discussion & Operational Considerations
+%% Ported from docs/DRAFT_PAPER.md Section 7.
+%%
+%% Section 7.4's first limitation is the Section 8.2 contingency
+%% (docs/DRAFT_PAPER.md drafting note 3). Its wording is deliberate and was NOT
+%% softened during LaTeX assembly. Do not soften it.
+
+\section{Discussion \& Operational Considerations}
+\label{sec:discussion}
+
+\subsection{End-to-end encryption}
+\label{sec:discussion:encryption}
+
+CARTA operates on decrypted local exports that the user's own device produced,
+using the platform's own export function, on an account the user controls.
+Encryption is not an obstacle the pipeline encounters, because the pipeline begins
+after the point where the platform has already decrypted the content for its
+owner. Nothing in Sections~\ref{sec:carta} or~\ref{sec:algorithms} attempts to
+read encrypted backup blobs, recover keys, or access an account other than the one
+performing the export, and no part of the specification would work any better if
+it could. This is worth stating plainly because reconstruction of chat history is
+adjacent to a body of forensic work that does address encrypted stores, and a
+reader arriving from that direction may reasonably expect such a claim. We make
+none.
+
+The corollary is that CARTA inherits whatever the export function chose to
+include. A platform that omits a field from its export puts that field beyond
+reach of any conforming implementation, and reconstruction cannot recover
+information the export never carried.
+
+\subsection{Generalisation across platforms}
+\label{sec:discussion:generalisation}
+
+The contract \carta{} is stated without reference to any platform, and
+Normalization, Synthesis, the invariants and the report structure are defined over
+record types rather than over file formats. Ingestion is the exception, and it is
+necessarily platform-specific: Signal, Telegram and iMessage each export in their
+own form, with their own timestamp conventions, their own representation of system
+events, and their own attachment references.
+
+Whether the rest of the contract survives contact with those formats is an open
+question, and we do not claim it has been answered. The specification has been
+developed against one platform's export conventions, illustrated by a corpus drawn
+from that same platform. A second platform could plausibly require reason codes
+the taxonomy in Section~\ref{sec:carta:normalization} does not anticipate, or
+exhibit a form of cross-fragment disagreement that the conflict definition in
+Section~\ref{sec:carta:synthesis} does not capture. Establishing generalisation
+requires implementing Ingestion for at least one further platform and checking
+whether the downstream stages need amendment. That work has not been done.
+
+\subsection{Forensic and legal considerations}
+\label{sec:discussion:forensic}
+
+CARTA's provenance model and its reconstruction report are close in shape to
+chain-of-custody practice, which Section~\ref{sec:related:forensics} discusses:
+each record traces to an identified source with a byte range and a content hash,
+originals are read and never modified, and the procedure emits an account of what
+it did. The resemblance is architectural and deliberate.
+
+It is not a claim of admissibility. This paper offers no legal analysis, no
+jurisdiction-specific argument, and no forensic validation of any kind, and none
+of the three would follow from the specification alone. Establishing that a
+reconstruction produced under CARTA would be accepted as evidence anywhere would
+require an implementation, validation against known-ground-truth material, and
+legal argument that is outside both this paper's scope and its authors' competence
+to assert. The honest position is that the design borrows a discipline from
+forensic practice without claiming the standing that practice confers.
+
+\subsection{Limitations}
+\label{sec:discussion:limitations}
+
+\paragraph{The related-work position is contingent on two documents we could not
+obtain.}
+Section~\ref{sec:related:forensics} argues that the forensic lineage stages
+reconstruction without specifying a typed inter-stage contract. That argument
+rests on the sources we were able to read. Two in the same lineage resisted
+retrieval, and either could narrow the claim further, in which case the
+contribution reduces to the quarantine set and the report as the properties
+without precedent.
+
+\paragraph{The clustering procedure is deliberately unspecified.}
+Section~\ref{sec:algorithms:similarity} fixes the similarity criterion and leaves
+the grouping algorithm open, and transitive closure with a bounded diameter and
+connected components over a similarity graph can disagree on chained
+near-boundary records. Two conforming implementations may therefore produce
+different reconciliation clusters from the same input while each remaining
+internally deterministic. This is a real gap in the specification's strength, and
+closing it means choosing a rule and defending the choice, which we have not done.
+
+\paragraph{Determinism and idempotence are requirements, not demonstrated
+properties.}
+Invariant 3 constrains an implementation to reproduce its own output, and
+Section~\ref{sec:algorithms:ordering} identifies the tie-break that makes this
+attainable, but no implementation exists to exhibit it. Invariant 4 is weaker
+still: it is stated as prose about what Synthesis must not do, and the type-safe
+formalisation establishing that records in $\mathcal{U}$ are schema-compatible
+with those in $\mathcal{R}'$ is deferred rather than supplied.
+
+\paragraph{The corpus is illustrative and single-platform.}
+Nineteen edge-case categories across five synthetic files show that the input
+space is varied. They do not establish coverage of that space, and no claim of
+completeness attaches to the corpus.

@@ -1,0 +1,326 @@
+%% Section 3 -- The CARTA Architectural Framework
+%% Ported from docs/DRAFT_PAPER.md Section 3. Math ported verbatim from the
+%% draft, which in turn follows docs/PAPER_BLUEPRINT.md 2.2-2.4 (locked).
+%%
+%% FOUR LOCKED CORRECTIONS -- do not regress any of these:
+%%   1. F_1 / F_2 overlap is a feature (delta, epsilon >= 0), not disjointness.
+%%   2. ~_dedup is a SIMILARITY relation feeding RECONCILIATION CLUSTERS. No
+%%      "equivalence class" or quotient notation anywhere.
+%%   3. Idempotence is a softened specification-level target, not a proven
+%%      equation S(U,U) = (U, Omega).
+%%   4. Normalization has THREE outcomes, not two.
+
+\section{The CARTA Architectural Framework}
+\label{sec:carta}
+
+CARTA specifies how to get from a set of fragmented exports to one reconstructed
+history together with an account of how that history was produced. It is a
+specification and not a system: it fixes what each stage receives, what each
+stage emits, and what the result must be able to report about its own
+construction. Section~\ref{sec:implementation} describes the planned
+implementation, and nothing in this section depends on that implementation
+existing.
+
+\subsection{The reconstruction algebra}
+\label{sec:carta:algebra}
+
+Write the raw fragment exports as $\mathcal{F} = \{F_1, F_2, \dots, F_n\}$. CARTA
+composes three stages (Figure~\ref{fig:carta_pipeline}):
+
+\begin{equation}
+  \mathcal{F}
+  \xrightarrow{\;\mathcal{I}\;} \mathcal{R}
+  \xrightarrow{\;\mathcal{N}\;} (\mathcal{R}', \mathcal{Q})
+  \xrightarrow{\;\mathcal{S}\;} (\mathcal{U}, \Omega)
+  \label{eq:algebra}
+\end{equation}
+
+%% Figure 2 -- CARTA pipeline. The stage signatures are those of Sections 3.2
+%% to 3.5, and the caption's contract is the \carta macro from main.tex, so
+%% the diagram cannot drift from the text. Two structural facts the prose
+%% makes explicit are drawn rather than described: Ingestion and Normalization
+%% run per fragment with no cross-fragment reconciliation (3.2), and Synthesis
+%% is the only stage that sees fragments together (3.4). The Q path is drawn
+%% bypassing Synthesis into Omega, which is what 3.5's quarantine carryover
+%% says: quarantined records are carried into the report, not reconciled.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      >={Stealth[length=2mm]},
+      stage/.style={draw, thick, rounded corners=2pt, minimum height=9mm,
+                    minimum width=17mm, align=center, font=\small,
+                    inner xsep=1pt},
+      data/.style={align=center, font=\small},
+      note/.style={font=\scriptsize\itshape, align=center, text=black!65},
+      node distance=9mm and 6mm,
+    ]
+
+    %% ---- per-fragment lane: Ingestion then Normalization ------------------
+    \node[data] (F) {$\mathcal{F}$\\[-1pt]
+      {\scriptsize$\{F_1,\dots,F_n\}$}\\[-2pt]
+      {\scriptsize$n \ge 2$}};
+    \node[stage, right=of F]        (I) {Ingestion\\$\mathcal{I}$};
+    \node[data,  right=of I]        (R) {$\mathcal{R}$};
+    \node[stage, right=of R]        (N) {Normalization\\$\mathcal{N}$};
+    \node[data,  right=of N]        (Rp) {$\mathcal{R}'$};
+    \node[stage, right=of Rp]       (S) {Synthesis\\$\mathcal{S}$};
+    \node[data,  right=of S]        (U) {$\mathcal{U}$};
+
+    \draw[->] (F) -- (I);
+    \draw[->] (I) -- (R);
+    \draw[->] (R) -- (N);
+    \draw[->] (N) -- (Rp);
+    \draw[->] (Rp) -- (S);
+    \draw[->] (S) -- (U);
+
+    %% ---- the quarantine path ---------------------------------------------
+    \node[data, below=10mm of Rp] (Q) {$\mathcal{Q}$\\[-2pt]
+      {\scriptsize$\bigcup_k Q_k$}};
+    \draw[->] (N.south) |- (Q.west);
+
+    \node[stage, below=10mm of U, minimum width=22mm] (Om)
+      {Report\\$\Omega$};
+    \draw[->] (Q) -- (Om)
+      node[midway, above, note] {carried, not\\reconciled};
+    \draw[->] (S.south) -- ++(0,-5mm) -| (Om.north);
+
+    %% ---- scope annotations, both stated in the prose ---------------------
+    \begin{scope}[on background layer]
+      \node[draw, dashed, black!45, rounded corners=3pt,
+            fit=(I)(N), inner sep=3.5mm] (perfrag) {};
+      \node[draw, dashed, black!45, rounded corners=3pt,
+            fit=(S), inner sep=3.5mm] (joint) {};
+    \end{scope}
+    \node[note, above=0.5mm of perfrag, text width=48mm]
+      {per fragment; no cross-fragment reconciliation};
+    \node[note, above=0.5mm of joint] {fragments\\meet here};
+
+  \end{tikzpicture}
+  \caption{The CARTA reconstruction contract \carta. Ingestion and
+  Normalization operate on one fragment at a time and perform no
+  reconciliation across fragments (Sections~\ref{sec:carta:ingestion}
+  and~\ref{sec:carta:normalization}); Synthesis is the only stage that sees
+  fragments together (Section~\ref{sec:carta:synthesis}). Records that fail to
+  parse, and records that parse under more than one reading, both leave
+  Normalization as $\mathcal{Q}$ and are carried into $\Omega$ with their
+  reason codes rather than being resolved or discarded
+  (Section~\ref{sec:carta:report}).}
+  \label{fig:carta_pipeline}
+\end{figure}
+
+The quarantine set $\mathcal{Q}$ appears in the top-level algebra by design.
+Records that cannot be interpreted safely are an output of the pipeline rather
+than an internal concern of one stage, and writing them into the signature is
+what makes it impossible for a conforming implementation to discard them quietly.
+
+TCF as defined in Section~\ref{sec:tcf} is a two-way split: one primary device
+pauses while one secondary continues, and Definition~1 formalises that case with
+$n = 2$. CARTA's algebra is stated for $n \ge 2$. Nothing in the reconstruction
+problem requires exactly two fragments, and a user who suffers repeated device
+failures can accumulate more. The generalisation runs one way: CARTA covers more
+than TCF's minimal case, while TCF itself remains binary.
+
+\subsection{Ingestion}
+\label{sec:carta:ingestion}
+
+Ingestion maps each fragment independently to a sequence of structured records:
+
+\begin{equation}
+  \mathcal{I}: F_k \mapsto R_k
+  = \langle r_{k,1}, r_{k,2}, \dots, r_{k,M_k} \rangle
+\end{equation}
+
+Each record keeps the raw text slice, the raw timestamp string, the raw sender
+token, a message category, and a provenance tuple:
+
+\begin{equation}
+  \mathrm{prov}(r_{k,j}) = \big\langle
+    \texttt{source\_id}: F_k,\;
+    \texttt{line\_range}: [\ell_{\text{start}}, \ell_{\text{end}}],\;
+    \texttt{sha256}: h(F_k)
+  \big\rangle
+  \label{eq:prov}
+\end{equation}
+
+Three parts, three jobs. The source identifier says which fragment the record
+came from. The line range makes the original text re-locatable, so a reader can
+return to the bytes the record was derived from. The hash binds that claim to a
+specific file state, which is what allows an auditor to detect that the fragment
+has changed since the reconstruction ran.
+
+Ingestion is non-lossy and non-destructive. It writes nothing back to the
+fragment files, and it filters no content. It also performs no reconciliation
+across fragments, and this restriction is deliberate rather than incidental: a
+stage that both parses and reconciles would make it impossible to say afterwards
+whether a discrepancy came from a parsing decision or a merging decision.
+Ingestion parses. Reconciliation happens later, once, in one place.
+
+\subsection{Normalization}
+\label{sec:carta:normalization}
+
+Normalization converts each fragment's records into a shared canonical schema,
+with UTC timestamps, resolved sender identity, and a fixed message-type taxonomy:
+
+\begin{equation}
+  \mathcal{N}: R_k \mapsto (R'_k, Q_k)
+\end{equation}
+
+Each record meets one of three fates, and the third is the one that distinguishes
+this stage from a conventional parser.
+
+A record that conforms to the canonical grammar \textbf{unambiguously} becomes a
+canonical record in $R'_k$, carrying a UTC epoch timestamp, a normalised sender
+identity, and a typed payload. Unambiguous here means a date and time admitting a
+single valid interpretation, valid UTF-8, and a sender or system token that
+resolves.
+
+A record that \textbf{fails to parse} moves to the quarantine set $Q_k$.
+
+A record that \textbf{parses but admits more than one reading} also moves to
+$Q_k$. The date string \texttt{03/04/24} is the standard case: it is well-formed
+under both day-month-year and month-day-year conventions, and nothing inside the
+record itself decides between them. Such a record is not normalised, and it is
+not resolved by picking the more likely convention. Guessing here would convert
+an uncertainty into an assertion that later stages, and eventually the reader,
+would have no way to distinguish from an observation.
+
+Every quarantined record carries a typed reason code $\rho$. The taxonomy
+distinguishes at minimum \texttt{MALFORMED\_\allowbreak TIMESTAMP},
+\texttt{UNSUPPORTED\_\allowbreak FORMAT}, \texttt{AMBIGUOUS\_\allowbreak DATE\_\allowbreak FORMAT},
+\texttt{UNRESOLVED\_\allowbreak SENDER}, and \texttt{INVALID\_\allowbreak ENCODING}, which separates a
+record that could not be read from one that could be read in several ways. The
+distinction matters downstream, because the two call for different remedies: a
+malformed record may need a parser fix, whereas an ambiguous one may be resolvable
+by evidence outside the record, such as a locale established elsewhere in the same
+fragment.
+
+Normalization is required to carry every record's provenance through to $R'_k$ or
+$Q_k$. This is a guarantee the stage owes, and not a property Synthesis may assume
+on its behalf.
+
+\subsection{Synthesis}
+\label{sec:carta:synthesis}
+
+Synthesis is the only stage that sees fragments together:
+
+\begin{equation}
+  \mathcal{S}: \big(\{R'_1, \dots, R'_n\}, \{Q_1, \dots, Q_n\}\big)
+  \mapsto (\mathcal{U}, \Omega)
+\end{equation}
+
+It performs four operations on the union
+$\mathcal{R}'_{\text{all}} = \bigcup_{k=1}^{n} R'_k$, in this order: it orders the
+records chronologically, groups records that appear to describe the same message
+into reconciliation clusters, synthesises one canonical record per cluster, and
+detects observations that cannot be reconciled. Section~\ref{sec:algorithms}
+gives the procedure.
+
+Recall from Section~\ref{sec:tcf:conditions} that $\delta$ and $\epsilon$ may both
+be strictly positive, so $F_1$ and $F_2$ can overlap. A message sent during that
+overlap appears in both fragments and arrives at Synthesis twice, in two
+separately parsed forms that need not agree byte for byte. Deduplication exists
+because of this overlap. Without it, concatenation would report the overlap region
+twice and misrepresent the history it claims to reconstruct.
+
+A conflict is any set of two or more observations that cannot be reconciled
+deterministically under the reconstruction rules. This is broader than a timestamp
+collision, and it includes contradictory sender attribution and orderings that
+cannot both hold.
+
+\subsection{The reconstruction report}
+\label{sec:carta:report}
+
+$\Omega$ is a first-class output with four components:
+
+\begin{equation}
+  \Omega = \big\langle
+    \Omega_{\text{provenance}},\;
+    \Omega_{\text{quarantine}} = \textstyle\bigcup_k Q_k,\;
+    \Omega_{\text{conflicts}},\;
+    \Omega_{\text{stats}}
+  \big\rangle
+  \label{eq:omega}
+\end{equation}
+
+The \textbf{provenance map} records, for every record in $\mathcal{U}$, its origin
+device, origin export, origin backup date, and confidence. The \textbf{quarantine
+carryover} holds every record from every $Q_k$, retained with its reason code
+rather than dropped at the stage boundary. The \textbf{conflict log} holds every
+irreconcilable observation under the definition above. The \textbf{statistics}
+report deduplication counts along with resolved and unresolved ambiguity counts.
+
+Quarantine carryover is the component that does the most work. A reconstruction
+that silently omits what it could not handle looks identical, to its reader, to
+one that had nothing to omit. Carrying $\mathcal{Q}$ into $\Omega$ makes the two
+cases distinguishable without requiring the reader to re-run anything.
+
+\subsection{Design principles}
+\label{sec:carta:principles}
+
+\paragraph{Deterministic.}
+Identical fragment inputs produce an identical $(\mathcal{U}, \Omega)$.
+
+\paragraph{Auditable.}
+Every record in $\mathcal{U}$ traces back to at least one source fragment through
+its provenance.
+
+\paragraph{Non-destructive.}
+Original fragment files are read and never modified.
+
+\subsection{Invariants}
+\label{sec:carta:invariants}
+
+Four invariants constrain any conforming implementation.
+
+\paragraph{Invariant 1, Zero unaccounted loss.}
+Every ingested record either contributes provenance to a record in the unified
+archive or appears in the quarantine carryover:
+
+\begin{equation}
+  \forall r \in \bigcup_{k=1}^{n} R_k, \quad
+  \big(\exists u \in \mathcal{U} : \mathrm{prov}(r) \subseteq \mathrm{prov}(u)\big)
+  \;\lor\;
+  \big(\exists q \in \Omega_{\text{quarantine}} : q = r\big)
+  \label{eq:inv1}
+\end{equation}
+
+No third outcome is permitted. A record cannot leave the pipeline unaccounted for.
+
+\paragraph{Invariant 2, Strict provenance traceability.}
+Every record in the unified archive carries at least one provenance entry, and
+every entry references a valid source fragment:
+
+\begin{equation}
+  \forall u \in \mathcal{U}, \quad
+  |\mathrm{prov}(u)| \ge 1
+  \;\land\;
+  \forall p \in \mathrm{prov}(u),\; p \text{ references a valid } F_k
+  \label{eq:inv2}
+\end{equation}
+
+This forbids synthesised records with no origin, which is what would let an
+inference enter the archive indistinguishable from an observation.
+
+\paragraph{Invariant 3, Determinism.}
+For a fixed $\mathcal{F}$, two runs of the pipeline yield the same pair:
+
+\begin{equation}
+  \mathcal{S}(\mathcal{N}(\mathcal{I}(\mathcal{F}))) = (\mathcal{U}_1, \Omega_1)
+  \;\land\;
+  \mathcal{S}(\mathcal{N}(\mathcal{I}(\mathcal{F}))) = (\mathcal{U}_2, \Omega_2)
+  \implies
+  (\mathcal{U}_1 = \mathcal{U}_2) \land (\Omega_1 = \Omega_2)
+  \label{eq:inv3}
+\end{equation}
+
+We state this as a requirement on conforming implementations. No implementation
+exists to exhibit it, and Section~\ref{sec:algorithms:ordering} identifies the
+tie-breaking rule that a conforming implementation needs in order to satisfy it.
+
+\paragraph{Invariant 4, Idempotent reconstruction.}
+Applying Synthesis to an already unified, canonical record set together with an
+identical copy of itself must not introduce additional information loss or
+unresolved conflicts. We state this as a specification-level target rather than a
+proven equation. A type-safe formalisation, establishing that records in
+$\mathcal{U}$ are schema-compatible with those in $\mathcal{R}'$, is deferred to
+the implementation phase and is not claimed here.

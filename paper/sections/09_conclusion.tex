@@ -1,0 +1,49 @@
+%% Section 9 -- Conclusion & Reproducibility
+%% Ported from docs/DRAFT_PAPER.md Section 9.
+%%
+%% The reproducibility claim below is this paper's ONLY reproducibility claim
+%% and the one a reviewer can falsify in under a minute. Re-run the generator
+%% check at submission time (docs/DRAFT_PAPER.md drafting note 11).
+
+\section{Conclusion \& Reproducibility}
+\label{sec:conclusion}
+
+This paper contributes a characterisation and a specification. The
+characterisation is TCF: three necessary conditions that together produce two
+archives of one account, each internally complete, overlapping in part, and
+irreconcilable through the platform that holds them. Bifurcation and independent
+persistence are the conditions that create the split; the restore that replaces
+rather than merges is the one that makes it permanent. The specification is CARTA:
+\carta, with typed data passing between stages, records that cannot be safely
+interpreted routed to a quarantine set with reason codes instead of being resolved
+by guessing, and a reconstruction report carrying provenance, quarantine, conflicts
+and counts as a first-class output.
+
+Two of those elements are what the survey in Section~\ref{sec:related} could not
+find anywhere among the neighbours. Every tool examined that merges chat archives
+either discards input it cannot parse, prints a diagnostic and moves on, or aborts
+the load, and none retains that input as an inspectable output. None emits a
+structured account of what the reconstruction did. The forensic lineage supplies
+staging and per-record provenance, both of which predate this work and neither of
+which we claim; the reference super-timeline engine retains typed warnings but
+keeps them out of the artefact an analyst reads. $\mathcal{Q}$ and $\Omega$ are the
+two properties this specification adds to that inheritance.
+
+\paragraph{Reproducibility.}
+One artefact in the accompanying repository runs and reproduces: the synthetic
+fixture generator. Running
+\texttt{node scripts/generate-synthetic-fixtures.js -{}-seed 1 -{}-count 5}
+regenerates the five committed fixtures and their manifest byte for byte, and we
+verified this across consecutive runs and against the committed files. That result
+covers deterministic generation of a synthetic corpus across 19 recorded
+edge-case categories, and it covers nothing else. CHAMP-Pipeline is not
+implemented, so no reconstruction, no unified archive, and no report can be
+reproduced from this repository, and no measurement in this paper depends on any
+that could be.
+
+What remains is the part a specification cannot settle on its own. The strongest
+claim available here is that a reconstruction which cannot say what it dropped is
+indistinguishable, to the person reading it, from one that dropped nothing. Every
+merging tool we examined leaves its reader in exactly that position. Whether
+$\mathcal{Q}$ and $\Omega$ are the right instruments for closing that gap is a
+question an implementation will answer better than an argument.

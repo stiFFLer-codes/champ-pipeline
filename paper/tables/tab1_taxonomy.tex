@@ -1,0 +1,55 @@
+%% Table 1 -- Taxonomy of neighbouring data-loss and consistency phenomena.
+%% Reproduced unchanged from docs/DRAFT_PAPER.md Section 2.4, which in turn
+%% reproduces docs/PAPER_BLUEPRINT.md Section 4. \input from 02_tcf.tex.
+%%
+%% Note: the column headings and the TCF column use the source documents'
+%% spelling ("Platform Behavior") rather than being Anglicised, because the
+%% table is reproduced verbatim. See docs/DRAFT_PAPER.md drafting note 5.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Taxonomy of neighbouring data-loss and consistency phenomena.}
+  \label{tab:taxonomy}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+    \toprule
+    \textbf{Dimension} &
+      \textbf{Backup Staleness} &
+      \textbf{Sync Conflict} &
+      \textbf{Git 3-Way Merge} &
+      \textbf{TCF (This Paper)} \\
+    \midrule
+    \textbf{Underlying Cause} &
+      Infrequent snapshotting &
+      Concurrent multi-client writes &
+      Divergent commit histories &
+      Device switch + destructive, merge-free restore \\
+
+    \textbf{Number of Timelines} &
+      Exactly 1 &
+      2+ concurrent &
+      2 branches + Common Ancestor &
+      2 independently persistent, potentially overlapping \\
+
+    \textbf{Platform Behavior} &
+      Restores stale snapshot &
+      Rejection or branch fork &
+      Automatic merge or conflict markers &
+      \textbf{Restore replaces current history; no merge offered} \\
+
+    \textbf{Physical Data State} &
+      Missing (never recorded) &
+      Present on server &
+      Merged in working tree &
+      \textbf{Intact on local device, inaccessible in cloud} \\
+
+    \textbf{Resolution Target} &
+      Data lost forever &
+      Operational state restored &
+      Codebase reconciliation &
+      \textbf{Forensic reconstruction ($\mathcal{U}, \Omega$)} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}

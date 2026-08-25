@@ -1,0 +1,223 @@
+%% Section 2 -- Temporal Communication Fragmentation
+%% Ported from docs/DRAFT_PAPER.md Section 2. British spelling is deliberate.
+
+\section{Temporal Communication Fragmentation}
+\label{sec:tcf}
+
+\subsection{Definition}
+\label{sec:tcf:definition}
+
+\textbf{Temporal Communication Fragmentation} is a state in which a user's
+communication history for a single logical account becomes partitioned across
+two or more device-bound application instances, arising from primary-device
+unavailability, continued account use on a secondary device during that window,
+and primary-device recovery followed by a restore action that replaces rather
+than merges. The platform offers no native path to combine the archives, no
+user-facing warning that a competing archive exists, and no attempt at a diff or
+a reconciliation.
+
+We assert the observable restore behaviour and nothing about the backend that
+produces it. A single-slot, last-write-wins cloud backup destination would
+explain what users see, but we have found no vendor documentation, citation, or
+controlled experiment establishing that architecture, and no argument in this
+paper depends on it.
+
+%% Figure 1 -- TCF timeline. Drawn from Section 2.2 only: the three necessary
+%% conditions, the t_f / t_r landmarks, and the F_1 / F_2 extents with delta
+%% and epsilon. Nothing here is asserted that Section 2.2 does not already
+%% state. delta and epsilon are drawn strictly positive because that is the
+%% case the prose singles out as the reason deduplication is needed at all
+%% (Sections 2.2 and 3.4); both are defined as merely non-negative, and the
+%% caption says so rather than letting the drawing imply otherwise.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      x=1mm, y=1mm,
+      >={Stealth[length=2mm]},
+      frag/.style={rounded corners=1pt, draw, thick},
+      lbl/.style={font=\small},
+      tick/.style={draw, thick},
+      cond/.style={font=\scriptsize\itshape, align=center},
+    ]
+
+    %% ---- time axis -------------------------------------------------------
+    \draw[->, thick] (0,0) -- (128,0) node[right, lbl] {time};
+
+    %% landmark positions
+    \def\tf{34}   % device failure / bifurcation
+    \def\tr{86}   % primary device recovery
+    \def\trest{110} % restore performed
+    \def\dlt{10}  % delta : pre-existing history on the secondary
+    \def\eps{8}   % epsilon: lag before the account returns to the primary
+
+    \foreach \x/\name in {\tf/$t_f$, \tr/$t_r$, \trest/restore} {
+      \draw[tick] (\x,-2) -- (\x,2);
+    }
+    \node[lbl, below=1mm] at (\tf,-2) {$t_f$};
+    \node[lbl, below=1mm] at (\tr,-2) {$t_r$};
+
+    %% ---- F_1 : primary -- paused across the window ------------------------
+    \draw[frag, fill=black!8] (2,8) rectangle (\tf,16);
+    \draw[frag, fill=black!8] (\tr,8) rectangle (126,16);
+    \draw[dashed, gray] (\tf,12) -- (\tr,12);
+    \node[lbl] at (18,12) {$F_1$};
+    \node[lbl] at (106,12) {$F_1$};
+    \node[cond, gray] at ({(\tf+\tr)/2},12) {primary paused\\(no new history)};
+
+    %% ---- F_2 : secondary -- active across the window ----------------------
+    \draw[frag, fill=black!20] ({\tf-\dlt},20) rectangle ({\tr+\eps},28);
+    \node[lbl] at ({(\tf+\tr)/2},24) {$F_2$};
+
+    %% ---- the two overlap regions -----------------------------------------
+    \begin{scope}[on background layer]
+      \fill[pattern=north east lines, pattern color=black!45]
+        ({\tf-\dlt},8) rectangle (\tf,28);
+      \fill[pattern=north east lines, pattern color=black!45]
+        (\tr,8) rectangle ({\tr+\eps},28);
+    \end{scope}
+    \draw[<->] ({\tf-\dlt},32) -- (\tf,32)
+      node[midway, above, font=\scriptsize] {$\delta$};
+    \draw[<->] (\tr,32) -- ({\tr+\eps},32)
+      node[midway, above, font=\scriptsize] {$\epsilon$};
+
+    %% ---- the three necessary conditions ----------------------------------
+    \draw[->, thick] (\tf,-14) -- (\tf,-4);
+    \node[cond, below=0.5mm] at (\tf,-14)
+      {\textbf{C1} Bifurcation\\primary pauses,\\secondary active};
+
+    \draw[decorate, decoration={brace, amplitude=4pt, mirror}]
+      (\tf,-6) -- (\tr,-6);
+    \node[cond, below=2mm] at ({(\tf+\tr)/2},-8)
+      {\textbf{C2} Independent persistence\\both branches accumulate,\\zero synchronisation};
+
+    \draw[->, thick] (\trest,-14) -- (\trest,-4);
+    \node[cond, below=0.5mm] at (\trest,-14)
+      {\textbf{C3} Asymmetric\\reconciliation on merge\\restore replaces,\\no warning, no diff};
+
+    %% archives coexist between recovery and restore
+    \draw[<->, gray] (\tr,4.5) -- (\trest,4.5);
+    \node[cond, gray, above=0mm] at ({(\tr+\trest)/2},4.5) {archives coexist};
+
+    \draw[very thick] (\trest,6) -- (\trest,30);
+    \node[cond, right=1mm, align=left] at (\trest,33)
+      {$F_2$ becomes\\unreachable};
+
+  \end{tikzpicture}
+  \caption{Temporal Communication Fragmentation, with the three necessary
+  conditions of Section~\ref{sec:tcf:conditions} placed on the timeline.
+  $F_1$ holds messages with $t(m) \le t_f$ or $t(m) \ge t_r$; $F_2$ holds
+  messages in $[t_f - \delta,\, t_r + \epsilon]$. Both $\delta$ and $\epsilon$
+  are defined as non-negative and are drawn here as strictly positive, which
+  is the case that produces the hatched overlap regions and hence the need for
+  deduplication rather than concatenation. The archives coexist without
+  conflict between $t_r$ and the restore; the restore, not the recovery, is
+  what makes the split permanent.}
+  \label{fig:tcf_timeline}
+\end{figure}
+
+\subsection{Necessary conditions}
+\label{sec:tcf:conditions}
+
+TCF requires all three of the following to hold at once
+(Figure~\ref{fig:tcf_timeline}).
+
+\paragraph{Condition 1, Bifurcation.}
+At failure time $t_f$, one authoritative timeline splits into two independently
+updating branches. The primary is paused; the secondary is active.
+
+\paragraph{Condition 2, Independent persistence.}
+Both branches survive and accumulate new history for some duration with zero
+synchronisation between them. This condition does most of the work in separating
+TCF from the replication literature, and Section~\ref{sec:related:replication}
+returns to it.
+
+\paragraph{Condition 3, Asymmetric reconciliation on merge.}
+When the primary device recovers, the two archives coexist without conflict for a
+period. The primary's resumption does not by itself threaten what the secondary
+accumulated. The split becomes permanent at the moment a restore is performed,
+because the restore replaces current chat state instead of merging into it,
+surfaces no warning, and gives no indication that a second archive existed.
+Thereafter the secondary's contribution survives only in whatever unsynced local
+form remains on the secondary device.
+
+Formally (Section~\ref{sec:carta} develops this), device failure at $t_f$ and
+recovery at $t_r$ partition a ground-truth history $\mathcal{T}$ into $F_1$,
+holding messages with $t(m) \le t_f$ or $t(m) \ge t_r$, and $F_2$, holding
+messages in $[t_f - \delta,\, t_r + \epsilon]$. The parameters $\delta$ and
+$\epsilon$ are non-negative, representing pre-existing history on the secondary
+device and the lag before the account returns to the primary. Both may be
+strictly positive, so $F_1$ and $F_2$ can overlap. That overlap is why
+reconstruction needs deduplication rather than concatenation.
+
+\subsection{Distinction from backup staleness}
+\label{sec:tcf:staleness}
+
+Backup staleness is the documented problem of infrequent snapshots losing data
+when a device fails. One timeline exists, and the data from the unprotected
+window was never captured. TCF has two timelines, each holding messages the other
+lacks, both physically present. The reconstruction problem is one of retrieval
+and reconciliation rather than of recovery from destruction.
+
+\subsection{Position against neighbouring phenomena}
+\label{sec:tcf:neighbours}
+
+\input{tables/tab1_taxonomy}
+
+Two further neighbours deserve separate treatment because they are close enough
+to invite misreading, and both are already-named phenomena rather than gaps.
+
+\paragraph{Sync conflict.}
+Systems built for optimistic replication also allow replicas to diverge, and they
+define conflict as a first-class condition. \citet{saito2005optimistic} survey
+the area and describe divergence and conflict as the characteristic problems such
+systems face. The difference is what happens on reunification: those platforms
+attempt reconciliation, imperfectly and with human fallback, whereas the platform
+behaviour in Condition 3 makes no attempt at all.
+
+\paragraph{Device migration.}
+Moving an account between handsets is routine, and the HCI literature on
+multi-device use describes the resulting failure as information stranded on the
+device the user is not currently holding~\citep{dearman2008othercomputer}.
+Migration moves one continuous timeline. TCF requires two timelines that
+accumulated independently and concurrently.
+
+\subsection{Terminology: what TCF is not called}
+\label{sec:tcf:terminology}
+
+Three established terms sit close enough to ``temporal communication
+fragmentation'' that a reader may reasonably assume the phenomenon is already
+covered. Each denotes something else, and we set the boundaries explicitly rather
+than rely on context.
+
+\paragraph{Information fragmentation (personal information management).}
+\citet{karger2006unification} define this as personal information split by the
+very tools meant to manage it, with applications storing data ``in their own
+particular locations and representations, inaccessible to other applications'';
+the project-level variant is treated by Bergman and
+colleagues~\citep{bergman2006project}. Later usage in the field routinely extends
+the term across devices as well as applications, so the surface overlap with TCF
+is real. Two things separate them. The unit differs: information fragmentation
+concerns \emph{different items} bearing on one task or project, scattered across
+stores, whereas TCF concerns \emph{one item stream}, a single conversation, split
+into disjoint temporal segments. And the access status differs: fragmented
+personal information is scattered but reachable, and the research goal is
+unification across silos, whereas in TCF one intact archive is unreachable
+through the platform that holds it. Karger and Jones do treat duplicate copies
+drifting out of step, which is content divergence between copies a user made;
+TCF's divergence is temporal, between copies the platform made and then rendered
+mutually exclusive.
+
+\paragraph{Fragmented communication (CSCW and workplace studies).}
+In that literature the term describes one conversation spread across many
+channels and tools. TCF is the opposite arrangement: one channel, one account,
+one conversation, split by time rather than by venue.
+
+\paragraph{Temporal fragmentation (time geography and ICT studies).}
+\citet{hubers2008temporal} use this for the splitting of human \emph{activities}
+into pieces performed at different times and places. The referent is an activity
+pattern, not a data archive. We keep the name Temporal Communication
+Fragmentation because the qualifier ``communication'' and the archival framing
+distinguish the two, and because no prior work applies any of these three terms
+to the configuration defined in Section~\ref{sec:tcf:conditions}. The collision
+is nonetheless a live source of confusion, and it is the reason this subsection
+exists.
