@@ -54,6 +54,12 @@ paper/*.fls
 paper/*.fdb_latexmk
 paper/*.synctex.gz
 paper/main.pdf
+# Regenerable arXiv upload bundle (main.tex + sections + tables + main.bbl).
+# Rebuild with: pdflatex -> bibtex -> pdflatex -> pdflatex, then tar the sources + .bbl.
+paper/arxiv-submission.tar.gz
 # NOTE: arXiv wants main.bbl uploaded with the source (it does not reliably run
 # bibtex). At submission, generate it and include it in the upload even though
 # it is ignored here.
+
+# --- Session scratch (tool output dumps, not project content) ---
+grill-me-output.txt

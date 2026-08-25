@@ -137,6 +137,15 @@ Working tree is clean apart from `grill-me-output.txt`, which is deliberately un
 * **`paper/` tracks exactly 12 source files**, no build artefacts, `.claude/` correctly excluded.
 * **HEAD's tree builds standalone.** `paper/` exported from HEAD via `git archive` and compiled in isolation: 19 pages, 0 LaTeX warnings, 0 overfull/underfull boxes, 0 BibTeX warnings, no `[CITE-T2]`. The committed file set is necessary and sufficient.
 
+### Submission readiness verified 2026-08-26
+
+* **Compiled with real `pdflatex`, not just Tectonic.** Every earlier clean build in this project used Tectonic, which is XeTeX-based; the `\ifPDFTeX` guard in `main.tex` meant the `inputenc`/`fontenc` branch that arXiv actually takes had never executed. Verified with pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026) against a `git archive` export of HEAD, running `pdflatex → bibtex → pdflatex → pdflatex`: all passes exit 0, BibTeX processed 31 entries with `warning$ -- 0`, and the log confirms `inputenc.sty` and `fontenc.sty` were loaded. **Result: 19 pages, 0 LaTeX warnings, 0 overfull/underfull boxes, 0 undefined references or citations, 0 font-substitution warnings.** This satisfies `docs/PAPER_BLUEPRINT.md` §6.2 item 3 literally. One extra pass beyond the standard four is needed to clear a "Label(s) may have changed" notice (the figure floats shift labels); arXiv runs enough passes for this, and it converges to zero warnings on pass five.
+* **arXiv upload bundle built and verified.** `paper/arxiv-submission.tar.gz` (gitignored, regenerable) holds the 12 files arXiv needs: `main.tex`, the nine section files, `tables/tab1_taxonomy.tex`, and `main.bbl`. `main.bib` is deliberately **excluded** so arXiv does not attempt to re-run BibTeX. Verified to compile to the same 19 pages with zero warnings *without* any `.bib` present.
+* **Generator determinism re-verified.** `node scripts/generate-synthetic-fixtures.js --seed 1 --count 5` run twice: both runs byte-identical to each other and to the committed corpus (all six files), working tree unchanged by the check. This is the paper's only reproducibility claim.
+* **Star counts re-checked against the GitHub API.** All seven repositories unchanged from the recorded figures, including the two the manuscript actually cites (`bepaald/signalbackup-tools` 1,392 and `natario1/whatsapp-database-merger` 78). Access dates in `paper/main.bib` remain 2026-08-25 and are still accurate; re-check again if submission slips by more than a few weeks.
+
+**Remaining before submission: arXiv endorsement (in progress, architect) and the category decision.** Recommended: primary `cs.DL`, cross-list `cs.CR` then `cs.SE`. `cs.DC` is deliberately *not* recommended — Section 8.1 argues TCF falls outside the CRDT convergence guarantee, so that audience would be reviewing against a claim the paper does not make.
+
 ### GitHub Verification
 
 Repository is `stiFFLer-codes/champ-pipeline`, branch `main`. **Nothing has been pushed yet** — `git status -sb` reports `main...origin/main [ahead 5]`, so all five commits above are local only.
