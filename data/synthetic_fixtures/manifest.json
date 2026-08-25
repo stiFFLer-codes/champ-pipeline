@@ -34,6 +34,7 @@
     {
       "file": "fixture-03-group-chat-encryption-and-membership.txt",
       "quirks": [
+        "attachment-double-filename",
         "attachment-standard",
         "date-format-ddmmyy",
         "emoji",

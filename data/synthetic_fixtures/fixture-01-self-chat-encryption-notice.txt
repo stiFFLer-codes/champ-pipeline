@@ -1,4 +1,4 @@
-08/01/24, 9:00 am - Messages and calls are end-to-end encrypted. Only people in this chat can read, listen to, or share them. *Learn more*
+08/01/24, 9:00 am - Messages to yourself are end-to-end encrypted. No one else, not even WhatsApp, can read, listen to, or share them.
 08/01/24, 9:07 am - You: 
 08/01/24, 9:41 am - Contact A: *Ok, done.*
 08/01/24, 1:40 pm - You: It is already on the calendar.

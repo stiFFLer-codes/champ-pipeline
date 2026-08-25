@@ -299,7 +299,7 @@ function profileGroupLifecycle(rng) {
   t = advance(rng, t);
   addSystem(c, fmt, t, 'You were added', ['membership-you-were-added']);
   const participants = ['You'].concat(members);
-  const events = buildEvents(rng, randint(rng, 14, 20), ['attach-plain', 'multiline', 'multiline', 'empty']);
+  const events = buildEvents(rng, randint(rng, 14, 20), ['attach-plain', 'attach-double', 'multiline', 'multiline', 'empty']);
   runEvents(rng, c, fmt, t, participants, events);
   return c;
 }
