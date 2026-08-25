@@ -13,13 +13,18 @@ primary device recovery.
   documented in /docs/CARTA-framework.md, not implemented directly in 
   this repo's code.
 - **CHAMP-Pipeline** = this repository. The concrete, WhatsApp-specific 
-  software that implements CARTA end-to-end, proving the framework works.
+  software that will implement CARTA end-to-end. *(Note, added 2026-08-24: the
+  current paper is a locked fast-path position/specification paper — CHAMP-Pipeline
+  is explicitly Phase II, deferred future work, not a claim this paper makes or
+  relies on. See PROJECT_PLAN.md §6/§2.6 of docs/PAPER_BLUEPRINT.md.)*
 
-This repo exists to support: a peer-reviewed journal paper, an arXiv 
-preprint, a Zenodo-minted citable DOI, and a JOSS (Journal of Open Source 
-Software) submission. Code quality, documentation, and reproducibility 
-matter more here than in a typical side project — this is citable 
-scholarly output.
+This repo exists to support: an arXiv preprint (current, near-term goal —
+see PROJECT_PLAN.md's locked fast-path scope). A peer-reviewed journal
+paper, a Zenodo-minted DOI, and a JOSS submission are explicitly *not*
+current priorities (PROJECT_PLAN.md §12) — they may be reconsidered later,
+but do not treat them as active goals. Code quality, documentation, and
+reproducibility still matter more here than in a typical side project —
+this is citable scholarly output, even at the current, smaller scope.
 
 ## Hard rules — never violate these
 1. **No real personal chat data, ever, anywhere in this repo.** Not in 

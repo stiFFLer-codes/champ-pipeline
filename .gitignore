@@ -36,3 +36,24 @@ $RECYCLE.BIN/
 
 # --- Command Code ---
 .commandcode/
+
+# --- Claude Code local session config/tools (personal, not project content) ---
+.claude/
+
+# --- LaTeX build artefacts (paper/) ---
+# Source is what gets archived and submitted; build outputs are regenerable.
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.lof
+paper/*.lot
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/main.pdf
+# NOTE: arXiv wants main.bbl uploaded with the source (it does not reliably run
+# bibtex). At submission, generate it and include it in the upload even though
+# it is ignored here.

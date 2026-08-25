@@ -16,11 +16,13 @@ The immediate objective is to produce a technically rigorous and reproducible bo
 
 ### Core principle
 
-> **The paper is the product. CHAMP-Pipeline is evidence.**
+> **The paper is the product. CHAMP-Pipeline's implementation is deferred future work (Phase II), not evidence for this paper.**
+
+*(Revised 2026-08-24 — the original tagline implied CHAMP-Pipeline provides empirical evidence for this paper. The project has since locked a fast-path, specification-paper scope in which no implementation or evaluation is required or claimed. See §6, Phase II.)*
 
 Every major engineering decision must therefore be evaluated against one question:
 
-> Does this materially strengthen the research contribution, implementation evidence, reproducibility, or paper?
+> Does this materially strengthen the research contribution, the specification's rigor, the literature positioning, or the paper itself?
 
 If not, it should normally be deprioritized.
 
@@ -151,14 +153,18 @@ Do not use these terms interchangeably.
 
 # 5. Research-to-Software Relationship
 
-The intended relationship is:
+**Revised 2026-08-24 (fast-path decision).** The diagram below originally implied implementation and experiments must precede the paper. That ordering is superseded — see §6, Phase II. The current relationship is:
 
 ```text
 Research Problem
       ↓
 TCF Formalization
       ↓
-CARTA Framework
+CARTA Framework (Specification)
+      ↓
+Research Paper  ←── current end of this project's roadmap
+      ↓
+   [Phase II, deferred, separate project]
       ↓
 CHAMP-Pipeline Implementation
       ↓
@@ -166,12 +172,10 @@ Controlled Experiments
       ↓
 Evidence
       ↓
-Research Paper
+[Follow-up publication, if evidence warrants]
 ```
 
-The implementation exists primarily to provide evidence that the framework can be operationalized.
-
-Therefore:
+The specification exists to be independently implementable and defensible on its own; it does not require an implementation to demonstrate that. When Phase II does begin — separately, later — the same rules apply as before:
 
 * Do not build features merely because they are technically interesting.
 * Do not introduce ML unnecessarily.
@@ -185,6 +189,8 @@ Therefore:
 ---
 
 # 6. Master Project Phases
+
+**Revised 2026-08-24 — fast-path decision locked.** The phase structure below replaces the original Phase 0–10 roadmap. Phases 3–8 of the original roadmap (Ingestion, Normalization, Synthesis, Validation, Experimental Evidence, Minimal Demonstration Layer) are not deleted — they are consolidated into **Phase II**, a deliberately deferred, separate future project, not a prerequisite for this paper. Full rationale: `docs/PAPER_BLUEPRINT.md §2.6`.
 
 The project is organized around research deliverables rather than calendar deadlines.
 
@@ -216,11 +222,13 @@ The research problem and CARTA framework can be explained independently of the i
 
 ---
 
-# PHASE 1 — Evidence Foundation
+# PHASE 1 — Evidence & Illustrative Corpus
+
+*(Renamed 2026-08-24 — under the fast-path decision this corpus is illustrative/supporting material only, not feeding an empirical evaluation. Not on the paper's critical path; cheap to finish, worth finishing.)*
 
 ### Objective
 
-Create a trustworthy synthetic experimental corpus for implementation and validation.
+Create a trustworthy synthetic corpus illustrating the range of WhatsApp export edge cases CARTA's specification must account for.
 
 ### Components
 
@@ -260,12 +268,10 @@ The synthetic corpus must contain deliberate coverage for relevant WhatsApp expo
 
 ### Known current issues to resolve
 
-The current reconnaissance identified:
+~~1. `attachment-double-filename` appears in only one fixture...~~ **RESOLVED 2026-08-24** — see `STATE.md` Known Issues.
+~~2. The self-chat encryption fixture has a mismatch...~~ **RESOLVED 2026-08-24** — see `STATE.md` Known Issues.
 
-1. `attachment-double-filename` appears in only one fixture and should be represented in at least two independent fixtures.
-2. The self-chat encryption fixture has a mismatch between its manifest classification, generator constant, and emitted literal text.
-
-These must be resolved before treating the fixture corpus as locked.
+Both resolved; determinism re-verified via two regeneration runs producing byte-identical manifests. No known blocking issues remain in this phase.
 
 ### Exit condition
 
@@ -280,11 +286,13 @@ The synthetic corpus is:
 
 ### Current status
 
-**IN PROGRESS**
+**DONE** (2026-08-24) — both known bugs resolved, determinism re-verified.
 
 ---
 
-# PHASE 2 — CARTA Data Contract
+# PHASE 2 — CARTA Specification Lock
+
+*(Renamed 2026-08-24, merged with the mathematical-consistency review. Four issues found and resolved 2026-08-24: F₁/F₂ overlap vs. Table 1's disjointness claim, dedup relation reframed as similarity clustering rather than a false equivalence-relation claim, idempotence softened to a specification-level target, ambiguous-but-parseable Normalization records routed to quarantine. See `docs/PAPER_BLUEPRINT.md §2.2–2.4`, `docs/CARTA-framework.md §3.2`. The cross-doc consistency pass (also 2026-08-24) found and fixed three more: `docs/CARTA-framework.md §3.1/§3.2` omitted Q from the F→R→(R',Q)→(U,Ω) notation and the Normalization function signature; Normalization's provenance-preservation guarantee was implicit, not stated; and TCF's inherently-binary framing vs. CARTA's n≥2 algebra was unreconciled — all three now fixed with an explanatory note. This phase is closed.)*
 
 ### Objective
 
@@ -329,312 +337,76 @@ Another engineer can implement the pipeline using the defined contracts without 
 
 ### Current status
 
-**NOT STARTED**
+**DONE** (2026-08-24) — cross-doc consistency pass complete.
 
 ---
 
-# PHASE 3 — Ingestion
+# PHASE L — Literature Survey Completion
+
+*(New phase, added 2026-08-24 — was implicit before but never formally tracked.)*
 
 ### Objective
 
-Implement:
+Establish CARTA's actual novelty/delta against prior art, with real citations — not comfortable assumptions.
 
-```text
-F → R
-```
+### Kill-shot questions
 
-The ingestion stage converts raw WhatsApp export files into structured, provenance-bearing records.
+1. Has this exact phenomenon already been formally named? (broad name search) — not yet run.
+2. Does digital forensics already provide essentially the same reconstruction framework? — **done.** Confirmed as the closest neighbor; real citation (DFRWS 2025 SoK, arXiv:2504.18131) identifies unified multi-source reconciliation as an open challenge, not a solved methodology.
+3. Do CRDT/distributed-systems/replica-reconciliation approaches already solve the same problem under a different abstraction? — **preliminary pass done** (Kaki et al., OOPSLA'19/PLDI'22 — requires a tracked common ancestor, doesn't cover ancestryless flat exports); needs a second, deeper verification pass.
+4. Has WhatsApp backup/export reconstruction already been demonstrated in forensic or archival literature specifically? — not yet run.
 
-It must account for the edge cases represented by the synthetic corpus.
-
-At minimum investigate and handle:
-
-* date formats
-* time formats
-* sender detection
-* senderless system lines
-* multiline messages
-* empty-body messages
-* attachments
-* encryption notices
-* group events
-* Unicode/emoji
-* malformed/unrecognized lines
-
-The implementation must preserve information rather than silently discard it.
+Findings tracked in `docs/PAPER_BLUEPRINT.md §2.5`, updated in place as the survey progresses.
 
 ### Exit condition
 
-Every supported synthetic fixture can be deterministically converted from raw TXT into the canonical `R` representation.
+A submission-grade Related Work section, and a delta sentence that has survived contact with all four kill-shots — or been honestly narrowed or withdrawn if it didn't.
 
 ### Current status
 
-**NOT STARTED**
+**IN PROGRESS** (1 of 4 fully resolved — forensics; 1 preliminary, needs a second pass — CRDT; 2 not yet started — exact-name search, WhatsApp-specific)
 
 ---
 
-# PHASE 4 — Normalization
+# PHASE W — Paper Writing
+
+*(Replaces the original Phase 9 — renamed 2026-08-24 to avoid confusion with the old numbered scheme.)*
 
 ### Objective
 
-Implement:
-
-```text
-R → R'
-```
-
-Normalization must produce canonical, schema-valid records while preserving provenance.
-
-Records that cannot safely be normalized must enter the quarantine set:
-
-```text
-Q
-```
-
-Nothing should disappear silently.
+Write the position/specification paper: TCF formalization, CARTA specification, formal data contracts, literature positioning, and an explicit, honest statement of implementation status.
 
 ### Exit condition
 
-Every ingested record is either:
-
-```text
-valid R'
-```
-
-or:
-
-```text
-explicitly retained in Q
-```
-
-with provenance preserved.
+The manuscript satisfies the paper-ready stop condition defined in `docs/PAPER_BLUEPRINT.md §2.6`: TCF formally and defensibly characterized; CARTA internally consistent and independently implementable; the novelty position survives the literature kill-shots; all mathematical claims internally valid; every empirical/capability statement is either cited or explicitly labeled proposed/future work.
 
 ### Current status
 
-**NOT STARTED**
+**DRAFT COMPLETE (2026-08-25).** All nine outline sections written to `docs/DRAFT_PAPER.md` (7,893 words), each verified in an independent review pass against the locked spec and survey — not self-reported. A References section (30 entries) was assembled and independently verified the same day; the bibliography is now real BibTeX in `paper/main.bib`, not placeholders. `[CITE-T2]` is **resolved** (2026-08-25) — narrowed to what the archived source supports, per the architect's decision; see Phase R below. The Section 8.2 contingency on the two unread Chabot-lineage documents is **decided, not open** — the architect chose to accept it as a stated limitation rather than chase further reads. Tracked in `docs/DRAFT_PAPER.md`'s "Drafting notes" block.
 
 ---
 
-# PHASE 5 — Synthesis
+# PHASE R — Repo Hygiene & Submission Prep
+
+*(New phase, added 2026-08-24.)*
 
 ### Objective
 
-Implement:
-
-```text
-{R'₁, R'₂, ..., R'ₙ} → (U, Ω)
-```
-
-This is the central CHAMP-Pipeline research implementation.
-
-Synthesis must address:
-
-* chronological reconstruction
-* duplicate detection/reconciliation
-* provenance
-* archive relationships
-* ambiguity
-* conflicts
-* deterministic decisions
-* non-destructive behavior
-
-Unresolved ambiguity must not be silently discarded.
-
-It must surface in `Ω`.
-
-### Output
-
-```text
-U = unified reconstructed archive
-
-Ω = auditable reconstruction report
-```
-
-### Exit condition
-
-Multiple fragmented archives can be reconstructed deterministically into `U` with an accompanying auditable `Ω`.
+Fill `CITATION.cff` (author, version, date — currently placeholder-empty), reconcile any remaining doc inconsistencies, confirm no real chat data or stray artifacts are present, and ensure reproducibility instructions match what the paper actually claims — the fixture generator, and nothing else. Also now covers: converting `docs/DRAFT_PAPER.md` into real LaTeX (`paper/`) and confirming it compiles clean.
 
 ### Current status
 
-**NOT STARTED**
+**DONE (2026-08-25).** `paper/main.tex` + `paper/sections/*.tex` + `paper/main.bib` (31 entries) built and independently verified across four passes: compiles clean (Tectonic — 19pp, 0 overfull/underfull boxes, **0 LaTeX/BibTeX warnings**, the only remaining log line being a pre-existing third-party `algorithm.sty` UTF-8 notice), abstract written and grounded in the finished sections, both planned figures (TCF timeline, CARTA pipeline) drawn as self-contained TikZ, author/ORCID filled in both `CITATION.cff` and `main.tex` (Maitreya Sapariya, Independent Researcher, ORCID 0009-0003-9346-3775), `[CITE-T2]` resolved (Section 1's claim narrowed to what the archived source actually supports — the "cannot be merged" framing became the paper's own observation with a pointer to §8.3's tooling survey, not an unsupported attribution to WhatsApp), bibliography orphan-clean (31 defined = 31 cited = 31 rendered), locked corrections and British spelling intact, read-only sources confirmed untouched by file mtimes throughout, no commits made. T1 (terminology collision) was found already resolved in `docs/DRAFT_PAPER.md` §2.5 (three named collisions distinguished, ported to `paper/sections/02_tcf.tex`). T3 (patent claims) closed as moot — the claim it would have policed was already dropped, and the patent isn't cited anywhere in the paper. `paper/main.bbl` is gitignored with build artifacts but must be generated and included manually at submission time since arXiv does not reliably run bibtex — noted in `.gitignore` itself.
 
 ---
 
-# PHASE 6 — Validation
+# PHASE S — arXiv Submission
+
+*(Replaces the original Phase 10 — renamed 2026-08-24. Zenodo DOI, ORCID, and JOSS remain explicitly out of scope per §12.)*
 
 ### Objective
 
-Demonstrate that the implementation actually satisfies the framework.
-
-Validation must cover:
-
-## Correctness
-
-Expected reconstruction behavior.
-
-## Determinism
-
-Identical inputs produce identical:
-
-```text
-U
-Ω
-```
-
-## Invariants
-
-The CARTA invariants are preserved.
-
-## Edge cases
-
-Synthetic fixtures exercise difficult parser/reconciliation conditions.
-
-## Regression
-
-Previously validated behavior remains stable after changes.
-
-Prefer deterministic tests and golden/reference outputs where appropriate.
-
-### Exit condition
-
-The complete core pipeline has a reproducible automated validation suite.
-
-### Current status
-
-**NOT STARTED**
-
----
-
-# PHASE 7 — Experimental Evidence
-
-### Objective
-
-Convert implementation into research evidence.
-
-The paper must be able to report what was actually evaluated.
-
-Potential evidence includes:
-
-* number of synthetic scenarios
-* message/record counts
-* archive fragmentation patterns
-* reconstruction outcomes
-* duplicate resolution
-* ambiguous cases
-* quarantine cases
-* invariant preservation
-* deterministic repeatability
-
-Do not manufacture statistical claims that the dataset cannot support.
-
-If the evaluation consists primarily of controlled handcrafted scenarios, describe it honestly as controlled proof-of-concept/validation evidence rather than pretending it is a large statistical benchmark.
-
-### Exit condition
-
-There is sufficient evidence to support the implementation and methodology claims made in the paper.
-
-### Current status
-
-**NOT STARTED**
-
----
-
-# PHASE 8 — Minimal Demonstration Layer
-
-### Objective
-
-Build the simplest useful viewer demonstrating the reconstructed output.
-
-The viewer is supporting infrastructure.
-
-It is not the primary research contribution.
-
-Potential functionality:
-
-* contact/chat navigation
-* reconstructed message display
-* date filtering
-* keyword search
-* media/attachment representation
-* basic provenance/reconstruction visibility where useful
-
-Do not spend significant time on visual polish.
-
-### Exit condition
-
-A researcher/reviewer can run the project and inspect a reconstructed archive.
-
-### Current status
-
-**NOT STARTED**
-
----
-
-# PHASE 9 — Paper
-
-### Objective
-
-Produce the actual research paper.
-
-The paper should follow the research argument:
-
-```text
-Problem
-   ↓
-Formalization
-   ↓
-Related phenomena
-   ↓
-CARTA framework
-   ↓
-CHAMP implementation
-   ↓
-Experimental methodology
-   ↓
-Results
-   ↓
-Limitations
-   ↓
-Conclusion
-```
-
-The paper should not become a software user manual.
-
-Likely contribution categories include:
-
-1. Formal definition of TCF.
-2. CARTA framework for reconstruction of fragmented communication archives.
-3. CHAMP-Pipeline as a WhatsApp-specific reference implementation.
-4. Reproducible controlled evaluation methodology.
-
-Only make claims that the evidence supports.
-
-### Exit condition
-
-A complete, internally consistent research paper exists and accurately corresponds to the implementation and experimental evidence.
-
-### Current status
-
-**NOT STARTED**
-
----
-
-# PHASE 10 — arXiv Preprint
-
-### Objective
-
-Publish the completed paper as an arXiv preprint.
-
-Supporting infrastructure such as:
-
-* GitHub release
-* Zenodo DOI
-* ORCID
-* citation metadata
-
-may be completed around this stage.
-
-These are supporting outputs, not the primary project goal.
+Publish the completed, reviewed paper as an arXiv preprint.
 
 ### Exit condition
 
@@ -642,52 +414,65 @@ The paper is submitted/published as an arXiv preprint.
 
 ### Current status
 
-**NOT STARTED**
+**NOT STARTED** — this is the current finish line for this project.
+
+---
+
+# PHASE II — CHAMP-Pipeline Implementation & Empirical Evaluation
+
+**DEFERRED — a separate future project, not part of this roadmap.**
+
+*(Consolidates what were originally Phases 3–8, added 2026-08-24 as part of the fast-path decision. Content preserved below for when this phase is deliberately opened — nothing here is scheduled or required for the current paper.)*
+
+Consolidates: Ingestion (`F → R`, provenance-preserving, handling date/time formats, sender detection, multiline/empty-body messages, attachments, encryption notices, group events, Unicode/emoji, malformed lines); Normalization (`R → R' + Q`, with the ambiguous-record quarantine rule locked in Phase 2); Synthesis (`R' → U, Ω`, chronological reconstruction, dedup via the reconciliation-cluster procedure locked in Phase 2, conflict detection, non-destructive behavior); Validation (correctness, determinism, invariant preservation, edge-case coverage, regression, golden/reference outputs); Experimental Evidence (real numbers from real runs only — no manufactured statistical claims, honest framing as controlled proof-of-concept evidence if that's what it is); and a Minimal Demonstration Layer (a simple viewer, supporting infrastructure, not the research contribution, no significant time on visual polish).
+
+### Exit condition (when this phase is eventually opened)
+
+Multiple fragmented synthetic archives can be reconstructed deterministically into `U` with an accompanying auditable `Ω`, validated against the CARTA invariants, with a reproducible automated test/validation suite, and a researcher/reviewer can run the project end-to-end.
+
+### Current status
+
+**NOT SCHEDULED.** Begins only after Phase S, and only as a deliberate, separately-planned decision — potential title: *"CHAMP: A Reference Implementation and Evaluation of CARTA for Fragmented WhatsApp Archives."* Do not begin any of this work under the current roadmap without an explicit, separate decision to open Phase II.
+
+---
+
+*(The original Phase 9 — Paper and Phase 10 — arXiv Preprint sections were removed 2026-08-24: superseded by Phase W and Phase S above, which replace Phase 9's research-argument diagram — it still routed "CHAMP implementation → Experimental methodology → Results" through the paper, the exact ordering the fast-path decision superseded — and its contribution list, which named "CHAMP-Pipeline as a WhatsApp-specific reference implementation" and "reproducible controlled evaluation methodology" as paper contributions. Neither is claimed by this paper; both remain Phase II.)*
 
 ---
 
 # 7. Current Position
 
-At the time this document is created:
+**Revised 2026-08-24.**
 
 ```text
 PHASE 0 — Research Foundation
 DONE
 
-PHASE 1 — Evidence Foundation
-IN PROGRESS
+PHASE 1 — Evidence & Illustrative Corpus
+DONE (both known bugs resolved 2026-08-24)
 
-PHASE 2 — CARTA Data Contract
-NOT STARTED
+PHASE 2 — CARTA Specification Lock
+DONE (4 math issues + 3 cross-doc consistency issues resolved 2026-08-24)
 
-PHASE 3 — Ingestion
-NOT STARTED
+PHASE L — Literature Survey Completion
+DONE (2026-08-25) — six kill-shot questions answered; delta survived but narrowed; see STATE.md Major Decision Log
 
-PHASE 4 — Normalization
-NOT STARTED
+PHASE W — Paper Writing
+DRAFT COMPLETE (all 9 sections, 7,893 words — see docs/DRAFT_PAPER.md)
 
-PHASE 5 — Synthesis
-NOT STARTED
+PHASE R — Repo Hygiene & Submission Prep
+DONE (2026-08-25) — paper/ builds clean, 0 warnings; abstract, figures, author/ORCID, and [CITE-T2] all resolved; see full detail above
 
-PHASE 6 — Validation
-NOT STARTED
+PHASE S — arXiv Submission
+NOT STARTED — current finish line
 
-PHASE 7 — Experimental Evidence
-NOT STARTED
-
-PHASE 8 — Demonstration Layer
-NOT STARTED
-
-PHASE 9 — Paper
-NOT STARTED
-
-PHASE 10 — arXiv
-NOT STARTED
+PHASE II — CHAMP-Pipeline Implementation & Empirical Evaluation
+DEFERRED — separate future project, out of scope for this roadmap
 ```
 
 The immediate milestone is therefore:
 
-> **Lock the synthetic evidence foundation before designing and implementing the CARTA data contracts.**
+> **Begin Phase S: one full read-through of the assembled `paper/main.pdf` (not per-section — the whole thing, cold), settle the arXiv category (cs.DL / cs.SE / cs.DC — architect's call, to be decided together), generate `main.bbl` fresh at submission time for upload alongside the source, and submit.**
 
 ---
 
@@ -895,36 +680,44 @@ Next milestone
 Document these checkpoint boundaries:
 
 ```text
-Checkpoint 1 — Evidence Foundation Locked
-After Phase 1 / M1 is fully verified:
+[Revised 2026-08-24 — checkpoints 3-8 below replaced; they were built around
+implementation phases now deferred to Phase II. See docs/PAPER_BLUEPRINT.md §2.6.]
+
+Checkpoint 1 — Evidence/Illustrative Corpus Locked
+After Phase 1 is fully verified:
 - fixture specification fixed,
 - generator deterministic,
 - manifest consistent,
 - required edge-case coverage accepted.
 
-Checkpoint 2 — CARTA Data Contract Locked
-After F, R, R', Q, U, and Ω contracts are reviewed and finalized.
+Checkpoint 2 — CARTA Specification Locked
+After F, R, R', Q, U, and Ω contracts, invariants, and algorithms are reviewed,
+internally consistent, and finalized across both docs/CARTA-framework.md and
+docs/PAPER_BLUEPRINT.md.
 
-Checkpoint 3 — Ingestion Complete
-After ingestion implementation, relevant tests, and fixture parsing are verified.
+Checkpoint 3 — Literature Survey Complete
+After all four kill-shot questions are answered with real citations and the
+delta sentence has survived contact with them (or been honestly narrowed).
 
-Checkpoint 4 — Normalization Complete
-After R → R' and quarantine behavior are implemented and verified.
+Checkpoint 4 — Paper Draft Complete
+After the manuscript satisfies the paper-ready stop condition
+(docs/PAPER_BLUEPRINT.md §2.6) and every claim traces to formal derivation,
+citation, or an explicitly labeled proposed/future-work statement.
 
-Checkpoint 5 — Synthesis Complete
-After R' → (U, Ω), deterministic reconstruction, and relevant tests are verified.
+Checkpoint 5 — Paper-Ready Repository
+After documentation, README, citation metadata, and reproducibility
+instructions are aligned with what the paper actually claims — the fixture
+generator, and nothing else.
 
-Checkpoint 6 — Core Validation Complete
-After end-to-end, golden/reference, invariant, determinism, and regression validation is passing.
+Checkpoint 6 — arXiv Submitted
+Current finish line for this project.
 
-Checkpoint 7 — Research Evidence Locked
-After experimental methodology and results are finalized and reproducible.
-
-Checkpoint 8 — Paper-Ready Repository
-After documentation, README, citation metadata, reproducibility instructions, and implementation are aligned with the paper.
+Phase II Kickoff (separate future milestone, not part of this checkpoint
+sequence) — only after Checkpoint 6, and only as an explicit, separately
+planned decision to begin CHAMP-Pipeline implementation.
 ```
 
-Clarify that the viewer does not automatically require its own checkpoint; checkpointing should follow research significance rather than arbitrary software milestones.
+Checkpointing should follow research significance rather than arbitrary software milestones.
 
 ### GitHub verification
 
@@ -973,6 +766,8 @@ A feature is not justified merely because:
 
 The following are explicitly **not current priorities**:
 
+* full CHAMP-Pipeline implementation (Ingestion/Normalization/Synthesis/Validation) — deferred to Phase II, see §6 (added 2026-08-24)
+* any benchmark or experimental evaluation before Phase II (added 2026-08-24)
 * production deployment
 * commercial productization
 * cloud infrastructure
@@ -997,25 +792,20 @@ These may be reconsidered only if later evidence demonstrates that they material
 
 # 13. Current Known Repository Reality
 
-The repository currently contains:
+**Revised 2026-08-24.** The repository currently contains:
 
-* formal CARTA documentation,
+* formal CARTA documentation (`docs/CARTA-framework.md`), mechanism-honest as of 2026-08-24 (LWW/single-slot backup mechanism disavowed, demoted to a labeled unverified hypothesis),
+* a detailed formal specification and living paper draft (`docs/PAPER_BLUEPRINT.md`), internally consistent as of 2026-08-24 (4 math issues resolved, no fabricated numbers, no unearned capability claims — swept and grepped clean),
+* a partial literature survey with real citations (`docs/PAPER_BLUEPRINT.md §2.5`),
 * repository/project scaffolding,
-* deterministic synthetic fixture generator,
-* five generated fixtures,
-* fixture manifest.
+* deterministic synthetic fixture generator, five generated fixtures, fixture manifest — both previously-known bugs resolved 2026-08-24 (see `STATE.md`).
 
-The following core research implementation is currently missing:
+The following are, by the fast-path decision (§6, Phase II), **intentionally and indefinitely deferred, not missing-and-pending**:
 
-* ingestion parser,
-* normalization,
-* synthesis,
-* Ω implementation,
-* automated tests,
-* CI,
-* viewer.
+* ingestion parser, normalization, synthesis, Ω implementation,
+* automated tests, CI, viewer.
 
-The synthetic generator and fixtures currently require validation/locking before they become the foundation for downstream implementation.
+None of the above is required for this paper. Do not schedule engineering work against them without an explicit, separate decision to open Phase II.
 
 Do not assume a component exists merely because a roadmap, README, or previous conversation says it should exist.
 
@@ -1025,25 +815,24 @@ Always verify actual repository state.
 
 # 14. Final Success Definition
 
-The project is successful when:
+**Revised 2026-08-24 (fast-path decision).** The project (this roadmap) is successful when:
 
 ```text
-TCF is formally defined
+TCF is formally and defensibly characterized
         +
-CARTA is formally specified
+CARTA is formally specified and internally consistent
         +
-CHAMP implements CARTA
+The novelty/related-work position survives the literature kill-shots
         +
-Implementation is reproducible
-        +
-Implementation is validated
-        +
-Evidence supports the claims
+Every empirical/capability statement is cited or explicitly labeled
+proposed/future work
         +
 Paper accurately describes all of the above
         ↓
 ARXIV PREPRINT
 ```
+
+`CHAMP implements CARTA`, `Implementation is reproducible`, `Implementation is validated`, and `Evidence supports the claims` are **not** required for this success definition — they belong to Phase II, a separate, deferred, future project (§6). Requiring them here was the original plan; this revision explicitly supersedes that.
 
 That is the finish line.
 
@@ -1055,8 +844,9 @@ Everything else is secondary.
 
 Keep this statement in mind whenever making project decisions:
 
-> **We are building the minimum rigorous, reproducible software artifact necessary to turn TCF + CARTA into a defensible research paper.**
+> **We are building the minimum rigorous, defensible specification — not software — necessary to turn TCF + CARTA into a publishable research paper.**
+> *(Revised 2026-08-24 — no software artifact is required for this paper; see §6, Phase II.)*
 
 And:
 
-> **The paper is the product. CHAMP-Pipeline is the evidence.**
+> **The paper is the product. CHAMP-Pipeline's implementation is deferred future work, not evidence for this paper.**
