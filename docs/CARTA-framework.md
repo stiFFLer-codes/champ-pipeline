@@ -6,12 +6,13 @@
 
 **Temporal Communication Fragmentation (TCF):** a state in which a user's 
 communication history for a single logical account becomes partitioned across 
-two or more device-bound application instances, arising from (1) primary-device 
-unavailability, (2) continued account use on a secondary device during that 
-window, and (3) primary-device recovery followed by a restore action that 
-replaces rather than merges — the platform offers no native path to combine 
-the two archives, no user-facing warning that a competing archive exists, and 
-no diff or reconciliation attempt. *(One plausible backend explanation is a 
+two or more device-bound application instances, that persist independently, and for which the platform provides no operation
+yielding their union. It arises from (1) primary-device unavailability, (2)
+continued account use on a secondary device during that window, and (3)
+primary-device recovery. Every platform path that brings the archives back
+together — restore above all — substitutes one state for another rather than
+merging them, with no user-facing warning that a competing archive exists
+and no diff or reconciliation attempt. *(One plausible backend explanation is a 
 single-slot, last-write-wins cloud backup architecture; this is an unverified 
 hypothesis, not a claim of this document — see §1.2, condition 3.)*
 
@@ -25,21 +26,26 @@ TCF requires all three of the following to hold simultaneously:
 2. **Independent persistence** — both branches survive and accumulate new 
    history for some duration Δt with zero synchronization between them.
 
-3. **Asymmetric reconciliation on merge** — when the primary device recovers, 
-   the primary and secondary archives briefly coexist without conflict: the 
-   primary's resumption does not, by itself, threaten the secondary's 
-   independently-accumulated archive. Fragmentation crystallizes only when a 
-   restore action is taken — the platform's restore operation replaces the 
-   current chat state rather than merging into it. No warning is surfaced, no 
-   diff is attempted, and no indication is given that a competing archive 
-   existed. The secondary's data survives only in whatever un-synced local 
-   form remains on the secondary device itself. **[Unverified, not asserted 
+3. **Asymmetric reconciliation** — no platform-native operation yields the
+   union of the two archives. Every path that brings them back together
+   substitutes one state for another: the platform's restore operation
+   replaces the current chat state rather than merging into it, no warning
+   is surfaced, no diff is attempted, and no indication is given that a
+   competing archive existed. This is a property of the platform's
+   reunification semantics, not an event that must occur; it holds from the
+   moment the branches exist, whether or not a restore is ever performed.
+   Conditions 1-3 are satisfied while both archives remain individually
+   readable on their own devices and only the combined view is unavailable
+   (the *latent* case). A restore makes the fragmentation *manifest*: the
+   replaced archive then survives only in whatever un-synced local form
+   remains on the device holding it. Manifest fragmentation is the severe
+   case of TCF, not its definition, and CARTA takes the same input in either
+   case. **[Unverified, not asserted 
    here]:** a plausible backend explanation is that the platform's cloud 
    backup destination is a single, last-write-wins slot per account, so the 
    next backup-write silently supersedes the secondary's most recent cloud 
    snapshot — no citation or controlled experiment currently backs this 
-   specific architectural claim; only the observable destructive-restore 
-   behavior above is part of this definition.
+   specific architectural claim; only the observable reunification behavior above is part of this definition.
 
 ### 1.3 Distinction from Backup Staleness
 
@@ -63,7 +69,7 @@ platform-enforced inaccessibility of one archive.
 
 **Closing thesis:** TCF's distinguishing signature is not the loss of data, 
 but the platform-enforced inaccessibility of a fully-intact archive, caused 
-by destructive (merge-free) restore semantics with no reconciliation path.
+by merge-free reunification semantics with no reconciliation path.
 
 ## 3. The CARTA Framework
 

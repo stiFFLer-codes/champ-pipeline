@@ -63,3 +63,10 @@ paper/arxiv-submission.tar.gz
 
 # --- Session scratch (tool output dumps, not project content) ---
 grill-me-output.txt
+
+# --- Convenience copy of the compiled paper (regenerable, see paper/) ---
+/When-Chats-Split-Apart.pdf
+
+# --- Source narrative for the motivating incident (real personal account, not chat data,
+# but not for the permanently-archived public repo; keep local as evidentiary source) ---
+/actual_problem.md

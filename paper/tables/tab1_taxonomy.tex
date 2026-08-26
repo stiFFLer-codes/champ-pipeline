@@ -25,7 +25,7 @@
       Infrequent snapshotting &
       Concurrent multi-client writes &
       Divergent commit histories &
-      Device switch + destructive, merge-free restore \\
+      Device switch + independent persistence; no merge operation \\
 
     \textbf{Number of Timelines} &
       Exactly 1 &
@@ -37,13 +37,13 @@
       Restores stale snapshot &
       Rejection or branch fork &
       Automatic merge or conflict markers &
-      \textbf{Restore replaces current history; no merge offered} \\
+      \textbf{No operation yields the union; every reunification path replaces} \\
 
     \textbf{Physical Data State} &
       Missing (never recorded) &
       Present on server &
       Merged in working tree &
-      \textbf{Intact on local device, inaccessible in cloud} \\
+      \textbf{Intact on both devices; no combined view} \\
 
     \textbf{Resolution Target} &
       Data lost forever &

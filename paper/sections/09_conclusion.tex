@@ -11,13 +11,14 @@
 This paper contributes a characterisation and a specification. The
 characterisation is TCF: three necessary conditions that together produce two
 archives of one account, each internally complete, overlapping in part, and
-irreconcilable through the platform that holds them. Bifurcation and independent
-persistence are the conditions that create the split; the restore that replaces
-rather than merges is the one that makes it permanent. The specification is CARTA:
-\carta, with typed data passing between stages, records that cannot be safely
-interpreted routed to a quarantine set with reason codes instead of being resolved
-by guessing, and a reconstruction report carrying provenance, quarantine, conflicts
-and counts as a first-class output.
+irreconcilable through the platform that holds them. Bifurcation and
+independent persistence create the split; the absence of any platform
+operation yielding the union is what makes it durable, and a restore that
+replaces rather than merges is what makes it manifest. The specification is
+CARTA: \carta, with typed data passing between stages, records that cannot be
+safely interpreted routed to a quarantine set with reason codes instead of
+being resolved by guessing, and a reconstruction report carrying provenance,
+quarantine, conflicts and counts as a first-class output.
 
 Two of those elements are what the survey in Section~\ref{sec:related} could not
 find anywhere among the neighbours. Every tool examined that merges chat archives

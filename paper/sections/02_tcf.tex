@@ -9,12 +9,13 @@
 
 \textbf{Temporal Communication Fragmentation} is a state in which a user's
 communication history for a single logical account becomes partitioned across
-two or more device-bound application instances, arising from primary-device
-unavailability, continued account use on a secondary device during that window,
-and primary-device recovery followed by a restore action that replaces rather
-than merges. The platform offers no native path to combine the archives, no
-user-facing warning that a competing archive exists, and no attempt at a diff or
-a reconciliation.
+two or more device-bound application instances that persist independently, and
+for which the platform provides no operation yielding their union. It arises
+from primary-device unavailability, continued account use on a secondary
+device during that window, and primary-device recovery. Every platform path
+that brings the archives back together, restore above all, substitutes one
+state for another rather than merging them, with no user-facing warning that a
+competing archive exists and no attempt at a diff or a reconciliation.
 
 We assert the observable restore behaviour and nothing about the backend that
 produces it. A single-slot, last-write-wins cloud backup destination would
@@ -29,6 +30,13 @@ paper depends on it.
 %% case the prose singles out as the reason deduplication is needed at all
 %% (Sections 2.2 and 3.4); both are defined as merely non-negative, and the
 %% caption says so rather than letting the drawing imply otherwise.
+%%
+%% NB (2026-08-26, ground-problem alignment): C1 and C2 are events and sit on
+%% the timeline; C3 is a standing property of the platform and must NOT be
+%% drawn at a point. It spans from t_f onwards. The restore is drawn dashed
+%% and labelled as the manifest case only -- conditions 1-3 are already
+%% satisfied without it. Reverting either of those would reintroduce the
+%% overfitting this pass removed.
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}[
@@ -40,67 +48,80 @@ paper depends on it.
       cond/.style={font=\scriptsize\itshape, align=center},
     ]
 
-    %% ---- time axis -------------------------------------------------------
-    \draw[->, thick] (0,0) -- (128,0) node[right, lbl] {time};
-
     %% landmark positions
     \def\tf{34}   % device failure / bifurcation
     \def\tr{86}   % primary device recovery
-    \def\trest{110} % restore performed
+    \def\trest{110} % restore, if it is ever performed
     \def\dlt{10}  % delta : pre-existing history on the secondary
     \def\eps{8}   % epsilon: lag before the account returns to the primary
 
-    \foreach \x/\name in {\tf/$t_f$, \tr/$t_r$, \trest/restore} {
+    %% ---- C3 : a standing property, not an event -------------------------
+    \draw[decorate, decoration={brace, amplitude=4pt}] (\tf,41) -- (126,41);
+    \node[cond, above=1.5mm] at ({(\tf+126)/2},41)
+      {\textbf{C3} Asymmetric reconciliation: no operation yields
+       $F_1 \cup F_2$\\(holds from $t_f$ onwards, whether or not
+       a restore is ever performed)};
+
+    %% ---- time axis -------------------------------------------------------
+    \draw[->, thick] (0,0) -- (128,0) node[right, lbl] {time};
+
+    \foreach \x in {\tf, \tr} {
       \draw[tick] (\x,-2) -- (\x,2);
     }
     \node[lbl, below=1mm] at (\tf,-2) {$t_f$};
     \node[lbl, below=1mm] at (\tr,-2) {$t_r$};
 
     %% ---- F_1 : primary -- paused across the window ------------------------
-    \draw[frag, fill=black!8] (2,8) rectangle (\tf,16);
-    \draw[frag, fill=black!8] (\tr,8) rectangle (126,16);
-    \draw[dashed, gray] (\tf,12) -- (\tr,12);
-    \node[lbl] at (18,12) {$F_1$};
-    \node[lbl] at (106,12) {$F_1$};
-    \node[cond, gray] at ({(\tf+\tr)/2},12) {primary paused\\(no new history)};
+    \draw[frag, fill=black!8] (2,10) rectangle (\tf,18);
+    \draw[frag, fill=black!8] (\tr,10) rectangle (126,18);
+    \draw[dashed, gray] (\tf,14) -- (\tr,14);
+    \node[lbl] at (18,14) {$F_1$};
+    \node[lbl] at (118,14) {$F_1$};
+    \node[cond, gray] at ({(\tf+\tr)/2},14) {primary paused\\(no new history)};
 
     %% ---- F_2 : secondary -- active across the window ----------------------
-    \draw[frag, fill=black!20] ({\tf-\dlt},20) rectangle ({\tr+\eps},28);
-    \node[lbl] at ({(\tf+\tr)/2},24) {$F_2$};
+    \draw[frag, fill=black!20] ({\tf-\dlt},22) rectangle ({\tr+\eps},30);
+    \node[lbl] at ({(\tf+\tr)/2},26) {$F_2$};
 
     %% ---- the two overlap regions -----------------------------------------
     \begin{scope}[on background layer]
       \fill[pattern=north east lines, pattern color=black!45]
-        ({\tf-\dlt},8) rectangle (\tf,28);
+        ({\tf-\dlt},10) rectangle (\tf,30);
       \fill[pattern=north east lines, pattern color=black!45]
-        (\tr,8) rectangle ({\tr+\eps},28);
+        (\tr,10) rectangle ({\tr+\eps},30);
     \end{scope}
-    \draw[<->] ({\tf-\dlt},32) -- (\tf,32)
+    \draw[<->] ({\tf-\dlt},34) -- (\tf,34)
       node[midway, above, font=\scriptsize] {$\delta$};
-    \draw[<->] (\tr,32) -- ({\tr+\eps},32)
+    \draw[<->] (\tr,34) -- ({\tr+\eps},34)
       node[midway, above, font=\scriptsize] {$\epsilon$};
 
-    %% ---- the three necessary conditions ----------------------------------
-    \draw[->, thick] (\tf,-14) -- (\tf,-4);
-    \node[cond, below=0.5mm] at (\tf,-14)
+    %% ---- latent TCF : C1-C3 hold, both archives still readable -----------
+    %% Single line, anchored inside the 0--10 gap. Do not re-anchor this above
+    %% its arrow: it then rides up into the right-hand F_1 rectangle.
+    \draw[<->, gray] (\tr,7.5) -- (\trest,7.5);
+    \node[cond, gray] at ({(\tr+\trest)/2},4)
+      {latent: both readable};
+
+    %% ---- the restore, if performed : latent becomes manifest -------------
+    \draw[very thick, dashed] (\trest,8) -- (\trest,32);
+
+    %% ---- below-axis annotations, in three non-overlapping bands ----------
+    %% band 1 (y -8 to -26): C1 at t_f and the manifest note at the restore;
+    %% they do not overlap horizontally. Arrows start at -8, below the tick
+    %% labels, so they do not strike through $t_f$ / $t_r$.
+    \draw[->, thick] (\tf,-15) -- (\tf,-8);
+    \node[cond, below=0.5mm] at (\tf,-15)
       {\textbf{C1} Bifurcation\\primary pauses,\\secondary active};
 
+    \draw[->, thick] (\trest,-15) -- (\trest,-8);
+    \node[cond, below=0.5mm] at (\trest,-15)
+      {\emph{manifest} case only\\restore replaces:\\$F_2$ no longer surfaced};
+
+    %% band 2 (y -28 down): C2, spanning t_f to t_r, clear of band 1.
     \draw[decorate, decoration={brace, amplitude=4pt, mirror}]
-      (\tf,-6) -- (\tr,-6);
-    \node[cond, below=2mm] at ({(\tf+\tr)/2},-8)
+      (\tf,-28) -- (\tr,-28);
+    \node[cond, below=2mm] at ({(\tf+\tr)/2},-30)
       {\textbf{C2} Independent persistence\\both branches accumulate,\\zero synchronisation};
-
-    \draw[->, thick] (\trest,-14) -- (\trest,-4);
-    \node[cond, below=0.5mm] at (\trest,-14)
-      {\textbf{C3} Asymmetric\\reconciliation on merge\\restore replaces,\\no warning, no diff};
-
-    %% archives coexist between recovery and restore
-    \draw[<->, gray] (\tr,4.5) -- (\trest,4.5);
-    \node[cond, gray, above=0mm] at ({(\tr+\trest)/2},4.5) {archives coexist};
-
-    \draw[very thick] (\trest,6) -- (\trest,30);
-    \node[cond, right=1mm, align=left] at (\trest,33)
-      {$F_2$ becomes\\unreachable};
 
   \end{tikzpicture}
   \caption{Temporal Communication Fragmentation, with the three necessary
@@ -109,9 +130,12 @@ paper depends on it.
   messages in $[t_f - \delta,\, t_r + \epsilon]$. Both $\delta$ and $\epsilon$
   are defined as non-negative and are drawn here as strictly positive, which
   is the case that produces the hatched overlap regions and hence the need for
-  deduplication rather than concatenation. The archives coexist without
-  conflict between $t_r$ and the restore; the restore, not the recovery, is
-  what makes the split permanent.}
+  deduplication rather than concatenation. C1 and C2 are events and sit at
+  points on the timeline; C3 is a standing property of the platform and is
+  drawn as a span, because it holds from $t_f$ onwards rather than beginning
+  at any particular moment. The restore at the right is dashed because it is
+  optional: Conditions 1 to 3 are already satisfied without it, which is the
+  latent case, and performing it is what makes the fragmentation manifest.}
   \label{fig:tcf_timeline}
 \end{figure}
 
@@ -131,23 +155,46 @@ synchronisation between them. This condition does most of the work in separating
 TCF from the replication literature, and Section~\ref{sec:related:replication}
 returns to it.
 
-\paragraph{Condition 3, Asymmetric reconciliation on merge.}
-When the primary device recovers, the two archives coexist without conflict for a
-period. The primary's resumption does not by itself threaten what the secondary
-accumulated. The split becomes permanent at the moment a restore is performed,
-because the restore replaces current chat state instead of merging into it,
-surfaces no warning, and gives no indication that a second archive existed.
-Thereafter the secondary's contribution survives only in whatever unsynced local
-form remains on the secondary device.
+\paragraph{Condition 3, Asymmetric reconciliation.} No platform-native
+operation yields the union of the two archives. Every path that brings them
+back together substitutes one state for another: a restore overwrites current
+chat state instead of merging into it, surfaces no warning, and gives no
+indication that a second archive existed. This condition is a property of the
+platform's reunification semantics rather than an event that must occur. It
+holds from the moment the branches exist, whether or not the user ever invokes
+one of those paths, and it is what separates TCF from the
+optimistic-replication systems of Section~\ref{sec:related:replication}, which
+attempt reconciliation imperfectly rather than declining to attempt it.
+
+\paragraph{Latent and manifest fragmentation.} Conditions 1 to 3 are satisfied
+while both archives remain individually readable on their own devices; what is
+unavailable is any view spanning them. We call this the \emph{latent} case,
+and it is the case the motivating incident of Section~\ref{sec:introduction}
+exhibits. A restore makes the fragmentation \emph{manifest}: the replaced
+archive thereafter survives only in whatever unsynced local form remains on
+the device holding it, and the platform ceases to surface it at all. Manifest
+fragmentation is the severe case of TCF, not its definition. The distinction
+matters for how urgent reconstruction is and for what a user can still recover
+unaided, but not for the reconstruction problem itself, because both cases
+present the same input: independently preserved fragments carrying no shared
+reconciliation state.
 
 Formally (Section~\ref{sec:carta} develops this), device failure at $t_f$ and
 recovery at $t_r$ partition a ground-truth history $\mathcal{T}$ into $F_1$,
 holding messages with $t(m) \le t_f$ or $t(m) \ge t_r$, and $F_2$, holding
 messages in $[t_f - \delta,\, t_r + \epsilon]$. The parameters $\delta$ and
-$\epsilon$ are non-negative, representing pre-existing history on the secondary
-device and the lag before the account returns to the primary. Both may be
-strictly positive, so $F_1$ and $F_2$ can overlap. That overlap is why
+$\epsilon$ are non-negative, representing pre-existing history on the
+secondary device and the lag before the account returns to the primary. Both
+may be strictly positive, so $F_1$ and $F_2$ can overlap. That overlap is why
 reconstruction needs deduplication rather than concatenation.
+
+Where this paper calls a fragment \emph{internally complete}, it means
+well-formed and gap-free with respect to its own accumulation window, which is
+a property of each fragment considered separately. It is not a claim that
+either fragment covers $\mathcal{T}$; by construction neither does, and that
+is the whole difficulty. Internal completeness is an idealisation of the TCF
+model rather than a property established of any real archive, and
+Section~\ref{sec:discussion} treats the case where it fails.
 
 \subsection{Distinction from backup staleness}
 \label{sec:tcf:staleness}

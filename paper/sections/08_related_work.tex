@@ -16,16 +16,17 @@
 \section{Related Work}
 \label{sec:related}
 
-CARTA sits at the meeting point of four bodies of work, none of which addresses
-the reconstruction of consumer chat archives after a destructive restore, and all
-of which supply pieces of the machinery. The argument of this section is narrow
-and worth stating up front. Merging chat archives is not an open problem; working
-tools do it today. Staging forensic reconstruction as a pipeline is not new; it
-was published in 2014. Per-record provenance is not new either; forensics
-formalised it in the same year. What has not been specified is the contract such a
-reconstruction owes its reader: what enters and leaves each stage, what becomes of
-a record that cannot be safely interpreted, and what the procedure must report
-about its own behaviour.
+CARTA sits at the meeting point of four bodies of work, none of which
+addresses the reconstruction of independently preserved consumer chat
+archives, and all of which supply pieces of the machinery. The argument of
+this section is narrow and worth stating up front. Merging chat archives is
+not an open problem; working tools do it today. Staging forensic
+reconstruction as a pipeline is not new; it was published in 2014. Per-record
+provenance is not new either; forensics formalised it in the same year. What
+has not been specified is the contract such a reconstruction owes its reader:
+what enters and leaves each stage, what becomes of a record that cannot be
+safely interpreted, and what the procedure must report about its own
+behaviour.
 
 \subsection{Optimistic replication and replicated data types}
 \label{sec:related:replication}

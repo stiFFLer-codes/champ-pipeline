@@ -120,9 +120,10 @@ are each internally complete and that the platform will not recombine. We
 characterise this state as Temporal Communication Fragmentation and give three
 necessary conditions for it: a timeline that bifurcates when the primary device
 becomes unavailable, both branches persisting and accumulating with no
-synchronisation between them, and a restore that replaces rather than merges,
-which makes the split permanent. Nothing is destroyed. An intact archive simply
-becomes unreachable through the platform holding it.
+synchronisation between them, and no platform operation yielding their union.
+Nothing is destroyed. Both archives stay intact; what is missing is any
+operation presenting them as one history. A restore that replaces rather than
+merges leaves an intact archive unreachable through the platform holding it.
 
 We then specify CARTA, a platform-agnostic three-stage reconstruction contract,
 \carta. Records that cannot be interpreted unambiguously are routed to a

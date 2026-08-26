@@ -24,7 +24,7 @@ Phase L — Literature Survey Completion (DONE, 2026-08-25) → Phase W — Pape
 
 ## Current Milestone
 
-Phase R is closed. `paper/main.tex` + `paper/sections/*.tex` + `paper/main.bib` (31 entries) compile clean via Tectonic: 19 pages, 0 overfull/underfull boxes, **0 LaTeX or BibTeX warnings** — the only remaining log line is a pre-existing third-party `algorithm.sty` UTF-8 notice, unfixable from this repo and harmless. (No local pdflatex install on this machine; a pdflatex run on the eventual submission machine is still the check that matters.) Abstract written (187 words, grounded in the finished sections). Both planned figures (TCF timeline, CARTA pipeline) drawn as self-contained TikZ — no external image files. Author/ORCID filled in `CITATION.cff` and `main.tex` (Maitreya Sapariya, Independent Researcher, ORCID 0009-0003-9346-3775). `[CITE-T2]` **resolved**: the architect chose to narrow Section 1's claim to what the archived WhatsApp source actually supports (the restore-account constraint), reframing "no merge operation exists" as the paper's own observation with a pointer to §8.3's tooling survey, rather than an unsupported attribution to WhatsApp — the `\citeTODO`/`\nocite` tripwire removal and the bibliography orphan-check (31 defined = 31 cited = 31 rendered) both confirm the fix is real, not cosmetic. T1 (terminology collision) turned out to already be resolved in `docs/DRAFT_PAPER.md` §2.5 — found during verification, not previously tracked as done. T3 (patent claims) closed as moot — the claim it would have gated was already dropped, and the patent isn't cited in the paper. The Chabot contingency remains **decided, not open**: accepted as a stated limitation. Only the arXiv category is still open, parked for a joint decision at the start of Phase S.
+Phase R is closed. `paper/main.tex` + `paper/sections/*.tex` + `paper/main.bib` (31 entries) compile clean under **real pdflatex** (TeX Live 2026, verified 2026-08-26 — see "Submission readiness" below): 19 pages, 0 overfull/underfull boxes, **0 LaTeX or BibTeX warnings** — the only remaining log line is a pre-existing third-party `algorithm.sty` UTF-8 notice, unfixable from this repo and harmless. Abstract written (187 words, grounded in the finished sections). Both planned figures (TCF timeline, CARTA pipeline) drawn as self-contained TikZ — no external image files. Author/ORCID filled in `CITATION.cff` and `main.tex` (Maitreya Sapariya, Independent Researcher, ORCID 0009-0003-9346-3775). `[CITE-T2]` **resolved**: the architect chose to narrow Section 1's claim to what the archived WhatsApp source actually supports (the restore-account constraint), reframing "no merge operation exists" as the paper's own observation with a pointer to §8.3's tooling survey, rather than an unsupported attribution to WhatsApp — the `\citeTODO`/`\nocite` tripwire removal and the bibliography orphan-check (31 defined = 31 cited = 31 rendered) both confirm the fix is real, not cosmetic. T1 (terminology collision) turned out to already be resolved in `docs/DRAFT_PAPER.md` §2.5 — found during verification, not previously tracked as done. T3 (patent claims) closed as moot — the claim it would have gated was already dropped, and the patent isn't cited in the paper. The Chabot contingency remains **decided, not open**: accepted as a stated limitation. Only the arXiv category is still open, parked for a joint decision at the start of Phase S.
 
 ## Project North Star
 
@@ -105,7 +105,7 @@ Carried into Phase W as tracked pre-submission TODOs (not blockers), full text i
 
 **Author/ORCID filled 2026-08-25**: Maitreya Sapariya, Independent Researcher, https://orcid.org/0009-0003-9346-3775, in both `CITATION.cff` and `paper/main.tex`. `date-released` left deliberately absent (invalid as an empty string; set at first tagged release). **Chabot contingency: decided, not open** — accepted as a stated limitation per the architect's explicit call, not chased further.
 
-**Phase R closed 2026-08-25** — abstract, figures, author/ORCID, and `[CITE-T2]` all resolved; see Current Milestone above for full detail. Remaining before Phase S can close: one full cold read-through of the assembled `paper/main.pdf` (not per-section), the arXiv category decision (cs.DL / cs.SE / cs.DC — parked, architect's call), re-verifying the fixture-generator determinism claim at actual submission time, generating a fresh `main.bbl` for upload alongside the source (gitignored, must be added by hand — arXiv doesn't reliably run bibtex), and the arXiv account/submission itself, which is the architect's own action.
+**Phase R closed 2026-08-25** — abstract, figures, author/ORCID, and `[CITE-T2]` all resolved; see Current Milestone above for full detail. **Real-pdflatex verification closed 2026-08-26** — see "Submission readiness" below. Remaining before Phase S can close: one full cold read-through of the assembled `paper/main.pdf` (not per-section — not yet done), the arXiv category decision (recommended `cs.DL` primary / `cs.CR` cross-list — parked, architect's call), re-verifying the fixture-generator determinism claim at actual submission time, generating a fresh `main.bbl` for upload alongside the source (gitignored, must be added by hand — arXiv doesn't reliably run bibtex), and the arXiv account/submission itself, which is the architect's own action.
 
 Do not commit until the result has been reviewed and explicitly approved.
 
@@ -144,7 +144,67 @@ Working tree is clean apart from `grill-me-output.txt`, which is deliberately un
 * **Generator determinism re-verified.** `node scripts/generate-synthetic-fixtures.js --seed 1 --count 5` run twice: both runs byte-identical to each other and to the committed corpus (all six files), working tree unchanged by the check. This is the paper's only reproducibility claim.
 * **Star counts re-checked against the GitHub API.** All seven repositories unchanged from the recorded figures, including the two the manuscript actually cites (`bepaald/signalbackup-tools` 1,392 and `natario1/whatsapp-database-merger` 78). Access dates in `paper/main.bib` remain 2026-08-25 and are still accurate; re-check again if submission slips by more than a few weeks.
 
-**Remaining before submission: arXiv endorsement (in progress, architect) and the category decision.** Recommended: primary `cs.DL`, cross-list `cs.CR` then `cs.SE`. `cs.DC` is deliberately *not* recommended — Section 8.1 argues TCF falls outside the CRDT convergence guarantee, so that audience would be reviewing against a claim the paper does not make.
+**Remaining before submission: arXiv endorsement (in progress, architect) and the category decision.** (Note: the page count and figures in this block predate the Ground-Problem Alignment pass below; 20 pages is current.) Recommended: primary `cs.DL`, cross-list `cs.CR` then `cs.SE`. `cs.DC` is deliberately *not* recommended — Section 8.1 argues TCF falls outside the CRDT convergence guarantee, so that audience would be reviewing against a claim the paper does not make.
+
+### Ground-Problem Alignment pass 2026-08-26 (external review, adopted with one modification)
+
+An in-depth external review, read against `actual_problem.md`, found that the
+TCF definition required an event that never happened in the motivating
+incident. Both findings were verified against the source before any edit; full
+record in `docs/DRAFT_PAPER.md` drafting note 21.
+
+* **A factual misstatement was corrected.** Section 1 said one of the authors
+  lost message history to a destructive restore. `actual_problem.md` says
+  nothing was lost and no restore was performed. Confirmed with the author:
+  **no restore was ever performed.** This was the most serious item in the
+  review — the paper disclaims its own anecdote as non-evidence, so an
+  unsupported claim about that anecdote was the worst-placed error in it.
+* **Condition 3 became a disposition rather than an event.** Old C3
+  ("Asymmetric reconciliation *on merge*") began the split at the moment a
+  restore is performed, so TCF did not obtain in the incident that motivated
+  it. New C3 ("Asymmetric reconciliation"): no platform-native operation
+  yields the union, and every reunification path substitutes one state for
+  another. It holds from the moment the branches exist.
+* **The reviewer's own C3 was NOT adopted verbatim.** They proposed dropping
+  the asymmetry and keeping only "no native mechanism". That would blunt
+  §2.4's distinction from sync conflict (which turns on other platforms
+  attempting reconciliation badly, not on absence) and drift TCF toward the
+  multi-device information fragmentation §2.5 fences off. The destructive
+  restore is instead kept as a named sub-case: Conditions 1–3 hold in the
+  **latent** case (both archives readable, no view spanning them — this is
+  what the incident exhibits), and a restore makes it **manifest**.
+* **Two smaller items, both verified:** an exhaustive product claim ("the
+  platform simply offers no operation") sitting one sentence above the
+  deliberately narrowed WhatsApp citation — a residual inconsistency from the
+  `[CITE-T2]` pass, now "we found no documented way"; and *internally
+  complete*, used in the abstract, RQ1 and §9 but never defined, now defined
+  in §2.2 as an idealisation of the model rather than a property established
+  of any real archive.
+* **CARTA (Sections 3–6) needed no change.** The specification never depended
+  on how the fragments arose. That is the strongest evidence the framework was
+  right and only the problem statement was overfitted.
+* **Figure 1 was redrawn, not edited** — C3 can no longer be drawn at a point.
+  **`pdflatex` reported zero overfull boxes for a version of the drawing whose
+  labels visibly collided in three places, two of which predated this pass.**
+  They were found only by rasterising the page and looking at it. For TikZ,
+  log-clean is not correctness; inspect the rendered page.
+
+**Re-verified after the pass** (same toolchain, TeX Live 2026 `pdflatex`):
+`pdflatex → bibtex → pdflatex ×4`, all passes exit 0, BibTeX 31 entries
+`warning$ -- 0`. **20 pages** (was 19; the pass added two paragraphs), **0
+LaTeX warnings, 0 overfull/underfull boxes, 0 undefined, 0 font
+substitutions.** Abstract re-measured at **199 rendered words** (target
+150–200). `paper/arxiv-submission.tar.gz` rebuilt at 33,488 bytes, 12 files,
+and re-verified to build to the identical PDF in a clean directory with no
+`.bib` present.
+
+### Found and closed 2026-08-26 (architect, independent check) — verified artefact and committed working tree had diverged
+
+The pdflatex verification above ran against a `git archive` export of HEAD — a legitimate, arguably stricter test (it verifies the exact committed tree in isolation, immune to working-directory contamination). But its output was never copied back: `paper/main.log` in the actual working tree still read `Output written on main.xdv` (Tectonic's XeTeX-derived pipeline) at the time this was checked, not `main.pdf` (pdfTeX's direct output) — meaning the *tracked repository's own* build products (`main.log`, `main.pdf`, `main.bbl`, all gitignored, so `git status` never flagged the mismatch) were still Tectonic-built, not pdflatex-built, despite the verification commit's message. This is a self-report/reality gap of exactly the kind this project has repeatedly caught elsewhere — this time in build provenance rather than a citation.
+
+**Fixed by rebuilding directly with the installed TinyTeX** (`C:\Users\MaitreyaSapariya\.tl-verify\TinyTeX`, full binary paths, `paper/` as the working directory): `pdflatex → bibtex → pdflatex → pdflatex`, all four steps exit 0. Confirmed via the log's own banner — `This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026)` — and `Output written on main.pdf` (not `.xdv`). **19 pages, 0 warnings, 0 overfull/underfull boxes.** Ran a further pass beyond the standard four to check the "Label(s) may have changed" note the verification commit flagged as needing a fifth pass: it did **not** recur — `rerunfilecheck` reported `File main.out has not changed` after the fourth pass, confirming convergence without needing that extra rerun. `paper/main.bbl` was independently confirmed byte-identical to the one already packaged in `paper/arxiv-submission.tar.gz`, so the upload bundle needed no rebuild. The tracked repository's own `paper/` directory now genuinely reflects a real-pdflatex build, not Tectonic.
+
+A convenience copy of this pdflatex-verified PDF was placed at the repo root, `When-Chats-Split-Apart.pdf`, per the architect's request — gitignored, consistent with `paper/main.pdf` also being a regenerable, uncommitted artefact.
 
 ### GitHub Verification
 
