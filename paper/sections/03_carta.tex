@@ -194,6 +194,15 @@ malformed record may need a parser fix, whereas an ambiguous one may be resolvab
 by evidence outside the record, such as a locale established elsewhere in the same
 fragment.
 
+That remedy is deliberately not applied inside Normalization. The stage judges
+each record on its own contents, so a record whose date admits two readings is
+quarantined even where another record in the same fragment would settle the
+ordering. An implementation may offer fragment-scope inference as a separate,
+declared step that consumes $Q_k$ and reports what it inferred and on what
+evidence. What the specification rules out is performing that inference silently
+within the stage, where the resulting timestamps would be indistinguishable from
+ones that were never in doubt.
+
 Normalization is required to carry every record's provenance through to $R'_k$ or
 $Q_k$. This is a guarantee the stage owes, and not a property Synthesis may assume
 on its behalf.
@@ -220,7 +229,11 @@ be strictly positive, so $F_1$ and $F_2$ can overlap. A message sent during that
 overlap appears in both fragments and arrives at Synthesis twice, in two
 separately parsed forms that need not agree byte for byte. Deduplication exists
 because of this overlap. Without it, concatenation would report the overlap region
-twice and misrepresent the history it claims to reconstruct.
+twice and misrepresent the history it claims to reconstruct. Where the fragments
+are in fact disjoint, as in the $\delta = \epsilon = 0$ case of
+Section~\ref{sec:tcf:conditions}, every cluster is a singleton and Synthesis
+reduces to ordered concatenation without special-casing: the specification does
+not need to know in advance which configuration it has been handed.
 
 A conflict is any set of two or more observations that cannot be reconciled
 deterministically under the reconstruction rules. This is broader than a timestamp
@@ -242,8 +255,19 @@ $\Omega$ is a first-class output with four components:
   \label{eq:omega}
 \end{equation}
 
-The \textbf{provenance map} records, for every record in $\mathcal{U}$, its origin
-device, origin export, origin backup date, and confidence. The \textbf{quarantine
+The \textbf{provenance map} sends every record in $\mathcal{U}$ to the union of
+the provenance tuples of the observations it was synthesised from, each tuple
+being the \texttt{source\_id}, \texttt{line\_range} and \texttt{sha256} that
+Ingestion attaches to every record. That triple is the whole of what the
+specification requires of the map: it names the fragment, locates the
+originating bytes within it, and binds the claim to a file state an auditor can
+re-check. An implementation may carry further metadata about a fragment, such as
+the device or export it was taken from and the date it was made; that is a
+property of the fragment, reachable through \texttt{source\_id}, rather than an
+additional field of the tuple. The specification defines no confidence score,
+and deliberately so: a score would compress into one number exactly the
+uncertainty that quarantine and the conflict log exist to keep explicit and
+inspectable. The \textbf{quarantine
 carryover} holds every record from every $Q_k$, retained with its reason code
 rather than dropped at the stage boundary. The \textbf{conflict log} holds every
 irreconcilable observation under the definition above. The \textbf{statistics}
@@ -270,7 +294,25 @@ Original fragment files are read and never modified.
 \subsection{Invariants}
 \label{sec:carta:invariants}
 
-Four invariants constrain any conforming implementation.
+Three invariants constrain any conforming implementation, and it is worth saying
+what kind of constraint they are. They are not correctness properties: none of
+them asserts that $\mathcal{U}$ is the right reconstruction, and the
+specification has no way to know what the right reconstruction would be. They are
+\emph{reporting obligations} --- things a reconstruction must be able to tell its
+reader about itself. That is the weaker claim and it is the one this paper can
+actually support, because it turns on what the procedure emits rather than on
+what the world contained.
+
+Reading them this way also settles what looks like the specification's biggest
+hole. Sections~\ref{sec:algorithms:similarity} and~\ref{sec:algorithms:ordering}
+leave the clustering procedure and the field-wise precedence rule open, so two
+conforming implementations may return different archives for the same fragments.
+Under a correctness framing that is close to fatal. Under a reporting framing it
+is the design: the specification does not care which rule an implementation
+adopts, because it has no evidence for preferring one. It cares that the
+implementation declares which rule it adopted and reports what that choice cost,
+which is precisely what an archive's reader needs in order to judge a
+reconstruction they cannot independently verify.
 
 \paragraph{Invariant 1, Zero unaccounted loss.}
 Every ingested record either contributes provenance to a record in the unified
@@ -317,10 +359,39 @@ We state this as a requirement on conforming implementations. No implementation
 exists to exhibit it, and Section~\ref{sec:algorithms:ordering} identifies the
 tie-breaking rule that a conforming implementation needs in order to satisfy it.
 
-\paragraph{Invariant 4, Idempotent reconstruction.}
-Applying Synthesis to an already unified, canonical record set together with an
-identical copy of itself must not introduce additional information loss or
-unresolved conflicts. We state this as a specification-level target rather than a
-proven equation. A type-safe formalisation, establishing that records in
-$\mathcal{U}$ are schema-compatible with those in $\mathcal{R}'$, is deferred to
-the implementation phase and is not claimed here.
+%% Idempotence was numbered "Invariant 4" through the first complete draft.
+%% Demoted 2026-08-26 (peer review, Major 6): the text always conceded it was
+%% prose rather than a proven property, and a stated non-proof sitting in a
+%% numbered invariant list weakens the three that are real. Do not renumber it
+%% back without actually proving it.
+\paragraph{Deferred: idempotent reconstruction.}
+A fourth property is worth naming but is not claimed as an invariant. Applying
+Synthesis to an already unified, canonical record set together with an identical
+copy of itself should introduce no additional information loss and no new
+unresolved conflicts. We have not proved this, and it depends on a type-safe
+formalisation establishing that records in $\mathcal{U}$ are schema-compatible
+with those in $\mathcal{R}'$, which is deferred to the implementation phase. It is
+stated here as a design target so that an implementation knows to test for it, and
+it should not be read as a property this specification establishes.
+
+\subsection{Conformance}
+\label{sec:carta:conformance}
+
+Because the reporting obligations are the substance, conformance is a matter of
+what an implementation publishes as much as of what it computes. An
+implementation may claim conformance with CARTA when it satisfies Invariants 1 to
+3 and declares, in a form a reader of $\Omega$ can reach, each of the following:
+the clustering procedure it applies over $\sim_{\text{dedup}}$; the field-wise
+precedence rule its canonical synthesis uses; the deduplication window
+$\Delta t_{\text{granularity}}$ and the conflict bucket
+$\Delta t_{\text{conflict}}$, how each was obtained, and that they satisfy the
+ordering constraint of Section~\ref{sec:algorithms:ordering}; the full reason-code
+taxonomy it emits, which must extend rather than replace the five codes of
+Section~\ref{sec:carta:normalization}; and the version of the implementation
+itself, since a change to any of the above changes the archive.
+
+The list is short on purpose. Every item on it is an open parameter that this
+specification declines to fix, and the requirement to declare is what stops that
+openness from being unaccountable. An implementation that satisfies the
+invariants but publishes none of these has produced an archive nobody can reason
+about, and it does not conform.

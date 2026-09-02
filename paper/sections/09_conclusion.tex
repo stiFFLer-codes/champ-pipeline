@@ -9,8 +9,8 @@
 \label{sec:conclusion}
 
 This paper contributes a characterisation and a specification. The
-characterisation is TCF: three necessary conditions that together produce two
-archives of one account, each internally complete, overlapping in part, and
+characterisation is TCF: three necessary conditions that together produce two or
+more archives of one account, each internally complete, overlapping in part, and
 irreconcilable through the platform that holds them. Bifurcation and
 independent persistence create the split; the absence of any platform
 operation yielding the union is what makes it durable, and a restore that
@@ -20,31 +20,58 @@ safely interpreted routed to a quarantine set with reason codes instead of
 being resolved by guessing, and a reconstruction report carrying provenance,
 quarantine, conflicts and counts as a first-class output.
 
-Two of those elements are what the survey in Section~\ref{sec:related} could not
-find anywhere among the neighbours. Every tool examined that merges chat archives
-either discards input it cannot parse, prints a diagnostic and moves on, or aborts
-the load, and none retains that input as an inspectable output. None emits a
-structured account of what the reconstruction did. The forensic lineage supplies
-staging and per-record provenance, both of which predate this work and neither of
-which we claim; the reference super-timeline engine retains typed warnings but
-keeps them out of the artefact an analyst reads. $\mathcal{Q}$ and $\Omega$ are the
-two properties this specification adds to that inheritance.
+Neither of those two elements is a new mechanism, and the survey in
+Section~\ref{sec:related} is explicit about where each already lives. Data
+integration quarantines records that fail validation and reports lineage per
+record as ordinary engineering practice, and it has done so for longer than this
+problem has had a name; the forensic lineage supplies staging and per-record
+provenance. We claim priority over none of it.
+
+What the survey could not find is that discipline anywhere in the setting this
+paper is about. Every tool examined that merges consumer chat archives either
+discards input it cannot parse, prints a diagnostic and moves on, or aborts the
+load, and none retains that input as an inspectable output. None emits a
+structured account of what the reconstruction did; the reference super-timeline
+engine retains typed warnings but keeps them out of the artefact an analyst
+reads. The contribution is therefore a transfer rather than an invention:
+$\mathcal{Q}$ and $\Omega$ specified as an output contract for reconstruction of
+personal chat history, where the reader of the result is usually the person whose
+history it is and has no second copy to check it against.
 
 \paragraph{Reproducibility.}
-One artefact in the accompanying repository runs and reproduces: the synthetic
-fixture generator. Running
+Two artefacts in the accompanying repository run. The first is the synthetic
+fixture generator. The repository is at
+\url{https://github.com/stiFFLer-codes/champ-pipeline}, and running
+%% Displayed rather than inline: the command is a long unbreakable \texttt run
+%% and setting it in running prose leaves the preceding line underfull. This
+%% matches how Section 5.3 displays the same command.
+\begin{quote}
 \texttt{node scripts/generate-synthetic-fixtures.js -{}-seed 1 -{}-count 5}
-regenerates the five committed fixtures and their manifest byte for byte, and we
-verified this across consecutive runs and against the committed files. That result
-covers deterministic generation of a synthetic corpus across 19 recorded
-edge-case categories, and it covers nothing else. CHAMP-Pipeline is not
-implemented, so no reconstruction, no unified archive, and no report can be
-reproduced from this repository, and no measurement in this paper depends on any
-that could be.
+\end{quote}
+under Node.js v24.14.0 on Windows 11 regenerates the five committed fixtures and
+their manifest byte for byte; we verified this across consecutive runs and against
+the committed files. Determinism across other Node versions and platforms was not
+tested. The second is
+\texttt{scripts/\allowbreak check-\allowbreak corpus-\allowbreak claims.js}, which
+derives every count Section~\ref{sec:implementation:inputs} states about the
+corpus from the committed fixtures and fails if the paper and the artefact
+disagree; the paper's claims about its own corpus are checkable rather than
+asserted. The reconstruction itself runs from the same repository:
+\texttt{node scripts/reconstruct.js -{}-infer} over the two committed fragments
+produces the archive and report of Section~\ref{sec:evaluation}, and
+\texttt{node tests/run-all.js} runs every check in the repository.
+
+The scope of that is narrow and stated in
+Section~\ref{sec:evaluation:limits}. It covers reconstruction of a synthetic
+corpus to a ground truth the same project constructed. No real archive has been
+reconstructed, no accuracy figure is reported, and no measurement in this paper
+rests on anything else.
 
 What remains is the part a specification cannot settle on its own. The strongest
 claim available here is that a reconstruction which cannot say what it dropped is
 indistinguishable, to the person reading it, from one that dropped nothing. Every
-merging tool we examined leaves its reader in exactly that position. Whether
-$\mathcal{Q}$ and $\Omega$ are the right instruments for closing that gap is a
-question an implementation will answer better than an argument.
+merging tool we examined leaves its reader in exactly that position. Building the
+implementation showed that $\mathcal{Q}$ and $\Omega$ can be produced and that
+the specification demanding them held up under execution in most respects and
+failed in four. Whether they are the right instruments for a real archive is a
+question that a real archive, and not a synthetic one, will answer.

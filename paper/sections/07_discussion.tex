@@ -17,8 +17,7 @@ Encryption is not an obstacle the pipeline encounters, because the pipeline begi
 after the point where the platform has already decrypted the content for its
 owner. Nothing in Sections~\ref{sec:carta} or~\ref{sec:algorithms} attempts to
 read encrypted backup blobs, recover keys, or access an account other than the one
-performing the export, and no part of the specification would work any better if
-it could. This is worth stating plainly because reconstruction of chat history is
+performing the export. This is worth stating plainly because reconstruction of chat history is
 adjacent to a body of forensic work that does address encrypted stores, and a
 reader arriving from that direction may reasonably expect such a claim. We make
 none.
@@ -62,9 +61,124 @@ jurisdiction-specific argument, and no forensic validation of any kind, and none
 of the three would follow from the specification alone. Establishing that a
 reconstruction produced under CARTA would be accepted as evidence anywhere would
 require an implementation, validation against known-ground-truth material, and
-legal argument that is outside both this paper's scope and its authors' competence
+legal argument that is outside both this paper's scope and its author's competence
 to assert. The honest position is that the design borrows a discipline from
 forensic practice without claiming the standing that practice confers.
+
+%% Added 2026-08-26. Section 2.2 promises that this section treats fragments
+%% which are not internally complete; before this subsection existed, that was a
+%% dangling forward reference (peer review, Minor 5). Do not delete without also
+%% removing the promise in Section 2.2's internal-completeness paragraph.
+\subsection{Fragments that are not internally complete}
+\label{sec:discussion:incomplete}
+
+Section~\ref{sec:tcf:conditions} defines internal completeness as a fragment
+being well-formed and gap-free with respect to its own accumulation window, and
+says plainly that this is an idealisation of the TCF model rather than a property
+established of any real archive. Real archives violate it. A user clears a
+conversation, a device runs out of storage mid-export, a chat is deleted on one
+device and not the other, or an export is taken from an application that had
+already pruned old media. The question this raises is what the specification owes
+a reader when its own precondition fails.
+
+The answer follows from what CARTA does and does not attempt. Nothing in
+Sections~\ref{sec:carta} or~\ref{sec:algorithms} tests whether a fragment is
+internally complete, and nothing in the pipeline depends on its being so. The
+stages consume records; a fragment with a hole in it simply contributes fewer
+records, and every stage behaves exactly as specified on the ones it does
+contribute. $\mathcal{U}$ is still the deduplicated union of what arrived,
+$\Omega$ still accounts for every record that did not reach it, and Invariants 1
+and 2 are unaffected, because both are claims about records the pipeline saw
+rather than about records that existed once.
+
+What is lost is an interpretive guarantee, not a mechanical one. Where both
+fragments are internally complete, a gap in $\mathcal{U}$ over some interval
+licenses the inference that no messages were sent in it. Where they are not, that
+inference is unavailable, and $\mathcal{U}$ cannot distinguish a quiet week from a
+cleared conversation. This is the sharpest limitation in the paper, because it is
+invisible in the output: nothing in $\mathcal{U}$ or $\Omega$ marks the
+difference, and a reader would have to already know the fragment's history to
+suspect it.
+
+Closing this properly would mean detecting absence, which is a genuinely harder
+problem than reconciling presence and is not attempted here. Export formats do
+not record what they omitted. A partial approach available to an implementation
+is to report per-fragment coverage in $\Omega_{\text{stats}}$ (first and last
+record timestamps per fragment, and the distribution of inter-record intervals),
+which would let a reader see that one fragment claims a window it contributes
+almost nothing to. That is a heuristic surfaced for inspection rather than a
+completeness test, which is the most this specification's discipline permits it to
+be, and stating it as future work is more honest than implying the model's
+idealisation is harmless.
+
+%% Added 2026-08-29. This subsection is the main scientific yield of building the
+%% implementation, and each item is a place the SPECIFICATION was wrong, not a
+%% place the code was. Do not soften these into "clarifications": the point is
+%% that a document two review rounds had gone over still contained them.
+\subsection{What implementing the specification revealed}
+\label{sec:discussion:specfindings}
+
+Writing a conforming implementation surfaced four defects in the specification
+itself. Three of them survived two rounds of review of the prose. They are
+recorded here because a specification paper that reported none would be making a
+weaker claim than it appears to: the value of building the reference
+implementation was mostly this, and not the reconstruction counts.
+
+\paragraph{A UTC timestamp with no offset to convert by.}
+Section~\ref{sec:carta:normalization} requires a canonical record to carry a UTC
+epoch timestamp. A WhatsApp text export carries no UTC offset.
+Section~\ref{sec:implementation:inputs} already observes that the export has no
+locale marker to settle the date ordering, and the same absence applies to the
+clock, so converting a wall-clock reading into an instant needs information the
+input does not contain. Resolving it silently is the failure Normalization exists
+to prevent. The implementation makes the offset a declared parameter defaulting
+to zero, so canonical timestamps are wall-clock instants correct up to a stated
+offset, and the statement reaches the reader through
+$\Omega$. Reconciling fragments from devices in different zones requires setting
+it per fragment. The specification should say where the offset comes from; as
+written it asserts UTC and leaves the question unasked.
+
+\paragraph{Equation~(\ref{eq:conflict}) reports ordinary conversation as
+contradiction.} Its second disjunct is $s(u_i) \neq s(u_j)$. Read literally, any
+two records in the same coarse bucket sent by different people conflict. Three
+participants messaging inside one minute produces three conflict entries, and the
+count grows with the square of the traffic in a bucket, so
+$\Omega_{\text{conflicts}}$ would be dominated by ordinary group-chat activity on
+any real archive. Two people talking is not an irreconcilable observation.
+
+The reading the implementation declares instead is that a sender disagreement is
+irreconcilable only when the two records are otherwise the same observation:
+same coarse bucket, not deduplicated, same body, different sender. That is a
+genuine question of who said something, and no total order settles it. Records
+with no sender are excluded from the clause, because $s(\cdot)$ is undefined for
+a system line and comparing it against a name produces a finding about a type
+error rather than about the archive. The ordering clause is unaffected.
+
+\paragraph{One export variant defeats deduplication.}
+Equation~(\ref{eq:dedup}) matches on body equality. The doubled-filename
+attachment variant of Section~\ref{sec:implementation:inputs} repeats the
+filename on a continuation line, which becomes part of the body. Two devices
+exporting the same attachment message in different variants therefore produce
+bodies that differ by that line, fail to match, and place the message in
+$\mathcal{U}$ twice. This is not a corner case for TCF specifically: two
+handsets on possibly different application versions is the configuration the
+whole paper is about. The implementation canonicalises the repeated line away in
+Normalization, where converting an export artefact into a canonical payload
+belongs, which leaves Equation~(\ref{eq:dedup}) intact rather than widening it to
+tolerate export noise.
+
+\paragraph{An unreachable branch, and what it says about the reason codes.}
+The fragment-scope step was written to re-quarantine a record when the
+established ordering yields an impossible date. That branch cannot execute. A
+record is quarantined as ambiguous only when both leading fields lie in 1 to 12,
+which is a valid day-and-month pair under either reading, and its clock has
+already been validated before the ordering question arises. The case is a guard
+rather than a behaviour. It is worth recording because it confirms the
+distinction Section~\ref{sec:carta:normalization} draws between
+\texttt{MALFORMED\_\allowbreak TIMESTAMP} and
+\texttt{AMBIGUOUS\_\allowbreak DATE\_\allowbreak FORMAT} is exhaustive on this
+input format: a date string is unreadable, or readable one way, or readable two
+ways, and the third case never collapses into the first.
 
 \subsection{Limitations}
 \label{sec:discussion:limitations}
@@ -90,13 +204,31 @@ closing it means choosing a rule and defending the choice, which we have not don
 \paragraph{Determinism and idempotence are requirements, not demonstrated
 properties.}
 Invariant 3 constrains an implementation to reproduce its own output, and
-Section~\ref{sec:algorithms:ordering} identifies the tie-break that makes this
-attainable, but no implementation exists to exhibit it. Invariant 4 is weaker
-still: it is stated as prose about what Synthesis must not do, and the type-safe
-formalisation establishing that records in $\mathcal{U}$ are schema-compatible
-with those in $\mathcal{R}'$ is deferred rather than supplied.
+Section~\ref{sec:evaluation:reconstruction} reports one implementation doing so
+on one input across two consecutive runs. That is an instance, not a proof, and
+nothing establishes it holds for inputs the implementation has not seen.
+Idempotence is weaker
+still, which is why Section~\ref{sec:carta:invariants} declines to number it among
+the invariants: it is stated as prose about what Synthesis must not do, and the
+type-safe formalisation establishing that records in $\mathcal{U}$ are
+schema-compatible with those in $\mathcal{R}'$ is deferred rather than supplied.
 
-\paragraph{The corpus is illustrative and single-platform.}
+\paragraph{The corpus is illustrative, synthetic and single-platform.}
 Nineteen edge-case categories across five synthetic files show that the input
-space is varied. They do not establish coverage of that space, and no claim of
-completeness attaches to the corpus.
+space is varied. They do not establish coverage of that space, no claim of
+completeness attaches to the corpus, and, as
+Section~\ref{sec:implementation:inputs} states, the categories record what this
+specification anticipates rather than what WhatsApp has been observed to emit.
+
+\paragraph{The platform's reunification affordances were not systematically
+enumerated.}
+Condition 3 asserts that no platform-native operation yields the union of two
+archives, and the support offered for it is documentary: the vendor's restore
+guidance describes no such operation, and third-party merge tools exist to supply
+what it describes no way of doing. We did not enumerate the platform's export,
+restore, transfer and migration paths and record what each does to a pair of
+archives. That enumeration is available to anyone holding the configuration, and
+it would convert the weakest premise in this paper into its only piece of primary
+evidence. It would be a dated, versioned, single-case observation rather than an
+experiment, and worth reporting as exactly that. We report its absence rather than implying the documentary
+argument is stronger than it is.

@@ -6,6 +6,14 @@
 %% PartitionIntoEquivalenceClasses must never reappear here -- ~_dedup is a
 %% similarity relation, not an equivalence relation, and it yields clusters,
 %% not classes.
+%%
+%% LOCKED (2026-08-26, formal-consistency pass): the in-cluster predicate is
+%% HasUnresolvedConflict, not the retired IsAmbiguous -- the question is what
+%% remains unsettled after the declared rules run, not what was ambiguous at
+%% some point during processing. DetectCrossClusterConflicts must stay a line
+%% of Algorithm 1 and must stay AFTER the loop: it compares canonical records,
+%% so it cannot run until every cluster has produced one. Line numbering in the
+%% walkthrough prose below depends on this; renumber it if the block changes.
 
 \section{Reconstruction \& Reconciliation Algorithms}
 \label{sec:algorithms}
@@ -23,9 +31,41 @@ second-resolution into another will represent one message with two different
 values, so an exact timestamp match would fail to group records that plainly
 belong together.
 
-The second is the \textbf{coarse resolution} used for conflict detection, fixed
-at one minute. This is a deliberately blunter bucket, used to decide which record
-pairs are close enough that a contradiction between them is worth reporting.
+$\Delta t_{\text{granularity}}$ is a property of the input, not of the run. It
+should be set to the coarsest timestamp quantum among the fragments being
+reconciled, which an implementation may infer from the exports or take from the
+operator, and it must be recorded in $\Omega_{\text{stats}}$ either way.
+Invariant 3 constrains an implementation to reproduce its own output, so the
+value has to be a function of the input rather than of when the run happened; a
+window that varied between runs on identical fragments would break the invariant
+directly, and an implementation that lets an operator supply it must therefore
+treat it as part of the input it is being deterministic about.
+
+The second is the \textbf{coarse resolution} $\Delta t_{\text{conflict}}$ used
+for conflict detection, a deliberately blunter bucket used to decide which record
+pairs are close enough that a contradiction between them is worth reporting. Like
+the deduplication window it is a declared parameter rather than a constant, and
+its default is one minute. That default is not an empirical finding about export
+formats in general, and Section~\ref{sec:implementation:inputs} is explicit that
+the corpus is not a field survey; it is chosen to match the timestamp resolution
+of the export format the reference implementation targets, which records minutes
+and not seconds. An implementation targeting a format with finer or coarser
+timestamps should declare a different value, and
+Section~\ref{sec:carta:conformance} requires it to say which.
+
+The two tolerances are not independent. A conforming implementation must satisfy
+
+\begin{equation}
+  \Delta t_{\text{granularity}} \le \Delta t_{\text{conflict}}
+  \label{eq:tolerances}
+\end{equation}
+
+and this is a constraint rather than an observation. Were the deduplication
+window the wider of the two, records grouped into a single cluster could be
+further apart than the bucket used to decide whether two \emph{different}
+messages contradict each other, and the same pair of records could be
+simultaneously treated as one message and as two conflicting ones. Widening one
+therefore requires widening the other.
 
 Ordering comes before either. Records are sorted primarily by $t_{\text{utc}}$
 ascending and secondarily by source sequence index. The secondary key is what
@@ -70,8 +110,28 @@ implementation must state which rule it applies, since Invariant 3 constrains a
 given implementation to behave the same way twice rather than requiring all
 implementations to agree with each other.
 
-For each cluster $C$, one canonical record $u$ is synthesised, and its provenance
-is the union of the provenance of every record in the cluster:
+For each cluster $C$, one \textbf{canonical} record $u$ is synthesised. Canonical
+here means the deterministic representative of $C$ under the implementation's
+declared reconciliation policy, and not a globally unique record that every
+conforming implementation would agree on. Because the clustering procedure is
+open, two conforming implementations may cluster the same input differently and
+therefore produce different representatives; Invariant 3 requires each of them
+to be self-consistent, not to agree with the other.
+
+Synthesis is field-wise, and it is the second open parameter of the
+specification. For each field of the canonical schema, an implementation applies
+a fixed precedence rule over the observations in $C$. Where those observations
+carry compatible values, the rule selects one deterministically. Where they are
+incompatible, the rule still yields a value, and the cluster additionally emits
+a conflict descriptor, so that a choice made between contradictory observations
+is reported rather than made silently. The specification fixes that shape and
+leaves the precedence itself open on the same terms as the clustering procedure:
+a conforming implementation must state the rule it applies. Fixing one
+precedence here would amount to a claim about which export is the more
+trustworthy source, and this paper has no evidence supporting such a claim.
+
+The provenance of $u$ is the union of the provenance of every record in the
+cluster:
 
 \begin{equation}
   \mathrm{prov}(u) = \bigcup_{r' \in C} \mathrm{prov}(r')
@@ -109,12 +169,14 @@ seen three times.
     \State $u.\text{provenance} \leftarrow
            \bigcup_{r' \in C} r'.\text{provenance}$
     \State $\mathcal{P}_{\text{map}}[u.\text{id}] \leftarrow u.\text{provenance}$
-    \If{$\textsc{IsAmbiguous}(C)$}
+    \If{$\textsc{HasUnresolvedConflict}(C)$}
         \State $\mathcal{C}_{\text{conflicts}}.\text{append}(
                \textsc{CreateConflictDescriptor}(C))$
     \EndIf
     \State $\mathcal{U}.\text{append}(u)$
 \EndFor
+\State $\mathcal{C}_{\text{conflicts}}.\text{extend}(
+       \textsc{DetectCrossClusterConflicts}(\mathcal{U}))$
 \State $\Omega \leftarrow \big\langle
        \text{provenance\_map}: \mathcal{P}_{\text{map}},\;
        \text{quarantine}: \bigcup \mathcal{Q},\;
@@ -147,31 +209,67 @@ Detection and reporting are separated from resolution, which is the same
 discipline the quarantine rule applies in Normalization: the procedure records
 what it could not settle instead of settling it silently.
 
-Line 14 assembles the report. The quarantine sets arrive at this line untouched,
+Line 14 runs the cross-cluster pass of Section~\ref{sec:algorithms:conflicts},
+which is the one form of conflict the cluster loop cannot see, and appends its
+descriptors to the same log.
+
+Line 15 assembles the report. The quarantine sets arrive at this line untouched,
 having been carried through from Normalization for exactly this purpose.
 
 \subsection{Conflict detection}
 \label{sec:algorithms:conflicts}
 
-Conflict detection has a second aspect that Algorithm~\ref{alg:carta_synthesis}'s
-cluster loop does not reach. Two records may describe genuinely different
-messages, and so belong to different clusters, while still standing in
-contradiction. The specification's criterion applies to records sharing a coarse
-timestamp at one-minute resolution but carrying incompatible sender or ordering
-constraints:
+Conflicts arise at two scopes, and Algorithm~\ref{alg:carta_synthesis} detects
+each at the line that can see it.
+
+Within a cluster, $\textsc{HasUnresolvedConflict}(C)$ at line 9 holds when the
+observations in $C$ disagree on a field the similarity criterion does not
+constrain, so that the field-wise precedence rule of
+Section~\ref{sec:algorithms:similarity} had to choose between incompatible
+values rather than between compatible ones. Sender identity, message type,
+attachment metadata beyond the $\cong$ used in
+Equation~(\ref{eq:dedup}), and timestamps differing by more than the granularity
+the cluster was formed under are all such disagreements. A cluster of one never
+satisfies the predicate. The name is deliberate: the question is not whether the
+cluster was ambiguous at some point in processing, but whether anything about it
+remains unsettled once the declared rules have been applied.
+
+Across clusters, two records may describe genuinely different messages, and so
+belong to different clusters, while still standing in contradiction.
+$\textsc{DetectCrossClusterConflicts}$ at line 14 is the pass that finds these.
+Its criterion applies to records falling in the same coarse bucket but
+carrying incompatible sender or ordering constraints:
 
 \begin{equation}
-  \mathrm{Conflict}(u_i, u_j) \implies \text{flag in } \Omega_{\text{conflicts}}
+  \begin{split}
+    \mathrm{Conflict}(u_i, u_j) \iff{}
+      &\lfloor t_{\text{utc}}(u_i) \rfloor_{\Delta t_{\text{conflict}}}
+        = \lfloor t_{\text{utc}}(u_j) \rfloor_{\Delta t_{\text{conflict}}} \\
+      &{}\land\; u_i \not\sim_{\text{dedup}} u_j \\
+      &{}\land\; \big( s(u_i) \neq s(u_j)
+        \;\lor\; \mathrm{seq}(u_i, u_j) \text{ is unsatisfiable} \big)
+  \end{split}
   \label{eq:conflict}
 \end{equation}
+
+Here $\lfloor \cdot \rfloor_{\Delta t_{\text{conflict}}}$ truncates a timestamp
+to its containing coarse bucket, and $\mathrm{seq}(u_i, u_j)$ denotes the ordering constraints
+the two records' source sequence indices impose: unsatisfiable means the
+fragments order the pair in opposite directions, so no single total order
+respects both. The second conjunct is what keeps this pass disjoint from the
+cluster loop --- a pair the similarity criterion already grouped is one message
+seen twice, not two messages in contradiction, and it is handled at line 9.
 
 Coarse buckets are used here because export timestamp precision is itself
 unreliable, and demanding exact equality before considering a contradiction would
 miss the cases most likely to matter. The consequence of flagging is a report
 entry. Neither record is dropped, neither is rewritten, and both remain in
 $\mathcal{U}$ with their provenance intact, which is what Invariant 1 requires.
+Equation~(\ref{eq:conflict}) detects and reports; it resolves nothing, and no
+conforming implementation may use it to drop a record.
 
-We fold this into the same exposition rather than giving it a separate algorithm
-block because it shares Algorithm~\ref{alg:carta_synthesis}'s inputs and writes to
-the same conflict log, and because presenting it separately would suggest a second
-pass over the data that the specification does not require.
+The pass is a single line of Algorithm~\ref{alg:carta_synthesis} rather than an
+algorithm block of its own because it writes to the same conflict log and needs
+no input the procedure does not already hold. Placing it after the loop, rather
+than inside, is what the scope requires: it compares canonical records against
+one another, so it cannot run before every cluster has produced one.

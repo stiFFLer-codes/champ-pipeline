@@ -128,8 +128,12 @@
   doi       = {10.1145/1357054.1357177}
 }
 
+%% NOTE: the author name takes eth (dh), not d-with-stroke (dj). They are
+%% different Icelandic letters. Corrected 2026-08-26. BibTeX only accepts
+%% comments BETWEEN entries, never inside one -- putting this note inside the
+%% braces silently voids every field in the entry.
 @techreport{gudjonsson2010log2timeline,
-  author      = {Gu{\dj}j\'{o}nsson, Kristinn},
+  author      = {Gu{\dh}j\'{o}nsson, Kristinn},
   title       = {Mastering the Super Timeline With log2timeline},
   institution = {SANS Institute Reading Room},
   type        = {{GIAC} ({GCFA}) Gold Certification paper},
@@ -267,7 +271,7 @@
 }
 
 @inproceedings{wunder2025resilience,
-  author    = {Wunder, Jan and Wash, Rick and Renaud, Karen and Oliveira, Daniela A. and Benenson, Zinaida},
+  author    = {Wunder, Julia and Wash, Rick and Renaud, Karen and Oliveira, Daniela A. and Benenson, Zinaida},
   title     = {Achieving Resilience: Data Loss and Recovery on Devices for Personal Use in Three Countries},
   booktitle = {Proceedings of the 2025 {CHI} Conference on Human Factors in Computing Systems ({CHI} '25)},
   pages     = {1--26},
@@ -299,7 +303,7 @@
   year         = {2026},
   howpublished = {GitHub repository, GPL-3.0},
   url          = {https://github.com/bepaald/signalbackup-tools},
-  note         = {1,392 stars; last push 2026-08-22. Accessed 2026-08-25}
+  note         = {Accessed 2026-08-25; repository snapshot that date: 1,392 stars, last push 2026-08-22}
 }
 
 @misc{repo_wadbmerger,
@@ -308,7 +312,7 @@
   year         = {2022},
   howpublished = {GitHub repository, no declared licence},
   url          = {https://github.com/natario1/whatsapp-database-merger},
-  note         = {78 stars; last push 2022-11-25. Accessed 2026-08-25}
+  note         = {Accessed 2026-08-25; repository snapshot that date: 78 stars, last push 2022-11-25}
 }
 
 @misc{repo_wachatmerger,
@@ -317,7 +321,7 @@
   year         = {2026},
   howpublished = {GitHub repository, MIT},
   url          = {https://github.com/tarikab7/whatsapp-chat-merger},
-  note         = {1 star; last push 2026-06-22. Accessed 2026-08-25}
+  note         = {Accessed 2026-08-25; repository snapshot that date: 1 star, last push 2026-06-22}
 }
 
 @misc{repo_chathistorymanager,
@@ -326,7 +330,7 @@
   year         = {2026},
   howpublished = {GitHub repository, MIT},
   url          = {https://github.com/frozenspider/chat-history-manager},
-  note         = {2 stars; last push 2026-06-29. Accessed 2026-08-25}
+  note         = {Accessed 2026-08-25; repository snapshot that date: 2 stars, last push 2026-06-29}
 }
 
 @misc{repo_wamerge,
@@ -335,7 +339,7 @@
   year         = {2025},
   howpublished = {GitHub repository},
   url          = {https://github.com/EkriirkE/WAMerge},
-  note         = {4 stars; last push 2025-03-20. Accessed 2026-08-25}
+  note         = {Accessed 2026-08-25; repository snapshot that date: 4 stars, last push 2025-03-20}
 }
 
 @misc{repo_smsmmsdedup,
@@ -344,7 +348,7 @@
   year         = {2026},
   howpublished = {GitHub repository},
   url          = {https://github.com/ragibson/SMS-MMS-deduplication},
-  note         = {32 stars; last push 2026-08-09. Accessed 2026-08-25}
+  note         = {Accessed 2026-08-25; repository snapshot that date: 32 stars, last push 2026-08-09}
 }
 
 @misc{repo_chat4n6,
@@ -353,5 +357,77 @@
   year         = {2026},
   howpublished = {GitHub repository},
   url          = {https://github.com/SecurityRonin/chat4n6},
-  note         = {39 stars; last push 2026-07-30. Accessed 2026-08-25}
+  note         = {Accessed 2026-08-25; repository snapshot that date: 39 stars, last push 2026-07-30}
+}
+
+%% ---------------------------------------------------------------------------
+%% Data integration, data quality and entity resolution (Section 8.5).
+%% Added 2026-08-26 after a peer review observed that this is the nearest
+%% neighbouring literature to CARTA and that it was missing entirely. Every
+%% entry below was verified against Crossref or the arXiv API on 2026-08-26;
+%% none is cited from memory or from the review that prompted the addition.
+%% NB: the review supplied DOI 10.1016/j.procs.2019.09.013 for Souibgui et al.
+%% That DOI resolves to an unrelated EEG paper. The correct one is .223, below.
+%% ---------------------------------------------------------------------------
+
+@article{souibgui2019dataquality,
+  author    = {Souibgui, Manel and Atigui, Faten and Zammali, Saloua and Cherfi, Samira and {Ben Yahia}, Sadok},
+  title     = {Data quality in {ETL} process: A preliminary study},
+  journal   = {Procedia Computer Science},
+  volume    = {159},
+  pages     = {676--687},
+  year      = {2019},
+  doi       = {10.1016/j.procs.2019.09.223}
+}
+
+@article{moreau2015prov,
+  author    = {Moreau, Luc and Groth, Paul and Cheney, James and Lebo, Timothy and Miles, Simon},
+  title     = {The rationale of {PROV}},
+  journal   = {Journal of Web Semantics},
+  volume    = {35},
+  pages     = {235--257},
+  year      = {2015},
+  doi       = {10.1016/j.websem.2015.04.001}
+}
+
+@article{chapman2024finegrained,
+  author    = {Chapman, Adriane and Lauro, Luca and Missier, Paolo and Torlone, Riccardo},
+  title     = {Supporting Better Insights of Data Science Pipelines with Fine-grained Provenance},
+  journal   = {ACM Transactions on Database Systems},
+  volume    = {49},
+  number    = {2},
+  pages     = {1--42},
+  year      = {2024},
+  doi       = {10.1145/3644385}
+}
+
+@misc{baas2021transitivity,
+  author       = {Baas, Jurian and Dastani, Mehdi and Feelders, Ad},
+  title        = {Exploiting Transitivity Constraints for Entity Matching in Knowledge Graphs},
+  year         = {2021},
+  howpublished = {arXiv preprint},
+  eprint       = {2104.12589},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.AI},
+  url          = {https://arxiv.org/abs/2104.12589}
+}
+
+@article{saeedi2018famer,
+  author    = {Saeedi, Alieh and Nentwig, Markus and Peukert, Eric and Rahm, Erhard},
+  title     = {Scalable Matching and Clustering of Entities with {FAMER}},
+  journal   = {Complex Systems Informatics and Modeling Quarterly},
+  volume    = {16},
+  pages     = {61--83},
+  note      = {CSIMQ numbers issues rather than volumes; ``16'' is the issue},
+  year      = {2018},
+  doi       = {10.7250/csimq.2018-16.04}
+}
+
+@article{li2015identity,
+  author    = {Li, Jiexun and Wang, Alan G.},
+  title     = {A framework of identity resolution: evaluating identity attributes and matching algorithms},
+  journal   = {Security Informatics},
+  volume    = {4},
+  year      = {2015},
+  doi       = {10.1186/s13388-015-0021-0}
 }

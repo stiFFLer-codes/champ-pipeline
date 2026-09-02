@@ -16,17 +16,22 @@
 \section{Related Work}
 \label{sec:related}
 
-CARTA sits at the meeting point of four bodies of work, none of which
+CARTA sits at the meeting point of five bodies of work, none of which
 addresses the reconstruction of independently preserved consumer chat
 archives, and all of which supply pieces of the machinery. The argument of
 this section is narrow and worth stating up front. Merging chat archives is
 not an open problem; working tools do it today. Staging forensic
 reconstruction as a pipeline is not new; it was published in 2014. Per-record
-provenance is not new either; forensics formalised it in the same year. What
-has not been specified is the contract such a reconstruction owes its reader:
-what enters and leaves each stage, what becomes of a record that cannot be
-safely interpreted, and what the procedure must report about its own
-behaviour.
+provenance is not new either; forensics formalised it in the same year, and
+data integration had a standard interchange model for it by 2015. Setting
+aside records that fail validation, under a recorded reason, is ordinary
+practice in that same literature. Not one of the mechanisms in this paper is
+ours. What has not been specified is the contract such a reconstruction owes
+its reader: what enters and leaves each stage, what becomes of a record that
+cannot be safely interpreted, and what the procedure must report about its own
+behaviour --- and, in particular, that contract for the consumer setting, where
+Section~\ref{sec:related:dataintegration} finds the discipline routine
+elsewhere and absent here.
 
 \subsection{Optimistic replication and replicated data types}
 \label{sec:related:replication}
@@ -65,8 +70,12 @@ semilattice under union after the fact; the difficulty is historical rather than
 algebraic, in that no synchronising representation existed while the two branches
 were diverging, so no convergence guarantee was ever purchased. Kleppmann and
 colleagues put the design premise directly, describing CRDTs as multi-user from the
-ground up, and note that side-by-side document versions and branches remain an
-area with little work behind it~\citep{kleppmann2019localfirst}.
+ground up, and noted, as of 2019, that side-by-side document versions and branches
+remained an area with little work behind
+them~\citep{kleppmann2019localfirst}. That is a statement about the state of the
+field seven years before this writing, and branching work has continued since; we
+cite it for the design premise it states rather than as a current survey of what
+has been built.
 
 Retrofitting reconciliation onto systems not built for it has been addressed in one
 direction only. Conflict-free replicated relations augment conventional relational
@@ -177,7 +186,14 @@ load outright, and none of them retains rejected input as an inspectable output.
 None couples merging with per-record provenance:
 \texttt{SecurityRonin/\allowbreak chat4n6} tags every recovered record with its evidence source
 and a confidence score but works on one acquisition and performs no
-merge~\citep{repo_chat4n6}, while the tools that merge carry no provenance. No
+merge~\citep{repo_chat4n6}, while the tools that merge carry no provenance. The
+evidence-source tag is the part we count as provenance; the confidence score is
+the part Section~\ref{sec:carta:report} declines to specify, and the two should
+not be read as one feature. A score is a defensible design choice for a forensic
+tool whose reader is a trained analyst weighing it against other evidence. It is
+the wrong output for a reader reconstructing their own history, who has no second
+source to weigh it against and for whom a number is likelier to end an enquiry
+than to open one. No
 merging tool found reports conflicts or states a determinism property, and the one
 deduplication predicate we examined in source ---
 \texttt{tarikab7/\allowbreak whatsapp-chat-merger}'s --- keys on timestamps floored into
@@ -220,3 +236,65 @@ models backup frequency as a protective behaviour rather than studying device
 replacement~\citep{redmiles2019phone}. Neither describes two independently
 persistent archives of one account, and we have found no HCI or CSCW study that
 does.
+
+%% Section 8.5 added 2026-08-26 after a peer review observed that the nearest
+%% neighbouring literature to CARTA was missing from the survey entirely, and
+%% that the novelty claim did not survive contact with it. Every source cited
+%% here was verified against Crossref or the arXiv API before being written in.
+%% This subsection deliberately NARROWS the paper's claim. Do not "restore" the
+%% stronger phrasing in the abstract or Section 9 without also deleting this.
+\subsection{Data integration, data quality and entity resolution}
+\label{sec:related:dataintegration}
+
+The nearest neighbour to CARTA is not forensics. A pipeline that ingests
+heterogeneous records, canonicalises them against a shared schema, sets aside the
+ones it cannot interpret, deduplicates by a similarity predicate, and reports what
+it did is, in structure, an extract-transform-load pipeline with a data-quality
+regime attached. That literature supplies each of CARTA's mechanisms
+independently, and it is the literature against which this paper's contribution
+has to be stated.
+
+Quarantine is the clearest case. Routing records that fail validation into a
+separate store under a recorded reason, rather than discarding them, is
+established practice rather than a new idea, and \citet{souibgui2019dataquality}
+survey where quality defects arise along the ETL process and how they are tracked
+through it. CARTA's $\mathcal{Q}$ is that mechanism, and we claim no priority over
+it.
+
+Provenance reporting is the same story. \citet{moreau2015prov} set out the
+rationale for PROV, the W3C interchange model for provenance, and
+\citet{chapman2024finegrained} capture fine-grained provenance through
+data-science pipelines and surface it so that a reader can see what the pipeline
+did to which record. $\Omega_{\text{provenance}}$ is a narrower artefact than
+either and adds nothing to them conceptually.
+Section~\ref{sec:related:forensics} credits \citet{chabot2014knowledge} with
+formalising per-record provenance in forensics, which is fair as far as it goes;
+reading only that lineage would make CARTA's provenance triple look considerably
+more novel than it is.
+
+The clustering question of Section~\ref{sec:algorithms:similarity} is likewise a
+studied problem rather than an open one. \citet{baas2021transitivity} show that
+enforcing transitivity by taking the transitive closure over a similarity relation
+can decrease precision substantially, and propose cluster editing in its place.
+\citet{saeedi2018famer} evaluate matching and clustering schemes for multi-source
+entity resolution, which is structurally the configuration Synthesis faces, and
+\citet{li2015identity} evaluate identity attributes against matching algorithms
+for identity resolution. Leaving the clustering procedure open remains the right
+choice for a specification, since the trade-off depends on data this paper has
+not measured. But the trade-off is not undiscovered. The reference implementation
+of Section~\ref{sec:implementation} declares bounded-diameter clustering rather
+than the unbounded transitive closure precisely because of the result above, and
+an implementation reaching for the closure as the obvious default should expect
+to pay for it in precision. Where this paper declines to recommend a rule for
+all implementations, that is because it has run no comparison, not because the
+question is unexamined.
+
+What survives this comparison is narrower than the claim that $\mathcal{Q}$ and
+$\Omega$ are new, and it is the claim the rest of this section evidences. The
+quarantine-and-report discipline is routine in enterprise data integration, where
+the data has an owner who is accountable for it to somebody else. It is absent
+from every consumer chat-archive tool examined in
+Section~\ref{sec:related:tooling}, where the only person the data is owed to is
+the person whose life it records. CARTA's contribution is to carry that discipline
+across into the second setting and state it as an output contract. Transfer, not
+invention.

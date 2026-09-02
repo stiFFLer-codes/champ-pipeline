@@ -21,6 +21,16 @@ the backup~\citep{whatsapp_backup_restore}; it documents no operation for
 combining two backups, a gap that has motivated the third-party merge tools
 surveyed in Section~\ref{sec:related:tooling}.
 
+The distinction between an undocumented operation and an absent one is worth
+holding onto, because it is the difference between a claim we can support and one
+we cannot. What we establish is that the documentation describes no such
+operation and that a body of third-party tools exists to supply what it describes
+no way of doing --- which is evidence of a gap in what users can reach, not proof
+that no path exists anywhere in the product. We have run no systematic enumeration
+of the platform's export, restore, transfer and migration affordances, and
+Section~\ref{sec:discussion:limitations} records that as an outstanding gap rather
+than resolving it here.
+
 We call this state \textbf{Temporal Communication Fragmentation} (TCF). Its
 signature is intact data that no platform operation will present as a single
 history. In the latent case both archives remain readable on their own devices
@@ -30,15 +40,16 @@ longer surfaced at all. In either case the data survives and the affordance to
 reach it as a whole does not.
 
 Three properties make the situation harder than it first appears. The two
-archives overlap in part and diverge in part, so neither is a superset of the
-other. They carry no shared version history, no operation log, and no common
-ancestor, because consumer chat exports were never designed to be reconciled.
+archives may overlap in part as well as diverge, so neither is in general a
+superset of the other. They carry no shared version history, no operation log,
+and no common ancestor, because consumer chat exports were never designed to be
+reconciled.
 And the platform paths that do bring the two archives back together, restore
 above all, give no warning that a competing archive exists, attempt no
 comparison, and report nothing about what was replaced.
 
 \paragraph{Motivation, stated as motivation.}
-This work began with one of the authors holding two simultaneously preserved
+This work began with the author holding two simultaneously preserved
 portions of one WhatsApp history: a primary handset unavailable for several
 months, the account carried on a spare handset meanwhile, and the primary
 returned from repair with its earlier history still present. Neither portion

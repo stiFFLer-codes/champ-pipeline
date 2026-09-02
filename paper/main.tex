@@ -17,6 +17,16 @@
 %% inputenc/fontenc are what pdflatex needs and what a Unicode engine
 %% (xelatex, lualatex, tectonic) warns about. Guarding on the engine keeps the
 %% build warning-free either way; the documented build is still pdflatex.
+%% lmodern MUST be loaded before fontenc. Without it, [T1]{fontenc} falls back
+%% to the EC bitmap fonts, which pdfTeX embeds as Type 3 and which carry no
+%% ToUnicode map. The visible symptom is in extracted text, not on the page:
+%% "definition" comes out as de<0x1C>nition and "conflict" as con<0x1D>ict,
+%% because the fi/fl ligatures extract as raw T1 slots. arXiv full-text search
+%% and Google Scholar index that extracted text, so the bitmap fallback makes
+%% the paper's own keywords unsearchable. Latin Modern is Type 1, T1-encoded,
+%% and metrically identical to Computer Modern, so nothing reflows.
+%% Verified 2026-08-26: 15 Type 3 fonts before, 0 after.
+\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -60,6 +70,12 @@
 
 \usepackage[hidelinks]{hyperref}
 \usepackage{url}
+%% A \url is one unbreakable box by default, so a line holding one cannot be
+%% justified and TeX reports the line before it as underfull. Urlmuskip gives
+%% the URL's own inter-character glue somewhere to stretch. It inserts no
+%% characters, so a copied URL is still exact -- the same reason the \texttt
+%% identifiers elsewhere use \allowbreak rather than hyphenation.
+\Urlmuskip=0mu plus 1mu\relax
 
 %% The archived-snapshot URL in the WhatsApp reference is long enough that it
 %% cannot break at default settings, which leaves a badness-10000 line in the
@@ -115,8 +131,9 @@ Fragmentation and the CARTA Reconstruction Framework}
 %% Section 8's opening argument, and the deferred-implementation scope is
 %% Sections 5 and 6. It states no result, because the paper reports none.
 \begin{abstract}
-A single messaging account's history can end up split across two archives that
-are each internally complete and that the platform will not recombine. We
+A single messaging account's history can end up split across two or more
+archives that are each internally complete and that the platform will not
+recombine. We
 characterise this state as Temporal Communication Fragmentation and give three
 necessary conditions for it: a timeline that bifurcates when the primary device
 becomes unavailable, both branches persisting and accumulating with no
@@ -131,11 +148,19 @@ quarantine set $\mathcal{Q}$ under typed reason codes instead of being resolved
 by guessing, and every reconstruction emits a report $\Omega$ carrying
 provenance, quarantine carryover, conflicts and counts.
 
-Merging chat archives is not new, and neither is staging forensic
-reconstruction nor per-record provenance; we claim priority over none of them.
-$\mathcal{Q}$ and $\Omega$ are what the tools and literature surveyed here do
-not supply. This is a specification paper: the reference implementation is
-deferred, and no evaluation is reported.
+Merging chat archives is not new; neither is staging forensic reconstruction,
+per-record provenance, nor setting aside records that fail validation under a
+recorded reason. Enterprise data integration has done all of it for years and we
+claim priority over none of it. What we found in none of the consumer
+chat-archive tools surveyed here is that discipline owed to the reader as an
+obligation, and a reconstruction that cannot say what it dropped is
+indistinguishable, to the person reading it, from one that dropped nothing.
+Carrying $\mathcal{Q}$ and $\Omega$ into that setting as an output contract is
+the contribution. A reference implementation reconstructs synthetic fragment
+pairs to their known ground truth and recovers the disjoint case as ordered
+concatenation without a branch for it. Building it exposed four defects in the
+specification, three of which had survived review of the prose. No real archive
+has been reconstructed.
 \end{abstract}
 
 \input{sections/01_introduction}
@@ -147,6 +172,42 @@ deferred, and no evaluation is reported.
 \input{sections/07_discussion}
 \input{sections/08_related_work}
 \input{sections/09_conclusion}
+
+%% ---------------------------------------------------------------------------
+%% Declarations. arXiv requires none of these; every journal this could later go
+%% to requires all of them, and they are cheaper to write now than to reconstruct
+%% later (peer review, Minor 16).
+%%
+%% AUTHOR: THE AI-USE PARAGRAPH BELOW IS A DRAFT AND MUST BE CONFIRMED OR
+%% CORRECTED BY YOU BEFORE SUBMISSION. It is written from what this repository
+%% records. Only you can attest to what is accurate. Do not post it unchecked.
+%% ---------------------------------------------------------------------------
+\section*{Declarations}
+\addcontentsline{toc}{section}{Declarations}
+
+\paragraph{Funding.}
+This research received no external funding, grant, or institutional support.
+
+\paragraph{Competing interests.}
+The author declares no competing interests. No relationship, financial or
+otherwise, exists with WhatsApp, Meta Platforms, or the maintainers of any tool
+surveyed in Section~\ref{sec:related:tooling}.
+
+\paragraph{Data availability.}
+No data were collected, and no personal message data of any kind were used at any
+point in this work. The synthetic corpus described in
+Section~\ref{sec:implementation:reproduces} is generated by a script in the
+accompanying repository and is regenerable from a seed; it contains no real
+communication content. No dataset accompanies this paper because none exists.
+
+\paragraph{Use of AI assistance.}
+An AI coding assistant was used in preparing this work: for drafting and revising
+prose, for assembling and checking the \LaTeX{} source, and for verifying
+bibliographic metadata against Crossref and the arXiv API. Every citation in the
+bibliography was checked against a retrieved record rather than accepted from
+model output. The framework, its claims, and the decisions about what this paper
+does and does not assert are the author's, and the author takes full
+responsibility for the content, including any errors that remain.
 
 \bibliography{main}
 

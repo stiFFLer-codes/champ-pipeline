@@ -6,17 +6,29 @@
 %% synthetic corpus" -- never "CHAMP-Pipeline handles X". Preserve that on any
 %% future edit.
 
-\section{CHAMP-Pipeline: Planned Implementation}
+\section{CHAMP-Pipeline: Reference Implementation}
 \label{sec:implementation}
 
-CHAMP-Pipeline is the intended WhatsApp-specific reference implementation of
-CARTA. It does not exist. At the time of writing,
-\texttt{core/src/ingestion/}, \texttt{core/src/normalization/} and
-\texttt{core/src/synthesis/} contain no implementation, and nothing in this
-section describes running code. The section states a design intention and the
-input range that design would have to cover, so that a reader can judge whether
-the specification in Sections~\ref{sec:carta} and~\ref{sec:algorithms} is
-implementable and what implementing it would involve.
+CHAMP-Pipeline is the WhatsApp-specific reference implementation of CARTA. It
+implements Ingestion, Normalization and Synthesis as
+Sections~\ref{sec:carta} and~\ref{sec:algorithms} specify them, together with the
+declared fragment-scope step that
+Section~\ref{sec:carta:normalization} permits, in 1{,}014 lines of JavaScript
+across four modules. A further 808 lines are self-checks. It carries no runtime
+dependencies and runs under Node.js.
+
+Its purpose is narrow and worth stating before the details. It exists to
+establish that the specification is implementable, and to put the specification
+in front of something that has to execute rather than only something that has to
+be read. The second turned out to matter more than the first:
+Section~\ref{sec:discussion:specfindings} reports four places where the
+specification and a working implementation disagreed, three of which no amount of
+further reading would have surfaced.
+
+What it is not is a general chat-archive tool. It targets one export format, it
+has been run against synthetic input and against no real archive, and its
+evaluation (Section~\ref{sec:evaluation}) reports reconstruction against a corpus
+whose ground truth is known by construction rather than measured in the field.
 
 The distinction between CARTA and CHAMP-Pipeline is load-bearing throughout this
 paper. CARTA is the platform-agnostic specification. CHAMP-Pipeline would be one
@@ -24,18 +36,32 @@ conforming implementation of it for one platform's export format. Nothing about
 CARTA depends on CHAMP-Pipeline being built, and a second implementation targeting
 a different platform would be equally conforming.
 
-\subsection{Intended architecture}
+\subsection{Architecture}
 \label{sec:implementation:architecture}
 
-The planned package, \texttt{champ-pipeline-core}, mirrors the three phases
-directly: one module per stage, with the stage signatures of
-Section~\ref{sec:carta} as the module boundaries. The intended design carries no
+The package \texttt{champ-pipeline-core} mirrors the three stages directly: one
+module per stage, with the stage signatures of Section~\ref{sec:carta} as the
+module boundaries. The fragment-scope date step of
+Section~\ref{sec:carta:normalization} is a fourth module rather than a branch
+inside Normalization, so the separation the specification requires is visible in
+the directory listing rather than asserted in a comment. The package carries no
 runtime dependencies, for two reasons that matter to the specification rather than
 to engineering taste. A reconstruction that a reader cannot re-run in ten years is
 not auditable in any useful sense, and dependency drift is the most common reason
 such re-runs fail. Invariant 3 also constrains an implementation to reproduce its
 own output exactly, and every dependency is a surface through which behaviour can
 change underneath that guarantee.
+
+The trade-off is real and worth naming rather than presenting the choice as free.
+The module where dependencies would help most is exactly the one where correctness
+matters most: a timestamp parser covering multiple regional orderings, both clock
+conventions and a locale-free input format is precisely the kind of code that
+mature date libraries exist because hand-rolled versions get wrong. Choosing
+auditability here buys long-term reproducibility at the cost of re-implementing a
+solved problem in the least forgiving place, and an implementation making that
+choice should treat its timestamp module as the one that needs the most testing.
+That prediction held. Normalization carries more self-checks than any other
+module, and every check that failed during its development was about dates.
 
 A separate viewer package, \texttt{champ-pipeline-viewer}, is planned for
 inspecting a reconstruction and its report. It is presentation over
@@ -63,24 +89,103 @@ message data of any kind.
 
 The corpus and the implementation are separate claims, and the separation matters.
 The generator produces examples of these input forms. It does not parse them,
-reconcile them, or reconstruct anything, and the existence of a fixture exhibiting
-a doubled-filename attachment establishes that such inputs occur and must be
-specified for. It establishes nothing about any software's ability to read one.
+reconcile them, or reconstruct anything.
+
+It is worth being blunt about what a synthetic fixture can and cannot establish,
+because this is the section of the paper that comes closest to claiming empirical
+grounding. A fixture exhibiting a doubled-filename attachment does not establish
+that such inputs occur. It establishes that this specification anticipates them,
+which is a claim about the author of the specification and not about WhatsApp.
+Only a real export, a platform changelog, or a defect report in a tool that had to
+handle one would establish occurrence, and this paper offers none of those. The
+nineteen categories should therefore be read as \emph{anticipated} input forms
+that a conforming implementation must account for, and the corpus as a
+demonstration of what each looks like once written down --- not as a survey of what
+WhatsApp emits in the field. Establishing the latter would require a corpus of
+real exports, which the data-handling constraints of this project rule out.
 Where Section~\ref{sec:implementation:inputs} says the specification must account
 for a case, the corpus is offered as an illustration of what that case looks like
 in practice, and no more.
 
 The ambiguous-date case is the one that reaches back into the specification rather
-than merely stressing a parser. Two fixtures use day-month-year ordering and two
-use month-day-year, and a record whose date is valid under both, with nothing in
-the record to disambiguate, is exactly the input
-Section~\ref{sec:carta:normalization} routes to quarantine under
-\texttt{AMBIGUOUS\_DATE\_FORMAT}. The corpus makes that class of input concrete.
+than merely stressing a parser. Three fixtures use day-month-year ordering and two
+use month-day-year, and every fixture contains at least one record whose date is
+valid under both orderings with nothing in that record to decide between them.
+Such a record is exactly the input Section~\ref{sec:carta:normalization} routes to
+quarantine under \texttt{AMBIGUOUS\_DATE\_FORMAT}.
+
+The corpus also makes the scope of that rule concrete, which is the more useful
+thing it does. This is a constructed demonstration and not a measurement: we wrote
+the generator and chose the seed, so the distribution described below is an
+authorial decision about what would be instructive to show, and it would be
+illegitimate to read any frequency claim out of it. What it demonstrates is that
+the boundary exists and where it falls. Four of the five fixtures contain some
+other record whose day component exceeds twelve and which therefore admits a
+single reading, so a fragment-scope inference would have evidence to work from.
+One fixture,
+\texttt{fixture-03-\allowbreak group-\allowbreak chat-\allowbreak encryption-\allowbreak and-\allowbreak membership.txt},
+contains no such record: all four of its distinct dates are valid under both
+orderings and nothing in the file settles them. The distinction is exactly the one
+Section~\ref{sec:carta:normalization} draws in holding fragment-scope inference
+outside the stage. Judged per record, as Normalization requires, all five fixtures
+yield quarantined dates; in fixture 03 alone would a declared fragment-scope step
+have nothing to work from afterwards.
+
+Every count in the preceding two paragraphs is derived from the committed corpus
+by \texttt{scripts/\allowbreak check-\allowbreak corpus-\allowbreak claims.js}
+rather than asserted here, and
+Section~\ref{sec:implementation:reproduces} says how to run it.
+
+\subsection{Fragment pairs}
+\label{sec:implementation:pairs}
+
+The five fixtures above are parsing cases: one account each, no relationship
+between files. None of them is an instance of TCF, so none could be used to test
+a reconstruction. The generator therefore has a second mode that produces a
+fragment \emph{pair} from one ground-truth timeline, split by
+Section~\ref{sec:tcf:conditions}'s own definition: $F_1$ receives messages with
+$t \le t_f$ or $t \ge t_r$, and $F_2$ receives those in
+$[t_f - \delta,\, t_r + \epsilon]$. A message inside an overlap region satisfies
+both and is written to both files.
+
+Two properties make the pair usable as a test rather than an illustration. The
+two fragments are rendered in different date orderings and different clock
+conventions, so a duplicated message is byte-different in the two files while
+denoting the same message: \texttt{06/02/24, 6:53~pm} in one is
+\texttt{02/06/24, 18:53} in the other. An implementation deduplicating on raw
+lines fails on this and one deduplicating on normalised records does not, which
+is the distinction Section~\ref{sec:carta:synthesis} rests on. The manifest also
+records ground truth, so $|\mathcal{U}|$ has a number to be checked against.
+
+Setting $\delta = \epsilon = 0$ produces the disjoint configuration of the
+motivating incident. The committed pair uses $\delta = 14$ days and
+$\epsilon = 7$ days so that deduplication is exercised.
 
 \subsection{What exists and reproduces today}
 \label{sec:implementation:reproduces}
 
-One artefact in the repository runs, and it is the fixture generator,
+%% SUBMISSION BLOCKER: the URL below must resolve to a tree that actually
+%% contains the generator and the five fixtures before this paper is posted.
+%% At the time of writing the local branch was ahead of origin. Push first,
+%% then add the commit hash to the sentence below. A reproducibility claim
+%% pointing at a repository that does not yet show the artefact is exactly the
+%% objection this paper spends nine sections making against other people's
+%% tools.
+The repository accompanying this paper is at
+\url{https://github.com/stiFFLer-codes/champ-pipeline}.
+The pipeline itself runs end to end:
+
+\begin{quote}
+\texttt{node scripts/reconstruct.js -{}-infer F1.txt F2.txt}
+\end{quote}
+
+ingests both fragments, normalises each independently, applies the declared
+fragment-scope step, and emits $(\mathcal{U}, \Omega)$.
+Section~\ref{sec:evaluation} reports what it produces. Invariants 1 and 2 are
+checked inside the procedure on every run and raise rather than return on
+violation, so a reconstruction that lost a record cannot be quietly printed.
+
+Three further artefacts run. The first is the fixture generator,
 %% \allowbreak marks break opportunities at characters already present in the
 %% path. Nothing is inserted, so the identifier a reader copies stays exact.
 \texttt{scripts/\allowbreak generate-\allowbreak synthetic-\allowbreak fixtures.js}.
@@ -93,6 +198,48 @@ Invoking
 reproduces the five committed fixtures and their manifest byte for byte. We ran it
 twice in succession and compared checksums across both runs and against the
 committed files; all three states are identical.
+
+That check was run under Node.js v24.14.0 on Windows 11, and it is worth being
+exact about what it therefore establishes. It shows that the generator is
+seed-deterministic on one runtime on one machine. It does not show that the
+generator produces identical bytes across Node versions or platforms, which is the
+stronger property the word ``reproducible'' is often taken to mean, and which we
+have not tested. The generator carries no dependencies and uses no source of
+entropy beyond the seed, so cross-version stability is expected; expected is not
+verified, and this paper does not claim it.
+
+The second artefact is
+\texttt{scripts/\allowbreak check-\allowbreak corpus-\allowbreak claims.js}, and
+it exists because of a mistake worth recording. Every count in
+Section~\ref{sec:implementation:inputs} --- the number of fixtures in each date
+ordering, which fixtures contain a record that admits only one reading, and which
+one contains none --- was originally written as prose by hand, alongside a corpus
+that a script generates. A reader checking those numbers against the artefact had
+no way to do so except by re-deriving them, and a hand-written claim about
+generated output is exactly the arrangement this paper argues against everywhere
+else. Running
+
+\begin{quote}
+\texttt{node scripts/check-corpus-claims.js}
+\end{quote}
+
+reads the committed fixtures and the manifest, derives each of those counts, and
+exits non-zero if any of them disagrees with what
+Section~\ref{sec:implementation:inputs} states. The claims in that section are
+therefore checkable in one command rather than on the paper's word, and if the
+corpus is ever regenerated the disagreement surfaces as a failure instead of
+surviving as a sentence.
+
+The third is the self-check suite. \texttt{node tests/run-all.js} runs every
+check in the repository and reports one line per module; there are five, and they
+pass. They are plain assertions with no test framework, for the same
+auditability reason the pipeline carries no dependencies. What they cover is
+chosen against the corpus's weakness rather than the code's structure: the corpus
+is well formed by construction, so the checks concentrate on input it does not
+contain, including files with no parseable record at all, orphaned continuation
+lines, zero-byte fragments, CRLF and byte-order marks, impossible dates such as
+29 February in a non-leap year, and the twelve-by-twelve grid of date strings
+that are valid under both orderings.
 
 The scope of that result should be read narrowly. It establishes that synthetic
 input generation is seed-deterministic and therefore that the corpus is

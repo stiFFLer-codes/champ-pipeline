@@ -1,23 +1,130 @@
 %% Section 6 -- Evaluation
-%% Ported from docs/DRAFT_PAPER.md Section 6.
 %%
-%% This section is deliberately two paragraphs (docs/DRAFT_PAPER.md drafting
-%% note 13). If a venue's structure demands a fuller evaluation, the correct
-%% response is to run an evaluation, not to expand the prose. Do not pad.
+%% REWRITTEN 2026-08-29. This section previously reported no evaluation because
+%% no implementation existed. It now reports reconstruction of synthetic
+%% fragment pairs against known ground truth.
+%%
+%% THE SCOPE RULE THAT REPLACES THE OLD "DO NOT PAD" RULE: every number below
+%% comes from a run that actually happened, and the section says what the
+%% numbers do NOT establish as plainly as what they do. No real archive has been
+%% reconstructed. Do not add a figure here that was not produced by executing
+%% scripts/reconstruct.js, and do not describe synthetic ground truth in
+%% language that would let a skimming reader take it for field data.
 
 \section{Evaluation}
 \label{sec:evaluation}
 
-No evaluation is reported, because there is no implementation to evaluate.
+The reconstruction was run against the synthetic fragment pairs of
+Section~\ref{sec:implementation:pairs}, whose ground truth is known because the
+generator constructed it. This establishes that the specification is
+implementable and that an implementation of it reproduces a known timeline. It
+establishes nothing about real archives, which we return to at the end of the
+section.
 
-This follows a deliberate scope decision rather than an omission. Building
-Ingestion, Normalization and Synthesis to the standard
-Sections~\ref{sec:carta} and~\ref{sec:algorithms} specify is substantial work, and
-a partial implementation produced quickly in order to report numbers would be
-worse than none: it would attach measurements to something that does not implement
-the specification the measurements would be read as validating. An evaluation
-section will be written when an evaluation has actually been run, populated from
-that run's output. Until then this paper reports no benchmark, no accuracy figure,
-and no performance measurement, and the reader should treat every property in
-Section~\ref{sec:carta:invariants} as a requirement placed on implementations
-rather than an observed result.
+\subsection{Reconstruction against known ground truth}
+\label{sec:evaluation:reconstruction}
+
+The committed pair is generated with $\delta = 14$ days and $\epsilon = 7$ days
+from a ground-truth timeline of 170 messages. The split gives $F_1$ 57 message
+records and $F_2$ 133, with 20 messages falling in an overlap region and
+therefore present in both fragments. Each fragment also opens with an
+encryption-notice system line, which the two do not share.
+
+Running Ingestion, Normalization, the declared fragment-scope step, and Synthesis
+over both fragments yields 192 normalised records entering Synthesis and a
+unified archive of 172. The 20 duplicated messages are collapsed to 20 canonical
+records carrying provenance from both fragments, leaving 170 messages and the two
+system lines. Nothing is quarantined and no conflict is reported.
+$|\mathcal{U}|$ therefore equals the generator's ground truth exactly, and the
+count of collapsed duplicates equals the constructed overlap exactly.
+
+Conservation holds in the sense Invariant 1 requires: the 172 records in
+$\mathcal{U}$, the 20 collapsed duplicates and the 0 quarantined records account
+for all 192 records that entered. Invariants 1 and 2 are verified inside the
+procedure rather than checked afterwards, so a run that violated either would
+raise instead of returning an archive.
+
+Regenerating the same pair with $\delta = \epsilon = 0$ gives the disjoint
+configuration of the motivating incident. There, 172 records enter and 172
+leave, with nothing collapsed and no conflict reported: Synthesis reduces to
+ordered concatenation. The reduction happens without a branch for it anywhere in
+the implementation, which is what Section~\ref{sec:carta:synthesis} claims should
+happen and is the one claim in this paper that the disjoint case can test.
+
+Two consecutive runs over identical input produce byte-identical
+$(\mathcal{U}, \Omega)$, and supplying the fragments in the opposite order
+produces the same archive. Invariant 3 is a requirement on implementations
+rather than a theorem, and this is one implementation exhibiting it on one input,
+not a proof.
+
+\subsection{What the quarantine rule costs}
+\label{sec:evaluation:quarantine}
+
+The run above uses the fragment-scope step of
+Section~\ref{sec:carta:normalization}. Running the same pair without it shows
+what per-record judgement costs on its own, and the figure is large enough to be
+worth reporting rather than smoothing over.
+
+Judged per record, 81 of the 192 records are quarantined under
+\texttt{AMBIGUOUS\_DATE\_FORMAT}: every record whose date has both leading
+fields in the range 1 to 12 and which therefore parses under both conventions.
+Only 111 records reach Synthesis, $|\mathcal{U}|$ falls to 103, and only 8 of the
+20 overlapping messages are still deduplicated, because the other 12 have at
+least one side quarantined. A reconstruction under the strict rule alone recovers
+substantially less of the timeline than the fragments contain.
+
+That is the specification behaving as designed rather than a defect. The point of
+the rule is that a record whose date admits two readings does not silently
+acquire one. The cost of the rule is visible here as a number, and the
+fragment-scope step exists to recover from it while reporting that it did: in the
+full run, 103 of the 172 canonical records were dated directly and 69 carry a
+mark naming the inference, the fragment that supplied the evidence, and how many
+records supplied it.
+
+\subsection{The corpus's own boundary case}
+\label{sec:evaluation:boundary}
+
+One fixture in the five-file corpus, the group-chat fixture named in
+Section~\ref{sec:implementation:inputs}, contains no record whose date admits a
+single reading. All 25 of its records
+quarantine, and the fragment-scope step declines to run on it, reporting that no
+record in the fragment established an ordering. The other four fixtures resolve
+completely once the step is applied.
+
+This is the boundary the specification's per-record rule implies, appearing in an
+artefact rather than in an argument. Where a fragment can settle its own
+convention the declared step recovers the ambiguous records; where it cannot,
+nothing in the fragment licenses a reading and the records stay quarantined. An
+implementation that guessed would produce a complete-looking archive here, and a
+reader would have no way to tell it apart from one that had evidence.
+
+\subsection{What this does not establish}
+\label{sec:evaluation:limits}
+
+The ground truth these numbers are checked against was written by the same
+project that wrote the implementation. That is the appropriate test for whether a
+specification is implementable and self-consistent, and it is not evidence about
+real archives. Specifically:
+
+No real WhatsApp export has been reconstructed. The corpus is synthetic by
+policy, since the project holds no permission to place real message content in a
+public repository, and Section~\ref{sec:implementation:inputs} already limits the
+nineteen edge-case categories to input forms this specification anticipates
+rather than input forms observed in the field. A real archive may contain forms
+the generator does not produce, and the implementation would quarantine or
+mis-parse them.
+
+No accuracy, precision or recall figure is reported, because the quantity those
+would measure is agreement with a ground truth that here is a construction. The
+counts above are conservation and identity checks, not measurements of a
+classifier.
+
+No performance measurement is reported. The largest input is 192 records, and
+nothing about how the implementation behaves on an archive of a hundred thousand
+has been tested.
+
+The declared parameters of Section~\ref{sec:carta:conformance} were chosen once
+and not varied. A different clustering rule or a wider deduplication window would
+produce a different archive from the same fragments, which is what
+Section~\ref{sec:algorithms:similarity} says openly; how much different has not
+been measured.

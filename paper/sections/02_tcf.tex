@@ -8,14 +8,19 @@
 \label{sec:tcf:definition}
 
 \textbf{Temporal Communication Fragmentation} is a state in which a user's
-communication history for a single logical account becomes partitioned across
+communication history for a single logical account becomes fragmented across
 two or more device-bound application instances that persist independently, and
 for which the platform provides no operation yielding their union. It arises
 from primary-device unavailability, continued account use on a secondary
-device during that window, and primary-device recovery. Every platform path
-that brings the archives back together, restore above all, substitutes one
-state for another rather than merging them, with no user-facing warning that a
-competing archive exists and no attempt at a diff or a reconciliation.
+device during that window, and primary-device recovery.
+
+The definition requires the absence of a union-yielding operation and nothing
+further. How a given platform declines to provide one is a separate, empirical
+matter. On the platform examined here, every path that brings the archives back
+together, restore above all, substitutes one state for another rather than
+merging them, with no user-facing warning that a competing archive exists and
+no attempt at a diff or a reconciliation. That is an observation about one
+documented restore path, not a property TCF requires.
 
 We assert the observable restore behaviour and nothing about the backend that
 produces it. A single-slot, last-write-wins cloud backup destination would
@@ -58,7 +63,7 @@ paper depends on it.
     %% ---- C3 : a standing property, not an event -------------------------
     \draw[decorate, decoration={brace, amplitude=4pt}] (\tf,41) -- (126,41);
     \node[cond, above=1.5mm] at ({(\tf+126)/2},41)
-      {\textbf{C3} Asymmetric reconciliation: no operation yields
+      {\textbf{C3} Absent reconciliation: no operation yields
        $F_1 \cup F_2$\\(holds from $t_f$ onwards, whether or not
        a restore is ever performed)};
 
@@ -124,18 +129,17 @@ paper depends on it.
       {\textbf{C2} Independent persistence\\both branches accumulate,\\zero synchronisation};
 
   \end{tikzpicture}
-  \caption{Temporal Communication Fragmentation, with the three necessary
-  conditions of Section~\ref{sec:tcf:conditions} placed on the timeline.
-  $F_1$ holds messages with $t(m) \le t_f$ or $t(m) \ge t_r$; $F_2$ holds
-  messages in $[t_f - \delta,\, t_r + \epsilon]$. Both $\delta$ and $\epsilon$
-  are defined as non-negative and are drawn here as strictly positive, which
-  is the case that produces the hatched overlap regions and hence the need for
-  deduplication rather than concatenation. C1 and C2 are events and sit at
-  points on the timeline; C3 is a standing property of the platform and is
-  drawn as a span, because it holds from $t_f$ onwards rather than beginning
-  at any particular moment. The restore at the right is dashed because it is
-  optional: Conditions 1 to 3 are already satisfied without it, which is the
-  latent case, and performing it is what makes the fragmentation manifest.}
+  %% Caption describes what is drawn. The argument behind the drawing --- why
+  %% C3 is a span rather than a point, why the restore is optional, why the
+  %% overlap needs deduplication --- is in Section 2.2 and must not migrate
+  %% back up here (peer review, Minor 13: a caption doing expository work).
+  \caption{Temporal Communication Fragmentation on a timeline, with the three
+  necessary conditions of Section~\ref{sec:tcf:conditions} marked. $F_1$ holds
+  messages with $t(m) \le t_f$ or $t(m) \ge t_r$; $F_2$ holds messages in
+  $[t_f - \delta,\, t_r + \epsilon]$. Hatching marks the two overlap regions.
+  $\delta$ and $\epsilon$ are non-negative in the model and are drawn here as
+  strictly positive so that the overlap is visible. C1 and C2 are drawn as
+  points and C3 as a span; the restore is dashed because it is optional.}
   \label{fig:tcf_timeline}
 \end{figure}
 
@@ -155,16 +159,34 @@ synchronisation between them. This condition does most of the work in separating
 TCF from the replication literature, and Section~\ref{sec:related:replication}
 returns to it.
 
-\paragraph{Condition 3, Asymmetric reconciliation.} No platform-native
-operation yields the union of the two archives. Every path that brings them
-back together substitutes one state for another: a restore overwrites current
-chat state instead of merging into it, surfaces no warning, and gives no
-indication that a second archive existed. This condition is a property of the
-platform's reunification semantics rather than an event that must occur. It
+\paragraph{Condition 3, Absent reconciliation.} No platform-native
+operation yields the union of the two archives. This condition is a property of
+the platform's reunification semantics rather than an event that must occur. It
 holds from the moment the branches exist, whether or not the user ever invokes
 one of those paths, and it is what separates TCF from the
 optimistic-replication systems of Section~\ref{sec:related:replication}, which
 attempt reconciliation imperfectly rather than declining to attempt it.
+
+Whether a platform's substitutive paths also overwrite silently, warn, or offer
+a comparison bears on how much a user can recover unaided, not on whether the
+condition holds. In the restore path examined here none of those mitigations is
+present: restoration overwrites current chat state instead of merging into it,
+surfaces no warning, and gives no indication that a second archive existed.
+That is the observed behaviour of one platform, recorded because it is the
+motivating case, and Condition 3 does not depend on it.
+
+Stated most carefully, Condition 3 is a property of the reconstruction problem's
+input rather than a claim about any company's feature list: the fragments carry
+no shared reconciliation state, and no union-yielding operation is available to
+the user holding them. This matters for what a changelog can do to this paper. If
+a platform ships a merge affordance tomorrow, instances of TCF on that platform
+cease to arise, in the same way that a fix removes instances of a defect class
+without refuting its description. What the definition would lose is reach, not
+correctness --- and the reconstruction problem for archives already fragmented
+before such a fix would be untouched, because the fragments in hand would still
+carry no shared reconciliation state. A definition whose truth conditions sat
+inside a vendor's roadmap would be a poor research object; this one names a
+configuration that either obtains for a given pair of archives or does not.
 
 \paragraph{Latent and manifest fragmentation.} Conditions 1 to 3 are satisfied
 while both archives remain individually readable on their own devices; what is
@@ -180,7 +202,7 @@ present the same input: independently preserved fragments carrying no shared
 reconciliation state.
 
 Formally (Section~\ref{sec:carta} develops this), device failure at $t_f$ and
-recovery at $t_r$ partition a ground-truth history $\mathcal{T}$ into $F_1$,
+recovery at $t_r$ split a ground-truth history $\mathcal{T}$ into $F_1$,
 holding messages with $t(m) \le t_f$ or $t(m) \ge t_r$, and $F_2$, holding
 messages in $[t_f - \delta,\, t_r + \epsilon]$. The parameters $\delta$ and
 $\epsilon$ are non-negative, representing pre-existing history on the
@@ -188,13 +210,35 @@ secondary device and the lag before the account returns to the primary. Both
 may be strictly positive, so $F_1$ and $F_2$ can overlap. That overlap is why
 reconstruction needs deduplication rather than concatenation.
 
+%% Added 2026-08-26 after review: the motivating incident is the delta = 0
+%% boundary, and the paper previously asserted overlap as though it were
+%% general without saying where the general case comes from. Do not delete
+%% without also softening Section 1's "overlap in part" and Section 3.4's
+%% "deduplication exists because of this overlap".
+The boundary case $\delta = \epsilon = 0$ deserves explicit mention, because it
+is the one the motivating incident of Section~\ref{sec:introduction} exhibits:
+the secondary device was set up without restoring any prior history, so $F_2$
+begins empty at $t_f$ and $F_1 \cap F_2 = \emptyset$. Reconstruction there
+reduces to ordered concatenation, and none of the deduplication machinery of
+Section~\ref{sec:algorithms} is exercised. We do not treat that case as the
+general one. A secondary device is more often brought into service the way any
+replacement device is, by restoring whatever backup exists, and a backup made
+before $t_f$ carries pre-failure history that the primary also still holds ---
+which is exactly $\delta > 0$. Symmetrically, an account does not always return
+to the primary the moment it is repaired, and any use of the secondary after
+$t_r$ produces $\epsilon > 0$. The overlapping configuration is therefore the
+one a specification has to be written for, and the disjoint one is the easy
+special case that falls out of it. Assuming disjointness and discovering
+overlap later would mean a reconstruction that silently reported the overlap
+region twice.
+
 Where this paper calls a fragment \emph{internally complete}, it means
 well-formed and gap-free with respect to its own accumulation window, which is
 a property of each fragment considered separately. It is not a claim that
 either fragment covers $\mathcal{T}$; by construction neither does, and that
 is the whole difficulty. Internal completeness is an idealisation of the TCF
 model rather than a property established of any real archive, and
-Section~\ref{sec:discussion} treats the case where it fails.
+Section~\ref{sec:discussion:incomplete} treats the case where it fails.
 
 \subsection{Distinction from backup staleness}
 \label{sec:tcf:staleness}
