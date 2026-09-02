@@ -70,3 +70,6 @@ grill-me-output.txt
 # --- Source narrative for the motivating incident (real personal account, not chat data,
 # but not for the permanently-archived public repo; keep local as evidentiary source) ---
 /actual_problem.md
+
+# --- Peer-review artefact (input to a revision pass, not project content) ---
+/peer-review-report.docx

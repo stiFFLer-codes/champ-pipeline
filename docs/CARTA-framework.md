@@ -118,8 +118,20 @@ as contradictory sender attribution or impossible ordering.
 Ω is not a mere conflict log. It carries forward everything that must 
 never be silently discarded:
 
-- **Provenance map** — every record's origin device, origin export, origin 
-  backup date, and confidence
+- **Provenance map** — every record in U mapped to the union of the provenance 
+  tuples of the observations it was synthesised from, each tuple being the 
+  `source_id`, `line_range` and `sha256` that Ingestion attaches. An 
+  implementation may carry further metadata about a fragment (the device or 
+  export it came from, the date it was made); that is a property of the 
+  fragment, reachable through `source_id`, not an additional field of the tuple.
+
+  *(Corrected 2026-08-28. This previously read "every record's origin device, 
+  origin export, origin backup date, and confidence", which named four fields, 
+  none of them the three the formal tuple actually defines — a flat 
+  contradiction with §3.2 and with Algorithm 1. **No confidence score is 
+  specified**, deliberately: a score compresses into one number exactly the 
+  uncertainty that quarantine and the conflict log exist to keep explicit. 
+  Same correction as the paper's §3.5.)*
 - **Quarantine carryover** — every record from Qᵢ, retained rather than dropped
 - **Conflict log** — every instance of irreconcilable observations, using 
   the definition above

@@ -16,7 +16,9 @@ The immediate objective is to produce a technically rigorous and reproducible bo
 
 ### Core principle
 
-> **The paper is the product. CHAMP-Pipeline's implementation is deferred future work (Phase II), not evidence for this paper.**
+> **The paper is the product. A minimal implementation (Phase II-A) exists to make the paper admissible and its claims checkable; the full CHAMP-Pipeline build (Phase II) remains deferred.**
+
+*(Revised 2026-08-27 — see the reopening notice in §6. The paper is still the product; what changed is that shipping it without any artifact turned out to carry a venue risk the 2026-08-24 decision could not have known about.)*
 
 *(Revised 2026-08-24 — the original tagline implied CHAMP-Pipeline provides empirical evidence for this paper. The project has since locked a fast-path, specification-paper scope in which no implementation or evaluation is required or claimed. See §6, Phase II.)*
 
@@ -36,7 +38,9 @@ The project has three tightly connected layers.
 
 TCF is the research problem being formally defined.
 
-It describes the situation in which a user's communication history becomes partitioned across independently persistent archives associated with the same logical account following device failure, secondary-device use, and asymmetric reconciliation behavior.
+It describes the situation in which a user's communication history becomes fragmented across independently persistent archives associated with the same logical account following device failure, secondary-device use, and the absence of any platform operation yielding their union.
+
+*("partitioned" corrected to "fragmented" 2026-08-27: the fragments can overlap, so they are not a partition. Same correction as the paper's Definition 1.)*
 
 The formal definition and necessary conditions are documented in:
 
@@ -48,7 +52,9 @@ The three necessary conditions are:
 
 1. Bifurcation
 2. Independent Persistence
-3. Asymmetric Reconciliation on Merge
+3. Absent Reconciliation
+
+*(Condition 3 renamed from "Asymmetric Reconciliation on Merge" 2026-08-27: the condition describes reconciliation that does not happen at all, not reconciliation that happens unevenly. The old name invited the confusion with sync conflict the paper then spends a paragraph dispelling.)*
 
 TCF must remain clearly distinguished from related phenomena such as:
 
@@ -103,7 +109,9 @@ CARTA is governed by three design principles:
 2. Auditable
 3. Non-Destructive
 
-The framework also defines four invariants.
+The framework defines three invariants, framed as **reporting obligations** rather than correctness properties, plus a conformance rule requiring an implementation to declare its open parameters.
+
+*(Revised 2026-08-27: idempotence was demoted from "Invariant 4" to a stated design target, because the text always conceded it was prose rather than a proven property.)*
 
 These concepts are documented in:
 
@@ -191,6 +199,14 @@ The specification exists to be independently implementable and defensible on its
 # 6. Master Project Phases
 
 **Revised 2026-08-24 — fast-path decision locked.** The phase structure below replaces the original Phase 0–10 roadmap. Phases 3–8 of the original roadmap (Ingestion, Normalization, Synthesis, Validation, Experimental Evidence, Minimal Demonstration Layer) are not deleted — they are consolidated into **Phase II**, a deliberately deferred, separate future project, not a prerequisite for this paper. Full rationale: `docs/PAPER_BLUEPRINT.md §2.6`.
+
+> **⚠ REOPENED 2026-08-27 — the fast-path lock above is no longer in force.**
+>
+> The 2026-08-24 decision was made without knowledge of arXiv's CS moderation practice for review articles and position papers, updated 31 October 2025, which requires such submissions to have completed peer review at a journal or conference before arXiv will consider them. A specification paper with no implementation, no evaluation, and a five-subsection survey as its longest section is squarely in the content type that change targets. **The fast path optimises for a finish line the paper may not be admitted through.**
+>
+> The architect reopened the lock on 2026-08-27 and chose to build a minimal implementation, converting the submission from a position paper to original research with an artifact. This is **not** a reversal of the reasoning behind the fast path — the paper is still the product, and the implementation exists to make the paper admissible and its claims checkable, not to become the contribution. See **Phase II-A** below, which is deliberately much smaller than Phase II.
+>
+> Two facts make this cheaper than it looks. First, the motivating incident is the $\delta = \epsilon = 0$ boundary case — the F12 started empty — so reconstruction there is ordered concatenation and exercises none of the clustering machinery. Second, §3.8's conformance rule requires an implementation to *declare* its open parameters, not to solve them, so a minimal implementation is conforming.
 
 The project is organized around research deliverables rather than calendar deadlines.
 
@@ -418,9 +434,45 @@ The paper is submitted/published as an arXiv preprint.
 
 ---
 
+# PHASE II-A — Minimal Conforming Implementation
+
+**OPENED 2026-08-27.** Sits between Phase R and Phase S: the paper does not go to arXiv until this closes.
+
+### Objective
+
+Build the smallest implementation of Ingestion, Normalization and Synthesis that (a) reconstructs the motivating incident's own configuration, (b) conforms to §3.8 by declaring its open parameters, and (c) converts the paper's content type from specification to original research with an artifact. **Minimal is the requirement, not a compromise** — everything beyond it is Phase II and stays deferred.
+
+### Scope
+
+| In | Out (stays Phase II) |
+| --- | --- |
+| Ingestion: WhatsApp text export → records + provenance triple | Any non-WhatsApp format |
+| Normalization: timestamp parsing, sender resolution, per-record `AMBIGUOUS_DATE_FORMAT` quarantine | Fragment-scope date inference |
+| Synthesis: disjoint case (all-singleton clusters), emit `U` and `Ω` | Field-wise precedence beyond a declared trivial rule |
+| Overlapping case via the committed `tcf-pair` corpus | Performance work, viewer, packaging |
+| Invariants 1–3 checked on every run | Idempotence proof |
+
+### Corpus
+
+`data/synthetic_fixtures/tcf-pair/` (added 2026-08-27) supplies the input this phase is validated against. Generated by `--tcf-pair`, it emits two fragments of one account split per §2.2, with configurable $\delta$ and $\epsilon$; the manifest records ground truth, so `|U|` has a number to be checked against rather than eyeballed. `--delta 0 --epsilon 0` reproduces the January incident; the committed pair uses `--delta 14 --epsilon 7` so deduplication is exercised. Overlapping messages are rendered in different date and clock conventions in the two fragments, so an implementation that compares raw lines fails and one that compares normalised records passes.
+
+### Exit condition
+
+**Revised 2026-08-29, after Normalization made the original condition unreachable.** It required `|U|` to equal the manifest's `expected_unified_size`. Under the specification's own per-record ambiguous-date rule about 42% of the pair's records quarantine, so `|U|` cannot equal ground truth and should not. The correct condition is conservation, which is what Invariant 1 actually asserts:
+
+> `|U|` + `|Ω_quarantine|` = ground truth, every quarantined record carrying a typed reason code and its provenance; `Ω` carries provenance, quarantine, conflicts and counts; Invariants 1–3 hold; the run is deterministic across two consecutive invocations; and §5 and §6 of the paper are rewritten against what actually ran, with "it does not exist" removed.
+
+Producing a `U` that spans the whole timeline additionally requires the fragment-scope date-inference step, which §3.3 permits as a *separate, declared* step consuming `Q_k`. That step is now a named Phase II-A item rather than a silent assumption.
+
+### Real-data validation (architect only, outside the repository)
+
+The strongest available evidence is a run against the actual S21 FE and F12 exports. **Hard rule 1 is not relaxed for this**: no real message content enters the repository, the paper, or any commit. Only aggregate counts are reportable — records ingested per fragment, quarantined counts by reason code, provenance entries, `|U|`. That is an n=1, dated, real-data observation, and it is worth more than the entire synthetic corpus for the paper's credibility.
+
+---
+
 # PHASE II — CHAMP-Pipeline Implementation & Empirical Evaluation
 
-**DEFERRED — a separate future project, not part of this roadmap.**
+**DEFERRED — a separate future project, not part of this roadmap.** Phase II-A above carves out the minimum; everything here remains deferred.
 
 *(Consolidates what were originally Phases 3–8, added 2026-08-24 as part of the fast-path decision. Content preserved below for when this phase is deliberately opened — nothing here is scheduled or required for the current paper.)*
 
@@ -442,7 +494,7 @@ Multiple fragmented synthetic archives can be reconstructed deterministically in
 
 # 7. Current Position
 
-**Revised 2026-08-24.**
+**Revised 2026-08-27.**
 
 ```text
 PHASE 0 — Research Foundation
@@ -463,11 +515,26 @@ DRAFT COMPLETE (all 9 sections, 7,893 words — see docs/DRAFT_PAPER.md)
 PHASE R — Repo Hygiene & Submission Prep
 DONE (2026-08-25) — paper/ builds clean, 0 warnings; abstract, figures, author/ORCID, and [CITE-T2] all resolved; see full detail above
 
+PHASE R — (continued) peer-review revision rounds
+DONE (2026-08-26/27) — two review rounds applied; Type 3 font / ligature-extraction
+  defect fixed; Section 8.5 added and the novelty claim narrowed to transfer;
+  invariants reframed as reporting obligations; 27 pages, 0 warnings
+
+PHASE II-A — Minimal Conforming Implementation
+IN PROGRESS (opened 2026-08-27)
+  [x] tcf-pair corpus: two fragments of one account, configurable delta/epsilon,
+      ground truth recorded for checking |U|
+  [x] Ingestion    F -> R with provenance triple (core/src/ingestion, 2026-08-28)
+  [x] Normalization R -> R' + Q (core/src/normalization, 2026-08-29)
+  [x] Fragment-scope date inference (core/src/inference, 2026-08-29)
+  [x] Synthesis    R' -> (U, Omega) (core/src/synthesis, 2026-08-29)
+  [x] Paper Sections 5 and 6 rewritten against what ran (2026-08-29)
+
 PHASE S — arXiv Submission
-NOT STARTED — current finish line
+NOT STARTED — now gated behind Phase II-A
 
 PHASE II — CHAMP-Pipeline Implementation & Empirical Evaluation
-DEFERRED — separate future project, out of scope for this roadmap
+DEFERRED — everything beyond the Phase II-A minimum remains out of scope
 ```
 
 The immediate milestone is therefore:
@@ -766,8 +833,8 @@ A feature is not justified merely because:
 
 The following are explicitly **not current priorities**:
 
-* full CHAMP-Pipeline implementation (Ingestion/Normalization/Synthesis/Validation) — deferred to Phase II, see §6 (added 2026-08-24)
-* any benchmark or experimental evaluation before Phase II (added 2026-08-24)
+* full CHAMP-Pipeline implementation beyond the Phase II-A minimum — still deferred to Phase II, see §6 (added 2026-08-24; narrowed 2026-08-27 when Phase II-A was opened)
+* any benchmark or statistical evaluation — Phase II-A reports counts from runs that actually happened, and nothing more (added 2026-08-24; restated 2026-08-27)
 * production deployment
 * commercial productization
 * cloud infrastructure

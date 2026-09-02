@@ -2,7 +2,7 @@
 
 ## Last Updated
 
-2026-08-25 (Phase R closed — bibliography, LaTeX assembly, abstract, figures, author/ORCID, [CITE-T2] all done)
+2026-08-29 (Phase II-A COMPLETE — pipeline runs end to end, paper rewritten against it; 31 pages, 0 warnings; push + endorsement + category remain)
 
 ## Major Decision Log
 
@@ -18,13 +18,243 @@
 
 **⚠ The delta is now contingent, and Phase L closes with this explicitly open.** (Original framing, kept for the historical record.) Two Chabot documents could not be obtained — the **ORD2I** body (*Digital Investigation* 15:83–100, DOI 10.1016/j.diin.2015.07.005, paywalled; its "seven necessary criteria" are the likeliest place an invariant is stated *and discharged*) and the **2015 thesis** (NNT 2015DIJOS037; every automated route 403'd, ResearchGate author profile is the live lead). **If either defines typed stage inputs/outputs, the residual claim reduces to Q and Ω alone and the paper must say so plainly rather than defending the pipeline framing.** Until one is read, "no prior formal inter-stage contract exists" is NOT settled and must not be written as such.
 
+## Major Decision Log — 2026-08-27
+
+**Fast-path scope lock REOPENED, and Phase II-A opened.** The 2026-08-24 lock (position/specification paper only, no implementation) was made before the peer review surfaced arXiv's CS moderation practice for review articles and position papers, updated 31 October 2025: such submissions must complete peer review at a journal or conference first. The paper as scoped is squarely in that content type. The lock was optimising for a finish line the paper may not be admitted through.
+
+The architect reopened it and chose to build a **minimal** implementation. This is not a reversal of the fast-path reasoning — the paper is still the product. What changed is that shipping with no artifact carries a venue risk the original decision could not have known about, and building the minimum happens to retire review Majors 3, 6 and 7 as a side effect.
+
+**Why this is much cheaper than PROJECT_PLAN.md's Phase II suggests.** Two findings from re-reading the ground problem:
+
+1. **The motivating incident is the $\delta = \epsilon = 0$ boundary case.** `actual_problem.md` states the F12 "effectively started with a new WhatsApp history", so the two fragments are disjoint. Reconstruction of the actual January incident is ordered concatenation — no deduplication, no clusters larger than one, no conflicts possible. The elaborate machinery is for the general case, not the originating one.
+2. **§3.8's conformance rule requires an implementation to *declare* its open parameters, not solve them.** A minimal implementation that states its clustering rule, precedence rule and both tolerances is conforming. Nothing has to be solved to be correct.
+
+**Corpus gap found and closed the same day.** Neither review caught it: `generate-synthetic-fixtures.js` emitted five *independent* fixtures — parsing edge cases, one account each — with no notion of a fragment pair, no $t_f$/$t_r$, no $\delta$ or $\epsilon$. **Nothing in the repository exhibited the phenomenon the paper is about**, so there was nothing an implementation could be validated against. Added `--tcf-pair` (with `--delta`, `--epsilon`, `--window`), which generates one ground-truth timeline and splits it per §2.2's own definition. Committed corpus lives in `data/synthetic_fixtures/tcf-pair/`.
+
+Properties that make it useful rather than decorative:
+
+* Overlapping messages are written to **both** fragments and rendered in **different date and clock conventions** — `06/02/24, 6:53 pm` in F1 is `02/06/24, 18:53` in F2. One message, two byte-different observations. An implementation deduplicating on raw lines fails; one deduplicating on normalised records passes. That is precisely what §3.4 says deduplication exists for.
+* The manifest records **ground truth**, so `|U|` is checkable rather than admired: `expected_unified_size`, `overlap_messages`, `f1_message_records`, `f2_message_records`, `t_f`, `t_r`.
+* The generator **asserts its own split**: `f1 + f2 − overlap == ground_truth`, and that `δ = ε = 0` really yields zero overlap. If the decomposition ever breaks it fails loudly rather than producing fragments that are not fragments.
+* Committed configuration is `--delta 14 --epsilon 7` (20 overlapping messages, 170 ground truth, 57 + 133 records). `--delta 0 --epsilon 0` reproduces the January incident exactly.
+
+**Regression-verified:** the five original fixtures and `manifest.json` are byte-identical after the change (`md5sum -c`), and `check-corpus-claims.js` still passes all six §5.2 claims. The paper's committed corpus claims are unaffected.
+
+**Cross-document drift corrected in `PROJECT_PLAN.md` the same pass** — it still carried the pre-review language: "partitioned" (fragments can overlap, so it is not a partition), "Asymmetric Reconciliation on Merge" (renamed to Absent Reconciliation), "four invariants" (three plus a demoted design target), and the core-principle tagline asserting no implementation.
+
+## Phase II-A — Ingestion complete, 2026-08-28
+
+`core/src/ingestion/index.js` implements `I : F_k -> R_k`. CLI: `node scripts/ingest.js [--json] <fragment.txt> ...`. Self-check: `node tests/test-ingestion.js`. Zero dependencies, Node stdlib only.
+
+**Record shape** — raw text slice, raw timestamp string, raw sender token, category, attachment descriptor, and the provenance triple `<source_id, line_range, sha256>` exactly as §3.2 defines it. `line_range` is 1-indexed and inclusive; it is a *range* because a multi-line message's continuation lines belong to the record above them.
+
+**The stage boundary is enforced, not just described.** Ingestion keeps `rawTimestamp` verbatim — `01/12/24` stays `01/12/24` and is not resolved to a date. Deciding whether that is 1 December or 12 January is Normalization's job under `AMBIGUOUS_DATE_FORMAT`, and a parser that guessed here would make it impossible to say later whether a discrepancy came from parsing or from merging.
+
+**Three categories: `message`, `system`, `unparsed`.** The third matters more than it looks. A line the grammar cannot classify becomes a record rather than being skipped, because Invariant 1 is a claim about records the pipeline *saw* — a line dropped at Ingestion is lost before the quarantine set that would have caught it even exists. Nothing is filtered.
+
+**Non-lossy is asserted on every run, not claimed.** `assertNonLossy` checks that record line ranges tile the file exactly: contiguous, non-overlapping, covering line 1 through `lineCount`. It throws rather than returning bad records.
+
+**Validation.**
+
+* All five fixtures and both `tcf-pair` fragments ingest with **0 unparsed records** and full line coverage.
+* **Cross-checked against the manifest**: the parser's detections (empty body, multi-line, senderless system line, doubled-filename attachment, trailing-period attachment) were compared against the quirk metadata the *generator* independently wrote, across all five fixtures. **Zero mismatches.** The two were written from opposite directions and agree.
+* **Ground truth recovered on the TCF pair**: 57 and 133 message records, exactly matching `f1_message_records` and `f2_message_records` in the pair manifest.
+* `tests/test-ingestion.js` covers what the corpus cannot, because the corpus is well-formed by construction: orphan leading continuation lines, a file with no record head at all, a zero-byte file, blank lines mid-file, CRLF, BOM, all three attachment forms, and provenance hash sensitivity.
+
+**One real bug found by that test file and fixed**: `''.split('
+')` returns `['']`, so a zero-byte fragment reported one phantom line and produced a spurious `unparsed` record. The corpus would never have surfaced it.
+
+**Stated assumption, not buried**: the sender token is the text before the first `": "`. WhatsApp sender tokens cannot contain that sequence, but a contact whose display name did would be mis-split, and no fragment in the corpus exercises it.
+
+**Doc drift fixed the same pass**: `docs/CARTA-framework.md` §3.3 still described the provenance map as carrying "origin device, origin export, origin backup date, and confidence" — four fields, none of them the three the formal tuple defines. It contradicted both the paper and the code being written against it. Corrected, with the no-confidence-score decision recorded.
+
+## Anti-AI writing audit, 2026-08-28
+
+Ran the `anti-ai` skill's §3.1 academic-manuscript pass over `paper/`. This is directly responsive to the half of review Major 1 that *is* actionable: the arXiv moderation post names LLM-assisted phrasing patterns as a motivating signal for the policy change, so how the paper reads is a live admission risk, separate from what it argues.
+
+Note: `.claude/anti-ai.skill` is a packaged zip, not an installed skill, so `/anti-ai` does not resolve. Extracted and followed `SKILL.md` directly. Unpack it to `.claude/skills/anti-ai/` to make the slash command work.
+
+**Result: the manuscript was already clean.** Measured, not asserted:
+
+| Check | Result |
+| --- | --- |
+| Overused AI vocabulary (delve, underscore, foster, harness, leverage, tapestry, realm, landscape, pivotal, crucial, robust, seamless, comprehensive, amidst, holistic, transformative, "paves the way", "sheds light on", + ~20 more) | **0 hits** across all sections |
+| Formulaic connectives (Moreover, Furthermore, Consequently, "It is important to note", "In conclusion", "further research is needed") | **0** as paragraph openers; 2 mid-sentence "additionally" adverbs, which are not the tell |
+| Negative parallelism ("not just X, it's Y") | **0** |
+| Vague attribution ("several studies have shown", "research suggests") | **0** |
+| Participial `-ing` tails ("...ensuring seamless delivery") | **0** of 671 sentences |
+| Priority inflation ("first to", "to the best of our knowledge", "significant improvement") | **0** |
+| Rule-of-three | 4 candidates, all substantive (three CARTA stages; the similarity relation's actual fields; two cited titles). None decorative. |
+| Sentence burstiness | mean 20.3 words, **stdev 13.9**, range 1--78. The tell is *low* variance clustering at 15--25; this is the opposite. |
+
+The single `novel` in the paper is used deflationarily ("would make CARTA's provenance triple look considerably more novel than it is"), which is the inverse of the tell. The opening is concrete from the first clause ("A phone stops working and goes in for repair"), with no throat-clearing paragraph to cut. The conclusion ends on a concrete claim, with no uplift horizon and no "further research is needed".
+
+**One real finding, fixed.** Two sentences in §7 used paired em-dashes as brackets, which the skill flags as a rewrite candidate ("more than one em dash in a sentence"). Both interiors already contained commas, so the fix was parentheses in one case and a sentence split in the other. Prose em-dash usage overall is 15 across 27 pages, which is not overuse; the earlier per-file counts of 100 and 76 were LaTeX comment separators, not prose.
+
+**No other edits made.** The audit found nothing else worth changing, and manufacturing cosmetic edits to demonstrate effort would be the wrong outcome for a pass whose entire purpose is removing artificial-looking prose.
+
+**27 pages, 0 warnings.** Root PDF and `arxiv-submission.tar.gz` regenerated.
+
+## Phase II-A — Normalization complete, 2026-08-29
+
+`core/src/normalization/index.js` implements `N : R_k -> (R'_k, Q_k)`. CLI `node scripts/normalize.js [--offset <min>] <fragment>`. Self-check `node tests/test-normalization.js`. Zero dependencies.
+
+**Per-record judgement is implemented literally.** A record whose date is well-formed under both orderings is quarantined even when a neighbouring record in the same fragment would settle the ordering. That is §3.3's rule, and it is what produces the numbers below rather than tidier ones.
+
+### The corpus result, which is the paper's own prediction executing
+
+| fragment | ingested | normalized | quarantined |
+| --- | --- | --- | --- |
+| fixture-01 | 20 | 10 | 10 (50%) |
+| fixture-02 | 19 | 12 | 7 (37%) |
+| **fixture-03** | **25** | **0** | **25 (100%)** |
+| fixture-04 | 13 | 5 | 8 (62%) |
+| fixture-05 | 16 | 11 | 5 (31%) |
+| tcf-F1 | 58 | 34 | 24 (41%) |
+| tcf-F2 | 134 | 77 | 57 (43%) |
+
+All under `AMBIGUOUS_DATE_FORMAT`. **Fixture-03 quarantines completely** — the exact case §5.2 predicted in prose ("in fixture 03 alone would a declared fragment-scope step have nothing to work from afterwards"), now demonstrated by running code rather than asserted.
+
+**Independent cross-validation.** For every fragment, the date ordering the pipeline *resolved* was compared against the ordering the generator *declared* in the manifest: fixture-01 DMY/DMY, 02 MDY/MDY, 03 all-quarantined, 04 MDY/MDY, 05 DMY/DMY, tcf-F1 DMY, tcf-F2 MDY. **Zero contradictions.** The parser never inferred an ordering the corpus disagrees with, and it was written without reference to the manifest.
+
+### Two findings that belong to the specification, not the code
+
+**1. "UTC epoch timestamp" has no source for the offset.** §3.3 says a canonical record carries a UTC epoch timestamp. A WhatsApp text export carries no UTC offset — §5.2 already notes the export has no locale marker to settle the date *ordering*, and the same is true of the *clock*. Converting a wall-clock reading to a UTC instant therefore requires information the input does not contain, and doing it silently is precisely what this stage exists to prevent. Implemented as a declared policy parameter `utcOffsetMinutes` (default 0), so canonical timestamps are wall-clock instants correct up to a declared offset, and the declaration lands in Ω per §3.8. **The paper should say this; right now it asserts UTC without saying where the offset comes from.** Flagged, not silently patched — PROJECT_PLAN.md §3 requires surfacing theory gaps rather than changing the theory implicitly.
+
+**2. The Phase II-A exit condition I wrote on 2026-08-27 was unreachable.** It required `|U|` to equal `expected_unified_size`. Under the per-record rule ~42% of the pair's records quarantine, so `|U|` cannot equal ground truth and should not. Corrected in PROJECT_PLAN.md to conservation, which is what Invariant 1 actually asserts: `|U| + |Ω_quarantine| = ground truth`. Producing a `U` spanning the whole timeline additionally needs the fragment-scope date-inference step that §3.3 permits as a *separate, declared* step over `Q_k`. That is now a named Phase II-A item.
+
+### Declared policy (§3.8 conformance)
+
+`utcOffsetMinutes` 0 · two-digit year pivot 70 (00–69 → 2000s) · taxonomy `message.text | message.attachment | message.empty | system` · reason precedence `UNSUPPORTED_FORMAT, INVALID_ENCODING, MALFORMED_TIMESTAMP, AMBIGUOUS_DATE_FORMAT, UNRESOLVED_SENDER`, first match wins, losing codes retained in `alsoFailed`.
+
+**One design change the tests forced.** An `unparsed` line was accumulating secondary reason codes for a timestamp slot and a sender slot it does not have. Short-circuited: one accurate code, no manufactured ones.
+
+`MALFORMED_TIMESTAMP` is kept distinct from `AMBIGUOUS_DATE_FORMAT` and the distinction is load-bearing: `25/13/24` has no reading under any convention, while `03/04/24` has two. §3.3 says the two call for different remedies, and only the second is resolvable by outside evidence.
+
+## Phase II-A — fragment-scope date inference, 2026-08-29
+
+`core/src/inference/index.js`. CLI flag `--infer` on `scripts/normalize.js`. Self-check `node tests/test-inference.js`; `node tests/run-all.js` now runs every check at once (4 passing).
+
+**Not a CARTA stage.** §3.3 permits it as a *separate, declared* step over `Q_k` and constrains it four ways. Each constraint is implemented as something checkable:
+
+| §3.3 requires | How it is met |
+| --- | --- |
+| separate | Own module outside `core/src/normalization`; runs only when called; a pipeline that skips it still conforms |
+| consumes `Q_k` | Its only inputs are the quarantine set and the records that resolved unaided; it re-reads no files |
+| reports what it inferred and on what evidence | Returns order applied, witness count by order, and witness line ranges so a reader can return to the bytes |
+| results stay distinguishable | Every rescued record carries an `inferred` block naming field, value, method and basis |
+
+### Result on the corpus
+
+| fragment | before | after `--infer` | inference |
+| --- | --- | --- | --- |
+| fixture-01 | 10 quarantined | 0 | applied DMY, 10 witnesses |
+| fixture-02 | 7 | 0 | applied MDY, 12 witnesses |
+| **fixture-03** | **25 (100%)** | **25 (100%)** | **declined: no-evidence** |
+| fixture-04 | 8 | 0 | applied MDY, 5 witnesses |
+| fixture-05 | 5 | 0 | applied DMY, 11 witnesses |
+| tcf-F1 | 24 | 0 | applied DMY, 34 witnesses |
+| tcf-F2 | 57 | 0 | applied MDY, 77 witnesses |
+
+**Fixture-03 is the only fragment where the step correctly refuses.** It has no self-disambiguating record, so there is nothing to generalise from, and it stays fully quarantined. The paper predicted exactly this in prose; it is now behaviour with a test asserting it.
+
+Every inferred order matches the ordering the generator declared in the manifest. Asserted in the test file, not just observed.
+
+**The pair now fully resolves** — F1 58 records, F2 134, 0 quarantined — which unblocks Synthesis. In F2, 77 records were never in doubt and 57 carry the `inferred` mark, so the two remain separable in `U`, which is the entire reason §3.3 permits the step.
+
+**It declines in three cases, all tested**: no evidence; split evidence (unambiguous records disagreeing — treated as a contradiction, not a majority vote); and below a declared witness threshold.
+
+### A dead branch the tests found
+
+The module re-quarantined a record when the established order produced an invalid date. That branch is unreachable: `AMBIGUOUS_DATE_FORMAT` is assigned only when both leading fields are in 1..12, which is a valid (day, month) pair under *both* orderings, and the clock is validated before the ordering question arises. Replaced with a loud guard that throws if either premise ever changes, and the property itself is now asserted across all 144 ambiguous date shapes.
+
+Two of the three test failures in this session were faults in the tests rather than the code — one assumed a mid-file orphan line becomes an `UNSUPPORTED_FORMAT` record when Ingestion correctly treats it as a continuation of the record above. Both are recorded here because a test that agrees with the code for the wrong reason is worth less than one that disagrees for the right one.
+
+## Phase II-A — Synthesis complete; the pipeline runs end to end, 2026-08-29
+
+`core/src/synthesis/index.js` implements Algorithm 1 line for line. CLI `node scripts/reconstruct.js [--infer] [--dt <ms>] [--expect <manifest>] <fragments...>`. `node tests/run-all.js` — **5 checks passing**.
+
+### It hits ground truth
+
+```
+node scripts/reconstruct.js --infer --expect .../tcf-pair/manifest.json F1 F2
+
+  records into synthesis 192
+  |U|                    172        (170 messages + 2 encryption notices)
+  duplicates collapsed    20
+  quarantined              0
+  ok  |U| messages == ground truth (170)
+  ok  duplicates collapsed == overlap (20)
+  ok  conservation: |U| + collapsed + quarantined == records ingested
+```
+
+The disjoint configuration (`--delta 0 --epsilon 0`, the January incident) reconstructs to 172 records with 0 collapsed and 0 conflicts — ordered concatenation, with no special-casing anywhere in the code, exactly as §3.4 claims it should reduce to. **Invariants 1 and 2 are verified inside `synthesize()` on every run**, not asserted in prose; Invariant 3 is a property of two runs and is tested, including independence from the order fragments are supplied in.
+
+### Declared parameters (§3.8)
+
+| Parameter | Value | Why |
+| --- | --- | --- |
+| clustering | transitive closure with bounded diameter (complete linkage) | §8.5 cites Baas et al. on transitive-closure chaining degrading precision. Having cited it, adopting the rule it warns against would be indefensible. |
+| field precedence | single representative, min (t_utc, source_id, sourceSeq) | Field-wise mixing can synthesise a canonical record no fragment ever held. Every record in U is a record that really appeared somewhere. |
+| dt_granularity | 0 ms | Both fragments share one platform's minute quantisation; a wider window would collapse a sender repeating a short message. |
+| dt_conflict | 60000 ms | Constraint dt_granularity ≤ dt_conflict enforced at entry, and tested. |
+
+### Two more specification findings — the count is now four
+
+**3. Equation (12) reports ordinary group-chat traffic as conflicts.** Its second disjunct is `s(u_i) ≠ s(u_j)`. Read literally, any two records in the same coarse bucket from different senders conflict. Three people messaging inside one minute produces **three conflicts**, and the count grows as the square of traffic per bucket — Ω_conflicts would be unusable on any real group chat. Two people talking is not a contradiction.
+
+The defensible reading, implemented and declared: a sender disagreement is irreconcilable only when the records are otherwise the *same observation* — same body, same bucket, different sender. That is a genuine "who said this?". Verified both ways: the three-line busy-minute example gives 3 conflicts literally and 0 under the declared reading, while same-body/two-senders correctly gives 1. Records with no sender (system lines) are excluded entirely, since `s()` is undefined for them and `null !== 'Alice'` is a type error dressed as a finding.
+
+**4. The doubled-filename export variant defeats deduplication.** Equation (10) matches on body equality, and that variant repeats the filename on a continuation line, so the *same attachment message* exported by two devices in different variants has different bodies, fails to deduplicate, and appears twice in U. This is exactly the TCF configuration: two handsets, possibly different app versions. Fixed in Normalization, where canonicalisation belongs — the repeated line is an export artefact, not content — which keeps Equation (10) intact instead of widening it to tolerate export noise. Ingestion still preserves the raw text and provenance still points at both lines.
+
+Found by a test that failed for the right reason. Both findings are flagged for the paper; neither is patched silently.
+
+### Where the paper now stands relative to the code
+
+Sections 5 and 6 still say CHAMP-Pipeline does not exist and that no evaluation is reported. That is now false in the good direction, and rewriting them is the last item in Phase II-A.
+
+## Phase II-A complete — the paper now reports an implementation, 2026-08-29
+
+Sections 5, 6, 7, 9 and the abstract rewritten against what actually runs. **31 pages, 0 LaTeX warnings, 0 BibTeX warnings, 0 overfull/underfull, 0 undefined references, 0 Type 3 fonts.**
+
+**Section 5** is now "Reference Implementation" rather than "Planned Implementation". The line "It does not exist" is gone. New §5.3 describes the fragment-pair corpus and why its two fragments are rendered in different date orderings and clock conventions. §5.4 documents the end-to-end command and the self-check suite.
+
+**Section 6** was one paragraph explaining there was nothing to evaluate. It now reports reconstruction against known ground truth, with a subsection on what the strict per-record quarantine rule costs, one on the corpus's boundary case, and one headed "What this does not establish".
+
+**Section 7.5, new: "What implementing the specification revealed".** This is the main scientific yield of Phase II-A and the strongest argument for having reopened the scope lock: four defects in the specification, three of which survived two rounds of review of the prose.
+
+**Every figure in Section 6 was machine-verified against a live run before the section was written, and again after.** Not transcribed from notes:
+
+| claim | verified |
+| --- | --- |
+| 1,014 lines core / 808 lines checks / 4 modules | exact |
+| 192 records in, \|U\| 172, 20 collapsed, 0 quarantined, 0 conflicts | exact |
+| dating: 103 direct, 69 inferred | exact |
+| strict mode: 81 quarantined, 111 to Synthesis, \|U\| 103, 8 of 20 collapsed | exact |
+| fixture-03: 25 records, 100% quarantined, inference declines | exact |
+| 5 checks passing | exact |
+
+The strict-mode figure is the one worth keeping in view: without the declared fragment-scope step, only 8 of the 20 overlapping messages still deduplicate, because the other 12 have at least one side quarantined. The quarantine rule has a measurable cost and the paper now states it as a number rather than a principle.
+
+### anti-ai pass over the new prose
+
+Roughly 1,200 words of new academic prose, audited under the skill's §3.1 before and after: **0 hits** on the vocabulary list, **0** formulaic connectives, **0** negative parallelism, **0** vague attribution, **0** participial `-ing` tails across 772 sentences. Burstiness held after adding ~100 sentences — mean 20.2, stdev 13.5, range 1–78. The four rule-of-three matches are the same substantive ones as before. Em-dashes in the new sections: 0 in §6, 0 in §7.5.
+
+One overfull box appeared and was fixed by referring to the group-chat fixture by description rather than repeating its long filename, which §5.2 already gives.
+
+### What is left
+
+Phase II-A is closed. Remaining before submission, all outside the code: **push** (`origin/main` still behind), the **AI-use disclosure** in `main.tex` still needs the author's confirmation, **endorsement outreach** has not started, and the **arXiv category** is still undecided. Major 1's content-type risk is materially reduced — the paper now reports an implementation and an evaluation, and its longest section is no longer the survey — but the routing decision is still the architect's.
+
 ## Current Phase
 
-Phase L — Literature Survey Completion (DONE, 2026-08-25) → Phase W — Paper Writing (DONE, 2026-08-25) → Phase R — Repo Hygiene & Submission Prep (**DONE, 2026-08-25**) → next: Phase S — arXiv Submission (NOT STARTED)
+Phase L (DONE, 2026-08-25) → Phase W (DONE, 2026-08-25) → Phase R incl. two peer-review revision rounds (DONE, 2026-08-27) → **Phase II-A — Minimal Conforming Implementation (IN PROGRESS, opened 2026-08-27)** → Phase S — arXiv Submission (NOT STARTED, now gated behind II-A)
+
+Phase II-A progress: tcf-pair corpus **done**; **Ingestion done (2026-08-28)**; **Normalization done (2026-08-29)**; **fragment-scope date inference done (2026-08-29)**; **Synthesis done (2026-08-29)** — the pipeline runs end to end and hits ground truth; **Sections 5, 6, 7, 9 and the abstract rewritten against what ran (2026-08-29)**. Phase II-A is complete.
 
 ## Current Milestone
 
-Phase R is closed. `paper/main.tex` + `paper/sections/*.tex` + `paper/main.bib` (31 entries) compile clean under **real pdflatex** (TeX Live 2026, verified 2026-08-26 — see "Submission readiness" below): 19 pages, 0 overfull/underfull boxes, **0 LaTeX or BibTeX warnings** — the only remaining log line is a pre-existing third-party `algorithm.sty` UTF-8 notice, unfixable from this repo and harmless. Abstract written (187 words, grounded in the finished sections). Both planned figures (TCF timeline, CARTA pipeline) drawn as self-contained TikZ — no external image files. Author/ORCID filled in `CITATION.cff` and `main.tex` (Maitreya Sapariya, Independent Researcher, ORCID 0009-0003-9346-3775). `[CITE-T2]` **resolved**: the architect chose to narrow Section 1's claim to what the archived WhatsApp source actually supports (the restore-account constraint), reframing "no merge operation exists" as the paper's own observation with a pointer to §8.3's tooling survey, rather than an unsupported attribution to WhatsApp — the `\citeTODO`/`\nocite` tripwire removal and the bibliography orphan-check (31 defined = 31 cited = 31 rendered) both confirm the fix is real, not cosmetic. T1 (terminology collision) turned out to already be resolved in `docs/DRAFT_PAPER.md` §2.5 — found during verification, not previously tracked as done. T3 (patent claims) closed as moot — the claim it would have gated was already dropped, and the patent isn't cited in the paper. The Chabot contingency remains **decided, not open**: accepted as a stated limitation. Only the arXiv category is still open, parked for a joint decision at the start of Phase S.
+Phase R is closed. `paper/main.tex` + `paper/sections/*.tex` + `paper/main.bib` (37 entries) compile clean under **real pdflatex** (TeX Live 2026, verified 2026-08-26; rebuilt after the formal-consistency and peer-review passes of 2026-08-26/27 — see "Submission readiness" below): 27 pages, 0 overfull/underfull boxes, **0 LaTeX or BibTeX warnings** — the only remaining log line is a pre-existing third-party `algorithm.sty` UTF-8 notice, unfixable from this repo and harmless. Abstract written (187 words, grounded in the finished sections). Both planned figures (TCF timeline, CARTA pipeline) drawn as self-contained TikZ — no external image files. Author/ORCID filled in `CITATION.cff` and `main.tex` (Maitreya Sapariya, Independent Researcher, ORCID 0009-0003-9346-3775). `[CITE-T2]` **resolved**: the architect chose to narrow Section 1's claim to what the archived WhatsApp source actually supports (the restore-account constraint), reframing "no merge operation exists" as the paper's own observation with a pointer to §8.3's tooling survey, rather than an unsupported attribution to WhatsApp — the `\citeTODO`/`\nocite` tripwire removal and the bibliography orphan-check (37 defined = 37 cited = 37 rendered as of the 2026-08-26 passes; 31 at the time of that fix) both confirm the fix is real, not cosmetic. T1 (terminology collision) turned out to already be resolved in `docs/DRAFT_PAPER.md` §2.5 — found during verification, not previously tracked as done. T3 (patent claims) closed as moot — the claim it would have gated was already dropped, and the patent isn't cited in the paper. The Chabot contingency remains **decided, not open**: accepted as a stated limitation. Only the arXiv category is still open, parked for a joint decision at the start of Phase S.
 
 ## Project North Star
 
@@ -205,6 +435,96 @@ The pdflatex verification above ran against a `git archive` export of HEAD — a
 **Fixed by rebuilding directly with the installed TinyTeX** (`C:\Users\MaitreyaSapariya\.tl-verify\TinyTeX`, full binary paths, `paper/` as the working directory): `pdflatex → bibtex → pdflatex → pdflatex`, all four steps exit 0. Confirmed via the log's own banner — `This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026)` — and `Output written on main.pdf` (not `.xdv`). **19 pages, 0 warnings, 0 overfull/underfull boxes.** Ran a further pass beyond the standard four to check the "Label(s) may have changed" note the verification commit flagged as needing a fifth pass: it did **not** recur — `rerunfilecheck` reported `File main.out has not changed` after the fourth pass, confirming convergence without needing that extra rerun. `paper/main.bbl` was independently confirmed byte-identical to the one already packaged in `paper/arxiv-submission.tar.gz`, so the upload bundle needed no rebuild. The tracked repository's own `paper/` directory now genuinely reflects a real-pdflatex build, not Tectonic.
 
 A convenience copy of this pdflatex-verified PDF was placed at the repo root, `When-Chats-Split-Apart.pdf`, per the architect's request — gitignored, consistent with `paper/main.pdf` also being a regenerable, uncommitted artefact.
+
+### Formal-consistency pass, 2026-08-26 (post-review)
+
+The root convenience copy was found **stale** — dated before commit `46a5641`, so it predated the TCF-definition correction. Rebuilt and replaced; both root and `paper/main.pdf` are now byte-identical (md5 `f7c935c1…`). `paper/arxiv-submission.tar.gz` was regenerated to match the new source.
+
+A scoped formal-consistency pass was then applied against an external review of the 20-page draft. **Ten changes, source-verified before editing:**
+
+1. **`partitioned` → `fragmented`** in Definition 1, and `partition` → `split` in the formal $F_1$/$F_2$ sentence. Both contradicted the paper's own admission that $\delta, \epsilon > 0$ allows $F_1 \cap F_2 \neq \emptyset$ — and §4.2 already polices exactly this word for clusters.
+2. **C3's necessary condition separated from WhatsApp's observed restore behaviour.** "No warning, no diff, overwrites" was doing definitional work in both §2.1 and Condition 3; it is now stated separately as an observation about one documented restore path that the definition does not depend on.
+3. **Ω's provenance map reconciled with `prov(r)`.** §3.4 claimed the map records "origin device, origin export, origin backup date, and confidence" while the formal tuple is ⟨`source_id`, `line_range`, `sha256`⟩ and Algorithm 1 line 8 assigns exactly that union — a flat contradiction, now resolved in favour of the tuple, with extra fragment metadata described as reachable through `source_id`.
+4. **`confidence` deleted from the specification.** It appeared exactly once, undefined, and a confidence score compresses into one number the uncertainty Q and Ω exist to keep explicit.
+5. **`SynthesizeCanonicalMessage` declared as the second open parameter**, on the same terms as the clustering procedure: field-wise precedence, deterministic selection among compatible values, conflict descriptor emitted when values are incompatible, rule to be stated by a conforming implementation.
+6. **"Canonical" defined** as the deterministic representative under an implementation's declared policy — not globally unique, since open clustering allows conforming implementations to disagree.
+7. **`IsAmbiguous` → `HasUnresolvedConflict`**, and the predicate defined: disagreement on a field the similarity criterion does not constrain, judged after the declared rules have run. A cluster of one never satisfies it.
+8. **Cross-cluster conflict detection added to Algorithm 1** as line 14, after the loop (it compares canonical records, so it cannot run before every cluster has one). §4.4's "we fold this into the exposition rather than the algorithm" defence is retired. Walkthrough prose renumbered: old line 14 is now line 15.
+9. **Corpus date-format count corrected: 3 DMY + 2 MDY**, not 2+2 — `manifest.json` has `date-format-ddmmyy` on fixtures 01/03/05. The old sentence did not account for fixture 5 at all, a residue of a four-fixture corpus.
+10. **Ambiguous-date scope stated.** §3.3 now says Normalization judges per record and holds fragment-scope inference outside the stage as a separate declared step; §5.2 reports what the corpus actually shows.
+
+Also: abstract and conclusion "two archives" → "two or more", matching Definition 1 and §1's RQ statements.
+
+**One review item was rejected on evidence.** The review asserted the corpus contains no genuinely ambiguous date record and proposed adding a disclaimer to that effect. Checked against the fixtures: every fixture contains at least one date string whose day and month components are both ≤ 12, and `fixture-03` is 4-of-4 ambiguous with no disambiguating record anywhere in the file. The proposed disclaimer would have been false. The real defect underneath it — unstated quarantine scope — is item 10 above. Three further review items (abstract already says "surveyed here"; latent-case sentence already in the abstract; softening "three necessary conditions") were declined as no-ops or as trading away generality the paper needs.
+
+**Rebuild after the pass:** `pdflatex → bibtex → pdflatex ×2` under the same TinyTeX. **21 pages, 0 LaTeX warnings, 0 BibTeX warnings, 0 overfull/underfull boxes, 0 undefined references.** `rerunfilecheck` reports `main.out` unchanged — converged, no fifth pass needed. Page count moved 19 → 20 → 21 across the last two content passes; the "19 pages" figures in the earlier entries of this file are historical records of those builds and were deliberately **not** rewritten.
+
+**Not done, deliberately:** `docs/DRAFT_PAPER.md` (§ algorithm block, lines ~234–237) and `docs/PAPER_BLUEPRINT.md` (~400–403) still carry the retired `IsAmbiguous` and the pre-pass algorithm. They now contradict `paper/`. Re-syncing them is a separate deliverable, not folded into this pass.
+
+### Peer-review revision pass, 2026-08-26 (`peer-review-report.docx`)
+
+A simulated hostile peer review was supplied as a `.docx` (gitignored; it is input to a revision, not project content). Every checkable claim in it was verified against the source before acting. **Outcome: 26 pages, 0 LaTeX warnings, 0 BibTeX warnings, 0 overfull/underfull boxes, 0 undefined references. Bibliography 37 defined = 37 cited = 37 rendered.**
+
+**The single most important find — Type 3 fonts and broken ligature extraction (review Minor 1).** `main.tex` loaded `[T1]{fontenc}` with no Type 1 font family, so pdfTeX fell back to EC bitmap fonts: **15 Type 3 fonts embedded**, and no ToUnicode map. The page looked fine; the *extracted text* did not. `definition` extracted as `de\x1cnition`, `conflict` as `con\x1dict` — the fi/fl ligatures coming out as raw T1 slots. arXiv full-text search and Google Scholar index that extracted text, so the paper's own keywords were unsearchable. Fixed with one line, `\usepackage{lmodern}`, loaded before `fontenc`. **Verified after: 0 Type 3 fonts, 0 raw ligature slots, every keyword extracting correctly.** This was invisible to every prior build check because the log reports no warning for it.
+
+**Majors acted on.** M3 (reproducibility claim unsupported) was **version skew** — the reviewer's snapshot showed `.gitkeep` placeholders, but the generator (12,930 bytes) and all five fixtures exist and were verified this session. The valid residue was fixed: the repository URL now appears in §5.3 and §9 (it appeared nowhere in the manuscript before), and the determinism claim is now scoped to the runtime it was actually tested on (Node.js v24.14.0, Windows 11) with cross-version stability explicitly *not* claimed. M4 (novelty does not survive the data-integration literature) — added **§8.5, "Data integration, data quality and entity resolution"**, and narrowed the claim in the abstract, §8 preamble and §9 from invention to **transfer**. M5 — Condition 3 restated as a property of the input rather than of a vendor's feature list, with the "undocumented ≠ absent" distinction made explicit in §1. M6 — invariants reframed as **reporting obligations** rather than correctness properties, idempotence **demoted from "Invariant 4"** to a named non-claim, and a new **§3.8 Conformance** checklist added stating what an implementation must declare. M7 — §5.2 relabelled: the 19 categories are **anticipated** input forms, and the fixture-03 discussion is now explicitly a constructed demonstration, not a measurement.
+
+**Six new bibliography entries, every one verified against Crossref or the arXiv API before being written in** (31 → 37): `souibgui2019dataquality`, `moreau2015prov`, `chapman2024finegrained`, `baas2021transitivity`, `saeedi2018famer`, `li2015identity`.
+
+**Two errors found in the review's own citations, and not propagated.** The review gave DOI `10.1016/j.procs.2019.09.013` for Souibgui et al.; that DOI resolves to an unrelated EEG paper. The correct one is `10.1016/j.procs.2019.09.223`, confirmed via Crossref. The review also dated Chapman et al. to 2023; the ACM TODS paper is 2024 (`10.1145/3644385`). Both are recorded in a comment block in `main.bib`.
+
+**Minors fixed:** ligature/Type 3 (1); Wunder first name **Jan → Julia**, confirmed against Crossref, not taken from the review (2); plural authorship on a single-author paper, three places including one introduced during this same pass (3); Condition 3 renamed **Asymmetric → Absent reconciliation** (4); §7.4 written to close the dangling forward reference from §2.1 about fragments that are not internally complete (5); confidence-score position reconciled between §3.5 and §8.3 (6); who sets $\Delta t$ (7); the **$\Delta t \le 60$s constraint** between the two tolerances, which was a genuine latent contradiction — without it the same pair of records could be simultaneously one message and two conflicting ones (8); `Conflict` given a real definition instead of a numbered sentence (9); Table 1 "Data lost forever" → "Data unrecoverable from the snapshot" (10); star counts reframed as dated snapshots in all eight repository entries (11); Kleppmann attributed as of 2019 (12); Figure 1 caption cut from ~150 words to descriptive only (13); §7.1 overclaim deleted (14); zero-dependency trade-off costed (15); **Declarations section added** — funding, competing interests, data availability, AI-use disclosure (16); the closing line promoted into the abstract (18).
+
+**Not done — the architect's calls, not mine.** M1 (arXiv CS content-type risk: implement / journal-first / restructure) and M2 (endorsement outreach) are strategy and outside-world actions. Minor 17 (restructuring the abstract to lead with the contribution) interacts with M1 and was left. The platform-affordance probe M5 recommends is real primary evidence nobody can fabricate; its absence is now **recorded as a stated limitation in §7.5** rather than glossed.
+
+**Two live submission blockers, both flagged in the source as comments:** (1) `origin/main` is **8 commits behind** local, so the repository URL now printed in the paper does not yet show the artefact it points at — push before posting; (2) the AI-use disclosure in `main.tex` is a **draft written from what this repo records** and must be confirmed or corrected by the author before submission.
+
+Still not re-synced: `docs/DRAFT_PAPER.md` and `docs/PAPER_BLUEPRINT.md`, which now diverge from `paper/` more than they did after the previous pass.
+
+### Second review round, 2026-08-26 — the unpushed-corpus trap
+
+The reviewer checked the repository URL the paper now prints and reported that §5.2's fixture-03 claim was false: five distinct dates, three of them disambiguating. **They were reading GitHub. GitHub is eight commits behind local, and one of those commits is `87e489b`, which regenerated the corpus.**
+
+| | fixture-03 distinct dates | disambiguating |
+| --- | --- | --- |
+| GitHub (`origin/main`, stale) | 08, 11, 13, 14, 18 Jan | 3 |
+| Local `HEAD` (current) | 08, 09, 10, 11 Jan | 0 |
+
+§5.2 is **correct against the tree that will be published** and wrong against the tree published today. Same cause for their `CITATION.cff` finding: GitHub's copy has empty `given-names`/`family-names`/`orcid`; the local copy has been fully populated since unpushed commit `be92a41`. **Neither is a paper defect. Both become false the moment `git push` runs, and stay true only if it does.** This is now the highest-priority action in the project — the paper's own URL currently points at a tree that contradicts it.
+
+**Five other findings verified as genuine errors of mine, all introduced by the previous pass, all fixed:**
+
+1. §7.4 opened by citing `sec:tcf:definition` (§2.1) for internal completeness, which is defined in §2.2. Retargeted to `sec:tcf:conditions`.
+2. §4.1 called the conflict bucket "fixed at one minute" and then required implementations to widen it — a direct contradiction I introduced when closing Minor 8. It is now a declared parameter $\Delta t_{\text{conflict}}$ with a stated default of one minute.
+3. §4.1 justified that default as "the coarsest quantum observed in the export formats surveyed in §5.2" — but the same pass had just made §5.2 disclaim being a field survey. Fixing Majors 7 and Minor 8 separately created a circular justification. Regrounded on the target format's resolution, with the survey claim withdrawn explicitly.
+4. Equation (12) and §3.8's conformance list updated to the parameterised bucket; the tolerance relation is now Equation (13), $\Delta t_{\text{granularity}} \le \Delta t_{\text{conflict}}$.
+5. `gudjonsson2010log2timeline` used `\dj` (d with stroke) where the Icelandic name takes `\dh` (eth). Corrected — and the fix initially broke the entry, because I put the explanatory `%%` note *inside* the braces. BibTeX has no in-entry comment syntax and silently voided all six fields. **`main.bib`'s own header comment, lines 32--36, already documents this exact hazard.** Note moved above the entry.
+
+**The overlap gap, also confirmed and closed.** `actual_problem.md` states the F12 "effectively started with a new WhatsApp history", so the motivating incident is $\delta = \epsilon = 0$ — no overlap — while §1 asserted overlap among the three properties making the problem hard and §3.4 grounds deduplication in it. §2.2 now names the boundary case explicitly, states that the motivating incident is it, and argues where $\delta > 0$ comes from in general (a secondary restored from a pre-$t_f$ backup inherits history the primary also holds; use of the secondary after $t_r$ gives $\epsilon > 0$). §1 softened to "may overlap", and §3.4 notes the disjoint case falls out as all-singleton clusters with no special-casing.
+
+**One reviewer claim rejected on evidence.** They report Li \& Wang's second author as "G. Alan Wang". OpenAlex does normalise the display name that way, but the article's own byline on the publisher's page is "Alan G. Wang", which is what the entry follows. Citing the published byline is correct practice; left unchanged.
+
+**Verified after all of the above:** 26 pages, 0 LaTeX warnings, 0 BibTeX warnings, 0 overfull/underfull, 0 undefined references, 37 defined = 37 cited = 37 rendered, 0 Type 3 fonts, 0 raw ligature slots, eth rendering correctly in extracted text.
+
+### Corpus claims made checkable, 2026-08-27
+
+The reviewer's structural recommendation — derive §5.2's corpus counts from a committed script rather than asserting them as prose — is now done. **New artefact: `scripts/check-corpus-claims.js`** (Node, no dependencies, matching the generator's conventions). It reads the committed fixtures and `manifest.json`, derives every count §5.2 states, prints a per-fixture table, and **exits non-zero if the paper and the corpus disagree**, naming which claim broke.
+
+Against the current corpus all six claims pass. **Against GitHub's stale corpus it fails with exit 1 on exactly the two claims the reviewer challenged, and reproduces their table figure for figure** — which is the demonstration that the tool works and that their numbers were `origin/main`'s, not a reading error:
+
+| fixture | local (distinct/ambig/disambig) | GitHub stale |
+| --- | --- | --- |
+| 01 self-chat | 6 / 3 / 3 | 6 / 3 / 3 |
+| 02 double-filename | 6 / 2 / 4 | 6 / 2 / 4 |
+| **03 group/encryption** | **4 / 4 / 0** | **5 / 2 / 3** |
+| 04 multiline | 4 / 2 / 2 | 4 / 2 / 2 |
+| 05 early-creation | 5 / 2 / 3 | 5 / 2 / 3 |
+
+Only fixtures 01 and 03 differ from `origin/main` at all (checksum-compared file by file), and only 03's counts differ — which is why the reviewer's table looked so credible: four of its five rows are correct against both trees.
+
+Paper updated to match: §5.3 and §9 now describe **two** runnable artefacts rather than one, §5.3 records why the checker exists (a hand-written prose claim about generated output is the same failure mode the paper argues against everywhere else), and §5.2 states outright that its counts are derived by the script rather than asserted. **27 pages, 0 LaTeX warnings, 0 BibTeX warnings, 0 overfull/underfull, 0 undefined references, 0 Type 3 fonts.**
+
+**Push remains outstanding and is the architect's own action, by their decision.** Until it runs, the URL printed in §5.3 and §9 points at a tree whose fixture-03 contradicts §5.2, and `CITATION.cff` there still mints a blank author. The `%% SUBMISSION BLOCKER` comment in `05_implementation.tex` stays until then.
 
 ### GitHub Verification
 
