@@ -1,0 +1,44 @@
+{
+  "seed": 1,
+  "mode": "tcf-pair",
+  "command": "node scripts/generate-synthetic-fixtures.js --tcf-pair --seed 1 --delta 14 --epsilon 7 --window 120",
+  "t_f": "2024-02-07T09:00:00.000Z",
+  "t_r": "2024-06-06T09:00:00.000Z",
+  "delta_days": 14,
+  "epsilon_days": 7,
+  "outage_window_days": 120,
+  "disjoint": false,
+  "ground_truth_messages": 170,
+  "f1_message_records": 57,
+  "f2_message_records": 133,
+  "overlap_messages": 20,
+  "expected_unified_size": 170,
+  "note": "expected_unified_size counts messages only, not the encryption-notice system line each fragment opens with. A conforming reconstruction of these two fragments must yield |U| = expected_unified_size after collapsing overlap_messages duplicate pairs.",
+  "fragments": [
+    {
+      "file": "tcf-F1-primary.txt",
+      "role": "primary",
+      "quirks": [
+        "date-format-ddmmyy",
+        "emoji",
+        "encryption-notice-group",
+        "rich-text-markup",
+        "senderless-system-line",
+        "standard-sender-line",
+        "time-12h"
+      ]
+    },
+    {
+      "file": "tcf-F2-secondary.txt",
+      "role": "secondary",
+      "quirks": [
+        "date-format-mmddyy",
+        "encryption-notice-group",
+        "rich-text-markup",
+        "senderless-system-line",
+        "standard-sender-line",
+        "time-24h"
+      ]
+    }
+  ]
+}

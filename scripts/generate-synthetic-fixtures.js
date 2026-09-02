@@ -22,21 +22,42 @@ function fail(message) {
 function parseArgs(argv) {
   let seed = 1;
   let count = 5;
+  let tcfPair = false;
+  let deltaDays = 0;
+  let epsilonDays = 0;
+  let windowDays = 120;
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--seed') {
       seed = Number(argv[++i]);
     } else if (argv[i] === '--count') {
       count = Number(argv[++i]);
+    } else if (argv[i] === '--tcf-pair') {
+      tcfPair = true;
+    } else if (argv[i] === '--delta') {
+      deltaDays = Number(argv[++i]);
+    } else if (argv[i] === '--epsilon') {
+      epsilonDays = Number(argv[++i]);
+    } else if (argv[i] === '--window') {
+      windowDays = Number(argv[++i]);
     } else {
       fail(`Unknown argument: ${argv[i]}`);
     }
   }
   if (!Number.isInteger(seed)) fail('--seed must be an integer');
+  if (tcfPair) {
+    if (!Number.isInteger(deltaDays) || deltaDays < 0) fail('--delta must be a non-negative integer (days)');
+    if (!Number.isInteger(epsilonDays) || epsilonDays < 0) fail('--epsilon must be a non-negative integer (days)');
+    if (!Number.isInteger(windowDays) || windowDays < 1) fail('--window must be a positive integer (days)');
+    if (deltaDays + epsilonDays >= windowDays) {
+      fail('--delta + --epsilon must be smaller than --window, or the fragments are not fragments');
+    }
+    return { seed, tcfPair, deltaDays, epsilonDays, windowDays };
+  }
   if (!Number.isInteger(count) || count < 1) fail('--count must be a positive integer');
   if (count < PROFILES.length) {
     console.error(`Warning: --count ${count} < ${PROFILES.length}; the batch will not cover every quirk type.`);
   }
-  return { seed, count };
+  return { seed, count, tcfPair: false };
 }
 
 const CONTACTS = [
@@ -346,8 +367,185 @@ const PROFILES = [
   { slug: 'early-creation-then-recent', build: profileLongLivedGroup },
 ];
 
+// --------------------------------------------------------------------------
+// TCF fragment pairs.
+//
+// The five profiles above are parsing edge cases: one account each, no
+// relationship between files. Nothing among them exhibits the phenomenon the
+// paper is actually about -- two independently preserved fragments of ONE
+// account -- so there was nothing an implementation could be run against to
+// demonstrate reconstruction. This mode emits that.
+//
+// One ground-truth timeline is generated, then split per the paper's own
+// definition (Section 2.2):
+//
+//   F1 (primary)    t <= t_f  or  t >= t_r
+//   F2 (secondary)  t_f - delta <= t <= t_r + epsilon
+//
+// A message inside [t_f - delta, t_f] or [t_r, t_r + epsilon] satisfies both
+// and is therefore written to BOTH files -- one message, two observations. The
+// two fragments are rendered in DIFFERENT date/time formats on purpose, so a
+// duplicate pair is byte-different while denoting the same message. That is
+// exactly the condition Section 3.4 says deduplication exists for, and an
+// implementation that compares raw lines rather than normalised records will
+// fail on it.
+//
+//   --delta 0 --epsilon 0   the disjoint case: the motivating incident, where
+//                           reconstruction reduces to ordered concatenation
+//   --delta N --epsilon M   the overlapping case the specification is written
+//                           for, where N + M days of messages are duplicated
+//
+// The manifest records ground truth, so a reconstruction can be checked rather
+// than admired: expected_unified_size is what |U| must equal, and
+// overlap_messages is how many duplicate pairs Synthesis has to collapse.
+// --------------------------------------------------------------------------
+
+const DAY_MS = 86400000;
+
+function buildTcfPair(rng, opts) {
+  const { deltaDays, epsilonDays, windowDays } = opts;
+  const preDays = 30;
+  const postDays = 30;
+
+  const start = new Date(BASE_DATE);
+  const tF = new Date(start.getTime() + preDays * DAY_MS);
+  const tR = new Date(tF.getTime() + windowDays * DAY_MS);
+  const end = new Date(tR.getTime() + postDays * DAY_MS);
+
+  // One ground-truth timeline for the whole span. Messages are generated at
+  // minute resolution, which is what the export format carries.
+  const participants = ['You'].concat(take(rng, CONTACTS, 3));
+  const truth = [];
+  let t = new Date(start.getTime() + randint(rng, 60, 600) * 60000);
+  while (t < end) {
+    truth.push({ t: new Date(t.getTime()), sender: pick(rng, participants) });
+    // Step in minutes so the whole span is covered at a plausible density.
+    t = new Date(t.getTime() + randint(rng, 120, 2880) * 60000);
+  }
+
+  const f1Lo = null; // F1 is defined by exclusion, not by a single interval.
+  const f2Start = new Date(tF.getTime() - deltaDays * DAY_MS);
+  const f2End = new Date(tR.getTime() + epsilonDays * DAY_MS);
+
+  const fmt1 = makeFormatter('dmy', '12h');
+  const fmt2 = makeFormatter('mdy', '24h');
+  const c1 = makeCollector();
+  const c2 = makeCollector();
+  c1.quirks.add('date-format-ddmmyy');
+  c1.quirks.add('time-12h');
+  c2.quirks.add('date-format-mmddyy');
+  c2.quirks.add('time-24h');
+
+  addSystem(c1, fmt1, truth[0].t, ENC_NOTICE_GROUP, ['encryption-notice-group']);
+  addSystem(c2, fmt2, f2Start, ENC_NOTICE_GROUP, ['encryption-notice-group']);
+
+  let inF1 = 0;
+  let inF2 = 0;
+  let overlap = 0;
+  for (const m of truth) {
+    // The body is drawn once and shared, so a duplicated message is the same
+    // message in both fragments rather than two different ones at one instant.
+    const body = messageBody(rng, c1);
+    const onF1 = m.t <= tF || m.t >= tR;
+    const onF2 = m.t >= f2Start && m.t <= f2End;
+    if (onF1) {
+      addMessage(c1, fmt1, m.t, m.sender, body);
+      inF1++;
+    }
+    if (onF2) {
+      addMessage(c2, fmt2, m.t, m.sender, body);
+      c2.quirks.add('rich-text-markup');
+      inF2++;
+    }
+    if (onF1 && onF2) overlap++;
+  }
+  void f1Lo;
+
+  // The split is the whole point of this mode, so check it rather than trust
+  // it. Every ground-truth message must land in at least one fragment, and a
+  // message counted twice must be counted once as an overlap. If this ever
+  // fails, the fragments are not a decomposition of the timeline and any
+  // reconstruction checked against them would be checked against nonsense.
+  if (inF1 + inF2 - overlap !== truth.length) {
+    fail(
+      `fragment split is not a decomposition: ${inF1} + ${inF2} - ${overlap} ` +
+        `!= ${truth.length} ground-truth messages`
+    );
+  }
+  if (deltaDays === 0 && epsilonDays === 0 && overlap !== 0) {
+    fail(`delta = epsilon = 0 must yield disjoint fragments, got ${overlap} overlapping`);
+  }
+
+  return {
+    c1,
+    c2,
+    meta: {
+      t_f: tF.toISOString(),
+      t_r: tR.toISOString(),
+      delta_days: deltaDays,
+      epsilon_days: epsilonDays,
+      outage_window_days: windowDays,
+      disjoint: overlap === 0,
+      ground_truth_messages: truth.length,
+      f1_message_records: inF1,
+      f2_message_records: inF2,
+      overlap_messages: overlap,
+      expected_unified_size: truth.length,
+      note:
+        'expected_unified_size counts messages only, not the encryption-notice ' +
+        'system line each fragment opens with. A conforming reconstruction of ' +
+        'these two fragments must yield |U| = expected_unified_size after ' +
+        'collapsing overlap_messages duplicate pairs.',
+    },
+  };
+}
+
+function mainTcfPair(opts) {
+  const outDir = path.join(__dirname, '..', 'data', 'synthetic_fixtures', 'tcf-pair');
+  fs.mkdirSync(outDir, { recursive: true });
+  const rng = mulberry32((opts.seed ^ 0x54434650) >>> 0);
+  const { c1, c2, meta } = buildTcfPair(rng, opts);
+
+  const f1 = 'tcf-F1-primary.txt';
+  const f2 = 'tcf-F2-secondary.txt';
+  fs.writeFileSync(path.join(outDir, f1), `${c1.lines.join('\n')}\n`, 'utf8');
+  fs.writeFileSync(path.join(outDir, f2), `${c2.lines.join('\n')}\n`, 'utf8');
+
+  const manifest = {
+    seed: opts.seed,
+    mode: 'tcf-pair',
+    command:
+      `node scripts/generate-synthetic-fixtures.js --tcf-pair --seed ${opts.seed}` +
+      ` --delta ${opts.deltaDays} --epsilon ${opts.epsilonDays} --window ${opts.windowDays}`,
+    ...meta,
+    fragments: [
+      { file: f1, role: 'primary', quirks: Array.from(c1.quirks).sort() },
+      { file: f2, role: 'secondary', quirks: Array.from(c2.quirks).sort() },
+    ],
+  };
+  fs.writeFileSync(
+    path.join(outDir, 'manifest.json'),
+    `${JSON.stringify(manifest, null, 2)}\n`,
+    'utf8'
+  );
+
+  console.log(`wrote ${f1} (${c1.lines.length} lines, ${meta.f1_message_records} messages)`);
+  console.log(`wrote ${f2} (${c2.lines.length} lines, ${meta.f2_message_records} messages)`);
+  console.log(
+    `delta=${opts.deltaDays}d epsilon=${opts.epsilonDays}d -> ` +
+      `${meta.overlap_messages} overlapping message(s), ` +
+      `${meta.disjoint ? 'DISJOINT (concatenation case)' : 'OVERLAPPING (deduplication case)'}`
+  );
+  console.log(`ground truth ${meta.ground_truth_messages} messages; |U| must equal ${meta.expected_unified_size}`);
+}
+
 function main() {
-  const { seed, count } = parseArgs(process.argv.slice(2));
+  const opts = parseArgs(process.argv.slice(2));
+  if (opts.tcfPair) {
+    mainTcfPair(opts);
+    return;
+  }
+  const { seed, count } = opts;
   const outDir = path.join(__dirname, '..', 'data', 'synthetic_fixtures');
   fs.mkdirSync(outDir, { recursive: true });
   const manifest = { seed, count, fixtures: [] };
