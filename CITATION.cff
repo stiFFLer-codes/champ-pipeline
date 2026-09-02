@@ -10,8 +10,7 @@ version: "0.1.0"
 date-released: "2026-09-02"
 repository-code: "https://github.com/stiFFLer-codes/champ-pipeline"
 license: MIT
-# After the first Zenodo release, add the minted concept DOI here:
-# identifiers:
-#   - type: doi
-#     value: 10.5281/zenodo.XXXXXXX
-#     description: "Concept DOI (all versions)"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22260522"
+    description: "Concept DOI (all versions)"

@@ -1,5 +1,7 @@
 # CHAMP-Pipeline
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22260522.svg)](https://doi.org/10.5281/zenodo.22260522)
+
 Reference implementation and formal specification of **CARTA** (Chat Archive
 Reconstruction & Temporal Access) — a platform-agnostic framework for
 reconstructing a chat history that has fragmented across two irreconcilable
