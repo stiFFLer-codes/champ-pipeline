@@ -1,14 +1,17 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it as below.
-title: "CHAMP-Pipeline: Chat History Archival & Merge Pipeline (Specification and Planned Reference Implementation of the CARTA Framework)"
+title: "CHAMP-Pipeline: Chat History Archival & Merge Pipeline (Specification and Reference Implementation of the CARTA Framework)"
 authors:
   - given-names: "Maitreya"
     family-names: "Sapariya"
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0003-9346-3775"
-version: "0.0.1"
-# date-released intentionally omitted: an empty string is not a valid CFF
-# date, and no version has actually been tagged/released yet. Set this to
-# the real release date at the first tagged release (Phase S).
+version: "0.1.0"
+date-released: "2026-09-02"
 repository-code: "https://github.com/stiFFLer-codes/champ-pipeline"
 license: MIT
+# After the first Zenodo release, add the minted concept DOI here:
+# identifiers:
+#   - type: doi
+#     value: 10.5281/zenodo.XXXXXXX
+#     description: "Concept DOI (all versions)"
