@@ -418,7 +418,7 @@ Fill `CITATION.cff` (author, version, date — currently placeholder-empty), rec
 
 # PHASE S — arXiv Submission
 
-*(Replaces the original Phase 10 — renamed 2026-08-24. Zenodo DOI, ORCID, and JOSS remain explicitly out of scope per §12.)*
+*(Replaces the original Phase 10 — renamed 2026-08-24. ORCID and JOSS remain explicitly out of scope per §12. Zenodo archival was taken in scope on 2026-09-02 — see §12 — and the v0.1.0 release is minted: concept DOI `10.5281/zenodo.22260522`.)*
 
 ### Objective
 
@@ -854,6 +854,14 @@ The following are explicitly **not current priorities**:
 * unnecessary abstraction layers
 
 These may be reconsidered only if later evidence demonstrates that they materially strengthen the research contribution.
+
+**Amended 2026-09-02 — Zenodo archival now in scope.** A GitHub↔Zenodo
+release archive was set up and the `v0.1.0` tag minted concept DOI
+`10.5281/zenodo.22260522` (recorded in `CITATION.cff` and the README badge).
+This was a deliberate, author-directed decision, not scope creep: it is a
+one-time archival hook, adds no engineering work, and gives the arXiv
+preprint a permanent citable software record. ORCID (already filled in
+`CITATION.cff` / `main.tex`) and JOSS submission remain out of scope.
 
 ---
 

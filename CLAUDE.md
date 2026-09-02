@@ -19,8 +19,10 @@ primary device recovery.
   relies on. See PROJECT_PLAN.md §6/§2.6 of docs/PAPER_BLUEPRINT.md.)*
 
 This repo exists to support: an arXiv preprint (current, near-term goal —
-see PROJECT_PLAN.md's locked fast-path scope). A peer-reviewed journal
-paper, a Zenodo-minted DOI, and a JOSS submission are explicitly *not*
+see PROJECT_PLAN.md's locked fast-path scope). The repo is archived at
+Zenodo (concept DOI `10.5281/zenodo.22260522`, minted from the `v0.1.0`
+release on 2026-09-02 — see PROJECT_PLAN.md §12, amended that date). A
+peer-reviewed journal paper and a JOSS submission are explicitly *not*
 current priorities (PROJECT_PLAN.md §12) — they may be reconsidered later,
 but do not treat them as active goals. Code quality, documentation, and
 reproducibility still matter more here than in a typical side project —

@@ -360,8 +360,8 @@ Recorded so a later drafting session cannot reintroduce them:
 +---------------------------------------------------------------------------------------+
 |  9. CONCLUSION & REPRODUCIBILITY                                                      |
 |     - Summary of contributions                                                        |
-|     - Data and code availability (GitHub open-source release; Zenodo DOI is           |
-|       explicitly out of scope per PROJECT_PLAN.md §12 — not required for arXiv)       |
+|     - Data and code availability (GitHub open-source release; archived at            |
+|       Zenodo, concept DOI 10.5281/zenodo.22260522)                                    |
 +---------------------------------------------------------------------------------------+
 ```
 
@@ -442,4 +442,4 @@ paper/
 1. **Zero Data Leakage:** Verify with automated scripts that no personal names, numbers, or private chat data exist anywhere in the paper, code, or fixtures.
 2. **Reproducibility Script:** Not yet built. No `scripts/benchmark-bifurcation.js` exists. This checklist item stays unchecked until a real benchmark script exists and has actually been run.
 3. **Clean Compilation:** `pdflatex main.tex` -> `bibtex main` -> `pdflatex main.tex` produces 0 warnings and 0 missing references.
-4. ~~**Permanent DOI & Zenodo Archival**~~ — **out of scope for this paper**, per `PROJECT_PLAN.md §12` (explicitly not a current priority) and Phase S (arXiv Submission only). Remove from the pre-submission checklist; not a blocker.
+4. **Permanent DOI & Zenodo Archival** — **DONE (2026-09-02).** GitHub↔Zenodo release archival is set up; the `v0.1.0` release minted concept DOI `10.5281/zenodo.22260522` (recorded in `CITATION.cff` and the README badge). Cite it in §9's data-availability statement. Was previously out of scope per `PROJECT_PLAN.md §12`; that section was amended 2026-09-02 to take archival in scope.
