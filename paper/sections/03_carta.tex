@@ -17,7 +17,7 @@ CARTA specifies how to get from a set of fragmented exports to one reconstructed
 history together with an account of how that history was produced. It is a
 specification and not a system: it fixes what each stage receives, what each
 stage emits, and what the result must be able to report about its own
-construction. Section~\ref{sec:implementation} describes the planned
+construction. Section~\ref{sec:implementation} describes the reference
 implementation, and nothing in this section depends on that implementation
 existing.
 
@@ -355,8 +355,10 @@ For a fixed $\mathcal{F}$, two runs of the pipeline yield the same pair:
   \label{eq:inv3}
 \end{equation}
 
-We state this as a requirement on conforming implementations. No implementation
-exists to exhibit it, and Section~\ref{sec:algorithms:ordering} identifies the
+We state this as a requirement on conforming implementations, not as a theorem.
+Section~\ref{sec:evaluation} reports one implementation exhibiting it on one
+input, which is evidence that the requirement is satisfiable and not a proof
+that it holds in general; Section~\ref{sec:algorithms:ordering} identifies the
 tie-breaking rule that a conforming implementation needs in order to satisfy it.
 
 %% Idempotence was numbered "Invariant 4" through the first complete draft.

@@ -39,7 +39,7 @@ personal chat history, where the reader of the result is usually the person whos
 history it is and has no second copy to check it against.
 
 \paragraph{Reproducibility.}
-Two artefacts in the accompanying repository run. The first is the synthetic
+Four artefacts in the accompanying repository run. The first is the synthetic
 fixture generator. The repository is at
 \url{https://github.com/stiFFLer-codes/champ-pipeline}, and running
 %% Displayed rather than inline: the command is a long unbreakable \texttt run
@@ -56,10 +56,10 @@ tested. The second is
 derives every count Section~\ref{sec:implementation:inputs} states about the
 corpus from the committed fixtures and fails if the paper and the artefact
 disagree; the paper's claims about its own corpus are checkable rather than
-asserted. The reconstruction itself runs from the same repository:
+asserted. The third is the reconstruction itself:
 \texttt{node scripts/reconstruct.js -{}-infer} over the two committed fragments
-produces the archive and report of Section~\ref{sec:evaluation}, and
-\texttt{node tests/run-all.js} runs every check in the repository. The
+produces the archive and report of Section~\ref{sec:evaluation}, and the
+fourth, \texttt{node tests/run-all.js}, runs every check in the repository. The
 repository is also archived at Zenodo under the concept DOI
 \url{https://doi.org/10.5281/zenodo.22260522}, which resolves to the latest
 release.

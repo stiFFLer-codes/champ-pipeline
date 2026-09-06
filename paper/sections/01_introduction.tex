@@ -83,14 +83,17 @@ a structured report $\Omega$ covering provenance, quarantine carryover,
 conflicts, and counts (Sections~\ref{sec:carta} and~\ref{sec:algorithms}).
 Answering RQ3 is Section~\ref{sec:related}.
 
-\paragraph{What this paper does not do.}
-No implementation is evaluated here. CHAMP-Pipeline, the WhatsApp-specific
-reference implementation of CARTA, is described in
-Section~\ref{sec:implementation} as planned work and does not yet exist;
-\texttt{core/src/\{ingestion,normalization,synthesis\}/} are empty. There is
-accordingly no benchmark, no performance measurement, and no
-reconstruction-accuracy figure anywhere in this paper. Where a capability is
-stated, it is either a property the specification requires of a conforming
-implementation or a citation to someone else's system. Readers should treat the
-contribution as a problem definition and a specification, with implementation
-and evaluation left as declared future work.
+\paragraph{What this paper does and does not do.}
+The contribution is a problem definition and a specification, accompanied by
+a reference implementation that exercises it. CHAMP-Pipeline, the
+WhatsApp-specific reference implementation of CARTA, is described in
+Section~\ref{sec:implementation} and evaluated in
+Section~\ref{sec:evaluation} against synthetic fragment pairs whose ground
+truth is known by construction; that evaluation establishes that the
+specification is implementable and reproduces a known timeline, and nothing
+about real archives. No real WhatsApp export has been reconstructed, no
+accuracy, precision or recall figure is reported, and no performance
+measurement is made, for the reasons Section~\ref{sec:evaluation:limits} sets
+out. Where a capability is stated, it is either exhibited by the reference
+implementation on synthetic input, required by the specification of a
+conforming implementation, or attributed to someone else's system.

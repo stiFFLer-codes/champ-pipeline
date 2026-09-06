@@ -1,10 +1,9 @@
-%% Section 5 -- CHAMP-Pipeline: Planned Implementation
+%% Section 5 -- CHAMP-Pipeline: Reference Implementation
 %% Ported from docs/DRAFT_PAPER.md Section 5.
 %%
-%% FRAMING RULE (do not blur): CHAMP-Pipeline DOES NOT EXIST. Every edge-case
-%% sentence here says "the specification must account for X, illustrated by the
-%% synthetic corpus" -- never "CHAMP-Pipeline handles X". Preserve that on any
-%% future edit.
+%% FRAMING RULE: the synthetic corpus ILLUSTRATES anticipated input forms;
+%% it does not establish that WhatsApp emits them in the field (see 5.2 / 6.4).
+%% State what CHAMP-Pipeline actually does, not what a corpus proves.
 
 \section{CHAMP-Pipeline: Reference Implementation}
 \label{sec:implementation}
@@ -241,11 +240,10 @@ lines, zero-byte fragments, CRLF and byte-order marks, impossible dates such as
 29 February in a non-leap year, and the twelve-by-twelve grid of date strings
 that are valid under both orderings.
 
-The scope of that result should be read narrowly. It establishes that synthetic
-input generation is seed-deterministic and therefore that the corpus is
-reproducible from a clean checkout. It establishes nothing about CARTA
-reconstruction, because no reconstruction code exists to run. There is no
-$\mathcal{U}$, no $\Omega$, and no deduplication or conflict count anywhere in this
-repository, and any claim drawn from this artefact is properly scoped to the
-generation of a deterministic synthetic corpus across a stated set of edge-case
-categories.
+The scope of that reproducibility result should be read narrowly. It
+establishes that synthetic input generation is seed-deterministic and that the
+corpus is reproducible from a clean checkout; it is a statement about the
+generator rather than about reconstruction accuracy. What the reconstruction
+establishes, and the narrow sense in which it does, is the subject of
+Section~\ref{sec:evaluation}, whose limits are stated in
+Section~\ref{sec:evaluation:limits}.
