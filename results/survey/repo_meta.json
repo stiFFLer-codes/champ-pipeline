@@ -1,0 +1,227 @@
+{
+  "Anarky/mbdbEditor": {
+    "queriedAtUtc": "2026-10-15T11:20:33.534Z",
+    "status": 200,
+    "stars": 5,
+    "fork": false,
+    "archived": false,
+    "license": null,
+    "language": "Python",
+    "pushed_at": "2015-11-16T11:40:13Z"
+  },
+  "ElDavoo/wa-crypt-tools": {
+    "queriedAtUtc": "2026-10-15T11:20:34.170Z",
+    "status": 200,
+    "stars": 1176,
+    "fork": false,
+    "archived": false,
+    "license": "GPL-3.0",
+    "language": "Python",
+    "pushed_at": "2026-10-13T00:34:24Z"
+  },
+  "GjjvdBurg/signal2html": {
+    "queriedAtUtc": "2026-10-15T11:20:34.509Z",
+    "status": 200,
+    "stars": 116,
+    "fork": false,
+    "archived": false,
+    "license": "MIT",
+    "language": "Python",
+    "pushed_at": "2023-03-19T10:30:36Z"
+  },
+  "KnugiHK/WhatsApp-Key-DB-Extractor": {
+    "queriedAtUtc": "2026-10-15T11:20:34.857Z",
+    "status": 200,
+    "stars": 186,
+    "fork": true,
+    "archived": false,
+    "license": "NOASSERTION",
+    "language": "Batchfile",
+    "pushed_at": "2026-04-01T13:12:54Z"
+  },
+  "KnugiHK/iphone_backup_decrypt": {
+    "queriedAtUtc": "2026-10-15T11:20:35.209Z",
+    "status": 200,
+    "stars": 38,
+    "fork": true,
+    "archived": false,
+    "license": "NOASSERTION",
+    "language": "Python",
+    "pushed_at": "2025-01-02T12:50:04Z"
+  },
+  "SecurityRonin/chat4n6": {
+    "queriedAtUtc": "2026-10-15T11:20:32.829Z",
+    "status": 200,
+    "stars": 47,
+    "fork": false,
+    "archived": false,
+    "license": "MIT",
+    "language": "Rust",
+    "pushed_at": "2026-09-28T06:35:18Z"
+  },
+  "cycneuramus/signal-backup-shrink": {
+    "queriedAtUtc": "2026-10-15T11:20:35.556Z",
+    "status": 200,
+    "stars": 13,
+    "fork": false,
+    "archived": false,
+    "license": null,
+    "language": "Python",
+    "pushed_at": "2024-07-18T15:30:27Z"
+  },
+  "discordwell/green2blue": {
+    "queriedAtUtc": "2026-10-15T11:20:35.957Z",
+    "status": 200,
+    "stars": 2,
+    "fork": false,
+    "archived": false,
+    "license": "MIT",
+    "language": "Python",
+    "pushed_at": "2026-06-19T06:27:54Z"
+  },
+  "frozenspider/chat-history-manager-ui": {
+    "queriedAtUtc": "2026-10-15T11:20:36.283Z",
+    "status": 200,
+    "stars": 0,
+    "fork": false,
+    "archived": true,
+    "license": "MIT",
+    "language": "Scala",
+    "pushed_at": "2025-01-27T00:48:57Z"
+  },
+  "giacomoferretti/whatsapp-backup-downloader-decryptor": {
+    "queriedAtUtc": "2026-10-15T11:20:36.665Z",
+    "status": 200,
+    "stars": 294,
+    "fork": false,
+    "archived": false,
+    "license": "Apache-2.0",
+    "language": "Python",
+    "pushed_at": "2026-09-23T10:23:08Z"
+  },
+  "jensstein/oandbackup": {
+    "queriedAtUtc": "2026-10-15T11:20:37.101Z",
+    "status": 200,
+    "stars": 585,
+    "fork": false,
+    "archived": false,
+    "license": "NOASSERTION",
+    "language": "Java",
+    "pushed_at": "2024-08-10T18:37:09Z"
+  },
+  "machiav3lli/oandbackupx": {
+    "queriedAtUtc": "2026-10-15T11:20:37.662Z",
+    "status": 200,
+    "stars": 3872,
+    "fork": true,
+    "archived": false,
+    "license": "AGPL-3.0",
+    "language": "Kotlin",
+    "pushed_at": "2026-05-03T20:52:30Z"
+  },
+  "mossblaser/signal_for_android_decryption": {
+    "queriedAtUtc": "2026-10-15T11:20:38.418Z",
+    "status": 200,
+    "stars": 54,
+    "fork": false,
+    "archived": false,
+    "license": "GPL-3.0",
+    "language": "Python",
+    "pushed_at": "2025-07-28T06:54:26Z"
+  },
+  "mukulkadel/mwatoi": {
+    "queriedAtUtc": "2026-10-15T11:20:38.794Z",
+    "status": 200,
+    "stars": 39,
+    "fork": false,
+    "archived": false,
+    "license": null,
+    "language": "Python",
+    "pushed_at": "2022-12-08T14:24:16Z"
+  },
+  "p1ne/SMS-Tools": {
+    "queriedAtUtc": "2026-10-15T11:20:39.158Z",
+    "status": 200,
+    "stars": 11,
+    "fork": true,
+    "archived": false,
+    "license": null,
+    "language": "Python",
+    "pushed_at": "2023-04-14T07:44:34Z"
+  },
+  "pajowu/signal-backup-decode": {
+    "queriedAtUtc": "2026-10-15T11:20:39.679Z",
+    "status": 200,
+    "stars": 231,
+    "fork": false,
+    "archived": false,
+    "license": "GPL-3.0",
+    "language": "Rust",
+    "pushed_at": "2023-10-29T19:08:21Z"
+  },
+  "parvesh-rm/wabridge": {
+    "queriedAtUtc": "2026-10-15T11:20:40.120Z",
+    "status": 200,
+    "stars": 1,
+    "fork": false,
+    "archived": false,
+    "license": "GPL-3.0",
+    "language": "Python",
+    "pushed_at": "2026-09-23T10:00:21Z"
+  },
+  "radj/AndroidSMSBackupRestoreCleaner": {
+    "queriedAtUtc": "2026-10-15T11:20:40.825Z",
+    "status": 200,
+    "stars": 21,
+    "fork": false,
+    "archived": false,
+    "license": "GPL-2.0",
+    "language": "Python",
+    "pushed_at": "2025-07-14T14:18:10Z"
+  },
+  "residentsummer/watoi": {
+    "queriedAtUtc": "2026-10-15T11:20:41.204Z",
+    "status": 200,
+    "stars": 453,
+    "fork": false,
+    "archived": false,
+    "license": "GPL-3.0",
+    "language": "Objective-C",
+    "pushed_at": "2022-01-03T13:54:36Z"
+  },
+  "rohancodesss/oath": {
+    "queriedAtUtc": "2026-10-15T11:20:41.524Z",
+    "status": 200,
+    "stars": 0,
+    "fork": false,
+    "archived": false,
+    "license": "GPL-3.0",
+    "language": "Python",
+    "pushed_at": "2026-09-24T09:04:06Z"
+  },
+  "steipete/backup-telecrawl": {
+    "queriedAtUtc": "2026-10-15T11:20:41.872Z",
+    "status": 404,
+    "license": null
+  },
+  "tbvdm/sigtop": {
+    "queriedAtUtc": "2026-10-15T11:20:42.154Z",
+    "status": 200,
+    "stars": 582,
+    "fork": false,
+    "archived": false,
+    "license": "NOASSERTION",
+    "language": "Go",
+    "pushed_at": "2026-09-14T16:17:00Z"
+  },
+  "xeals/signal-back": {
+    "queriedAtUtc": "2026-10-15T11:20:42.487Z",
+    "status": 200,
+    "stars": 720,
+    "fork": false,
+    "archived": false,
+    "license": "Apache-2.0",
+    "language": "Go",
+    "pushed_at": "2019-10-28T13:48:56Z"
+  }
+}

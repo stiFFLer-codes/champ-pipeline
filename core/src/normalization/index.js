@@ -24,37 +24,53 @@
 // DECLARED POLICY (paper Section 3.8 requires a conforming implementation to
 // publish these; they are returned in the result and belong in Omega):
 //
-//   utcOffsetMinutes  Default 0. SEE THE NOTE BELOW -- this one is a genuine
-//                     gap in the specification, not merely a tunable.
+//   zone              Per fragment. Default +00:00, and recorded as defaulted.
+//                     SEE THE NOTE BELOW.
 //   yearWindow        Two-digit years: 00-69 -> 2000-2069, 70-99 -> 1970-1999.
 //   typeTaxonomy      message.text | message.attachment | message.empty | system
 //   reasonPrecedence  First matching code wins, in the fixed order declared in
 //                     REASON_PRECEDENCE below.
+//   canonicalisations The export-variant rules in CANONICALISATIONS below.
 // -------------------------------------------------------------------------
 //
-// NOTE ON UTC, surfaced rather than papered over:
+// NOTE ON TIME ZONES (CARTA 1.1):
 //
-//   Section 3.3 says a canonical record carries "a UTC epoch timestamp". A
-//   WhatsApp text export carries no UTC offset -- Section 5.2 already observes
-//   that the export has no locale marker to settle the DATE ordering, and the
-//   same is true of the clock. Converting a wall-clock reading to a UTC instant
-//   therefore requires an offset the input does not contain.
+//   A canonical record carries a UTC instant, and a WhatsApp text export
+//   carries no zone or offset: converting its wall-clock reading to an instant
+//   needs a fact the input does not contain. So every fragment is normalized
+//   under a DECLARED zone -- the device's zone when the export was written --
+//   which is either a fixed offset ("+05:30") or an IANA name
+//   ("Asia/Kolkata"), resolved per instant through Intl so that daylight
+//   saving is applied where it was in force. Fragments from devices in
+//   different zones need different declarations; a wrong declaration shifts
+//   every instant of that fragment and defeats deduplication against the
+//   others, which is why the zone of every fragment is reported in Omega.
 //
-//   Resolving that silently would be precisely the failure this stage exists to
-//   prevent. So the offset is a declared policy parameter, defaulting to 0, and
-//   the canonical timestamps are wall-clock instants correct up to the declared
-//   offset. An implementation reconciling fragments from devices in different
-//   zones must set it per fragment and say so.
-//
-//   This is a specification gap, not an implementation choice, and it is flagged
-//   for the paper rather than fixed here.
+//   Daylight saving makes some readings non-unique, and they are treated like
+//   any other uninterpretable reading rather than guessed at:
+//     - a reading the zone skipped (spring forward) names no instant:
+//       MALFORMED_TIMESTAMP;
+//     - a reading the zone repeated (fall back) names two instants an hour
+//       apart: AMBIGUOUS_LOCAL_TIME.
 
 const REASON = {
   UNSUPPORTED_FORMAT: 'UNSUPPORTED_FORMAT',
   INVALID_ENCODING: 'INVALID_ENCODING',
   MALFORMED_TIMESTAMP: 'MALFORMED_TIMESTAMP',
   AMBIGUOUS_DATE_FORMAT: 'AMBIGUOUS_DATE_FORMAT',
+  AMBIGUOUS_LOCAL_TIME: 'AMBIGUOUS_LOCAL_TIME',
   UNRESOLVED_SENDER: 'UNRESOLVED_SENDER',
+};
+
+// What each code asserts, published in Omega so the taxonomy is part of the
+// report rather than something a reader must look up in the source.
+const REASON_MEANING = {
+  UNSUPPORTED_FORMAT: 'text that does not open with a record head and belongs to no record',
+  INVALID_ENCODING: 'the record contains bytes that are not valid UTF-8',
+  MALFORMED_TIMESTAMP: 'the timestamp names no instant: unparseable, an impossible date or clock value, or a local time skipped by a DST transition in the declared zone',
+  AMBIGUOUS_DATE_FORMAT: 'the date reads validly as both day-month-year and month-day-year',
+  AMBIGUOUS_LOCAL_TIME: 'the local time occurs twice in the declared zone (a DST fall-back), so it names two instants',
+  UNRESOLVED_SENDER: 'a message line with an empty sender',
 };
 
 // A record can fail more than one way at once. The specification asks for one
@@ -65,6 +81,7 @@ const REASON_PRECEDENCE = [
   REASON.INVALID_ENCODING,
   REASON.MALFORMED_TIMESTAMP,
   REASON.AMBIGUOUS_DATE_FORMAT,
+  REASON.AMBIGUOUS_LOCAL_TIME,
   REASON.UNRESOLVED_SENDER,
 ];
 
@@ -76,11 +93,60 @@ const TYPE = {
 };
 
 const DEFAULT_POLICY = {
-  utcOffsetMinutes: 0,
+  zone: '+00:00',
   yearWindowPivot: 70, // < 70 -> 2000s, >= 70 -> 1900s
   typeTaxonomy: Object.values(TYPE),
   reasonPrecedence: REASON_PRECEDENCE,
 };
+
+// --- declared zones ----------------------------------------------------------
+
+const zones = new Map();
+
+// '+05:30' -> fixed offset; anything else must be an IANA name Intl knows.
+// An unknown zone is refused outright: falling back to UTC would be exactly
+// the silent default this declaration exists to prevent.
+function parseZone(zone) {
+  if (zones.has(zone)) return zones.get(zone);
+  let z;
+  const m = /^([+-])(\d{2}):(\d{2})$/.exec(zone);
+  if (m) {
+    if (Number(m[2]) > 14 || Number(m[3]) > 59) throw new Error(`offset out of range: "${zone}"`);
+    const ms = (m[1] === '-' ? -1 : 1) * (Number(m[2]) * 60 + Number(m[3])) * 60000;
+    z = { name: zone, kind: 'fixed-offset', offsetAt: () => ms };
+  } else {
+    let fmt;
+    try {
+      fmt = new Intl.DateTimeFormat('en-US', {
+        timeZone: zone, hourCycle: 'h23',
+        year: 'numeric', month: 'numeric', day: 'numeric',
+        hour: 'numeric', minute: 'numeric', second: 'numeric',
+      });
+    } catch (e) {
+      throw new Error(`unknown time zone "${zone}": declare an IANA name (e.g. Asia/Kolkata) or an offset (e.g. +05:30)`);
+    }
+    // The zone's UTC offset at instant t, read back from its wall clock.
+    const offsetAt = (t) => {
+      const p = {};
+      for (const { type, value } of fmt.formatToParts(t)) p[type] = Number(value);
+      return Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute, p.second) - t;
+    };
+    // Recorded as declared: ICU's resolved id can be a legacy alias (Node 24
+    // resolves Asia/Kolkata to Asia/Calcutta), which is not what anyone typed.
+    z = { name: zone, kind: 'iana', offsetAt };
+  }
+  zones.set(zone, z);
+  return z;
+}
+
+// Every instant at which the zone's clock reads `wall` (a wall-clock reading
+// coded as if it were UTC). Usually one; none in a DST gap, two in an overlap.
+// ponytail: candidate offsets are sampled a day either side, so a zone with
+// two transitions inside 48 hours would be misread; no current IANA zone has.
+function instantsAt(z, wall) {
+  const offsets = new Set([z.offsetAt(wall - 86400000), z.offsetAt(wall + 86400000)]);
+  return [...offsets].map((o) => wall - o).filter((t) => z.offsetAt(t) === wall - t).sort((x, y) => x - y);
+}
 
 const STAMP = /^(\d{2})\/(\d{2})\/(\d{2}),\s(\d{1,2}):(\d{2})(?:\s?([ap])\.?m\.?)?$/i;
 
@@ -154,8 +220,13 @@ function resolveTimestamp(raw, policy, forceOrder) {
     return { ok: false, reason: REASON.MALFORMED_TIMESTAMP };
   }
 
-  const wall = Date.UTC(year, month - 1, day, hour, minute);
-  return { ok: true, tUtc: wall - policy.utcOffsetMinutes * 60000, dateOrder };
+  // The date is settled; the declared zone turns the reading into an instant.
+  // A failure here is flagged `zone`, so the inference step can tell it from a
+  // date that failed (which it treats as impossible).
+  const instants = instantsAt(parseZone(policy.zone), Date.UTC(year, month - 1, day, hour, minute));
+  if (instants.length === 0) return { ok: false, reason: REASON.MALFORMED_TIMESTAMP, zone: true };
+  if (instants.length > 1) return { ok: false, reason: REASON.AMBIGUOUS_LOCAL_TIME, zone: true };
+  return { ok: true, tUtc: instants[0], dateOrder };
 }
 
 function classifyType(rec) {
@@ -165,25 +236,49 @@ function classifyType(rec) {
   return TYPE.TEXT;
 }
 
-// The doubled-filename export variant repeats the attachment's filename on a
-// continuation line. That line is an artefact of how the export was written,
-// not something anybody sent, so the canonical body drops it.
+// Attachment canonicalisations. Equation (10) deduplicates on body equality
+// and attachment congruence. Two devices exporting the same attachment message
+// in different variants -- exactly the TCF configuration, two handsets on
+// possibly different app versions -- write it differently, and every
+// difference that is export noise rather than message content is removed here:
 //
-// This matters more than it looks. Equation (10) deduplicates on body equality.
-// Two devices exporting the same attachment message in different variants --
-// exactly the TCF configuration, two handsets on possibly different app
-// versions -- would otherwise produce bodies that differ by that repeated line,
-// fail to deduplicate, and appear twice in U. Canonicalising here keeps
-// Equation (10) intact rather than widening it to tolerate export noise.
+//   attachment-marker  The "<file> (file attached)" line is the export's way of
+//                      writing the attachment, which the canonical record
+//                      carries as `attachment`. The body is the caption: the
+//                      lines written with it, if any.
+//   double-filename    That variant repeats the filename on a continuation
+//                      line. An artefact of the export, so the caption drops it.
+//   trailing-period    That variant writes "IMG-...-WA0001." with the extension
+//                      lost. Nothing in the record can restore it, so it cannot
+//                      be canonicalised to the standard name; instead every
+//                      attachment gets a `stem` (name minus its final extension
+//                      or bare trailing period), and Synthesis compares stems
+//                      only when a trailing-period rendering is involved.
+//                      Dropping extensions from every name would make the
+//                      variants equal too, but would merge report.pdf with
+//                      report.docx.
 //
-// Nothing is lost: Ingestion preserved the raw text, and provenance line_range
-// still points at the bytes containing both lines.
+// Nothing is lost: Ingestion preserved the raw text, and provenance still
+// points at, and hashes, the bytes containing every line.
+const CANONICALISATIONS = {
+  'attachment-marker': 'the "<file> (file attached)" line becomes attachment {ref, form, stem}; body is the caption (the remaining lines)',
+  'double-filename': 'trailing continuation lines repeating the attachment filename are dropped from the caption',
+  'trailing-period': 'stem = filename minus its final extension or bare trailing period; Synthesis compares stems when a trailing-period rendering is involved',
+};
+
 function canonicalBody(rec) {
   if (rec.category === 'system') return rec.rawSystemText;
-  if (!rec.attachment || rec.attachment.form !== 'double-filename') return rec.rawBody;
-  const lines = rec.rawBody.split('\n');
-  while (lines.length > 1 && lines[lines.length - 1] === rec.attachment.rawRef) lines.pop();
+  if (!rec.attachment) return rec.rawBody;
+  const lines = rec.rawBody.split('\n').slice(1);
+  if (rec.attachment.form === 'double-filename') {
+    while (lines.length > 0 && lines[lines.length - 1] === rec.attachment.rawRef) lines.pop();
+  }
   return lines.join('\n');
+}
+
+function canonicalAttachment(att) {
+  if (!att) return null;
+  return { ref: att.rawRef, form: att.form, stem: att.rawRef.replace(/\.[^.]*$/, '') };
 }
 
 // Invalid UTF-8 survives a utf8 decode as U+FFFD. Its presence means bytes were
@@ -199,6 +294,25 @@ function resolveSender(rec) {
   return { ok: true, sender: s };
 }
 
+// The canonical record. Built in one place so the declared inference step,
+// which rescues records after the fact, produces records schema-identical to
+// ones that resolved unaided.
+function canonicalRecord(rec, ts, seq) {
+  return {
+    tUtc: ts.tUtc,
+    dateOrder: ts.dateOrder,
+    sender: resolveSender(rec).sender,
+    type: classifyType(rec),
+    body: canonicalBody(rec),
+    attachment: canonicalAttachment(rec.attachment),
+    // Synthesis sorts primarily by t_utc and secondarily by source sequence
+    // index (paper Section 4.1). That index is this record's position in its
+    // own fragment, and it is the tie-break Invariant 3 depends on.
+    sourceSeq: seq,
+    provenance: rec.provenance,
+  };
+}
+
 /**
  * Normalize one ingested fragment.
  * @param {{sourceId:string, records:object[]}} ingested output of ingestFragment
@@ -207,6 +321,12 @@ function resolveSender(rec) {
  */
 function normalizeFragment(ingested, policyOverrides) {
   const policy = Object.assign({}, DEFAULT_POLICY, policyOverrides || {});
+  const z = parseZone(policy.zone); // refuses an unknown zone before any record is read
+  const zone = {
+    name: z.name,
+    kind: z.kind,
+    source: policyOverrides && policyOverrides.zone !== undefined ? 'declared' : 'default',
+  };
   const records = [];
   const quarantine = [];
 
@@ -248,19 +368,7 @@ function normalizeFragment(ingested, policyOverrides) {
       return;
     }
 
-    records.push({
-      tUtc: ts.tUtc,
-      dateOrder: ts.dateOrder,
-      sender: sender.sender,
-      type: classifyType(rec),
-      body: canonicalBody(rec),
-      attachment: rec.attachment ? { ref: rec.attachment.rawRef, form: rec.attachment.form } : null,
-      // Synthesis sorts primarily by t_utc and secondarily by source sequence
-      // index (paper Section 4.1). That index is this record's position in its
-      // own fragment, and it is the tie-break Invariant 3 depends on.
-      sourceSeq: seq,
-      provenance: rec.provenance,
-    });
+    records.push(canonicalRecord(rec, ts, seq));
   });
 
   // The stage's own guarantee: every record in equals one record out, on one
@@ -277,6 +385,9 @@ function normalizeFragment(ingested, policyOverrides) {
 
   return {
     sourceId: ingested.sourceId,
+    idSource: ingested.idSource,
+    sha256: ingested.sha256,
+    zone,
     records,
     quarantine,
     policy,
@@ -290,6 +401,6 @@ function normalizeFragment(ingested, policyOverrides) {
 }
 
 module.exports = {
-  normalizeFragment, resolveTimestamp, canonicalBody, classifyType,
-  REASON, TYPE, DEFAULT_POLICY,
+  normalizeFragment, resolveTimestamp, canonicalRecord,
+  REASON, REASON_MEANING, TYPE, DEFAULT_POLICY, CANONICALISATIONS,
 };

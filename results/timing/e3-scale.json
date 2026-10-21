@@ -1,0 +1,188 @@
+{
+  "experiment": "E3",
+  "note": "totalMs = ingest + normalize + infer + synthesize (hashing excluded); peak RSS from process.resourceUsage().maxRSS of the reconstructing process",
+  "machine": {
+    "cpu": "Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz",
+    "logicalCpus": 4,
+    "memoryGiB": 15.9,
+    "os": "Windows_NT 10.0.26100 (win32 x64)",
+    "node": "v24.14.0",
+    "v8": "13.6.233.17-node.41",
+    "icu": "78.2",
+    "tz": "2025c"
+  },
+  "sizes": [
+    {
+      "size": 100000,
+      "generateMs": 945,
+      "generatePeakRssMiB": 289,
+      "generateHeap": "--max-old-space-size=12288",
+      "reps": [
+        {
+          "rep": 1,
+          "heap": "default",
+          "ok": true,
+          "stagesMs": {
+            "ingest": 1442.7933,
+            "normalize": 506.1722,
+            "infer": 354.9666,
+            "synthesize": 2258.4416,
+            "hash": 1032.4946
+          },
+          "totalMs": 4562.3737,
+          "peakRssMiB": 347,
+          "heapLimitMiB": 4288,
+          "counts": {
+            "recordsIn": 101416,
+            "unified": 100002,
+            "unifiedMessages": 100000,
+            "collapsed": 1414,
+            "quarantined": 0,
+            "conflicts": 0,
+            "dedupAmbiguities": 0,
+            "advisories": 0
+          },
+          "outputSha256": "d34e7ed0fd5e37e99cb0054611c0a1b226f02cee54f0ff72cdb33b63ff570ea3"
+        },
+        {
+          "rep": 2,
+          "heap": "default",
+          "ok": true,
+          "stagesMs": {
+            "ingest": 1240.7678,
+            "normalize": 426.8234,
+            "infer": 182.3696,
+            "synthesize": 1446.0962,
+            "hash": 731.4266
+          },
+          "totalMs": 3296.057,
+          "peakRssMiB": 348,
+          "heapLimitMiB": 4288,
+          "counts": {
+            "recordsIn": 101416,
+            "unified": 100002,
+            "unifiedMessages": 100000,
+            "collapsed": 1414,
+            "quarantined": 0,
+            "conflicts": 0,
+            "dedupAmbiguities": 0,
+            "advisories": 0
+          },
+          "outputSha256": "d34e7ed0fd5e37e99cb0054611c0a1b226f02cee54f0ff72cdb33b63ff570ea3"
+        },
+        {
+          "rep": 3,
+          "heap": "default",
+          "ok": true,
+          "stagesMs": {
+            "ingest": 769.5983,
+            "normalize": 227.1258,
+            "infer": 249.2387,
+            "synthesize": 958.0379,
+            "hash": 794.7807
+          },
+          "totalMs": 2204.0006999999996,
+          "peakRssMiB": 347,
+          "heapLimitMiB": 4288,
+          "counts": {
+            "recordsIn": 101416,
+            "unified": 100002,
+            "unifiedMessages": 100000,
+            "collapsed": 1414,
+            "quarantined": 0,
+            "conflicts": 0,
+            "dedupAmbiguities": 0,
+            "advisories": 0
+          },
+          "outputSha256": "d34e7ed0fd5e37e99cb0054611c0a1b226f02cee54f0ff72cdb33b63ff570ea3"
+        }
+      ]
+    },
+    {
+      "size": 1000000,
+      "generateMs": 7039,
+      "generatePeakRssMiB": 1305,
+      "generateHeap": "--max-old-space-size=12288",
+      "reps": [
+        {
+          "rep": 1,
+          "heap": "default",
+          "ok": true,
+          "stagesMs": {
+            "ingest": 8065.6217,
+            "normalize": 2467.2005,
+            "infer": 2451.8532,
+            "synthesize": 15038.2559,
+            "hash": 7217.8723
+          },
+          "totalMs": 28022.9313,
+          "peakRssMiB": 1909,
+          "heapLimitMiB": 4288,
+          "counts": {
+            "recordsIn": 1014274,
+            "unified": 1000002,
+            "unifiedMessages": 1000000,
+            "collapsed": 14272,
+            "quarantined": 0,
+            "conflicts": 0,
+            "dedupAmbiguities": 0,
+            "advisories": 0
+          },
+          "outputSha256": "30f2dd5fa8881e75d61ee179619690df724a1d708105f5300facd00d44809bd5"
+        },
+        {
+          "rep": 2,
+          "heap": "default",
+          "ok": true,
+          "stagesMs": {
+            "ingest": 8175.7392,
+            "normalize": 2709.2979,
+            "infer": 3620.2012,
+            "synthesize": 12679.3523,
+            "hash": 9217.0672
+          },
+          "totalMs": 27184.590600000003,
+          "peakRssMiB": 1916,
+          "heapLimitMiB": 4288,
+          "counts": {
+            "recordsIn": 1014274,
+            "unified": 1000002,
+            "unifiedMessages": 1000000,
+            "collapsed": 14272,
+            "quarantined": 0,
+            "conflicts": 0,
+            "dedupAmbiguities": 0,
+            "advisories": 0
+          },
+          "outputSha256": "30f2dd5fa8881e75d61ee179619690df724a1d708105f5300facd00d44809bd5"
+        },
+        {
+          "rep": 3,
+          "heap": "default",
+          "ok": true,
+          "stagesMs": {
+            "ingest": 8235.2262,
+            "normalize": 1387.0534,
+            "infer": 1910.8264,
+            "synthesize": 14087.0128,
+            "hash": 5346.5984
+          },
+          "totalMs": 25620.1188,
+          "peakRssMiB": 1915,
+          "heapLimitMiB": 4288,
+          "counts": {
+            "recordsIn": 1014274,
+            "unified": 1000002,
+            "unifiedMessages": 1000000,
+            "collapsed": 14272,
+            "quarantined": 0,
+            "conflicts": 0,
+            "dedupAmbiguities": 0,
+            "advisories": 0
+          },
+          "outputSha256": "30f2dd5fa8881e75d61ee179619690df724a1d708105f5300facd00d44809bd5"
+        }
+      ]
+    }
+  ]
+}

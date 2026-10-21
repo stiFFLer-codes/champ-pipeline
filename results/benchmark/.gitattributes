@@ -1,0 +1,2 @@
+# Raw tool outputs are evidence: store them byte for byte (some tools write CRLF on Windows).
+raw/** -text

@@ -1,0 +1,437 @@
+repo	source	proposed_decision	code	borderline	reason	input_format	named_by
+0x6rss/matkap	search	exclude	OOS		Telegram malware-bot hunting; no archive combining		
+2921323707/CPA_Orbit	search	exclude	OOS		AI subscription/workspace tool; not a messaging archive tool		
+3dnow/Chat-Backup-Optimizer	search	exclude	I2	y	dedups MEDIA files across two exported WeChat HTML archives ("Merge with External Archive"); message histories are not combined		
+99percentpeople/weblink	search	exclude	OOS		WebRTC chat/file-sharing app		
+AbdulmalikAlayande/beacon	search	exclude	OOS		notification-sending library (dedup of outgoing sends)		
+abhinai2244/Merchant-bot	search	exclude	OOS		Telegram merchant bot (dedup of payment SMS)		
+Aegean-E/NeuroCore	search	exclude	OOS		AI agent framework		
+agenticmail/agenticmail	search	exclude	OOS		email/SMS platform for AI agents		
+aiming-lab/AutoResearchClaw	search	exclude	OOS		autonomous research agent		
+akhil-dara/sqlite-gui-analyzer	search	exclude	OOS		generic SQLite viewer/forensic analyzer, one database at a time; not messaging-specific		
+akhil-dara/WAInsight	search	comparator	FOR		WhatsApp forensic analysis of one acquired Android database; no merge	acquired WhatsApp Android databases	
+Akif-b-Atif/The-Omar-Files	search	include	I		merges successive WhatsApp .txt exports of one group chat into an archive, dedup against archive	WhatsApp .txt export (Android/iOS styles); also text extracted from msgstore.db	
+akx/merge-sms-backup	search	include	I		merges SMS Backup & Restore XML files into one deduplicated JSON	SMS Backup & Restore XML	
+al1enjesus/polymarket-whales	search	exclude	OOS		trading alerts		
+alanagoyal/messages	search	exclude	OOS		AI persona chat website; repo says moved		
+aldinokemal/go-whatsapp-web-multidevice	search	exclude	OOS		WhatsApp Web API server		
+alejandrocora/WhatsAppMediaEnumeration	search	exclude	OOS		security proof of concept on WhatsApp media dedup cache		
+alicenjr/WhatsApp-MCP-Server	search	exclude	OOS		WhatsApp MCP bridge		
+alicin/wamove	search	include	I		moves Android WhatsApp chats onto an already set-up iPhone; chats already on the iPhone are merged and messages already there are skipped	Android WhatsApp msgstore.db.crypt15 + iPhone backup (ChatStorage.sqlite)	
+AmanyadavFD/DSA-----WhatsApp---Merge-Chat-History	search	exclude	NOCODE		algorithm exercise (merge two sorted in-memory arrays); takes no archive input		
+AMortalsOdyssey/mail-invoice-archiver	search	exclude	OOS		invoice archiver		
+Anantys-oss/koan	search	exclude	OOS		AI coding agent		
+ancsemi/Haven	search	exclude	OOS		self-hosted chat server		
+andreavb/whatsapp-history-migrator	search	exclude	I2	y	merges two threads of one contact (old/new number format) inside ONE WhatsApp database; not across archives		
+anirudhmalik/xhunter	search	exclude	OOS		Android RAT		
+anjitagargi/ChatPortFolio	search	exclude	OOS		portfolio website		
+antiabcdefg/PhoneBackup	search	include	I		Android SMS/call/contact backup-restore app; restore skips records already on the device (PhoneRestoreTask.kt:133,229)	on-device Android SMS/call log/contacts + the app's own backup files	
+antirez/smallchat	search	exclude	OOS		chat server teaching example		
+aphexcx/titanium-backup-merger	search	include	I		merges multiple Titanium Backup SMS/MMS XML backups	Titanium Backup SMS/MMS XML	
+apocas/restai	search	exclude	OOS		AI platform		
+asternic/wuzapi	search	exclude	OOS		WhatsApp REST API		
+Athenkosi-Maqwara01/StudentSupportWhatsAppChatbot_Code	search	exclude	OOS		chatbot		
+atilaahmettaner/tradingview-mcp	search	exclude	OOS		market data MCP server		
+auanasgheps/whatsapp-backup-tools	search	exclude	VIEW		media archiver and viewer over one WhatsApp database; multiple media roots are deduplicated, message histories are not combined		
+Augusty10/java-final-project	search	exclude	OOS		student projects		
+AvillaDaniel/AvillaForensics	search	comparator	FOR		mobile forensic acquisition/analysis tool; single acquisition	Android device extractions / backups	
+Avunu/messaging	search	exclude	OOS		Frappe messaging app		
+Awaisali36/Whatsapp-chat-voice-Bot-with-Realtime-scraping	search	exclude	OOS		lead-handling chatbot		
+awesome-gptX/awesome-gpt	search	exclude	OOS		link list		
+ayu9x/MobileTrust-Relay	search	exclude	OOS		emergency SMS relay (dedup of live alerts)		
+azalio/azalio_tech_summary	search	exclude	OOS		news digest bot		
+B16f00t/whapa	search	include	I		WhatsApp toolset including Whamerge, a msgstore database merger	WhatsApp Android msgstore.db (decrypted)	
+b1rdmania/couples-therapy-bot	search	exclude	OOS		chat-analysis bot		
+badboysm890/Whatsapp-GPT3-BOT	search	exclude	OOS		chatbot		
+badman-returns/unify-chat	search	exclude	OOS		customer-communication inbox		
+bakasur-te/whatsapp-dedup-dashboard	search	exclude	OOS		captures live WhatsApp messages and dedups the captured stream; no archive/backup/export input		
+BandosMonkies/PES-Connect	search	exclude	OOS		student platform		
+BenjaminJornet/PhoneBridge	search	include	I		consolidates several Android phone backups (incl. messages) into one library deduplicated by content, with provenance (README marks cross-backup dedup as in progress)	Android phone backups (folder copies, Smart Switch, ADB pull)	
+bepaald/signalbackup-tools	search	include	I		Signal Android backup tool; --importthreads merges one backup into another	Signal Android .backup files (plus Signal Desktop database for import)	
+beriktassuly/chatpack	search	exclude	VIEW		converts one chat export to compact CSV/JSON; "merge" means consecutive messages, not archives		
+BochilGaming/games-wabot	search	exclude	OOS		WhatsApp bot		
+bogkonstantin/android_income_sms_gateway_webhook	search	exclude	OOS		SMS forwarder		
+BrodieL3/comms-triage	search	exclude	OOS		communications triage digest		
+bytedance/deer-flow	search	exclude	OOS		AI agent framework		
+calebnewtonusc/D1-Networking-Automation	search	exclude	OOS		networking automation		
+callofthev0id/n8n-automation-suite	search	exclude	OOS		MSP automation workflows		
+carderne/signal-export	search	exclude	VIEW		exports one Signal Desktop database to Markdown/HTML; no merge		
+carterlasalle/mac_messages_mcp	search	exclude	OOS		macOS Messages MCP server		
+casabre/whatsapp-merge	search	include	I		merges WhatsApp history from two iPhones (ChatStorage.sqlite from iTunes backups) into one database	iOS WhatsApp ChatStorage.sqlite from unencrypted iTunes/Finder backups	
+ChatLab/ChatLab	search	exclude	VIEW		chat-history analyzer; no statement of combining several exports or dedup across them		
+ChatsApp-application/chatsApp-SERVER-	search	exclude	OOS		chat app server		
+chaubeysatyam/Varta	search	exclude	OOS		chat app		
+CherryHQ/cherry-studio	search	exclude	OOS		LLM client		
+ChesterXXX/GreenToBlue	search	exclude	VIEW		converts a WhatsApp backup to Telegram import format; no merge		
+Chevey339/kelivo	search	exclude	OOS		LLM client		
+cipheraxat/notification-system	search	exclude	OOS		notification platform		
+CivicSense-Labs/civicsense	search	exclude	OOS		issue-report dedup		
+cokaholic/TKKeyboardControl	search	exclude	OOS		iOS UI library		
+commune-dev/awesome-agent-protocols	search	exclude	OOS		link list		
+csm10495/merge_and_dedupe	search	include	I		merges and deduplicates SMS Backup & Restore XML files (calls and SMS)	SMS Backup & Restore XML (sms and calls)	
+cyhung1/SMS_Backup_Merger	search	include	I		merges SMS Backup & Restore XML backups	SMS Backup & Restore XML	
+d99kris/nchat	search	exclude	OOS		terminal chat client (single cache export)		
+Daily-AC/chatdrop	search	include	I		collects successive WeChat exports into one named conversation; later exports fill gaps without adding a second copy of a matching message	WeChat forwarded chat-record files / WeChat ZIP	
+dallyswag/sqygd	search	exclude	NOCODE		configuration file only, unrelated		
+danielamitay/DAKeyboardControl	search	exclude	OOS		iOS UI library		
+danielrosehill/WhatsApp-Export-Unpacker	search	exclude	VIEW		unpacks/reconstructs one WhatsApp export		
+danzek/sms-backup-and-restore-parser	search	exclude	VIEW		parses one SMS Backup & Restore XML		
+daodao97/chatmcp	search	exclude	OOS		LLM chat client		
+davidakpele/notification-service	search	exclude	OOS		specification document; notification engine		
+DavidGaso1/AI-News-Update	search	exclude	OOS		news newsletter		
+decolua/9router	search	exclude	OOS		AI router		
+delltrak/watson-triage	search	exclude	OOS		GitHub issue triage		
+denxv/TGV2RayScraper	search	exclude	OOS		Telegram channel scraper		
+devadvance/sms-backup-reader-2	search	include	I		SMS Backup & Restore reader that loads several backup files and merges/deduplicates them	SMS Backup & Restore XML	
+Devesh43/EvidenX-GUI-	search	comparator	FOR		forensic visualization of extractions from one rooted Android device; no merge	rooted Android extractions (WhatsApp, Signal, Instagram)	
+devkitshq/notifkit	search	exclude	OOS		notification infrastructure		
+Dexterfury/flutter_chat_reactions	search	exclude	OOS		UI package		
+dfelix/wa-export-pdf	search	exclude	VIEW		converts one WhatsApp export to PDF		
+dickyermawan/kilas	search	exclude	OOS		WhatsApp gateway API		
+dimaskiddo/go-whatsapp-multidevice-rest	search	exclude	OOS		WhatsApp REST API		
+DissidentAI/free-sms-gateway	search	exclude	OOS		SMS alert gateway		
+dmitryp-dev00j2/chatgpt-prompt-library	search	exclude	PLAT		ChatGPT conversation archive (LLM service, not a messaging platform)		
+DouglasVolcato/whatsapp-automation-agent	search	exclude	OOS		automation agent		
+dperez-sct/whatsckup	search	include	I		decrypts successive crypt15 backups and merges them append-only into a master msgstore.db, deduplicating by natural keys	WhatsApp Android msgstore.db.crypt15 backups	
+Dr-Muh/telegram-gif-manager	search	exclude	OOS		GIF bot		
+Dragon-Born/message-mirror	search	exclude	OOS		notification forwarder		
+dsebastien/whatsapp-claude-agent	search	exclude	OOS		agent bridge		
+dtcarls/fantasy_football_chat_bot	search	exclude	OOS		chatbot		
+DYAI2025/Chat.txt_Voice_merge	search	exclude	OOS		inserts voice-message transcripts into one exported chat; does not combine archives		
+ebitezion/notif-service	search	exclude	OOS		specification document		
+EkriirkE/WAMerge	search	include	I		merges two decrypted WhatsApp msgstore.db files	WhatsApp Android msgstore.db (decrypted)	
+ElamanBaiguanishev/telegram-chat-reader	search	exclude	OOS		channel digest userbot		
+enescingoz/awesome-n8n-templates	search	exclude	OOS		template list		
+enricoros/big-AGI	search	exclude	OOS		LLM client		
+envielxyz/SwayRouter	search	exclude	OOS		AI gateway		
+eon01/awesome-chatgpt	search	exclude	OOS		link list		
+ericwddev/whatsapp-link-generator	search	exclude	OOS		link generator		
+Eshanthreddy130705/Meta-x-WhatsApp-A-Strategic-MnA-Case-Analysis	search	exclude	NOCODE		business case document		
+ezhes/OSXMessageProxy	search	exclude	OOS		iMessage API		
+F1Justin/claude-archiver	search	exclude	PLAT	y	archives Claude/ChatGPT exports with message-level dedup; LLM services, not a consumer messaging platform (borderline on I3)		
+FantoX/Atlas-MD	search	exclude	OOS		WhatsApp bot		
+farhan-beg/huggingmes-hermes-webui	search	exclude	OOS		agent web UI		
+farhankk360/boulder-ai-whatsapp-bot	search	exclude	OOS		chatbot		
+farinchan/chatery_whatsapp	search	exclude	OOS		WhatsApp API		
+felipeDS91/whatsapp-api	search	exclude	OOS		WhatsApp send API		
+FENGFANCHEN-012/whatsapp-reply-copilot	search	exclude	OOS		reply-suggestion tool that reads exports; no archive combining		
+ferferga/WhatsAppMigrationTools	search	include	I		merger/ script merges an old Windows Phone WhatsApp database into an existing Android database	Windows Phone WhatsApp database + Android msgstore.db	
+Fiza-Sarwar/Ai-sales-crm-automation-ecosystem	search	exclude	NOCODE		portfolio/CRM description, no code		
+Fontan030/mulmes2sqlite	search	exclude	I2	y	imports exports of different messengers into one SQLite db; no deduplication and no handling of several archives of one account		
+frozenspider/chat-history-manager	search	include	I		stores chat histories from many sources and merges dataset snapshots taken at different dates	Telegram JSON export, WhatsApp msgstore.db or .txt export (two-person chats), Signal Desktop db, others	
+gavi/mlx-whatsapp	search	exclude	OOS		LLM fine-tuning on chats		
+GetStream/stream-chat-react	search	exclude	OOS		chat SDK		
+GetStream/stream-chat-react-native	search	exclude	OOS		chat SDK		
+Gibranhiko/Cleverum	search	exclude	OOS		chatbot platform		
+GiovanniPasq/agentic-rag-for-dummies	search	exclude	OOS		RAG tutorial		
+GorvGoyl/Clone-Wars	search	exclude	OOS		link list		
+gsusI/Telegram-Group-or-Channel-users-to-CSV	search	exclude	OOS		member export		
+guidone/node-red-contrib-chatbot	search	exclude	OOS		chatbot framework		
+guttank2/lead-intel-pipeline	search	exclude	OOS		lead pipeline		
+haniabdemai/whatsapp-voice	search	exclude	OOS		LLM reply drafting		
+hari161008/Ever-Dialer	search	exclude	OOS		dialer app		
+haythamf92/gark	search	exclude	PLAT		Gemini Code Assist log archiver (not a messaging platform)		
+hcengineering/platform	search	exclude	OOS		collaboration platform		
+hilnik432-noob/Sadhna_whtspp	search	exclude	OOS		reporting pipeline		
+himanshuchauhan/react-native-whatsapp-ui	search	exclude	OOS		UI prototype		
+hknaack/AndroidMessageMerger	search	include	I		merges SMS/MMS threads from one Android mmssms.db into another	Android mmssms.db	
+HybridNetworks/whatsapp-cidr	search	exclude	OOS		IP ranges list		
+iamers/steve-agent	search	exclude	OOS		AI dev-team agent		
+iammohith/Voice-First-Aura-Real-Estate-Agent-V-FAREA	search	exclude	OOS		sales agent		
+Iankulani/expendable_orca	search	exclude	OOS		security operations platform		
+inkbox-ai/claude-code-plugin	search	exclude	OOS		agent bridge		
+insightriot/signal	search	exclude	OOS		AI workflow plugin named Signal		
+Inzyz/whatsapp-android-to-iphone	search	include	I		merges Android WhatsApp history into an iPhone backup; chats already on the iPhone get the old messages added in date order without duplicates	Android msgstore.db.crypt15 + iPhone backup (ChatStorage.sqlite)	
+iOfficeAI/AionUi	search	exclude	OOS		AI agent app		
+isabekov/WhatsApp_DB_Merger	search	include	I		SQLite script merging two WhatsApp backup databases, skipping duplicate entries	WhatsApp Android msgstore.db (decrypted)	
+itsomg134/social-media-website-that-combines-features-from-WhatsApp-and-Facebook	search	exclude	OOS		web app		
+itxshakil/laravel-fast2sms	search	exclude	OOS		SMS sending package		
+ivo-toby/talon	search	exclude	OOS		AI agents		
+iyear/E5SubBot	search	exclude	OOS		Telegram bot		
+Jacksgong/wechat-backup-merge	search	include	I		merges each new WeChat Mac backup into one accumulated backup folder	WeChat for Mac backup folders	
+Jalquin/whatsapp-android-ios-migration-notes	search	exclude	NOCODE		reverse-engineering notes, no tool		
+jbrowne/tb_sms_backup_merge	search	exclude	SINGLE	y	finds and combines duplicates within ONE Titanium Backup SMS/MMS XML file; not across archives (borderline on I2)		
+Jessecar96/hangouts-reader	search	exclude	VIEW		viewer for one Hangouts JSON		
+JessyTsui/Claude-Code-Remote	search	exclude	OOS		agent remote control		
+jferrl/amberkeep	search	include	I		reads WhatsApp backups; merges history into chats already on the destination phone, deduplicated by message id	WhatsApp Android encrypted backups and iOS databases	
+jhlee0409/claude-code-history-viewer	search	exclude	PLAT		AI coding assistant history viewer		
+jleboube/teetime-search	search	exclude	OOS		golf skill		
+joshbalfour/SMS.db-Analyser	search	exclude	VIEW		statistics on one iPhone sms.db		
+joshuaswanson/messages-cli	search	exclude	OOS		read/send CLI		
+jsharkey13/iphone_backup_decrypt	search	exclude	OOS		iOS backup decryption		
+jtmoon79/super-speedy-syslog-searcher	search	exclude	OOS		syslog merge		
+JulesLiu390/PetGPT	search	exclude	OOS		desktop pet		
+KARAN0072177/NexSyncHub-prod	search	exclude	OOS		collaboration platform		
+KarlAVo/WhatsApp	search	exclude	NOCODE		README states an intention only; no code		
+KashmalaJamshaid/NLP-implementation-on-whastapp-chats-using-python	search	exclude	OOS		chat NLP notebook		
+kellygold/imessage-contacts-merger	search	exclude	VIEW		reads messages and contacts from one Messages chat.db; no merge despite the name		
+kenn-io/msgvault	search	include	I		local archive importing WhatsApp, iMessage, SMS Backup & Restore and other exports, with a deduplicate command across imported copies	WhatsApp msgstore.db / ChatStorage.sqlite, iMessage chat.db, SMS Backup & Restore XML, Google Voice, Messenger exports	
+kesha-antonov/react-native-chat	search	exclude	OOS		UI library		
+Keshav-gehlot/WhatsApp-forensics-tool	search	comparator	FOR		extracts/decrypts/reviews WhatsApp data from one Android device; no merge	Android device (ADB) / WhatsApp backups	
+Kesuek/hermes-bridge-adapter	search	exclude	OOS		agent bridge		
+knadh/tg-archive	search	exclude	VIEW		exports one Telegram group to a static site		
+KnugiHK/WhatsApp-Chat-Exporter	search	include	I		WhatsApp database exporter with --incremental-merge, merging two exports (source dir into target dir)	WhatsApp msgstore.db / ChatStorage.sqlite; --incremental-merge acts on two of its own export directories	
+kobie3717/baileys-antiban	search	exclude	OOS		bot middleware		
+kp7742/KWhatsApp	search	exclude	OOS		WhatsApp mod		
+krishnarajt/Whatsapp-Chat-File-Merger	search	include	I		merges several WhatsApp .txt exports, sorting by date and dropping duplicate lines	WhatsApp .txt exports (Android style, 24h clock)	
+krypton-byte/neonize	search	exclude	OOS		WhatsApp automation library		
+KudoAI/chatgpt.js	search	exclude	OOS		ChatGPT library		
+Kunboruto20/whalibmob	search	exclude	OOS		WhatsApp protocol library		
+kx-Huang/ChatGPT-on-WeChat	search	exclude	OOS		chatbot		
+lee-junyeol/MacMessageMerge	search	exclude	OOS		mail-merge style bulk sending via macOS Messages		
+legion-an/django-models-logging	search	exclude	OOS		Django change log		
+lemuxon/mesa	search	exclude	OOS		live unified inbox app (merges one person's chats across apps at display time); no archive input		
+leprema29/WhaChatExporter2	search	exclude	VIEW		copy of KnugiHK/WhatsApp-Chat-Exporter (single-database exporter)		
+Lifecycle-Innovations-Limited/claude-ops	search	exclude	OOS		business ops plugin		
+linq-team/claude-code-imessage-channel	search	exclude	OOS		iMessage MCP		
+linuxhsj/openclaw-zero-token	search	exclude	OOS		LLM access tool		
+LiroyvH/signal-export	search	exclude	VIEW		exports one Signal Desktop database		
+lobu-ai/lobu	search	exclude	OOS		agent context layer		
+lockevod/Karoo-KSafe	search	exclude	OOS		cycling safety extension		
+locphamnguyen/ZaloCRM	search	exclude	OOS		CRM for Zalo accounts		
+lrhodin/corten-matrix	search	exclude	OOS		iMessage-Matrix bridge		
+LucieEveille/kiwi-mem	search	exclude	OOS		AI memory gateway		
+ludios/whatsapp-tail-merge	search	include	I		merges the diverged tails of two decrypted WhatsApp Android msgstore.db files	WhatsApp Android msgstore.db (decrypted, post-2021 schema)	
+lulu-sk/CodexFlow	search	exclude	OOS		AI coding workbench		
+luolongfei/freenom	search	exclude	OOS		domain renewal		
+lyfe00011/whatsapp-bot	search	exclude	OOS		bot		
+MaanasSehgal/RTCT	search	exclude	OOS		collaboration tool		
+MaddyMcNair/AlertStream	search	exclude	OOS		emergency reporting		
+maduranma/telegram-export-merger	search	include	I		merges several Telegram exports of the same chat taken at different times	folder of Telegram Desktop HTML exports of one chat	
+mako1092/whatsapp	search	comparator	FOR		copy of WAInsight (forensic analysis of one acquired WhatsApp database)	acquired WhatsApp Android databases	
+marcschwaiger/signal-backup-v2-helper	search	include	I		inspects, validates and merges Signal local backup v2 snapshots	Signal local backup v2 snapshots	
+mario-andreschak/FLUJO	search	exclude	OOS		agent builder		
+MayukXT/WAren6	search	comparator	FOR		WhatsApp Desktop forensic extraction; unifies the stores of one acquisition into one database, no cross-archive merge	WhatsApp Desktop (Windows) databases, WAL and IndexedDB	
+mbhat978/Rescue-Route-AI-System	search	exclude	OOS		emergency triage		
+mdezube/sms-analysis	search	exclude	VIEW		analysis of one iPhone backup; "merge" joins its tables		
+meena-erian/unicom	search	exclude	OOS		communication layer for bots		
+meetparikh1202/pdf-merger-automation	search	exclude	OOS		PDF merge and send		
+melandlabs/openloomi	search	exclude	OOS		AI coworker		
+melgarafael/DeskcommCRM	search	exclude	OOS		CRM		
+mergisi/awesome-openclaw-agents	search	exclude	OOS		template list		
+mihailgaberov/chat	search	exclude	OOS		chat app		
+mikematthewsai/n8n-google-review-request-sms	search	exclude	OOS		n8n workflow		
+minhaz725/whatsapp-cross-platform-merge-and-recovery	search	include	I		merges an iOS-schema WhatsApp database into an Android backup to rebuild a complete history	iOS-schema WhatsApp database + Android msgstore.db.crypt15	
+minvws/DSA-WhatsApp-merger	search	exclude	I2	y	author decision 2026-10-16: merges exports of different accounts	WhatsApp .txt exports (Android and iPhone styles) from several phones	
+mitensampat/alfred	search	exclude	OOS		coaching agent		
+mlapeter/claude-engram	search	exclude	OOS		AI memory		
+mlg404/whatsapp-music-bot	search	exclude	OOS		bot		
+mlomb/chat-analytics	search	exclude	VIEW		chat analysis reports		
+mnemocron/TelegramChatStats	search	exclude	VIEW		statistics on one export		
+moltis-org/moltis	search	exclude	OOS		agent server		
+MPavion/whatsapp-transcriber	search	exclude	I2	y	author decision 2026-10-16: merges exports of different accounts	WhatsApp .txt exports / export ZIPs (with voice notes)	
+mr-tbot/mesh-api	search	exclude	OOS		mesh radio router		
+multiOTP/multiotp	search	exclude	OOS		2FA library		
+namnoops/merjapp	search	include	I		tool for merging WhatsApp databases (verify I1: working code present)	WhatsApp Android msgstore.db (old + new)	
+NamoVize/universal-chat-aggregator	search	exclude	OOS		live chat aggregator client		
+nanocoai/nanoclaw	search	exclude	OOS		AI assistant		
+natario1/whatsapp-database-merger	search	include	I		merges multiple decrypted WhatsApp msgstore.db files	WhatsApp Android msgstore.db (decrypted, March 2022 schema)	
+Neeraj-x0/X-Asena	search	exclude	OOS		bot		
+neiios/telegram-chat-export-merger	search	exclude	SINGLE	y	joins the paginated messages*.html files of ONE Telegram export into one JSON; does not combine exports		
+nextlevelbuilder/goclaw	search	exclude	OOS		AI gateway		
+nicksmarto/sms_viewer	search	include	I		SMS Backup & Restore viewer; several backups in one folder are merged and de-duplicated	SMS Backup & Restore XML	
+nikhilbadyal/docker-py-revanced	search	exclude	OOS		app patcher		
+NikhilPandey-IIIT-Surat/RescueNet-Android-APP	search	exclude	OOS		emergency mesh app		
+nixfred/blip	search	exclude	OOS		iMessage client		
+njavet/unichat	search	exclude	OOS		unified chat client		
+noDiego/whatsapp-claude-gpt	search	exclude	OOS		chatbot		
+NumesSanguis/naver_line_restore_chat_root	search	include	I		merges an old LINE (Android) chat database into a fresh install's database	LINE Android naver_line SQLite database (root)	
+OMD-123/notification-dedup	search	exclude	OOS		notification dedup backend		
+omkarnub/Kanri	search	exclude	OOS		expense tracker reading bank SMS		
+omorandi/TiSMSDialog	search	exclude	OOS		SMS dialog module		
+OnlyTerp/hermes-optimization-guide	search	exclude	OOS		agent guide		
+openclaw/imsgcrawl	search	include	I		syncs successive read-only snapshots of the Apple Messages database into one local archive; sync merges and retains rows absent from later snapshots	macOS Messages chat.db snapshots	
+openclaw/telecrawl	search	include	I		Telegram Desktop archive CLI; imports merge into the existing archive by default	Telegram Desktop tdata and Telegram exports	
+openclaw/wacrawl	search	include	I		imports snapshots of WhatsApp Desktop databases; imports merge by stable source identity and retain history missing from later snapshots	macOS WhatsApp Desktop databases	
+opsknight-labs/OpsKnight	search	exclude	OOS		incident management		
+parai/WhatsApp	search	exclude	OOS		unrelated application framework named WhatsApp		
+Pavankumar-Mhaske/MultiVerse	search	exclude	OOS		social app		
+PawanGothwaad/grixchat	search	exclude	OOS		chat app		
+pawank0411/WhatsApp-Cleaner	search	exclude	OOS		media cleaner		
+pbeck/whatsbook	search	exclude	VIEW		book from one chat export		
+pcsingh/WhatsApp-Chat-Analyzer	search	exclude	VIEW		analysis of one export		
+per1ch/Telegram-Exported-Messages-Merger-Optimizer	search	exclude	SINGLE	y	joins the paginated messagesN.html files of ONE Telegram export		
+phantomVK/MessageKit	search	exclude	OOS		chat UI kit		
+PhilippeMeyer/whatsapp-photobook	search	include	I		decrypts each WhatsApp backup and merges it into a library database with the backups imported before	WhatsApp Android encrypted backups (crypt14/15)	
+PhoebusSi/Alpaca-CoT	search	exclude	OOS		LLM tuning		
+photon-hq/advanced-imessage-kit	search	exclude	OOS		iMessage SDK		
+photon-hq/dsh-imessage	search	exclude	OOS		iMessage transport		
+pl402/wa-fuse	search	include	I		merges iOS WhatsApp chat history into an Android crypt15 backup	iOS WhatsApp ChatStorage.sqlite + Android msgstore.db.crypt15	
+popstas/telegram-download-chat	search	exclude	VIEW		downloads/exports Telegram history		
+pradeep-67k/SahayakNet-AI_Disaster_Coordination_System	search	exclude	OOS		disaster coordination		
+preekashya-hub/Merge-Ai	search	exclude	OOS		chat summarizer for one export		
+Prognosticate-X/clash-shadowrocket-ai-rules	search	exclude	NOCODE		proxy rules		
+pryndor/Lixplore_cli	search	exclude	OOS		literature search		
+Pulse-Community-Agency/whatsapp-plusplus-hermes	search	exclude	OOS		agent plugin		
+PurifyPioneer/WhatsAppDatabaseMerger	search	exclude	NOCODE		README states "Not ready to use yet" (fails I1)		
+qTox/qTox	search	exclude	OOS		IM client		
+queelius/ctk	search	exclude	PLAT		AI conversation toolkit (LLM services)		
+QwenLM/Qwen	search	exclude	OOS		LLM		
+QwenLM/Qwen-VL	search	exclude	OOS		LLM		
+ragibson/SMS-MMS-deduplication	search	include	I		combines one or more SMS Backup & Restore XML files and removes duplicates	SMS Backup & Restore XML	
+raroque/boop-agent	search	exclude	OOS		agent		
+rayistern/whatsapp-transfer	search	exclude	VIEW		iOS to Android converter; README states no merge capability		
+rbouaf/restore-messages-disconnected-beeper	search	include	I		merges SMS/RCS recovered from a Beeper account into an SMS Backup & Restore XML, deduplicating overlap	Beeper account data + SMS Backup & Restore XML	
+remorses/kimaki	search	exclude	OOS		agent in Discord		
+repaera/chat	search	exclude	OOS		MCP chat client		
+rexo-n/instagram_backup_sorter	search	exclude	SINGLE	y	reassembles the split files of ONE Instagram export; media dedup within it		
+Rhymen/go-whatsapp	search	exclude	OOS		WhatsApp Web API		
+Rich627/whatsapp-claude-plugin	search	exclude	OOS		agent channel		
+riozee/miki-whatsapp-bot	search	exclude	OOS		bot		
+rkuning/chatGPT-openAI-whatsapp	search	exclude	OOS		bot		
+rmyndharis/OpenWA-plugins	search	exclude	OOS		gateway plugins		
+RobLe3/canonforge-chatgpt-archive	search	exclude	PLAT	y	merges and deduplicates several ChatGPT exports; LLM service, not a messaging platform (borderline on I3)		
+rociiu/talorys	search	exclude	OOS		AI agent		
+RocketChat/docs-old	search	exclude	OOS		documentation		
+roverx12345/telegram-archiver	search	exclude	OOS		downloads media from a live Telegram account with file dedup; no archive input		
+rshodoskar-star/openclaw-desktop	search	exclude	OOS		agent client		
+RuchirSingh1000/Xeno-CRM	search	exclude	OOS		CRM		
+rusq/slackdump	search	exclude	PLAT		Slack workspace archiver (workplace platform)		
+rusty4444/hermes-android	search	exclude	OOS		agent client		
+ryukenshin546-a11y/antigravity-projects-fix	search	exclude	OOS		IDE project dedup		
+sadruzzahan/Lexor	search	exclude	OOS		legal platform		
+sairam356/Smart-Trading-Analzyer	search	exclude	OOS		trading		
+salozubz/WhatsApp-Db-Merger	search	include	I		Linux script merging the WhatsApp databases passed as arguments	WhatsApp Android msgstore.db	
+SamNet-dev/MTProxyMax	search	exclude	OOS		proxy manager		
+samy/sms-super-backup-deduplication	search	exclude	SINGLE	y	single-page tool removing duplicate SMS within one Super Backup XML file (borderline on I2)		
+sandsturm/whatsapp-converter	search	exclude	VIEW		converts one export to CSV/XLS		
+SANIAGRG/Noticore	search	exclude	OOS		notification service		
+sarao-creates/iMessage-Lyric-Delivery	search	exclude	OOS		message automation		
+sarim2000/pennywiseai-tracker	search	exclude	OOS		expense tracker		
+satyamurti/LetsChat	search	exclude	OOS		chat app		
+sch3m4/wforensic	search	include	I		WhatsApp forensic Django project whose tools include merge.py, merging many msgstore databases into one	WhatsApp Android msgstore.db (and crypt)	
+scheinker/MessageClean	search	exclude	OOS		removes iMessage video attachments already in Photos		
+sebnembasak/wa-rescue	search	exclude	I2	y	author decision 2026-10-16: merges exports of different accounts	WhatsApp .txt export (other party) + own msgstore.db.crypt15	
+SecurityRonin/chat4n6	paper	comparator	FOR		forensic recovery from one acquisition with per-record evidence-source tags; no merge (not retrieved by any query; added from the paper)	Android filesystem images, iOS backups, DAR archives (WhatsApp, Signal, Telegram databases)	
+SenCodeMaker/whatsapp-database-merger	search	include	I		SQL scripts merging two or more decrypted WhatsApp databases	WhatsApp Android msgstore.db (decrypted)	
+SerCom-KC/TelegramAdminLogExtended	search	exclude	OOS		exports admin log via API and interleaves it with chat history; no archive input		
+Shashankls/Video-Merge-Bot	search	exclude	OOS		video merge bot		
+shashotoNur/commlog-viewer	search	exclude	VIEW		shows one call-log backup and one SMS backup together; no message-archive merge		
+Shivam10025/Google_Chat1	search	exclude	OOS		chat app		
+shohan-001/ffmpeg-video-bot	search	exclude	OOS		video bot		
+shuxin/ios-backup-merge	search	include	I		merges SMS/iMessage messages and attachments from an old iPhone backup into a new one	iPhone backups (sms.db + attachments)	
+shuxueslpi/chatGLM-6B-QLoRA	search	exclude	OOS		LLM tuning		
+sigalor/whatsapp-web-reveng	search	exclude	OOS		protocol reverse engineering		
+Simarbir2112006/pulseai-hackmol	search	exclude	OOS		market alerts		
+sindresorhus/awesome-chatgpt	search	exclude	OOS		link list		
+six-ddc/ccbot	search	exclude	OOS		agent bridge		
+sk7001/whatsapp-merged	search	exclude	OOS		WhatsApp Web bulk-messaging extension ("merged" only in the name)		
+sllvn/ios-sms-merge	search	include	I		merges iOS SMS SQLite databases	iOS sms.db	
+SmagArt/chat-merge	search	exclude	I2	y	combines one correspondence's exports from different platforms (Telegram, VK, Instagram, WhatsApp) into one text file; different accounts		
+smallmain/vscode-unify-chat-provider	search	exclude	OOS		LLM provider extension		
+snackoverflowasad/chat-buddy	search	exclude	OOS		chatbot		
+sockysec/Telerecon	search	exclude	OOS		OSINT		
+sohrabezzati/telegram-downloader	search	exclude	OOS		media downloader		
+sokie/keepsake	search	include	I		imports WhatsApp export zips or a decrypted backup; imports merge and dedupe across sources	WhatsApp export ZIP/.txt, decrypted msgstore.db, wtsexporter JSON	
+solovey1/unified-sms-activate	search	exclude	OOS		SMS activation API		
+Sompote/tiger_cowork	search	exclude	OOS		AI workspace		
+somratpro/HuggingClaw	search	exclude	OOS		agent space		
+Sonal-Tulasyan/Smart-Whatsapp-Chat-List	search	exclude	OOS		LRU cache exercise		
+spinabot/brigade	search	exclude	OOS		AI assistant		
+srikrishnacj-archived/whatsappmerge	search	include	I		Java utility merging two WhatsApp SQLite databases	WhatsApp Android msgstore.db	
+srtucker22/chatty	search	exclude	OOS		tutorial app		
+ssstonebraker/aolunderground-proggies	search	exclude	OOS		software archive		
+stenyak/breakbot	search	exclude	OOS		gateway bot		
+stephenschoettler/hermes-lcm	search	exclude	OOS		agent memory		
+steveseguin/social_stream	search	exclude	OOS		live-stream chat overlay		
+SteveSplash934/chatreplay	search	exclude	VIEW		viewer for one WhatsApp export; "merging" means contact identities		
+stillwagon89/Simple-Script-for-Exporting-iMessage-History-into-Telegram	search	exclude	NOCODE		no code file in the repository at the examined SHA (README only)		
+stonesam92/ChitChat	search	exclude	OOS		WhatsApp Web wrapper		
+suitangi/Crosstalk	search	include	I		parses Discord/Messenger/WhatsApp/Telegram exports into one SQLite db; re-imports upsert by natural key without duplicates and flag messages missing from the new import	Discord and Messenger exports (WhatsApp/Telegram adapters planned, not present at the examined SHA)	
+suurjaak/Skyperious	search	include	I		Skype history tool; compares and synchronizes messages with another Skype database, merging their differences	Skype main.db	
+SwirX/WhatsappTools	search	include	I	n	decrypt.py and merge_saves.py merge two WhatsApp databases; README TODO still lists "merge two databases entries" (I1 uncertain); author rule 2026-10-16 applied to merge_saves.py at 49f73c2: opens two databases (:195) and writes rows from both into output/msgstore.db (:199 copy of the old database, :233/:289/:352 inserts of the new database rows), so kept included	WhatsApp Android crypt database + msgstore.db	
+Sypthon/voice-chat-combined	search	exclude	OOS		bot		
+t413/SMS-Tools	search	include	I		import/export/merge tool for Android, iOS and Google Voice text-message histories	Android mmssms.db, iOS sms.db, SMS Backup & Restore XML, Google Voice, CSV/JSON	
+Tahler/sms-merge-backups	search	include	I		merges SMS Backup & Restore XML files	SMS Backup & Restore XML	
+taishi-i/awesome-ChatGPT-repositories	search	exclude	OOS		link list		
+tarikab7/whatsapp-chat-merger	search	include	I		imports and merges several WhatsApp .txt exports into one timeline with duplicate flagging	WhatsApp .txt exports (folders/ZIP, Android and iOS styles)	
+taxze6/flutter-chat-craft	search	exclude	OOS		chat app		
+teamgram/teamgram-server	search	exclude	OOS		MTProto server		
+teidesu/inugram	search	exclude	OOS		Telegram client fork		
+TelegramTools/TLMerger	search	exclude	OOS	y	copies messages between two live Telegram chats via the API; no archive/backup/export input (borderline)		
+TencentCloud/TIMSDK	search	exclude	OOS		chat SDK		
+Tevin-Isaac/SakaAI-on-ICP	search	exclude	OOS		AI chat		
+The-Osint-Toolbox/Telegram-OSINT	search	exclude	NOCODE		link list		
+The-Swarm-Corporation/ClawSwarm	search	exclude	OOS		agents		
+theetherGit/wamerge	search	include	I		merges Android WhatsApp text history into the iPhone WhatsApp database, keeping the existing iPhone chats	Android WhatsApp backup + iPhone backup (ChatStorage.sqlite)	
+TheODDYSEY/ML-Assignment	search	exclude	OOS		ML assignment		
+theopenconversationkit/tock	search	exclude	OOS		bot platform		
+TheSecurityDev/Signal-Backup-V2-Merge	search	include	I		merges two encrypted Signal Android BackupV2 backups without duplicating chat items	Signal Android BackupV2 (encrypted)	
+thiwaK/decrypted_whatsapp_database_merger	search	include	I		merges the messages tables of two decrypted WhatsApp databases	WhatsApp Android msgstore.db (decrypted)	
+thomasjjj/Telegram-Snowball-Sampling	search	exclude	OOS		channel sampling		
+TideKnight/voxcat-chatgpt-prompt-eagle-exporter	search	exclude	PLAT		ChatGPT exporter		
+Tiledesk/design-studio	search	exclude	OOS		bot designer		
+tmo1/sms-db	search	include	I		builds one SQLite store from SMS/MMS collections in several formats, combining multiple sources	SMS Backup & Restore XML, Android bugle_db, Signal and other SMS/MMS collections	
+tmo1/sms-ie	search	exclude	VIEW		Android app importing/exporting SMS, call logs and contacts as JSON; no merge or dedup stated		
+Trecto34/convolith	search	exclude	PLAT		AI-assistant chat archive with dedup (LLM services)		
+turnerlabs/sigsci_site_manager	search	exclude	OOS		WAF site manager		
+tusharnankani/whatsapp-chat-data-analysis	search	exclude	VIEW		analysis notebook		
+umamanipraharshitha/Whatsapp_ai_extended-version	search	exclude	OOS		chatbot		
+UmarEhtisham/AuditFlow-Chat	search	exclude	OOS		audit chat app		
+Urigo/Ionic2-MeteorCLI-WhatsApp	search	exclude	OOS		tutorial		
+Urigo/Ionic2CLI-Meteor-WhatsApp	search	exclude	OOS		tutorial		
+uryyakir/extract-wa-media	search	exclude	VIEW		extracts media from one iOS WhatsApp database; merging into a phone is left to the user		
+Uvik/dupe_buster	search	exclude	SINGLE	y	deletes adjacent duplicates within ONE SMS Backup & Restore file (borderline on I2)		
+uxderrick/pennywatch-oss	search	exclude	OOS		finance tracker		
+vassovass/ConvoCraft-AI	search	exclude	OOS		inserts audio transcripts into one WhatsApp export; does not combine archives		
+verygoodplugins/whatsapp-mcp	search	exclude	OOS		WhatsApp MCP server		
+Veverke/ChatWizard	search	exclude	PLAT		AI coding chat history		
+VictorOmoboye/WhatsApp-Conversational-AI-Agent	search	exclude	NOCODE		agent description		
+viktor-niderman/telegram_notify	search	exclude	OOS		keyword notifier		
+vinay-18-king/Disaster-Whisper-Network-Public-Safety-	search	exclude	OOS		disaster triage		
+Viper-x0/X-AsenaDuplicated	search	exclude	OOS		bot		
+weiwill88/Local_Pdf_Chat_RAG	search	exclude	OOS		RAG		
+WhiskeySockets/Baileys	search	exclude	OOS		WhatsApp Web API		
+xiaowu0162/LongMemEval	search	exclude	OOS		LLM benchmark		
+xxirfanx/zoromd	search	exclude	OOS		bot		
+Yak0xff/ChatMessageTableViewController	search	exclude	OOS		UI		
+yash-ishraj/Incident-Management-System	search	exclude	OOS		incident management		
+yashoswalyo/MERGE-BOT	search	exclude	OOS		video merge bot		
+yeeuh/iOS6-sms_db-java	search	include	I		merges iPhone iOS 6 SMS databases	iOS 6 sms.db	
+YHernGg8/HEART	search	exclude	OOS		care routing		
+yodifadhilabdhusshabur/chatapp-client	search	exclude	OOS		chat app		
+yodifadhilabdhusshabur/chatapp-serverbase	search	exclude	OOS		chat app		
+YonkoSam/whatsapp-python-chatbot	search	exclude	OOS		chatbot		
+youmssi/jiku_app	search	exclude	OOS		event API		
+yym68686/ChatGPT-Telegram-Bot	search	exclude	OOS		bot		
+Zenitsu272/ExTraa	search	exclude	OOS		expense tracker		
+zenjahid/bKash-Sync	search	exclude	OOS		payment SMS sync		
+znanx/moon-bot	search	exclude	OOS		bot		
+zulip/zulip-archive	search	exclude	PLAT		Zulip organisation archive (team chat)		
+zyjwjck/nanobot-chat-ui	search	exclude	OOS		AI chat UI		
+ZYKJShadow/Async	search	exclude	OOS		IDE		
+Anarky/mbdbEditor	snowball	exclude	OOS		iOS backup manifest editor		shuxin/ios-backup-merge
+ElDavoo/wa-crypt-tools	snowball	exclude	OOS		WhatsApp crypt12/14/15 encryption/decryption		B16f00t/whapa; Inzyz/whatsapp-android-to-iphone; jferrl/amberkeep; ludios/whatsapp-tail-merge; PhilippeMeyer/whatsapp-photobook
+GjjvdBurg/signal2html	snowball	exclude	VIEW		converts one Signal backup to HTML		bepaald/signalbackup-tools
+KnugiHK/WhatsApp-Key-DB-Extractor	snowball	exclude	OOS		key/database extraction from a device		KnugiHK/WhatsApp-Chat-Exporter
+KnugiHK/iphone_backup_decrypt	snowball	exclude	OOS		iOS backup decryption		KnugiHK/WhatsApp-Chat-Exporter
+cycneuramus/signal-backup-shrink	snowball	exclude	OOS		shrinks attachments in one Signal backup		bepaald/signalbackup-tools
+discordwell/green2blue	snowball	include	I		moves Android SMS/MMS/RCS (SMS Import/Export) into an iPhone backup; "archive merge" merges Android and iPhone histories into one SQLite archive, deduplicating across sources	SMS Import/Export (Android) archive + iPhone backup	alicin/wamove
+frozenspider/chat-history-manager-ui	snowball	exclude	OOS		deprecated UI front-end of the included chat-history-manager (no merge logic of its own)		frozenspider/chat-history-manager
+giacomoferretti/whatsapp-backup-downloader-decryptor	snowball	exclude	OOS		downloads/decrypts one Google Drive WhatsApp backup		Akif-b-Atif/The-Omar-Files; sokie/keepsake
+jensstein/oandbackup	snowball	exclude	OOS		Android app-data backup		tmo1/sms-db
+machiav3lli/oandbackupx	snowball	exclude	OOS		Android app-data backup		tmo1/sms-db
+mossblaser/signal_for_android_decryption	snowball	exclude	OOS		decrypts one Signal backup		tmo1/sms-db
+mukulkadel/mwatoi	snowball	exclude	VIEW		copies Android WhatsApp chats into an iPhone backup; no merge with existing iPhone history stated		Inzyz/whatsapp-android-to-iphone
+p1ne/SMS-Tools	snowball	exclude	FORK		GitHub fork of the included t413/SMS-Tools (API fork=true)		tmo1/sms-db
+pajowu/signal-backup-decode	snowball	exclude	OOS		decodes one Signal backup		tmo1/sms-db
+parvesh-rm/wabridge	snowball	exclude	VIEW		Android to iPhone WhatsApp migration; no merge with existing iPhone history stated		alicin/wamove
+radj/AndroidSMSBackupRestoreCleaner	snowball	include	I		combines multiple SMS Backup & Restore backups into one	SMS Backup & Restore XML	ragibson/SMS-MMS-deduplication
+residentsummer/watoi	snowball	exclude	VIEW		Android to iOS migration; replaces the chat database in the backup		Inzyz/whatsapp-android-to-iphone; jferrl/amberkeep
+rohancodesss/oath	snowball	exclude	VIEW		Android/iPhone WhatsApp migration; restore replaces the phone's contents		alicin/wamove
+steipete/backup-telecrawl	snowball	exclude	NOTFOUND		linked repository returns 404 (not retrievable on 2026-10-15)		openclaw/telecrawl
+tbvdm/sigtop	snowball	exclude	VIEW		exports one Signal Desktop database		frozenspider/chat-history-manager
+xeals/signal-back	snowball	exclude	VIEW		decrypts/formats one Signal backup		tmo1/sms-db
+Automattic/node-canvas	snowball	exclude	DEP		library dependency named in README		PhilippeMeyer/whatsapp-photobook
+WiseLibs/better-sqlite3	snowball	exclude	DEP		library dependency named in README		suitangi/Crosstalk
+astral-sh/uv	snowball	exclude	DEP		package manager named in README		pl402/wa-fuse
+felixhagspiel/jsOnlyLightbox	snowball	exclude	DEP		library dependency named in README		suurjaak/Skyperious
+imathis/fancy-avatars	snowball	exclude	DEP		library dependency named in README		suurjaak/Skyperious
+doronz88/pymobiledevice3	snowball	exclude	DEP		library dependency named in README		alicin/wamove
+openai/whisper	snowball	exclude	DEP		speech-recognition dependency named in README		MPavion/whatsapp-transcriber
+guillaumeklinvex/faster-whisper	snowball	exclude	DEP		speech-recognition dependency named in README		MPavion/whatsapp-transcriber
+signalapp/Signal-Android	snowball	exclude	DEP		the messaging app itself		bepaald/signalbackup-tools; tmo1/sms-db
+wooster/biplist	snowball	exclude	DEP		library dependency named in README		shuxin/ios-backup-merge
+Terrance/SkPy	snowball	exclude	DEP		library dependency named in README		suurjaak/Skyperious
+openclaw/homebrew-tap	snowball	exclude	DEP		package tap named in README		openclaw/wacrawl
+sch3m4/pyadb	snowball	exclude	DEP		library dependency named in README		sch3m4/wforensic

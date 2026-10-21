@@ -1,0 +1,235 @@
+{
+  "note": "All decisions after the metadata screen are PROPOSED; inclusion is the author's decision.",
+  "platform": "GitHub REST API, GET /search/repositories (unauthenticated)",
+  "queries": [
+    {
+      "id": "q01",
+      "terms": "whatsapp merge",
+      "total_count": 43090,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q02",
+      "terms": "whatsapp merger",
+      "total_count": 1020,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q03",
+      "terms": "merge whatsapp backup",
+      "total_count": 7972,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q04",
+      "terms": "merge whatsapp chats",
+      "total_count": 16083,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q05",
+      "terms": "whatsapp msgstore merge",
+      "total_count": 54,
+      "retrieved": 54,
+      "capped": false
+    },
+    {
+      "id": "q06",
+      "terms": "whatsapp chat export merge",
+      "total_count": 7785,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q07",
+      "terms": "combine whatsapp chat",
+      "total_count": 17304,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q08",
+      "terms": "signal backup merge",
+      "total_count": 27115,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q09",
+      "terms": "telegram export merge",
+      "total_count": 17263,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q10",
+      "terms": "chat history merge",
+      "total_count": 116199,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q11",
+      "terms": "merge chat backups",
+      "total_count": 35872,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q12",
+      "terms": "sms backup merge",
+      "total_count": 6551,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q13",
+      "terms": "sms deduplication",
+      "total_count": 6511,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q14",
+      "terms": "imessage merge",
+      "total_count": 3048,
+      "retrieved": 1000,
+      "capped": true
+    },
+    {
+      "id": "q15",
+      "terms": "chat archive deduplicate",
+      "total_count": 7785,
+      "retrieved": 1000,
+      "capped": true
+    }
+  ],
+  "hits_total": 14054,
+  "unique_repos": 10708,
+  "forks_in_results": 0,
+  "metadata_screen": {
+    "rule": {
+      "PLATFORM": "whats\\s?app|msgstore|signal|telegram|\\bsms\\b|\\bmms\\b|imessage|chat|messag|messenger|wechat|viber|discord|skype|kakao|threema",
+      "MERGE": "merg|combin|de-?dup|duplicat|consolidat|reconcil|unif(y|ie|ica)",
+      "RANK_K": 50,
+      "fields": "name (separators as spaces), description, topics",
+      "pass": "not a fork AND PLATFORM AND (MERGE [rule A] OR best-match rank <= RANK_K in any query [rule B])"
+    },
+    "passed": 400,
+    "passed_rule_A_only": 194
+  },
+  "readme_source_screen": {
+    "screened": 400,
+    "proposed_include": 58,
+    "proposed_comparator": 6,
+    "proposed_exclude": 336
+  },
+  "added_outside_search": {
+    "paper_tools_not_retrieved": {
+      "screened": 1,
+      "proposed_include": 0,
+      "proposed_comparator": 1,
+      "proposed_exclude": 0
+    },
+    "snowball": {
+      "screened": 35,
+      "proposed_include": 2,
+      "proposed_comparator": 0,
+      "proposed_exclude": 33
+    }
+  },
+  "proposed_included_total": 60,
+  "proposed_included_borderline": 0,
+  "proposed_comparators_total": 7,
+  "decision_codes": {
+    "search:exclude:OOS": 274,
+    "search:exclude:I2": 7,
+    "search:comparator:FOR": 6,
+    "search:include:I": 58,
+    "search:exclude:NOCODE": 11,
+    "search:exclude:VIEW": 27,
+    "search:exclude:PLAT": 11,
+    "search:exclude:SINGLE": 6,
+    "paper:comparator:FOR": 1,
+    "snowball:exclude:OOS": 11,
+    "snowball:exclude:VIEW": 7,
+    "snowball:include:I": 2,
+    "snowball:exclude:FORK": 1,
+    "snowball:exclude:NOTFOUND": 1,
+    "snowball:exclude:DEP": 13
+  },
+  "paper_tools": [
+    {
+      "repo": "bepaald/signalbackup-tools",
+      "retrieved_by": [
+        "q08#2",
+        "q09#99",
+        "q11#48",
+        "q12#9"
+      ],
+      "metadata_screen": "pass",
+      "proposed": "include (I)"
+    },
+    {
+      "repo": "natario1/whatsapp-database-merger",
+      "retrieved_by": [
+        "q01#44",
+        "q02#4",
+        "q03#15",
+        "q04#43",
+        "q05#4",
+        "q11#50"
+      ],
+      "metadata_screen": "pass",
+      "proposed": "include (I)"
+    },
+    {
+      "repo": "frozenspider/chat-history-manager",
+      "retrieved_by": [
+        "q04#797",
+        "q05#29",
+        "q06#336"
+      ],
+      "metadata_screen": "pass",
+      "proposed": "include (I)"
+    },
+    {
+      "repo": "EkriirkE/WAMerge",
+      "retrieved_by": [
+        "q02#20",
+        "q04#698",
+        "q05#11"
+      ],
+      "metadata_screen": "pass",
+      "proposed": "include (I)"
+    },
+    {
+      "repo": "SecurityRonin/chat4n6",
+      "retrieved_by": [],
+      "metadata_screen": "not retrieved",
+      "proposed": "comparator (FOR)"
+    },
+    {
+      "repo": "tarikab7/whatsapp-chat-merger",
+      "retrieved_by": [
+        "q02#45",
+        "q04#796",
+        "q06#380"
+      ],
+      "metadata_screen": "pass",
+      "proposed": "include (I)"
+    },
+    {
+      "repo": "ragibson/SMS-MMS-deduplication",
+      "retrieved_by": [
+        "q13#7"
+      ],
+      "metadata_screen": "pass",
+      "proposed": "include (I)"
+    }
+  ]
+}

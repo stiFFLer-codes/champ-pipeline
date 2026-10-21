@@ -1,0 +1,1408 @@
+{
+ "sources": [
+  {
+   "file": "tcf-F2-secondary.txt",
+   "parsed": 134,
+   "participants": [
+    "Contact A",
+    "You",
+    "Contact E",
+    "Contact H"
+   ],
+   "added": 134,
+   "merged": 0
+  },
+  {
+   "file": "tcf-F1-primary.txt",
+   "parsed": 58,
+   "participants": [
+    "You",
+    "Contact A",
+    "Contact H",
+    "Contact E"
+   ],
+   "added": 38,
+   "merged": 20
+  }
+ ],
+ "messages": [
+  {
+   "id": "e3c79ebe9f0fd7c0",
+   "ts": 1704718200000,
+   "sender": "WhatsApp",
+   "fromMe": false,
+   "system": true,
+   "text": "Messages and calls are end-to-end encrypted. Only people in this group can read, listen to, or share them. *Learn more*",
+   "source": "export"
+  },
+  {
+   "id": "766141c6fe414b1c",
+   "ts": 1704718200010,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "_Good point, I had not thought of that._"
+  },
+  {
+   "id": "db20a81811898df1",
+   "ts": 1704746160000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Not sure yet, I will confirm tomorrow."
+  },
+  {
+   "id": "43535a6c35d45265",
+   "ts": 1704837840000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*We can move it to Friday.*"
+  },
+  {
+   "id": "e523708ee6a6e4a1",
+   "ts": 1704993120000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*No worries, take your time.*"
+  },
+  {
+   "id": "06171004b137f44b",
+   "ts": 1705082340000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "*See you then.*"
+  },
+  {
+   "id": "e810269138625883",
+   "ts": 1705154460000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Can everyone vote on the poll?"
+  },
+  {
+   "id": "5ee773028b9a83b0",
+   "ts": 1705258800000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Please review the draft when you get a chance."
+  },
+  {
+   "id": "ae674ca8e7779ddc",
+   "ts": 1705390140000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Can everyone vote on the poll?*"
+  },
+  {
+   "id": "0ce0fd171882649d",
+   "ts": 1705441320000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "See you then. 🙏"
+  },
+  {
+   "id": "189ec66d846f1e43",
+   "ts": 1705505760000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "See you then."
+  },
+  {
+   "id": "c4ef8b095fa64e06",
+   "ts": 1705601460000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "_Yes, that is correct._"
+  },
+  {
+   "id": "62c320d877838f0b",
+   "ts": 1705744680000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "I have added it to the shared list."
+  },
+  {
+   "id": "a702a75a44657104",
+   "ts": 1705779720000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "I will bring the printed copies."
+  },
+  {
+   "id": "d20c86b3506bdeaa",
+   "ts": 1705791000000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*It is already on the calendar.*"
+  },
+  {
+   "id": "8204db5eca24dca5",
+   "ts": 1705919640000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "_Ok, done._"
+  },
+  {
+   "id": "d07d74e8ba738785",
+   "ts": 1706070060000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Yes, that is correct."
+  },
+  {
+   "id": "f7b0c2191afa1978",
+   "ts": 1706086800000,
+   "sender": "WhatsApp",
+   "fromMe": false,
+   "system": true,
+   "text": "Messages and calls are end-to-end encrypted. Only people in this group can read, listen to, or share them. *Learn more*",
+   "source": "export"
+  },
+  {
+   "id": "f9fdb537590269fb",
+   "ts": 1706205000000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Please review the draft when you get a chance."
+  },
+  {
+   "id": "e98ff6cefb10d982",
+   "ts": 1706254080000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Please review the draft when you get a chance.*"
+  },
+  {
+   "id": "924b14ed57959656",
+   "ts": 1706377140000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Same time next week?"
+  },
+  {
+   "id": "d3147aa1320bcdc6",
+   "ts": 1706480340000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "_Sounds good._"
+  },
+  {
+   "id": "155dc372c5b24482",
+   "ts": 1706524980000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "We can move it to Friday."
+  },
+  {
+   "id": "d036e0ef780e4f67",
+   "ts": 1706645460000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "See you then."
+  },
+  {
+   "id": "c452d816e84d7ed5",
+   "ts": 1706723700000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*We can move it to Friday.*"
+  },
+  {
+   "id": "d6400c63eb23e1a7",
+   "ts": 1706744400000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Good point, I had not thought of that."
+  },
+  {
+   "id": "b678ff43a18e0b15",
+   "ts": 1706793960000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "See you then."
+  },
+  {
+   "id": "1933c0ae87b570f0",
+   "ts": 1706944560000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*No worries, take your time.*"
+  },
+  {
+   "id": "ccb71093f098c83f",
+   "ts": 1707001140000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "_Same time next week?_"
+  },
+  {
+   "id": "c33fe7eea8f50660",
+   "ts": 1707122880000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "*Can everyone vote on the poll?*"
+  },
+  {
+   "id": "bb03998c6074d007",
+   "ts": 1707245580000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Can everyone vote on the poll?"
+  },
+  {
+   "id": "6e8a788a13a5317b",
+   "ts": 1707415080000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "I will be there in ten minutes."
+  },
+  {
+   "id": "d1008dc04d261d7c",
+   "ts": 1707443760000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "See you then. 🎉"
+  },
+  {
+   "id": "9feb98d8152e820a",
+   "ts": 1707526380000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "See you then."
+  },
+  {
+   "id": "d3e9bb3368b808e1",
+   "ts": 1707607380000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Sounds good."
+  },
+  {
+   "id": "276285f309ae19b3",
+   "ts": 1707726960000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Sounds good."
+  },
+  {
+   "id": "9366c542a291466f",
+   "ts": 1707835080000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Same time next week?"
+  },
+  {
+   "id": "29ba5f688e62b620",
+   "ts": 1707982800000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "I will check and get back to you."
+  },
+  {
+   "id": "0456481763ea5dbb",
+   "ts": 1708155360000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "The meeting got pushed by an hour."
+  },
+  {
+   "id": "575b360c7dd1a3f6",
+   "ts": 1708233180000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "I will check and get back to you."
+  },
+  {
+   "id": "6d80912a8655857c",
+   "ts": 1708387620000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*I have added it to the shared list.*"
+  },
+  {
+   "id": "58e85554801e9e82",
+   "ts": 1708411800000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Ok, done."
+  },
+  {
+   "id": "b7639ac2c56a61df",
+   "ts": 1708573260000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "No worries, take your time."
+  },
+  {
+   "id": "66af0aed6487dbac",
+   "ts": 1708664280000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "See you then."
+  },
+  {
+   "id": "74298dd3b05adb62",
+   "ts": 1708776600000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "I will be there in ten minutes. 🙏"
+  },
+  {
+   "id": "157cf0b753f809ea",
+   "ts": 1708797240000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Thanks for the update."
+  },
+  {
+   "id": "d686ff5f05639349",
+   "ts": 1708833360000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "The meeting got pushed by an hour."
+  },
+  {
+   "id": "ac4a00698212102e",
+   "ts": 1708977900000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Please review the draft when you get a chance. 👍"
+  },
+  {
+   "id": "6904df0e145f18ed",
+   "ts": 1709037600000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "That works for me."
+  },
+  {
+   "id": "c77c2b6af4ab5926",
+   "ts": 1709070900000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "I have attached the summary."
+  },
+  {
+   "id": "d00536285bc3ac17",
+   "ts": 1709168220000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Let me know when you are free. 🙏"
+  },
+  {
+   "id": "9f5fb600ef917cf0",
+   "ts": 1709209500000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Let me know when you are free.*"
+  },
+  {
+   "id": "3d3f157ffe271ea9",
+   "ts": 1709226060000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Did you see the announcement?"
+  },
+  {
+   "id": "300c7736b69ce6a9",
+   "ts": 1709343180000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Can you send the notes over?"
+  },
+  {
+   "id": "592025a1e378e920",
+   "ts": 1709428260000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Sounds good.*"
+  },
+  {
+   "id": "df681691e94c0ffc",
+   "ts": 1709546160000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Thanks for the update."
+  },
+  {
+   "id": "23292e837fc2aa46",
+   "ts": 1709607960000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "That works for me."
+  },
+  {
+   "id": "9d01f990bb6b8a34",
+   "ts": 1709702940000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Ok, done."
+  },
+  {
+   "id": "32082eb00e3dac47",
+   "ts": 1709834160000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "No worries, take your time."
+  },
+  {
+   "id": "531e23b6978af1c4",
+   "ts": 1709946120000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "That works for me."
+  },
+  {
+   "id": "3953aa41e4a982ae",
+   "ts": 1710093120000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "That works for me."
+  },
+  {
+   "id": "55c984809edf8e9d",
+   "ts": 1710108180000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Thanks for the update."
+  },
+  {
+   "id": "a04b8d6595cc4aff",
+   "ts": 1710232620000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "We can move it to Friday. 📌"
+  },
+  {
+   "id": "8dbd5be714bbe4b8",
+   "ts": 1710391380000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "I have attached the summary. ✅"
+  },
+  {
+   "id": "ec43967ed18c2b3f",
+   "ts": 1710559260000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "_No worries, take your time._"
+  },
+  {
+   "id": "6e164990dd652b91",
+   "ts": 1710724680000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Not sure yet, I will confirm tomorrow.*"
+  },
+  {
+   "id": "bd3e0cbfe16904ba",
+   "ts": 1710735780000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "I have attached the summary."
+  },
+  {
+   "id": "18a613f16d066650",
+   "ts": 1710763980000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "_We can move it to Friday._"
+  },
+  {
+   "id": "c6c16f7f7fcfc1a9",
+   "ts": 1710862560000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Did you see the announcement?"
+  },
+  {
+   "id": "1bd0374139d8da18",
+   "ts": 1710962040000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Let me know when you are free."
+  },
+  {
+   "id": "12204879fc52a75d",
+   "ts": 1710977700000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "_Can everyone vote on the poll?_"
+  },
+  {
+   "id": "0e0e4202ff95df22",
+   "ts": 1711054740000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "I will bring the printed copies. 👍"
+  },
+  {
+   "id": "d34d17c7bb43b1c2",
+   "ts": 1711224000000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "I will be there in ten minutes."
+  },
+  {
+   "id": "f1d779c510f9c5c9",
+   "ts": 1711293420000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Can everyone vote on the poll?"
+  },
+  {
+   "id": "20fb932e4414a97e",
+   "ts": 1711389420000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Did you see the announcement?"
+  },
+  {
+   "id": "f599009112753187",
+   "ts": 1711413180000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Did you see the announcement? 📌"
+  },
+  {
+   "id": "366b6e097d84bd51",
+   "ts": 1711555440000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Good point, I had not thought of that."
+  },
+  {
+   "id": "464f0bd6d957ab21",
+   "ts": 1711663800000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "_Please review the draft when you get a chance._"
+  },
+  {
+   "id": "d45f02ccaf87663c",
+   "ts": 1711725180000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Not sure yet, I will confirm tomorrow."
+  },
+  {
+   "id": "35b97f2bcd844594",
+   "ts": 1711822560000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "_We can move it to Friday._"
+  },
+  {
+   "id": "f6edd68b560a813f",
+   "ts": 1711867620000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Not sure yet, I will confirm tomorrow."
+  },
+  {
+   "id": "65303ea5b41063e1",
+   "ts": 1711888200000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Let us pick this up in the morning."
+  },
+  {
+   "id": "d53710ecbbd86b13",
+   "ts": 1711989000000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "No worries, take your time."
+  },
+  {
+   "id": "d36b4201deb3d8f8",
+   "ts": 1712044500000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*See you then.*"
+  },
+  {
+   "id": "9d0a4e8f60f9a85c",
+   "ts": 1712095980000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Did you see the announcement?"
+  },
+  {
+   "id": "242410e7c97e808d",
+   "ts": 1712135100000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "See you then."
+  },
+  {
+   "id": "4192477934a135ac",
+   "ts": 1712216640000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "No worries, take your time."
+  },
+  {
+   "id": "f122eff552853349",
+   "ts": 1712366820000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Did you see the announcement? 🙏"
+  },
+  {
+   "id": "39a545a3346f4c49",
+   "ts": 1712518080000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*I will be there in ten minutes.*"
+  },
+  {
+   "id": "e324980df42da3aa",
+   "ts": 1712594580000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "I have added it to the shared list."
+  },
+  {
+   "id": "c1d64b95c505ece3",
+   "ts": 1712622180000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "I will bring the printed copies."
+  },
+  {
+   "id": "5613e6d30006339f",
+   "ts": 1712756220000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Can everyone vote on the poll?"
+  },
+  {
+   "id": "70e21df723e083e8",
+   "ts": 1712827980000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Same time next week?"
+  },
+  {
+   "id": "1146b9143b9ea9fa",
+   "ts": 1712958840000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "_That works for me._"
+  },
+  {
+   "id": "d8dffd040d079715",
+   "ts": 1713115920000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Please review the draft when you get a chance."
+  },
+  {
+   "id": "15f6d72bd377c4e2",
+   "ts": 1713137880000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "The meeting got pushed by an hour."
+  },
+  {
+   "id": "15e9a8eaae12fb49",
+   "ts": 1713180300000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "I will be there in ten minutes."
+  },
+  {
+   "id": "87552aab4befff87",
+   "ts": 1713330000000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Did you see the announcement?*"
+  },
+  {
+   "id": "224a39b3d3a221fe",
+   "ts": 1713398340000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Thanks for the update."
+  },
+  {
+   "id": "3692b17a238cdc30",
+   "ts": 1713454440000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Sounds good. 📌"
+  },
+  {
+   "id": "3729c7ecdd2575dc",
+   "ts": 1713474720000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "_We can move it to Friday._"
+  },
+  {
+   "id": "9d2bf0b6257d3b38",
+   "ts": 1713578400000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Ok, done."
+  },
+  {
+   "id": "d7a3c99c728ef25b",
+   "ts": 1713653400000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "*We can move it to Friday.*"
+  },
+  {
+   "id": "18f4552a446c63d2",
+   "ts": 1713691680000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*That works for me.*"
+  },
+  {
+   "id": "ad31c4d7dbd799c8",
+   "ts": 1713844740000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "_I have attached the summary._"
+  },
+  {
+   "id": "2bff22d14233fb40",
+   "ts": 1713855720000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "I have attached the summary."
+  },
+  {
+   "id": "8f117dbd570f7c2c",
+   "ts": 1713954780000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "No worries, take your time. 🎉"
+  },
+  {
+   "id": "11bfcd1af61f52ad",
+   "ts": 1714127160000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "_It is already on the calendar._"
+  },
+  {
+   "id": "a05be061697f3533",
+   "ts": 1714258260000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Sounds good."
+  },
+  {
+   "id": "e9ae535fa206dbe5",
+   "ts": 1714316040000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Please review the draft when you get a chance.*"
+  },
+  {
+   "id": "a9c4d6b37fc1a886",
+   "ts": 1714454040000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Please review the draft when you get a chance."
+  },
+  {
+   "id": "fce446ec8d775816",
+   "ts": 1714490460000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "I will be there in ten minutes."
+  },
+  {
+   "id": "cfb69181c13a1276",
+   "ts": 1714525440000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Sounds good.*"
+  },
+  {
+   "id": "8afe4fff13288ae3",
+   "ts": 1714623060000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "_Did you see the announcement?_"
+  },
+  {
+   "id": "250c50870ed88378",
+   "ts": 1714719180000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "_Let us pick this up in the morning._"
+  },
+  {
+   "id": "9afc5825751f9d6d",
+   "ts": 1714851840000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Good point, I had not thought of that.*"
+  },
+  {
+   "id": "eeabb494ef187766",
+   "ts": 1714906860000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Ok, done."
+  },
+  {
+   "id": "4c7442dcf59f7687",
+   "ts": 1714958400000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*It is already on the calendar.*"
+  },
+  {
+   "id": "3f4f3bf0584d8732",
+   "ts": 1715040060000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "No worries, take your time."
+  },
+  {
+   "id": "9297fc0ef8d3b024",
+   "ts": 1715138400000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "_I will be there in ten minutes._"
+  },
+  {
+   "id": "0bc7632b73c9509e",
+   "ts": 1715186280000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*See you then.*"
+  },
+  {
+   "id": "c1c79202a930c5c6",
+   "ts": 1715217300000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Thanks for the update."
+  },
+  {
+   "id": "7c3cd667b54e6c52",
+   "ts": 1715318520000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Let me know when you are free. 😊"
+  },
+  {
+   "id": "31e31230eafcb1ea",
+   "ts": 1715384340000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Thanks for the update."
+  },
+  {
+   "id": "56d0cd323f49f1b8",
+   "ts": 1715451600000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "_I have added it to the shared list._"
+  },
+  {
+   "id": "339ecff20e0c4cd9",
+   "ts": 1715462820000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Yes, that is correct. ✅"
+  },
+  {
+   "id": "78f6fc6e33d86350",
+   "ts": 1715619780000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Same time next week?*"
+  },
+  {
+   "id": "b1334da2fb26915c",
+   "ts": 1715743980000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Let us pick this up in the morning."
+  },
+  {
+   "id": "f85e57801c7079bc",
+   "ts": 1715905320000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Let us pick this up in the morning."
+  },
+  {
+   "id": "5495b8c1782e4992",
+   "ts": 1716030480000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Same time next week? 😊"
+  },
+  {
+   "id": "a07126c5a96f3d92",
+   "ts": 1716081660000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Please review the draft when you get a chance.*"
+  },
+  {
+   "id": "24679c834fd6f0eb",
+   "ts": 1716178140000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Yes, that is correct."
+  },
+  {
+   "id": "2baabe6700d62947",
+   "ts": 1716342840000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Same time next week?"
+  },
+  {
+   "id": "bed695c4ce5f79b2",
+   "ts": 1716502680000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "I will check and get back to you."
+  },
+  {
+   "id": "d095fbec01ae63f9",
+   "ts": 1716657480000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "I will be there in ten minutes."
+  },
+  {
+   "id": "6e5427797b9da224",
+   "ts": 1716737340000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Can everyone vote on the poll?*"
+  },
+  {
+   "id": "d5055396f194f10a",
+   "ts": 1716760200000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "*I will bring the printed copies.*"
+  },
+  {
+   "id": "499e04ec7d9d40cf",
+   "ts": 1716892500000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "_That works for me._"
+  },
+  {
+   "id": "300341d7e8fecf7c",
+   "ts": 1717047120000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Let us pick this up in the morning."
+  },
+  {
+   "id": "2d7a457c5ffe3753",
+   "ts": 1717108380000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Not sure yet, I will confirm tomorrow."
+  },
+  {
+   "id": "b721bdc9c1d43083",
+   "ts": 1717266120000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "I have attached the summary."
+  },
+  {
+   "id": "cc098e9137ee8583",
+   "ts": 1717378440000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Let me know when you are free."
+  },
+  {
+   "id": "9e62c8e16909fec3",
+   "ts": 1717393620000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Yes, that is correct."
+  },
+  {
+   "id": "c93cd2839646ec08",
+   "ts": 1717564680000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Did you see the announcement?"
+  },
+  {
+   "id": "efffde60b89a17c6",
+   "ts": 1717701240000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "No worries, take your time."
+  },
+  {
+   "id": "9bbb0772734e9823",
+   "ts": 1717849980000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "I have added it to the shared list."
+  },
+  {
+   "id": "e81d8fbc134fc42c",
+   "ts": 1718020620000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Did you see the announcement?"
+  },
+  {
+   "id": "2c8d52570e3711ac",
+   "ts": 1718105520000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Good point, I had not thought of that.*"
+  },
+  {
+   "id": "f5eadb0a13e1f29a",
+   "ts": 1718113980000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Good point, I had not thought of that."
+  },
+  {
+   "id": "98739c8c1be7311f",
+   "ts": 1718210940000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "The meeting got pushed by an hour."
+  },
+  {
+   "id": "fcd9cbe0098d92b7",
+   "ts": 1718223300000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Please review the draft when you get a chance.\n"
+  },
+  {
+   "id": "aa7173d5416299e0",
+   "ts": 1718311620000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "*Thanks for the update.*"
+  },
+  {
+   "id": "4708f4ef1f0f1b58",
+   "ts": 1718322360000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "_Yes, that is correct._"
+  },
+  {
+   "id": "34d965fd7966ca46",
+   "ts": 1718479920000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Did you see the announcement?"
+  },
+  {
+   "id": "7be3e199f7ee86af",
+   "ts": 1718514480000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Please review the draft when you get a chance."
+  },
+  {
+   "id": "ff9476892b858054",
+   "ts": 1718669580000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "No worries, take your time."
+  },
+  {
+   "id": "e1d8d57c13c913ed",
+   "ts": 1718824620000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "Sounds good."
+  },
+  {
+   "id": "0917012927f97154",
+   "ts": 1718947560000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*That works for me.*"
+  },
+  {
+   "id": "ffcfc4910bcac345",
+   "ts": 1719119100000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "Let us pick this up in the morning. 👍"
+  },
+  {
+   "id": "a23215de43ab0683",
+   "ts": 1719251160000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "I will be there in ten minutes."
+  },
+  {
+   "id": "711471e6d645c310",
+   "ts": 1719312540000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "Yes, that is correct."
+  },
+  {
+   "id": "145d1f1ad811199f",
+   "ts": 1719419640000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "That works for me."
+  },
+  {
+   "id": "d838d91408b13604",
+   "ts": 1719509880000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "*Same time next week?*"
+  },
+  {
+   "id": "3c55fb8f723e686c",
+   "ts": 1719617100000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "That works for me. ✅"
+  },
+  {
+   "id": "c59c711bdcd1b183",
+   "ts": 1719633240000,
+   "sender": "Contact H",
+   "fromMe": false,
+   "source": "export",
+   "text": "_Ok, done._"
+  },
+  {
+   "id": "bd4496e7a3637f95",
+   "ts": 1719784200000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "*Good point, I had not thought of that.*"
+  },
+  {
+   "id": "35308ad25671adf2",
+   "ts": 1719824700000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "_Did you see the announcement?_"
+  },
+  {
+   "id": "95132b2fca34d831",
+   "ts": 1719854760000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "*We can move it to Friday.*"
+  },
+  {
+   "id": "d4353b8ee12ad6d3",
+   "ts": 1719989220000,
+   "sender": "Contact A",
+   "fromMe": false,
+   "source": "export",
+   "text": "_Let me know when you are free._"
+  },
+  {
+   "id": "79bb167b5f2a3980",
+   "ts": 1720061520000,
+   "sender": "You",
+   "fromMe": true,
+   "source": "export",
+   "text": "Let me know when you are free."
+  },
+  {
+   "id": "b21d2a47265a62cb",
+   "ts": 1720202880000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "I have attached the summary. 🙏"
+  },
+  {
+   "id": "f24012fd6a03509b",
+   "ts": 1720242960000,
+   "sender": "Contact E",
+   "fromMe": false,
+   "source": "export",
+   "text": "The meeting got pushed by an hour.\n"
+  }
+ ]
+}

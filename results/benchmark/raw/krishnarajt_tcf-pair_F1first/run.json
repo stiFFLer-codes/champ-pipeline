@@ -1,0 +1,24 @@
+{
+  "tool": "krishnarajt/Whatsapp-Chat-File-Merger",
+  "variant": "Source.py (Tk GUI)",
+  "sha": "138add0aa8534e9ccc92f3fb5090b31d363a33d9",
+  "input": "data/synthetic_fixtures/tcf-pair",
+  "order": "F1 picked first",
+  "status": "ran",
+  "env": {
+    "os": "Windows_NT 10.0.26100 x64",
+    "node": "v24.14.0",
+    "bun": "1.3.14",
+    "python": "3.12.10",
+    "pandas": "3.0.6",
+    "numpy": "2.5.4"
+  },
+  "command": "python scripts/survey/bench/run_krishnarajt.py <checkout>/Source.py <first> <second>  (cwd: empty temp dir; output cf-F1-primary_merged.txt)",
+  "wrapper_stdout": "('<repo>\\\\data\\\\synthetic_fixtures\\\\tcf-pair\\\\tcf-F1-primary.txt', '<repo>\\\\data\\\\synthetic_fixtures\\\\tcf-pair\\\\tcf-F2-secondary.txt')\r\nchanged date format",
+  "diagnostics_emitted": "stdout only: \"('<repo>\\\\data\\\\synthetic_fixtures\\\\tcf-pair\\\\tcf-F1-primary.txt', '<repo>\\\\data\\\\synthetic_fixtures\\\\tcf-pair\\\\tcf-F2-secondary.txt') | changed date format\"",
+  "conflicts_reported": "n",
+  "provenance_reported": "n",
+  "unparseable_input": "lines without \"/\" or \":\" (and https lines without \",\") are removed before parsing, silently; a line whose date fits neither %m/%d/%y nor %d/%m/%y raises an uncaught ValueError (abort); am/pm is ignored, so 12h times are read as 24h for ordering",
+  "note": "requirements.txt pins pandas 1.3.4 / numpy 1.21.4 (no wheels for Python 3.12); current pandas/numpy used instead. Output lines are the input lines verbatim, re-ordered.",
+  "environment_crashes_retried": []
+}

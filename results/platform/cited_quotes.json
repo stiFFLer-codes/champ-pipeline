@@ -1,0 +1,4331 @@
+{
+  "what": "Quotes from evidence/*.json of the R1.1 platform evidence bundle (../champ-platform-evidence, built 2026-10-15) whose article is one of the 13 listed in the WP4 brief, with their URLs and Wayback snapshots.",
+  "articles": [
+    "1039228717453239",
+    "1295296267926284",
+    "1195710084347483",
+    "1066696467238362",
+    "686469079565350",
+    "618575946635920",
+    "589979312881396",
+    "1233566054551746",
+    "828406668498455",
+    "1180414079177245",
+    "378279804439436",
+    "1046791737425017",
+    "653480766448040"
+  ],
+  "verified_utc": "2026-10-16T10:29:21Z",
+  "rule": "verbatim = a substring of the rendered article text after mapping curly quotes/apostrophes to straight ones, non-breaking spaces to spaces, collapsing whitespace and dropping rendered link targets (the bundle's step4_report.py rule). displayed = not inside a HelpContentGalaxyLLMInclude block (the site's component for it returns null). Wayback text: the snapshot fetched raw (id_) and rendered with the bundle's wa.article_text.",
+  "quotes": [
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can't restore your chat history from Settings. Once you confirm that you have a backup, you can restore your chat history by reinstalling WhatsApp on your mobile device.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": false,
+      "platforms_passing": [],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": false,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": false
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": false,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": false
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:14Z",
+          "local_verbatim": true,
+          "local_displayed": false,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145036/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T14:50:36Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": false
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can restore your chat history as long as you have an existing backup with WhatsApp cloud storage or your Google Account.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can restore your chat history as long as you have an existing backup on WhatsApp cloud storage or iCloud.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "If your old phone is broken or lost, you can restore your chats on a new device from your backup.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "If you don't have a WhatsApp cloud storage or Google Account backup, you can still restore chats on a new device by transferring chats from your old device.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "Uninstall and reinstall WhatsApp.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "Tap Restore when prompted.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "It's not possible to backup or restore your chat history on linked devices such as WhatsApp on Web, WhatsApp on Mac, or WhatsApp on Windows. To back up or restore your chats, you’ll need to use your phone.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:14Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145036/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T14:50:36Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "686469079565350",
+      "title": "How to move chats from an Android device to an iPhone",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "To move your WhatsApp chats from an Android phone to an iPhone, use the Move to iOS app.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:08Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "686469079565350",
+      "title": "How to move chats from an Android device to an iPhone",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can transfer your account info, profile photo, chats, Channel updates, chat history, media, and settings. Chats include individual chats, group chats, and communities.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:08Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "686469079565350",
+      "title": "How to move chats from an Android device to an iPhone",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can't transfer your call history, display name, or media received over WhatsApp Channels.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:08Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1295296267926284",
+      "title": "How to move chats from an iPhone to an Android device",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "On your iPhone, open WhatsApp and go to Chats > Transfer chat history > Transfer to Android.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1295296267926284",
+      "title": "How to move chats from an iPhone to an Android device",
+      "question": "Q1",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can’t transfer your display name, status updates, or media received over WhatsApp Channels.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q2",
+      "evidence_file": "evidence_01.json",
+      "quote": "Note: Don't tap Skip if you still want your old chats.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q2",
+      "evidence_file": "evidence_01.json",
+      "quote": "If another backup occurs, the previous backup will be replaced with only the chats you've received since skipping. Your old chat history can’t be recovered.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "686469079565350",
+      "title": "How to move chats from an Android device to an iPhone",
+      "question": "Q2",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can only restore your WhatsApp history before you've activated WhatsApp on your new device. If you want to get back your old message history, you need to wipe your new device and start over.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:08Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "686469079565350",
+      "title": "How to move chats from an Android device to an iPhone",
+      "question": "Q2",
+      "evidence_file": "evidence_01.json",
+      "quote": "Note: Your iPhone needs to be factory new, or already factory reset, to pair with the Move to iOS app. If you've already set up and used your iPhone, this transfer isn't available to you.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:08Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1295296267926284",
+      "title": "How to move chats from an iPhone to an Android device",
+      "question": "Q2",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can only transfer your chats before you’ve activated WhatsApp on your new Android device. If you want to restore your old chats, you'll need to first uninstall WhatsApp on your new device.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "If your most recent backup is more than 120 days old, restoring your backup may not be possible, even if your account is still active.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "The phone number used for backing up and the one used for restoring must be the same.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "For additional security, you may be prompted to verify your identity to restore your chats.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can only restore your chat history if you have previously enabled a backup option and have a successful recent backup.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "It’s not possible to restore backups created on Android on your iPhone or backups created on your iPhone on Android.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "Note: After 120 days of inactivity, your account will be deleted. Should this happen, you will be asked to register as a new user and will not have the option to restore backup.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": false,
+      "platforms_passing": [],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": false,
+          "wayback_displayed": null
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "Verify your phone number and Apple ID.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "686469079565350",
+      "title": "How to move chats from an Android device to an iPhone",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "Use the same phone number as your old phone on your new device.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:08Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "686469079565350",
+      "title": "How to move chats from an Android device to an iPhone",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "Your iPhone needs to be factory new, or already factory reset, for it to pair with the Move to iOS app and move data from your Android phone.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:08Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "686469079565350",
+      "title": "How to move chats from an Android device to an iPhone",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "It's not possible to transfer your WhatsApp data to a new phone number. You can however change your new phone number on your old device before moving to your new device.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:08Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1295296267926284",
+      "title": "How to move chats from an iPhone to an Android device",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "The same phone number on the new device as the old device.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1295296267926284",
+      "title": "How to move chats from an iPhone to an Android device",
+      "question": "Q3",
+      "evidence_file": "evidence_01.json",
+      "quote": "It’s not possible to transfer your chats to a new phone number.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_01.json",
+      "quote": "Your Google Account stores only one backup per phone number, so a new backup permanently replaces the one containing your missing chats.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_01.json",
+      "quote": "iCloud stores only one backup per account, so a new backup permanently replaces the one containing your missing chats.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can only store one backup per account. Each new backup replaces the old one, so it's not possible to restore old backups. Don't create a new backup while you're trying to restore an older one.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can only store one backup per iCloud account. Each new backup replaces the old one, so it's not possible to restore old backup files. Don't create a new backup while you're trying to restore an older one.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_01.json",
+      "quote": "If another backup occurs, the previous backup will be replaced with only the chats you've received since skipping.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "618575946635920",
+      "title": "How to restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_01.json",
+      "quote": "Any messages sent and received after the latest backup can’t be restored.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144935/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:49:35Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145007/https://faq.whatsapp.com/618575946635920/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:50:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "686469079565350",
+      "title": "How to move chats from an Android device to an iPhone",
+      "question": "Q5",
+      "evidence_file": "evidence_01.json",
+      "quote": "It's not possible to merge the new and old history.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:08Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1295296267926284",
+      "title": "How to move chats from an iPhone to an Android device",
+      "question": "Q5",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can't merge new chats from your new phone and old chats from your old phone.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1233566054551746",
+      "title": "How to delete chats from your old phone",
+      "question": "Q6",
+      "evidence_file": "evidence_01.json",
+      "quote": "When you register your phone number on a new phone, you will be logged out of WhatsApp on your old phone. However, your chats will remain on the device. To help keep your chats private, you can delete your chats on your old phone.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1233566054551746/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:19:34Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132100/https://faq.whatsapp.com/1233566054551746/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:21:00Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1233566054551746/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:36:00Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132100/https://faq.whatsapp.com/1233566054551746/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:21:00Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1233566054551746/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:36:02Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132100/https://faq.whatsapp.com/1233566054551746/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:21:00Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "686469079565350",
+      "title": "How to move chats from an Android device to an iPhone",
+      "question": "Q6",
+      "evidence_file": "evidence_01.json",
+      "quote": "You’ll be signed out from your Android phone once the data is prepared.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:08Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "686469079565350",
+      "title": "How to move chats from an Android device to an iPhone",
+      "question": "Q6",
+      "evidence_file": "evidence_01.json",
+      "quote": "Your Android phone will still have your data unless you delete WhatsApp or wipe your phone.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:08Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015151156/https://faq.whatsapp.com/686469079565350/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:11:56Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1295296267926284",
+      "title": "How to move chats from an iPhone to an Android device",
+      "question": "Q6",
+      "evidence_file": "evidence_01.json",
+      "quote": "Your old device will still have your data unless you wipe it or delete WhatsApp.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:29:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:29:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015132643/https://faq.whatsapp.com/1295296267926284/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:26:43Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "378279804439436",
+      "title": "About linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "There is a known issue for some linked devices not displaying up to one year of chat history.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:34Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015141959/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:19:59Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:24:10Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015142026/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:20:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:24:14Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015142136/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T14:21:36Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "378279804439436",
+      "title": "About linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can stay connected by linking up to four devices at a time to your primary phone. You’ll still need your primary phone to register your WhatsApp account and link new devices.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:34Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015141959/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:19:59Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:24:10Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015142026/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:20:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:24:14Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015142136/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T14:21:36Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "378279804439436",
+      "title": "About linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "Use WhatsApp on your computer even when your phone is off.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:34Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015141959/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:19:59Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:24:10Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015142026/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:20:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:24:14Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015142136/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T14:21:36Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "378279804439436",
+      "title": "About linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "We’ll also automatically disconnect linked devices after 30 days of inactivity.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:34Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015141959/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:19:59Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:24:10Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015142026/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:20:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "378279804439436",
+      "title": "About linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "Linked devices work without your phone online, but will log out if your phone is unused for over 14 days.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:34Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015141959/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:19:59Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "378279804439436",
+      "title": "About linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "Note: Your phone doesn’t need to stay online to use WhatsApp on linked devices, but your linked devices will be logged out if you don’t use your phone for over 14 days.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:24:10Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015142026/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:20:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "378279804439436",
+      "title": "About linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "Linked devices (Windows, Mac, Web, iPad, and wearables) can't be used as the primary device on an account.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:34Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015141959/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:19:59Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "378279804439436",
+      "title": "About linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "To use an Android Tablet as a primary device, you must register your account from that device.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:34Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015141959/https://faq.whatsapp.com/378279804439436/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:19:59Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "653480766448040",
+      "title": "About message history on linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "Right after you link a device, your primary phone sends an end-to-end encrypted copy of your most recent message history to your newly linked device, where it’s stored locally.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:52Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:24:22Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:24:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "653480766448040",
+      "title": "About message history on linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "Your chat history remains visible on your primary device.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:52Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:24:22Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:24:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "653480766448040",
+      "title": "About message history on linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "Not all messages and chats are synced to linked devices from your phone. WhatsApp Desktop syncs more message history than WhatsApp Web. To see or search your full history, check your phone.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:52Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:24:22Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:24:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "653480766448040",
+      "title": "About message history on linked devices",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "When you delete a message for yourself or for everyone in a chat, the deletion will sync across all online devices where you are logged into WhatsApp.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:52Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:24:22Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:24:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015145726/https://faq.whatsapp.com/653480766448040/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:57:26Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1046791737425017",
+      "title": "About linking WhatsApp to a second phone",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "You can now use the same WhatsApp account on multiple phones at the same time, using your primary phone to link up to four devices. You’ll need to log in to WhatsApp on your primary phone every 14 days to keep linked devices connected to your WhatsApp account.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1046791737425017/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:54Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130413/https://faq.whatsapp.com/1046791737425017/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:04:13Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1046791737425017/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:24:31Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130442/https://faq.whatsapp.com/1046791737425017/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T13:04:42Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1046791737425017",
+      "title": "About linking WhatsApp to a second phone",
+      "question": "Q7",
+      "evidence_file": "evidence_01.json",
+      "quote": "Your companion phones will be logged out if you don’t use WhatsApp on your primary phone for over 14 days.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1046791737425017/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:15:54Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130413/https://faq.whatsapp.com/1046791737425017/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:04:13Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1046791737425017/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:24:31Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130442/https://faq.whatsapp.com/1046791737425017/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T13:04:42Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q1",
+      "evidence_file": "evidence_02.json",
+      "quote": "You may be able to restore your backup by using the chat transfer feature.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:42Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144439/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:44:39Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q2",
+      "evidence_file": "evidence_02.json",
+      "quote": "“This account already exists on your device.”",
+      "note": "listed among error messages when creating or restoring a backup",
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:42Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144439/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:44:39Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q2",
+      "evidence_file": "evidence_02.json",
+      "quote": "If you restore a backup and chats are still missing, you most likely restored a backup file that didn't contain the missing chats.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:42Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144439/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:44:39Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_02.json",
+      "quote": "You can only restore your chat history if you have previously enabled a backup option and have a successful recent backup.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:42Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144439/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:44:39Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:12Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144604/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:46:04Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_02.json",
+      "quote": "If you cancel your subscription, your backup is preserved but new backups won't be possible until you're under 2 GB or resubscribe. After 120 days without a successful backup, restoring your backup may not be possible",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:42Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144439/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:44:39Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:12Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144604/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:46:04Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_02.json",
+      "quote": "If you need more space, you can upgrade to WhatsApp Plus (100 GB), Meta One Core (2 TB), or Meta One Premium (4 TB).",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:42Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144439/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:44:39Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:12Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144604/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:46:04Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_02.json",
+      "quote": "Check that you’re restoring data from the same phone number and iCloud account that the backup was created on.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:12Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144604/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:46:04Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_02.json",
+      "quote": "To have enough space, your available iCloud account storage must be at least 2.05 times bigger than the size of your backup.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:12Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144604/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:46:04Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_02.json",
+      "quote": "Both WhatsApp cloud storage and Google Account store only one backup per phone number. Each new backup replaces the previous one, so there's no way to restore an older backup.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:42Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144439/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:44:39Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:12Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144604/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:46:04Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_02.json",
+      "quote": "Your existing backup may be the only copy of those chats, and any of these actions will overwrite or delete it permanently.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:42Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144439/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:44:39Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:12Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144604/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:46:04Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_02.json",
+      "quote": "Don't create a new backup while you're trying to restore an older one. Because only one backup is stored per phone number, a new backup overwrites the old one permanently.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:42Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144439/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:44:39Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_02.json",
+      "quote": "WhatsApp cloud storage only stores one backup per phone number. Each new backup overwrites the previous one.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:42Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144439/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:44:39Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_02.json",
+      "quote": "iCloud only stores one backup per account. Each new backup overwrites the old one, so there’s no way to restore a previous iCloud backup.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:12Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144604/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:46:04Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_02.json",
+      "quote": "Only if your chats are still on your device: If backing up continues to fail or get stuck, you can delete your backup from iCloud and start a new one. Deleting a backup is permanent and can't be undone.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:12Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144604/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T14:46:04Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "589979312881396",
+      "title": "Can't back up or restore your chat history",
+      "question": "Q4",
+      "evidence_file": "evidence_02.json",
+      "quote": "Back up your chats manually before changing devices so you have the most up-to-date chat history.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:42Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015144439/https://faq.whatsapp.com/589979312881396/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T14:44:39Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1039228717453239",
+      "title": "Can’t transfer chat history",
+      "question": "Q1",
+      "evidence_file": "evidence_03.json",
+      "quote": "Chats can only be transferred between two of the same type of device using WhatsApp Chat Transfer.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:19:00Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:31Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1195710084347483",
+      "title": "Can’t move chats from an Android device to an iPhone",
+      "question": "Q1",
+      "evidence_file": "evidence_03.json",
+      "quote": "Start a new transfer with the Move to iOS app on your Android device.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:50Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:18Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1195710084347483",
+      "title": "Can’t move chats from an Android device to an iPhone",
+      "question": "Q2",
+      "evidence_file": "evidence_03.json",
+      "quote": "You can only move your chats before you've activated WhatsApp on your iPhone. The transfer runs as part of setting up a new device, so it only works on a device that's factory new or freshly reset.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:50Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:18Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1195710084347483",
+      "title": "Can’t move chats from an Android device to an iPhone",
+      "question": "Q2",
+      "evidence_file": "evidence_03.json",
+      "quote": "Before you continue: These steps erase your iPhone and replace any WhatsApp chats currently on it.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:50Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:18Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1195710084347483",
+      "title": "Can’t move chats from an Android device to an iPhone",
+      "question": "Q2",
+      "evidence_file": "evidence_03.json",
+      "quote": "You don't need any of the chats or messages currently on your iPhone, because a factory reset deletes them permanently.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:50Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:18Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1195710084347483",
+      "title": "Can’t move chats from an Android device to an iPhone",
+      "question": "Q2",
+      "evidence_file": "evidence_03.json",
+      "quote": "That means the only way to move your old chat history across now is to put your iPhone back into setup state, which erases it:",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:50Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:18Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1066696467238362",
+      "title": "Can’t move chats from an iPhone to an Android device",
+      "question": "Q2",
+      "evidence_file": "evidence_03.json",
+      "quote": "You can only move your chats before you've activated WhatsApp on your Android device. The transfer runs as part of setting up a new device, so it only works on a device that's factory new or freshly reset.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:57Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1066696467238362",
+      "title": "Can’t move chats from an iPhone to an Android device",
+      "question": "Q2",
+      "evidence_file": "evidence_03.json",
+      "quote": "These steps erase your Android device and replace any WhatsApp chats currently on it.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:57Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1066696467238362",
+      "title": "Can’t move chats from an iPhone to an Android device",
+      "question": "Q2",
+      "evidence_file": "evidence_03.json",
+      "quote": "You don't need any of the chats or messages currently on your Android device, because a factory reset deletes them permanently.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:57Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1039228717453239",
+      "title": "Can’t transfer chat history",
+      "question": "Q2",
+      "evidence_file": "evidence_03.json",
+      "quote": "You can only transfer your chats before you’ve activated WhatsApp on your new phone. Before starting the transfer from your old device, make sure you uninstall WhatsApp on your new device.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:19:00Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:31Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1195710084347483",
+      "title": "Can’t move chats from an Android device to an iPhone",
+      "question": "Q3",
+      "evidence_file": "evidence_03.json",
+      "quote": "Your iPhone needs to be new, or already factory reset.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:50Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:18Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1195710084347483",
+      "title": "Can’t move chats from an Android device to an iPhone",
+      "question": "Q3",
+      "evidence_file": "evidence_03.json",
+      "quote": "You’re using the same phone number on your old phone and new phone.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:50Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:18Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1195710084347483",
+      "title": "Can’t move chats from an Android device to an iPhone",
+      "question": "Q3",
+      "evidence_file": "evidence_03.json",
+      "quote": "It's not possible to move your chats to a new phone number.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:50Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:18Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1195710084347483",
+      "title": "Can’t move chats from an Android device to an iPhone",
+      "question": "Q3",
+      "evidence_file": "evidence_03.json",
+      "quote": "You can’t move chats to or from the WhatsApp Business app using this feature.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:50Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:18Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1066696467238362",
+      "title": "Can’t move chats from an iPhone to an Android device",
+      "question": "Q3",
+      "evidence_file": "evidence_03.json",
+      "quote": "Your Android device needs to be new, or already factory reset, with Android 10 or above.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:57Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1039228717453239",
+      "title": "Can’t transfer chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_03.json",
+      "quote": "Make sure you’re scanning the correct QR code that’s shown after you complete registration.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:19:00Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:31Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1039228717453239",
+      "title": "Can’t transfer chat history",
+      "question": "Q3",
+      "evidence_file": "evidence_03.json",
+      "quote": "It's not possible to transfer your chats to a new phone number.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:19:00Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:31Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1195710084347483",
+      "title": "Can’t move chats from an Android device to an iPhone",
+      "question": "Q5",
+      "evidence_file": "evidence_03.json",
+      "quote": "Note: You can't merge new chats from your iPhone with old chats from your Android device. Whichever set you transfer replaces the other.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:50Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:18Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1066696467238362",
+      "title": "Can’t move chats from an iPhone to an Android device",
+      "question": "Q5",
+      "evidence_file": "evidence_03.json",
+      "quote": "Note: You can’t merge new chats from your Android device with old chats from your iPhone. Whichever set you transfer replaces the other.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:57Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1039228717453239",
+      "title": "Can’t transfer chat history",
+      "question": "Q5",
+      "evidence_file": "evidence_03.json",
+      "quote": "Note: You can’t merge new chats from your new phone and old chats from your old phone.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:19:00Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:31Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1039228717453239",
+      "title": "Can’t transfer chat history",
+      "question": "Q6",
+      "evidence_file": "evidence_03.json",
+      "quote": "WhatsApp doesn’t delete your chats during a transfer and your chats aren’t lost if an error occurs.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:19:00Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:31Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1039228717453239",
+      "title": "Can’t transfer chat history",
+      "question": "Q6",
+      "evidence_file": "evidence_03.json",
+      "quote": "Note: Your chats aren't lost if a transfer gets stuck or shows an error. Your data is still available on your old phone, so don't delete it, reset your old phone, or uninstall WhatsApp until you confirm the transfer finished.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:19:00Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:28Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:31Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015115509/https://faq.whatsapp.com/1039228717453239/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T11:55:09Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1195710084347483",
+      "title": "Can’t move chats from an Android device to an iPhone",
+      "question": "Q6",
+      "evidence_file": "evidence_03.json",
+      "quote": "A failed transfer doesn't delete your original chats, but a reset does.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:50Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:18Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:21Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131617/https://faq.whatsapp.com/1195710084347483/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:16:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1066696467238362",
+      "title": "Can’t move chats from an iPhone to an Android device",
+      "question": "Q6",
+      "evidence_file": "evidence_03.json",
+      "quote": "A failed transfer doesn't delete your original chats, but a reset does.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:18:57Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:30:23Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:30:26Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015130617/https://faq.whatsapp.com/1066696467238362/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:06:17Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1180414079177245",
+      "title": "How to export your chat history",
+      "question": "Q8",
+      "evidence_file": "evidence_05.json",
+      "quote": "Tap Without media or Include media.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:16:57Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131254/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:12:54Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1180414079177245",
+      "title": "How to export your chat history",
+      "question": "Q8",
+      "evidence_file": "evidence_05.json",
+      "quote": "If you choose Include media, the most recent media sent will be added as attachments to be sent from your sharesheet.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:16:57Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131254/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:12:54Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1180414079177245",
+      "title": "How to export your chat history",
+      "question": "Q8",
+      "evidence_file": "evidence_05.json",
+      "quote": "Your chat history can’t be re-imported because it’s a text file and not a backup file.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web",
+        "windows-desktop",
+        "mac-desktop"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:16:57Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131254/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T13:12:54Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:34:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131355/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T13:13:55Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:34:14Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131440/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T13:14:40Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "windows-desktop",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=windows-desktop",
+          "retrieved_utc": "2026-10-15T11:34:17Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131440/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T13:14:40Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "mac-desktop",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=mac-desktop",
+          "retrieved_utc": "2026-10-15T11:34:19Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131507/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=mac-desktop",
+          "wayback_utc": "2026-10-15T13:15:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1180414079177245",
+      "title": "How to export your chat history",
+      "question": "Q8",
+      "evidence_file": "evidence_05.json",
+      "quote": "If the chat contains media, choose With all media, With selected media…, or Without media.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone",
+        "mac-desktop"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:34:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131355/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T13:13:55Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "mac-desktop",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=mac-desktop",
+          "retrieved_utc": "2026-10-15T11:34:19Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131507/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=mac-desktop",
+          "wayback_utc": "2026-10-15T13:15:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1180414079177245",
+      "title": "How to export your chat history",
+      "question": "Q8",
+      "evidence_file": "evidence_05.json",
+      "quote": "Your chat history will be exported as a ZIP file.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone",
+        "web",
+        "windows-desktop",
+        "mac-desktop"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:34:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131355/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T13:13:55Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:34:14Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131440/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T13:14:40Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "windows-desktop",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=windows-desktop",
+          "retrieved_utc": "2026-10-15T11:34:17Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131440/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T13:14:40Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "mac-desktop",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=mac-desktop",
+          "retrieved_utc": "2026-10-15T11:34:19Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131507/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=mac-desktop",
+          "wayback_utc": "2026-10-15T13:15:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1180414079177245",
+      "title": "How to export your chat history",
+      "question": "Q8",
+      "evidence_file": "evidence_05.json",
+      "quote": "View once messages will not be exported.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "iphone",
+        "mac-desktop"
+      ],
+      "variants": [
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:34:11Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131355/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=iphone",
+          "wayback_utc": "2026-10-15T13:13:55Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "mac-desktop",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=mac-desktop",
+          "retrieved_utc": "2026-10-15T11:34:19Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131507/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=mac-desktop",
+          "wayback_utc": "2026-10-15T13:15:07Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1180414079177245",
+      "title": "How to export your chat history",
+      "question": "Q8",
+      "evidence_file": "evidence_05.json",
+      "quote": "Select All messages or Custom date range.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "web",
+        "windows-desktop"
+      ],
+      "variants": [
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:34:14Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131440/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T13:14:40Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "windows-desktop",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=windows-desktop",
+          "retrieved_utc": "2026-10-15T11:34:17Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131440/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T13:14:40Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1180414079177245",
+      "title": "How to export your chat history",
+      "question": "Q8",
+      "evidence_file": "evidence_05.json",
+      "quote": "Media isn’t included, unlike exporting chats on your mobile device.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "web",
+        "windows-desktop"
+      ],
+      "variants": [
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:34:14Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131440/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T13:14:40Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "windows-desktop",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=windows-desktop",
+          "retrieved_utc": "2026-10-15T11:34:17Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131440/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T13:14:40Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "1180414079177245",
+      "title": "How to export your chat history",
+      "question": "Q8",
+      "evidence_file": "evidence_05.json",
+      "quote": "View once and disappearing messages won’t be exported.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "web",
+        "windows-desktop"
+      ],
+      "variants": [
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:34:14Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131440/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T13:14:40Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "windows-desktop",
+          "url": "https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=windows-desktop",
+          "retrieved_utc": "2026-10-15T11:34:17Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015131440/https://faq.whatsapp.com/1180414079177245/?locale=en_US&cms_platform=web",
+          "wayback_utc": "2026-10-15T13:14:40Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "828406668498455",
+      "title": "About inactive account deletion",
+      "question": "Q2",
+      "evidence_file": "evidence_12.json",
+      "quote": "Content stored locally on a user’s device prior to account deletion will remain until WhatsApp is deleted from the device. When a user reregisters for WhatsApp on the same device, their locally stored content will reappear.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:19:58Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015153538/https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:35:38Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:32:07Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015153538/https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:35:38Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:32:10Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015153538/https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:35:38Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    },
+    {
+      "id": "828406668498455",
+      "title": "About inactive account deletion",
+      "question": "Q3",
+      "evidence_file": "evidence_12.json",
+      "quote": "To maintain security, limit data retention, and protect the privacy of our users, WhatsApp accounts are generally deleted after 120 days of inactivity. Inactivity means the user hasn’t connected to WhatsApp.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": false,
+      "platforms_passing": [],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:19:58Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015153538/https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:35:38Z",
+          "wayback_verbatim": false,
+          "wayback_displayed": null
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:32:07Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015153538/https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:35:38Z",
+          "wayback_verbatim": false,
+          "wayback_displayed": null
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:32:10Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015153538/https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:35:38Z",
+          "wayback_verbatim": false,
+          "wayback_displayed": null
+        }
+      ]
+    },
+    {
+      "id": "828406668498455",
+      "title": "About inactive account deletion",
+      "question": "Q3",
+      "evidence_file": "evidence_12.json",
+      "quote": "An internet connection is required for an account to be active.",
+      "note": null,
+      "displayed_and_verbatim_local_and_wayback": true,
+      "platforms_passing": [
+        "android",
+        "iphone",
+        "web"
+      ],
+      "variants": [
+        {
+          "platform": "android",
+          "url": "https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "retrieved_utc": "2026-10-15T11:19:58Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015153538/https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:35:38Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "iphone",
+          "url": "https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=iphone",
+          "retrieved_utc": "2026-10-15T11:32:07Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015153538/https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:35:38Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        },
+        {
+          "platform": "web",
+          "url": "https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=web",
+          "retrieved_utc": "2026-10-15T11:32:10Z",
+          "local_verbatim": true,
+          "local_displayed": true,
+          "wayback_snapshot": "https://web.archive.org/web/20261015153538/https://faq.whatsapp.com/828406668498455/?locale=en_US&cms_platform=android",
+          "wayback_utc": "2026-10-15T15:35:38Z",
+          "wayback_verbatim": true,
+          "wayback_displayed": true
+        }
+      ]
+    }
+  ]
+}

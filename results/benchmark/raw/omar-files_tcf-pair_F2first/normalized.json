@@ -1,0 +1,1466 @@
+[
+ {
+  "tUtc": "2024-01-02T13:26:00.000Z",
+  "sender": "Contact H",
+  "body": "See you then.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-04T16:30:00.000Z",
+  "sender": "Contact E",
+  "body": "No worries, take your time.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-05T01:04:00.000Z",
+  "sender": "Contact E",
+  "body": "*Sounds good.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-06T18:22:00.000Z",
+  "sender": "Contact E",
+  "body": "I have attached the summary.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-08T12:50:00.000Z",
+  "sender": null,
+  "body": "Messages and calls are end-to-end encrypted. Only people in this group can read, listen to, or share them. *Learn more*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": true
+ },
+ {
+  "tUtc": "2024-01-08T12:50:00.000Z",
+  "sender": "You",
+  "body": "_Good point, I had not thought of that._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-08T20:36:00.000Z",
+  "sender": "Contact A",
+  "body": "Not sure yet, I will confirm tomorrow.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-09T22:04:00.000Z",
+  "sender": "Contact A",
+  "body": "*We can move it to Friday.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-11T17:12:00.000Z",
+  "sender": "Contact H",
+  "body": "*No worries, take your time.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-12T17:59:00.000Z",
+  "sender": "Contact E",
+  "body": "*See you then.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-13T14:01:00.000Z",
+  "sender": "Contact A",
+  "body": "Can everyone vote on the poll?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-14T19:00:00.000Z",
+  "sender": "Contact A",
+  "body": "Please review the draft when you get a chance.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-16T07:29:00.000Z",
+  "sender": "Contact A",
+  "body": "*Can everyone vote on the poll?*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-16T21:42:00.000Z",
+  "sender": "Contact E",
+  "body": "See you then. 🙏",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-17T15:36:00.000Z",
+  "sender": "Contact A",
+  "body": "See you then.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-18T18:11:00.000Z",
+  "sender": "Contact E",
+  "body": "_Yes, that is correct._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-20T09:58:00.000Z",
+  "sender": "Contact E",
+  "body": "I have added it to the shared list.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-20T19:42:00.000Z",
+  "sender": "You",
+  "body": "I will bring the printed copies.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-20T22:50:00.000Z",
+  "sender": "Contact A",
+  "body": "*It is already on the calendar.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-22T10:34:00.000Z",
+  "sender": "Contact E",
+  "body": "_Ok, done._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-24T04:21:00.000Z",
+  "sender": "You",
+  "body": "Yes, that is correct.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-24T09:00:00.000Z",
+  "sender": null,
+  "body": "Messages and calls are end-to-end encrypted. Only people in this group can read, listen to, or share them. *Learn more*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": true
+ },
+ {
+  "tUtc": "2024-01-25T17:50:00.000Z",
+  "sender": "Contact A",
+  "body": "Please review the draft when you get a chance.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-26T07:28:00.000Z",
+  "sender": "Contact A",
+  "body": "*Please review the draft when you get a chance.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-27T17:39:00.000Z",
+  "sender": "Contact A",
+  "body": "Same time next week?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-28T22:19:00.000Z",
+  "sender": "You",
+  "body": "_Sounds good._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-29T10:43:00.000Z",
+  "sender": "You",
+  "body": "We can move it to Friday.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-30T20:11:00.000Z",
+  "sender": "Contact E",
+  "body": "See you then.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-31T17:55:00.000Z",
+  "sender": "Contact A",
+  "body": "*We can move it to Friday.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-01-31T23:40:00.000Z",
+  "sender": "You",
+  "body": "Good point, I had not thought of that.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-01T13:26:00.000Z",
+  "sender": "Contact H",
+  "body": "See you then.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-03T01:33:00.000Z",
+  "sender": "You",
+  "body": "Can you send the notes over?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-03T07:16:00.000Z",
+  "sender": "Contact H",
+  "body": "*No worries, take your time.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-03T22:59:00.000Z",
+  "sender": "You",
+  "body": "_Same time next week?_",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-04T07:55:00.000Z",
+  "sender": "Contact A",
+  "body": "*See you then.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-04T22:13:00.000Z",
+  "sender": "Contact H",
+  "body": "Did you see the announcement?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-05T04:11:00.000Z",
+  "sender": "Contact E",
+  "body": "_Did you see the announcement?_",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-05T08:48:00.000Z",
+  "sender": "You",
+  "body": "*Can everyone vote on the poll?*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-06T18:53:00.000Z",
+  "sender": "Contact A",
+  "body": "Can everyone vote on the poll?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-13T14:38:00.000Z",
+  "sender": "Contact E",
+  "body": "Same time next week?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-15T07:40:00.000Z",
+  "sender": "Contact E",
+  "body": "I will check and get back to you.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-17T07:36:00.000Z",
+  "sender": "Contact E",
+  "body": "The meeting got pushed by an hour.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-18T05:13:00.000Z",
+  "sender": "Contact A",
+  "body": "I will check and get back to you.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-20T00:07:00.000Z",
+  "sender": "Contact H",
+  "body": "*I have added it to the shared list.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-20T06:50:00.000Z",
+  "sender": "Contact E",
+  "body": "Ok, done.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-22T03:41:00.000Z",
+  "sender": "Contact E",
+  "body": "No worries, take your time.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-23T04:58:00.000Z",
+  "sender": "You",
+  "body": "See you then.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-24T12:10:00.000Z",
+  "sender": "You",
+  "body": "I will be there in ten minutes. 🙏",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-24T17:54:00.000Z",
+  "sender": "Contact A",
+  "body": "Thanks for the update.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-25T03:56:00.000Z",
+  "sender": "Contact E",
+  "body": "The meeting got pushed by an hour.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-26T20:05:00.000Z",
+  "sender": "You",
+  "body": "Please review the draft when you get a chance. 👍",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-27T12:40:00.000Z",
+  "sender": "Contact H",
+  "body": "That works for me.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-27T21:55:00.000Z",
+  "sender": "You",
+  "body": "I have attached the summary.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-29T00:57:00.000Z",
+  "sender": "Contact E",
+  "body": "Let me know when you are free. 🙏",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-29T12:25:00.000Z",
+  "sender": "Contact E",
+  "body": "*Let me know when you are free.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-02-29T17:01:00.000Z",
+  "sender": "Contact E",
+  "body": "Did you see the announcement?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-02T07:16:00.000Z",
+  "sender": "Contact H",
+  "body": "*No worries, take your time.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-02T22:59:00.000Z",
+  "sender": "You",
+  "body": "_Same time next week?_",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-03T01:11:00.000Z",
+  "sender": "Contact A",
+  "body": "*Sounds good.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-04T09:05:00.000Z",
+  "sender": "Contact A",
+  "body": "See you then.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-05T06:53:00.000Z",
+  "sender": "Contact E",
+  "body": "_Let us pick this up in the morning._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-06T01:34:00.000Z",
+  "sender": "You",
+  "body": "Let me know when you are free.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-06T05:47:00.000Z",
+  "sender": "You",
+  "body": "Yes, that is correct.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-14T04:43:00.000Z",
+  "sender": "Contact A",
+  "body": "I have attached the summary. ✅",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-16T03:21:00.000Z",
+  "sender": "You",
+  "body": "_No worries, take your time._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-18T01:18:00.000Z",
+  "sender": "Contact H",
+  "body": "*Not sure yet, I will confirm tomorrow.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-18T04:23:00.000Z",
+  "sender": "Contact A",
+  "body": "I have attached the summary.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-18T12:13:00.000Z",
+  "sender": "Contact E",
+  "body": "_We can move it to Friday._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-19T15:36:00.000Z",
+  "sender": "You",
+  "body": "Did you see the announcement?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-20T19:14:00.000Z",
+  "sender": "Contact H",
+  "body": "Let me know when you are free.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-20T23:35:00.000Z",
+  "sender": "Contact H",
+  "body": "_Can everyone vote on the poll?_",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-21T20:59:00.000Z",
+  "sender": "Contact H",
+  "body": "I will bring the printed copies. 👍",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-23T20:00:00.000Z",
+  "sender": "Contact H",
+  "body": "I will be there in ten minutes.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-24T15:17:00.000Z",
+  "sender": "You",
+  "body": "Can everyone vote on the poll?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-25T17:57:00.000Z",
+  "sender": "Contact A",
+  "body": "Did you see the announcement?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-26T00:33:00.000Z",
+  "sender": "Contact E",
+  "body": "Did you see the announcement? 📌",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-27T16:04:00.000Z",
+  "sender": "Contact H",
+  "body": "Good point, I had not thought of that.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-28T22:10:00.000Z",
+  "sender": "Contact A",
+  "body": "_Please review the draft when you get a chance._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-29T15:13:00.000Z",
+  "sender": "Contact E",
+  "body": "Not sure yet, I will confirm tomorrow.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-30T18:16:00.000Z",
+  "sender": "Contact E",
+  "body": "_We can move it to Friday._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-31T06:47:00.000Z",
+  "sender": "You",
+  "body": "Not sure yet, I will confirm tomorrow.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-03-31T12:30:00.000Z",
+  "sender": "Contact A",
+  "body": "Let us pick this up in the morning.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-03T09:56:00.000Z",
+  "sender": "You",
+  "body": "Thanks for the update.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-04T07:44:00.000Z",
+  "sender": "Contact A",
+  "body": "No worries, take your time.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-05T19:44:00.000Z",
+  "sender": "Contact E",
+  "body": "*Good point, I had not thought of that.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-14T17:32:00.000Z",
+  "sender": "Contact A",
+  "body": "Please review the draft when you get a chance.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-14T23:38:00.000Z",
+  "sender": "Contact A",
+  "body": "The meeting got pushed by an hour.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-15T11:25:00.000Z",
+  "sender": "Contact H",
+  "body": "I will be there in ten minutes.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-17T05:00:00.000Z",
+  "sender": "Contact H",
+  "body": "*Did you see the announcement?*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-17T23:59:00.000Z",
+  "sender": "Contact A",
+  "body": "Thanks for the update.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-18T15:34:00.000Z",
+  "sender": "Contact H",
+  "body": "Sounds good. 📌",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-18T21:12:00.000Z",
+  "sender": "Contact E",
+  "body": "_We can move it to Friday._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-20T02:00:00.000Z",
+  "sender": "Contact H",
+  "body": "Ok, done.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-20T22:50:00.000Z",
+  "sender": "You",
+  "body": "*We can move it to Friday.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-21T09:28:00.000Z",
+  "sender": "Contact A",
+  "body": "*That works for me.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-23T03:59:00.000Z",
+  "sender": "You",
+  "body": "_I have attached the summary._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-23T07:02:00.000Z",
+  "sender": "Contact H",
+  "body": "I have attached the summary.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-24T10:33:00.000Z",
+  "sender": "You",
+  "body": "No worries, take your time. 🎉",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-26T10:26:00.000Z",
+  "sender": "Contact E",
+  "body": "_It is already on the calendar._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-27T22:51:00.000Z",
+  "sender": "Contact H",
+  "body": "Sounds good.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-28T14:54:00.000Z",
+  "sender": "Contact A",
+  "body": "*Please review the draft when you get a chance.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-30T05:14:00.000Z",
+  "sender": "Contact A",
+  "body": "Please review the draft when you get a chance.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-04-30T15:21:00.000Z",
+  "sender": "Contact H",
+  "body": "I will be there in ten minutes.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-02T08:48:00.000Z",
+  "sender": "You",
+  "body": "*Can everyone vote on the poll?*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-03T03:06:00.000Z",
+  "sender": "Contact E",
+  "body": "That works for me.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-05T11:01:00.000Z",
+  "sender": "Contact E",
+  "body": "Ok, done.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-06T05:18:00.000Z",
+  "sender": "Contact E",
+  "body": "Did you see the announcement?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-13T17:03:00.000Z",
+  "sender": "Contact H",
+  "body": "*Same time next week?*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-15T03:33:00.000Z",
+  "sender": "Contact H",
+  "body": "Let us pick this up in the morning.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-17T00:22:00.000Z",
+  "sender": "You",
+  "body": "Let us pick this up in the morning.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-18T11:08:00.000Z",
+  "sender": "Contact H",
+  "body": "Same time next week? 😊",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-19T01:21:00.000Z",
+  "sender": "Contact H",
+  "body": "*Please review the draft when you get a chance.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-20T04:09:00.000Z",
+  "sender": "Contact A",
+  "body": "Yes, that is correct.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-22T01:54:00.000Z",
+  "sender": "You",
+  "body": "Same time next week?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-23T22:18:00.000Z",
+  "sender": "Contact E",
+  "body": "I will check and get back to you.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-25T17:18:00.000Z",
+  "sender": "Contact A",
+  "body": "I will be there in ten minutes.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-26T15:29:00.000Z",
+  "sender": "Contact H",
+  "body": "*Can everyone vote on the poll?*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-26T21:50:00.000Z",
+  "sender": "Contact H",
+  "body": "*I will bring the printed copies.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-28T10:35:00.000Z",
+  "sender": "Contact A",
+  "body": "_That works for me._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-30T05:32:00.000Z",
+  "sender": "Contact H",
+  "body": "Let us pick this up in the morning.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-05-30T22:33:00.000Z",
+  "sender": "Contact E",
+  "body": "Not sure yet, I will confirm tomorrow.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-02T18:53:00.000Z",
+  "sender": "Contact A",
+  "body": "Can everyone vote on the poll?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-03T05:29:00.000Z",
+  "sender": "Contact H",
+  "body": "Ok, done.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-04T01:27:00.000Z",
+  "sender": "Contact A",
+  "body": "Did you see the announcement? 🙏",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-05T01:20:00.000Z",
+  "sender": "Contact H",
+  "body": "*It is already on the calendar.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-06T19:14:00.000Z",
+  "sender": "Contact E",
+  "body": "No worries, take your time.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-08T12:33:00.000Z",
+  "sender": "Contact A",
+  "body": "I have added it to the shared list.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-10T11:57:00.000Z",
+  "sender": "Contact H",
+  "body": "Did you see the announcement?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-11T11:32:00.000Z",
+  "sender": "Contact A",
+  "body": "*Good point, I had not thought of that.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-11T13:53:00.000Z",
+  "sender": "You",
+  "body": "Good point, I had not thought of that.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-12T16:49:00.000Z",
+  "sender": "Contact H",
+  "body": "The meeting got pushed by an hour.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-12T20:15:00.000Z",
+  "sender": "You",
+  "body": "Please review the draft when you get a chance.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-13T20:47:00.000Z",
+  "sender": "Contact E",
+  "body": "*Thanks for the update.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-13T23:46:00.000Z",
+  "sender": "Contact A",
+  "body": "_Yes, that is correct._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-15T19:32:00.000Z",
+  "sender": "Contact H",
+  "body": "Did you see the announcement?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-16T05:08:00.000Z",
+  "sender": "Contact E",
+  "body": "Please review the draft when you get a chance.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-18T00:13:00.000Z",
+  "sender": "Contact H",
+  "body": "No worries, take your time.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-19T19:17:00.000Z",
+  "sender": "Contact A",
+  "body": "Sounds good.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-21T05:26:00.000Z",
+  "sender": "Contact A",
+  "body": "*That works for me.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-23T05:05:00.000Z",
+  "sender": "Contact E",
+  "body": "Let us pick this up in the morning. 👍",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-24T17:46:00.000Z",
+  "sender": "Contact A",
+  "body": "I will be there in ten minutes.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-25T10:49:00.000Z",
+  "sender": "Contact H",
+  "body": "Yes, that is correct.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-26T16:34:00.000Z",
+  "sender": "You",
+  "body": "That works for me.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-27T17:38:00.000Z",
+  "sender": "You",
+  "body": "*Same time next week?*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-28T23:25:00.000Z",
+  "sender": "Contact E",
+  "body": "That works for me. ✅",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-29T03:54:00.000Z",
+  "sender": "Contact H",
+  "body": "_Ok, done._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-06-30T21:50:00.000Z",
+  "sender": "You",
+  "body": "*Good point, I had not thought of that.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-07-01T09:05:00.000Z",
+  "sender": "You",
+  "body": "_Did you see the announcement?_",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-07-01T17:26:00.000Z",
+  "sender": "Contact A",
+  "body": "*We can move it to Friday.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-07-03T06:47:00.000Z",
+  "sender": "Contact A",
+  "body": "_Let me know when you are free._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-07-03T17:56:00.000Z",
+  "sender": "Contact H",
+  "body": "No worries, take your time.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-07-04T02:52:00.000Z",
+  "sender": "You",
+  "body": "Let me know when you are free.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-07-04T19:28:00.000Z",
+  "sender": "Contact H",
+  "body": "*I will be there in ten minutes.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-07-05T00:01:00.000Z",
+  "sender": "Contact E",
+  "body": "No worries, take your time.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-07-05T18:08:00.000Z",
+  "sender": "Contact E",
+  "body": "I have attached the summary. 🙏",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-07-06T05:16:00.000Z",
+  "sender": "Contact E",
+  "body": "The meeting got pushed by an hour.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-08-02T17:58:00.000Z",
+  "sender": "Contact E",
+  "body": "I will be there in ten minutes.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-08-04T16:43:00.000Z",
+  "sender": "Contact H",
+  "body": "I have added it to the shared list.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-08-05T03:20:00.000Z",
+  "sender": "Contact H",
+  "body": "_I will be there in ten minutes._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-08-05T16:38:00.000Z",
+  "sender": "Contact H",
+  "body": "*See you then.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-08-06T12:33:00.000Z",
+  "sender": "Contact A",
+  "body": "I have added it to the shared list.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-09-02T01:56:00.000Z",
+  "sender": "Contact A",
+  "body": "See you then. 🎉",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-09-03T01:02:00.000Z",
+  "sender": "You",
+  "body": "That works for me.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-09-04T00:23:00.000Z",
+  "sender": "You",
+  "body": "I will bring the printed copies.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-09-05T01:15:00.000Z",
+  "sender": "Contact E",
+  "body": "Thanks for the update.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-10-02T00:53:00.000Z",
+  "sender": "You",
+  "body": "See you then.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-10-02T23:23:00.000Z",
+  "sender": "Contact E",
+  "body": "Sounds good.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-10-03T17:52:00.000Z",
+  "sender": "Contact H",
+  "body": "That works for me.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-10-03T22:03:00.000Z",
+  "sender": "You",
+  "body": "Thanks for the update.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-10-04T13:37:00.000Z",
+  "sender": "Contact H",
+  "body": "Can everyone vote on the poll?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-10-05T05:22:00.000Z",
+  "sender": "You",
+  "body": "Let me know when you are free. 😊",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-10-05T23:39:00.000Z",
+  "sender": "Contact A",
+  "body": "Thanks for the update.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-10-06T11:57:00.000Z",
+  "sender": "Contact H",
+  "body": "Did you see the announcement?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-11-04T09:33:00.000Z",
+  "sender": "Contact A",
+  "body": "Same time next week?",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-11-05T18:20:00.000Z",
+  "sender": "Contact E",
+  "body": "_I have added it to the shared list._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-11-05T21:27:00.000Z",
+  "sender": "Contact A",
+  "body": "Yes, that is correct. ✅",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-11-06T11:32:00.000Z",
+  "sender": "Contact A",
+  "body": "*Good point, I had not thought of that.*",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-11-06T13:53:00.000Z",
+  "sender": "You",
+  "body": "Good point, I had not thought of that.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-12-02T08:36:00.000Z",
+  "sender": "You",
+  "body": "Sounds good.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-12-03T08:37:00.000Z",
+  "sender": "Contact E",
+  "body": "We can move it to Friday. 📌",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-12-04T21:54:00.000Z",
+  "sender": "Contact H",
+  "body": "_That works for me._",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-12-06T16:49:00.000Z",
+  "sender": "Contact H",
+  "body": "The meeting got pushed by an hour.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ },
+ {
+  "tUtc": "2024-12-06T20:15:00.000Z",
+  "sender": "You",
+  "body": "Please review the draft when you get a chance.",
+  "duplicateFlag": false,
+  "source": null,
+  "system": false
+ }
+]

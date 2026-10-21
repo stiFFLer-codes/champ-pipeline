@@ -1,0 +1,17 @@
+[
+  {
+    "timestamp": "2026-10-15T16:46:19",
+    "source_file": "tcf-F1-primary_normalized.txt",
+    "new_messages_added": 58,
+    "duplicates_skipped": 0,
+    "placeholders_superseded_by_archive": 0,
+    "note": "archive was empty (first merge)"
+  },
+  {
+    "timestamp": "2026-10-15T16:46:20",
+    "source_file": "tcf-F2-secondary_normalized.txt",
+    "new_messages_added": 125,
+    "duplicates_skipped": 9,
+    "placeholders_superseded_by_archive": 0
+  }
+]

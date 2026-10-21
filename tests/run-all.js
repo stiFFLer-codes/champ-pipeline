@@ -23,8 +23,9 @@ for (const f of files) {
   }
 }
 
-// The corpus checker is not a test file but it is a check, and a corpus that
-// drifts from Section 5.2's claims should fail the same way a broken parser does.
+// The corpus checker is not a test file but it is a check, and a corpus or
+// pipeline that drifts from the numbers the paper cites (results/
+// paper-numbers.json) should fail the same way a broken parser does.
 try {
   execFileSync(process.execPath, [path.join(__dirname, '..', 'scripts', 'check-corpus-claims.js')], { encoding: 'utf8' });
   process.stdout.write('corpus claims: all hold\n');

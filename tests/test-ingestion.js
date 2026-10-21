@@ -154,6 +154,24 @@ function lines(res) {
   // The hash binds the claim to a file state: change the file, change the hash.
   const f2 = withFile('prov2.txt', content + '08/01/24, 09:01 - You: b\n');
   assert.notStrictEqual(ingestFragment(f2).sha256, p.sha256);
+  // record_sha256 binds the record to its own bytes, so it survives a change
+  // elsewhere in the file that the file hash does not.
+  assert.strictEqual(ingestFragment(f2).records[0].provenance.record_sha256, p.record_sha256);
+}
+
+{
+  // record_sha256 is the hash of the record's raw bytes, line terminators
+  // included: a BOM is not part of line 1, CRLF stays CRLF, a multi-line
+  // record covers all its lines, and the last line may have no terminator.
+  const h = (s) => require('crypto').createHash('sha256').update(Buffer.from(s, 'utf8')).digest('hex');
+  const f = withFile('rec.txt',
+    '﻿08/01/24, 09:00 - You: a\r\n08/01/24, 09:01 - You: b\nmore\n08/01/24, 09:02 - You: c');
+  const r = ingestFragment(f).records.map((x) => x.provenance.record_sha256);
+  assert.deepStrictEqual(r, [
+    h('08/01/24, 09:00 - You: a\r\n'),
+    h('08/01/24, 09:01 - You: b\nmore\n'),
+    h('08/01/24, 09:02 - You: c'),
+  ]);
 }
 
 // --- the stage guarantee, on real corpus files ------------------------------

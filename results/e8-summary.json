@@ -1,0 +1,1153 @@
+{
+  "experiment": "E8 zone-offset advisory",
+  "config": "scripts/experiments/e8-config.json",
+  "frozen_with_commit": "4464da677c7963bc902d890b5e2139d966406f81",
+  "false_alarms": {
+    "runs": 600,
+    "runs_with_advisory": 2,
+    "false_alarm_rate": 0.003333,
+    "cells": [
+      {
+        "geometry": "disjoint",
+        "size": 10000,
+        "repeat_bursts": 0,
+        "runs": 50,
+        "runs_with_advisory": 0,
+        "false_alarm_rate": 0,
+        "advisories": 0,
+        "false_alarms": []
+      },
+      {
+        "geometry": "disjoint",
+        "size": 10000,
+        "repeat_bursts": 500,
+        "runs": 50,
+        "runs_with_advisory": 0,
+        "false_alarm_rate": 0,
+        "advisories": 0,
+        "false_alarms": []
+      },
+      {
+        "geometry": "disjoint",
+        "size": 10000,
+        "repeat_bursts": 5000,
+        "runs": 50,
+        "runs_with_advisory": 0,
+        "false_alarm_rate": 0,
+        "advisories": 0,
+        "false_alarms": []
+      },
+      {
+        "geometry": "disjoint",
+        "size": 50000,
+        "repeat_bursts": 0,
+        "runs": 50,
+        "runs_with_advisory": 1,
+        "false_alarm_rate": 0.02,
+        "advisories": 1,
+        "false_alarms": [
+          {
+            "seed": 12,
+            "advisories": [
+              {
+                "offset": "+23:30",
+                "support": 3,
+                "supportAtZero": 0,
+                "maxControlSupport": 2,
+                "distinctKeys": 3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "geometry": "disjoint",
+        "size": 50000,
+        "repeat_bursts": 500,
+        "runs": 50,
+        "runs_with_advisory": 1,
+        "false_alarm_rate": 0.02,
+        "advisories": 1,
+        "false_alarms": [
+          {
+            "seed": 12,
+            "advisories": [
+              {
+                "offset": "+23:30",
+                "support": 3,
+                "supportAtZero": 0,
+                "maxControlSupport": 2,
+                "distinctKeys": 3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "geometry": "disjoint",
+        "size": 50000,
+        "repeat_bursts": 5000,
+        "runs": 50,
+        "runs_with_advisory": 0,
+        "false_alarm_rate": 0,
+        "advisories": 0,
+        "false_alarms": []
+      },
+      {
+        "geometry": "d14e7",
+        "size": 10000,
+        "repeat_bursts": 0,
+        "runs": 50,
+        "runs_with_advisory": 0,
+        "false_alarm_rate": 0,
+        "advisories": 0,
+        "false_alarms": []
+      },
+      {
+        "geometry": "d14e7",
+        "size": 10000,
+        "repeat_bursts": 500,
+        "runs": 50,
+        "runs_with_advisory": 0,
+        "false_alarm_rate": 0,
+        "advisories": 0,
+        "false_alarms": []
+      },
+      {
+        "geometry": "d14e7",
+        "size": 10000,
+        "repeat_bursts": 5000,
+        "runs": 50,
+        "runs_with_advisory": 0,
+        "false_alarm_rate": 0,
+        "advisories": 0,
+        "false_alarms": []
+      },
+      {
+        "geometry": "d14e7",
+        "size": 50000,
+        "repeat_bursts": 0,
+        "runs": 50,
+        "runs_with_advisory": 0,
+        "false_alarm_rate": 0,
+        "advisories": 0,
+        "false_alarms": []
+      },
+      {
+        "geometry": "d14e7",
+        "size": 50000,
+        "repeat_bursts": 500,
+        "runs": 50,
+        "runs_with_advisory": 0,
+        "false_alarm_rate": 0,
+        "advisories": 0,
+        "false_alarms": []
+      },
+      {
+        "geometry": "d14e7",
+        "size": 50000,
+        "repeat_bursts": 5000,
+        "runs": 50,
+        "runs_with_advisory": 0,
+        "false_alarm_rate": 0,
+        "advisories": 0,
+        "false_alarms": []
+      }
+    ]
+  },
+  "detection": {
+    "runs": 2800,
+    "detected": 2800,
+    "detection_rate": 1,
+    "runs_with_other_advisory": 0,
+    "misses_by_reason": {},
+    "by_shift": [
+      {
+        "shift_minutes": -1560,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -1305,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -1140,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -1050,
+        "pairs": 2,
+        "runs": 100,
+        "detected": 100,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -885,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -840,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -795,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -780,
+        "pairs": 2,
+        "runs": 100,
+        "detected": 100,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -720,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -630,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -585,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -540,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -525,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -510,
+        "pairs": 2,
+        "runs": 100,
+        "detected": 100,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -420,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -360,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -330,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -300,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -270,
+        "pairs": 2,
+        "runs": 100,
+        "detected": 100,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -255,
+        "pairs": 2,
+        "runs": 100,
+        "detected": 100,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -210,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -90,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": -60,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 60,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 90,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 210,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 255,
+        "pairs": 2,
+        "runs": 100,
+        "detected": 100,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 270,
+        "pairs": 2,
+        "runs": 100,
+        "detected": 100,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 300,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 330,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 360,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 420,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 510,
+        "pairs": 2,
+        "runs": 100,
+        "detected": 100,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 525,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 540,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 585,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 630,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 720,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 780,
+        "pairs": 2,
+        "runs": 100,
+        "detected": 100,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 795,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 840,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 885,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 1050,
+        "pairs": 2,
+        "runs": 100,
+        "detected": 100,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 1140,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 1305,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      },
+      {
+        "shift_minutes": 1560,
+        "pairs": 1,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "misses_by_reason": {}
+      }
+    ],
+    "by_pair": [
+      {
+        "render_zone": "+00:00",
+        "declared_zone": "+05:30",
+        "shift_minutes": -330,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+00:00",
+        "declared_zone": "-05:00",
+        "shift_minutes": 300,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+00:00",
+        "declared_zone": "+01:00",
+        "shift_minutes": -60,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+00:00",
+        "declared_zone": "+09:45",
+        "shift_minutes": -585,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+00:00",
+        "declared_zone": "-03:30",
+        "shift_minutes": 210,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+00:00",
+        "declared_zone": "+14:00",
+        "shift_minutes": -840,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+00:00",
+        "declared_zone": "-12:00",
+        "shift_minutes": 720,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+05:30",
+        "declared_zone": "+00:00",
+        "shift_minutes": 330,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+05:30",
+        "declared_zone": "-05:00",
+        "shift_minutes": 630,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+05:30",
+        "declared_zone": "+01:00",
+        "shift_minutes": 270,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+05:30",
+        "declared_zone": "+09:45",
+        "shift_minutes": -255,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+05:30",
+        "declared_zone": "-03:30",
+        "shift_minutes": 540,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+05:30",
+        "declared_zone": "+14:00",
+        "shift_minutes": -510,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+05:30",
+        "declared_zone": "-12:00",
+        "shift_minutes": 1050,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-05:00",
+        "declared_zone": "+00:00",
+        "shift_minutes": -300,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-05:00",
+        "declared_zone": "+05:30",
+        "shift_minutes": -630,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-05:00",
+        "declared_zone": "+01:00",
+        "shift_minutes": -360,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-05:00",
+        "declared_zone": "+09:45",
+        "shift_minutes": -885,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-05:00",
+        "declared_zone": "-03:30",
+        "shift_minutes": -90,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-05:00",
+        "declared_zone": "+14:00",
+        "shift_minutes": -1140,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-05:00",
+        "declared_zone": "-12:00",
+        "shift_minutes": 420,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+01:00",
+        "declared_zone": "+00:00",
+        "shift_minutes": 60,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+01:00",
+        "declared_zone": "+05:30",
+        "shift_minutes": -270,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+01:00",
+        "declared_zone": "-05:00",
+        "shift_minutes": 360,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+01:00",
+        "declared_zone": "+09:45",
+        "shift_minutes": -525,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+01:00",
+        "declared_zone": "-03:30",
+        "shift_minutes": 270,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+01:00",
+        "declared_zone": "+14:00",
+        "shift_minutes": -780,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+01:00",
+        "declared_zone": "-12:00",
+        "shift_minutes": 780,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+09:45",
+        "declared_zone": "+00:00",
+        "shift_minutes": 585,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+09:45",
+        "declared_zone": "+05:30",
+        "shift_minutes": 255,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+09:45",
+        "declared_zone": "-05:00",
+        "shift_minutes": 885,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+09:45",
+        "declared_zone": "+01:00",
+        "shift_minutes": 525,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+09:45",
+        "declared_zone": "-03:30",
+        "shift_minutes": 795,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+09:45",
+        "declared_zone": "+14:00",
+        "shift_minutes": -255,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+09:45",
+        "declared_zone": "-12:00",
+        "shift_minutes": 1305,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-03:30",
+        "declared_zone": "+00:00",
+        "shift_minutes": -210,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-03:30",
+        "declared_zone": "+05:30",
+        "shift_minutes": -540,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-03:30",
+        "declared_zone": "-05:00",
+        "shift_minutes": 90,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-03:30",
+        "declared_zone": "+01:00",
+        "shift_minutes": -270,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-03:30",
+        "declared_zone": "+09:45",
+        "shift_minutes": -795,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-03:30",
+        "declared_zone": "+14:00",
+        "shift_minutes": -1050,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-03:30",
+        "declared_zone": "-12:00",
+        "shift_minutes": 510,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+14:00",
+        "declared_zone": "+00:00",
+        "shift_minutes": 840,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+14:00",
+        "declared_zone": "+05:30",
+        "shift_minutes": 510,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+14:00",
+        "declared_zone": "-05:00",
+        "shift_minutes": 1140,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+14:00",
+        "declared_zone": "+01:00",
+        "shift_minutes": 780,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+14:00",
+        "declared_zone": "+09:45",
+        "shift_minutes": 255,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+14:00",
+        "declared_zone": "-03:30",
+        "shift_minutes": 1050,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "+14:00",
+        "declared_zone": "-12:00",
+        "shift_minutes": 1560,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-12:00",
+        "declared_zone": "+00:00",
+        "shift_minutes": -720,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-12:00",
+        "declared_zone": "+05:30",
+        "shift_minutes": -1050,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-12:00",
+        "declared_zone": "-05:00",
+        "shift_minutes": -420,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-12:00",
+        "declared_zone": "+01:00",
+        "shift_minutes": -780,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-12:00",
+        "declared_zone": "+09:45",
+        "shift_minutes": -1305,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-12:00",
+        "declared_zone": "-03:30",
+        "shift_minutes": -510,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      },
+      {
+        "render_zone": "-12:00",
+        "declared_zone": "+14:00",
+        "shift_minutes": -1560,
+        "runs": 50,
+        "detected": 50,
+        "detection_rate": 1,
+        "runs_with_other_advisory": 0,
+        "misses_by_reason": {},
+        "misses": []
+      }
+    ]
+  }
+}

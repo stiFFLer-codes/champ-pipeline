@@ -1,0 +1,12 @@
+row,clustering,input,expected,actual_unified,omega_entries,pass
+a,one-to-one,"a: k=3 identical inside the overlap, k=2 identical outside it",|U| 127; -,127,-,pass
+a,complete,a: the same scenario under complete linkage (CARTA 1.0),|U| 124; -,124,-,pass
+a-boundary,one-to-one,"a: k=3 identical in the minute holding a boundary of the overlap (2 copies before it, 1 after)",|U| 125; dedup_ambiguity x1,125,dedup_ambiguity x1,pass
+a-boundary-disjoint,one-to-one,"a: k=2 identical in the minute of a boundary, delta = epsilon = 0 (1 copy in each fragment)",|U| 123; -,123,-,pass
+b,one-to-one,"b: one body from two senders in one minute, inside the overlap",|U| 124; conflict:sender-disagreement x1,124,conflict:sender-disagreement x1,pass
+c,one-to-one,"c: two messages in one minute, written in opposite orders by the two fragments",|U| 124; conflict:ordering-unsatisfiable x1,124,conflict:ordering-unsatisfiable x1,pass
+d,one-to-one,"d: one attachment doubled-filename in F2, one trailing-period in F2; both standard in F1",|U| 124; conflict:within-cluster:attachment.form x2,124,conflict:within-cluster:attachment.form x2,pass
+e,one-to-one,"e: one body with "" (rev)"" appended in F2 (synthetic variant, not WhatsApp's edit rendering)",|U| 124; -,124,-,pass
+f,one-to-one,"f: F2 rendered in +05:30, declared +00:00",|U| 130; advisory:zone_offset_suspected x1,130,advisory:zone_offset_suspected x1,pass
+g,one-to-one,"g: +-1 min on F2's copy of every overlap message, p = 1 (hypothetical clock disagreement)",|U| 126; -,126,-,pass
+h,one-to-one,h: F2 in +05:30 (declared); one message whose date is ambiguous in one zone and not in the other,|U| 123; -; dating.mixed 1,123,-; dating.mixed 1,pass

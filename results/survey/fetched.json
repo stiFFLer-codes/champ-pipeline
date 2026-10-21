@@ -1,0 +1,3381 @@
+{
+  "0x6rss/matkap": {
+    "sha": "4f24ed95676e5fe7d6f1d30d9564a71f3de88d0e",
+    "last_commit_date": "2026-08-26T00:42:56+03:00",
+    "files": 67,
+    "code_files": 30,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:46.935Z"
+  },
+  "2921323707/CPA_Orbit": {
+    "sha": "58b58aab557ccfec5115aa8c0e82b4871cc2c3f8",
+    "last_commit_date": "2026-07-22T22:22:16+08:00",
+    "files": 224,
+    "code_files": 80,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:47.579Z"
+  },
+  "3dnow/Chat-Backup-Optimizer": {
+    "sha": "0f4994ebfaa27525eab16a9efb2d9a718567fdda",
+    "last_commit_date": "2026-03-12T06:42:59+08:00",
+    "files": 3,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:21:43.399Z"
+  },
+  "99percentpeople/weblink": {
+    "sha": "3096f842ffb4facb69f9fa0dc517d9f768972f28",
+    "last_commit_date": "2026-10-15T14:50:25+08:00",
+    "files": 1166,
+    "code_files": 1025,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:53.164Z"
+  },
+  "AMortalsOdyssey/mail-invoice-archiver": {
+    "sha": "5993133342e49d4b8166416f85cc43fa3900c05b",
+    "last_commit_date": "2026-08-05T14:34:46+08:00",
+    "files": 47,
+    "code_files": 26,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:22:13.580Z"
+  },
+  "AbdulmalikAlayande/beacon": {
+    "sha": "378f83e16a023f10a51c09c23f91d16c2f0548fc",
+    "last_commit_date": "2026-10-10T10:26:47+01:00",
+    "files": 119,
+    "code_files": 74,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:55.759Z"
+  },
+  "Aegean-E/NeuroCore": {
+    "sha": "16606b851846eb541b3a1ea035cab8831b8b4ed7",
+    "last_commit_date": "2026-03-23T18:54:03+03:00",
+    "files": 288,
+    "code_files": 242,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:21:47.706Z"
+  },
+  "Akif-b-Atif/The-Omar-Files": {
+    "sha": "27faf12e3e007ece86a0dab794c50be6ceedf3de",
+    "last_commit_date": "2026-09-16T21:38:58+05:00",
+    "files": 48,
+    "code_files": 21,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:21:48.315Z"
+  },
+  "AmanyadavFD/DSA-----WhatsApp---Merge-Chat-History": {
+    "sha": "23ab928daa7f412249f28f3e47cade6af8ff35ef",
+    "last_commit_date": "2026-08-10T04:09:17+05:30",
+    "files": 2,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:22:06.755Z"
+  },
+  "Anantys-oss/koan": {
+    "sha": "1c97612bc7f635b732a06570d6babbe2d7c6a8b9",
+    "last_commit_date": "2026-10-13T16:49:42-06:00",
+    "files": 1546,
+    "code_files": 945,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:09.758Z"
+  },
+  "Anarky/mbdbEditor": {
+    "sha": "895e636d95306a401d7490a48da586fe9c771f41",
+    "last_commit_date": "2015-09-27T15:44:15-07:00",
+    "files": 3,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:35.069Z"
+  },
+  "Athenkosi-Maqwara01/StudentSupportWhatsAppChatbot_Code": {
+    "sha": "f8cb01456c08a659e5b87fe9d78b706d2f0922d1",
+    "last_commit_date": "2025-05-04T22:39:15+02:00",
+    "files": 33,
+    "code_files": 30,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:18.395Z"
+  },
+  "Augusty10/java-final-project": {
+    "sha": "64e4d592016679053f01241ea1e4cc9d7378cc8f",
+    "last_commit_date": "2026-03-31T23:05:47+05:30",
+    "files": 23,
+    "code_files": 7,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:22:41.443Z"
+  },
+  "AvillaDaniel/AvillaForensics": {
+    "sha": "d65637b3c95c9aa05470558bacd28eb0f32cc87e",
+    "last_commit_date": "2026-04-04T15:02:34-03:00",
+    "files": 85,
+    "code_files": 54,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:22.728Z"
+  },
+  "Avunu/messaging": {
+    "sha": "0c7d16ef6c9d9af5589b92e0679e5bc5d30ef34b",
+    "last_commit_date": "2026-10-06T19:06:12-04:00",
+    "files": 98,
+    "code_files": 58,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:21.214Z"
+  },
+  "Awaisali36/Whatsapp-chat-voice-Bot-with-Realtime-scraping": {
+    "sha": "144d4d5ec66c4d44cec412bf42f5be853250b0d0",
+    "last_commit_date": "2026-03-22T10:34:41+05:00",
+    "files": 11,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:22:46.809Z"
+  },
+  "B16f00t/whapa": {
+    "sha": "c17ca34e570411280fa2ccd3db0b08394da246b3",
+    "last_commit_date": "2026-08-02T15:58:42+02:00",
+    "files": 77,
+    "code_files": 18,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:23.682Z"
+  },
+  "BandosMonkies/PES-Connect": {
+    "sha": "6be2ab6c01033d50953ac1689fcf23ef03ab05ee",
+    "last_commit_date": "2026-07-17T21:57:53+05:30",
+    "files": 5230,
+    "code_files": 3252,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:23:13.994Z"
+  },
+  "BenjaminJornet/PhoneBridge": {
+    "sha": "a39b514b76b1b6b717ccec1a5292d9451e8147ee",
+    "last_commit_date": "2026-07-17T18:03:11+02:00",
+    "files": 139,
+    "code_files": 83,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:23:20.313Z"
+  },
+  "BochilGaming/games-wabot": {
+    "sha": "104c43fc6f88f16c4299ca8cc4d56da5b0c041c5",
+    "last_commit_date": "2022-05-29T10:34:28+07:00",
+    "files": 420,
+    "code_files": 327,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:30.096Z"
+  },
+  "BrodieL3/comms-triage": {
+    "sha": "f26054758fbf842ea801f1fdb82082ed927f0a65",
+    "last_commit_date": "2026-07-22T02:29:55-04:00",
+    "files": 13,
+    "code_files": 5,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:34:14.131Z"
+  },
+  "ChatLab/ChatLab": {
+    "sha": "0edc64d99a243eb2de5e32213082807bc419e942",
+    "last_commit_date": "2026-10-12T20:50:43+08:00",
+    "files": 1797,
+    "code_files": 1320,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:37.810Z"
+  },
+  "ChatsApp-application/chatsApp-SERVER-": {
+    "sha": "cdd6c992c41979afc45666854ae7aee771f015d2",
+    "last_commit_date": "2020-09-05T20:10:58+02:00",
+    "files": 31,
+    "code_files": 26,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:06.109Z"
+  },
+  "CherryHQ/cherry-studio": {
+    "sha": "215e4d0cf429f8e9442859c107570b4379e5f04b",
+    "last_commit_date": "2026-10-15T17:22:24+08:00",
+    "files": 10105,
+    "code_files": 8801,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:10.321Z"
+  },
+  "ChesterXXX/GreenToBlue": {
+    "sha": "f876212285bed8df771992bcaf069b21f280031d",
+    "last_commit_date": "2021-02-19T13:43:57+05:30",
+    "files": 62,
+    "code_files": 14,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:37.470Z"
+  },
+  "Chevey339/kelivo": {
+    "sha": "7cadf7022dd50f6b13e69395abf2e0aeef84ab2c",
+    "last_commit_date": "2026-10-14T20:42:33-07:00",
+    "files": 2978,
+    "code_files": 2295,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:43.744Z"
+  },
+  "CivicSense-Labs/civicsense": {
+    "sha": "063d59a5b110582c47367a6664b83aad99758b3d",
+    "last_commit_date": "2025-11-01T10:27:27-04:00",
+    "files": 62,
+    "code_files": 40,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:05.574Z"
+  },
+  "DYAI2025/Chat.txt_Voice_merge": {
+    "sha": "0429f3e08e4fd792e8fc4d736d917a9fc7cc1f41",
+    "last_commit_date": "2025-08-18T22:32:52+02:00",
+    "files": 238,
+    "code_files": 50,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:20.972Z"
+  },
+  "Daily-AC/chatdrop": {
+    "sha": "d2e255ba4c9c7eebb4f7d54d151244c213f66d47",
+    "last_commit_date": "2026-09-17T18:28:38+08:00",
+    "files": 32,
+    "code_files": 12,
+    "readme": "README.en.md",
+    "fetched_at_utc": "2026-10-15T09:24:13.557Z"
+  },
+  "DavidGaso1/AI-News-Update": {
+    "sha": "53ed19e7b2dc66349bd97b5ed884273e1febe792",
+    "last_commit_date": "2026-10-14T11:20:10Z",
+    "files": 18,
+    "code_files": 8,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:16.300Z"
+  },
+  "Devesh43/EvidenX-GUI-": {
+    "sha": "55f83bf62d79b6ef400736951fb24826f7a0430b",
+    "last_commit_date": "2026-08-13T23:16:23+05:30",
+    "files": 32,
+    "code_files": 21,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:55.997Z"
+  },
+  "Dexterfury/flutter_chat_reactions": {
+    "sha": "6c2ac1a63cc572b57ef4c485435926d5ad86bb75",
+    "last_commit_date": "2026-09-28T20:29:11+02:00",
+    "files": 282,
+    "code_files": 114,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:03.328Z"
+  },
+  "DissidentAI/free-sms-gateway": {
+    "sha": "172e4ee79d0e3a7e501bc930b8d688338b23c538",
+    "last_commit_date": "2026-10-13T16:25:35+02:00",
+    "files": 18,
+    "code_files": 3,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:23.556Z"
+  },
+  "DouglasVolcato/whatsapp-automation-agent": {
+    "sha": "90efb188e719f7900f301b6251565c393128ba25",
+    "last_commit_date": "2025-07-01T08:44:54-03:00",
+    "files": 259,
+    "code_files": 205,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:26.361Z"
+  },
+  "Dr-Muh/telegram-gif-manager": {
+    "sha": "eac6471f27719e4659355b8dd31aed3567a1b7b3",
+    "last_commit_date": "2026-09-23T19:27:17+02:00",
+    "files": 16,
+    "code_files": 6,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:24.449Z"
+  },
+  "Dragon-Born/message-mirror": {
+    "sha": "b107f153cbbfc9d4f3111fcbe4ba2370282191ad",
+    "last_commit_date": "2025-11-08T19:07:54+03:30",
+    "files": 73,
+    "code_files": 32,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:12.379Z"
+  },
+  "EkriirkE/WAMerge": {
+    "sha": "ed39ea9afecc38a3e0b0d6580a91324641ff3a60",
+    "last_commit_date": "2025-03-20T23:57:17+01:00",
+    "files": 3,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:25.853Z"
+  },
+  "ElDavoo/wa-crypt-tools": {
+    "sha": "b16a805a394b8e243334f286dcf30f262e60db4f",
+    "last_commit_date": "2026-10-06T09:05:07+02:00",
+    "files": 151,
+    "code_files": 80,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:34.960Z"
+  },
+  "ElamanBaiguanishev/telegram-chat-reader": {
+    "sha": "e114e200b2474d1a901e89b23a2bf2623cf17b1b",
+    "last_commit_date": "2026-07-20T16:23:02+03:00",
+    "files": 43,
+    "code_files": 29,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:32.358Z"
+  },
+  "Eshanthreddy130705/Meta-x-WhatsApp-A-Strategic-MnA-Case-Analysis": {
+    "sha": "6c6906cdd0819b573167056698fcf98007adbbc7",
+    "last_commit_date": "2025-03-03T13:29:29+05:30",
+    "files": 1,
+    "code_files": 0,
+    "readme": null,
+    "fetched_at_utc": "2026-10-15T09:24:33.981Z"
+  },
+  "F1Justin/claude-archiver": {
+    "sha": "184d6caec94bdebdee34a65224182cdb52853acb",
+    "last_commit_date": "2026-07-12T22:33:59+08:00",
+    "files": 12,
+    "code_files": 9,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:37.042Z"
+  },
+  "FENGFANCHEN-012/whatsapp-reply-copilot": {
+    "sha": "901d44d107124ea858108ddadf278df473f45649",
+    "last_commit_date": "2026-09-28T15:08:24+08:00",
+    "files": 29,
+    "code_files": 20,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:33.714Z"
+  },
+  "FantoX/Atlas-MD": {
+    "sha": "3b87370dc6fd14bb953524bb9e47880cf235e4c0",
+    "last_commit_date": "2026-08-18T11:55:32+05:30",
+    "files": 61,
+    "code_files": 42,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:28.112Z"
+  },
+  "Fiza-Sarwar/Ai-sales-crm-automation-ecosystem": {
+    "sha": "c9aada7ecd1c44fc582b26e5c2a8c3953b714358",
+    "last_commit_date": "2026-08-16T15:21:52+05:00",
+    "files": 11,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:39.963Z"
+  },
+  "Fontan030/mulmes2sqlite": {
+    "sha": "a30ba317d355143c5e2daf0c52e4caff5303f14c",
+    "last_commit_date": "2026-02-14T04:44:48+07:00",
+    "files": 16,
+    "code_files": 9,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:41.548Z"
+  },
+  "GetStream/stream-chat-react": {
+    "sha": "493383750dede6967a87ff9db0b0cd8bc7902194",
+    "last_commit_date": "2026-10-14T12:47:59+02:00",
+    "files": 1684,
+    "code_files": 1211,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:38.898Z"
+  },
+  "GetStream/stream-chat-react-native": {
+    "sha": "1c5875a26dacd5b7a737ffa7c162679dbfb9aa5c",
+    "last_commit_date": "2026-10-14T12:19:42Z",
+    "files": 1686,
+    "code_files": 1493,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:39.746Z"
+  },
+  "Gibranhiko/Cleverum": {
+    "sha": "ee7c5e18d3ea2419a1e48cf98782ddf54b82dba5",
+    "last_commit_date": "2026-06-03T00:30:45-06:00",
+    "files": 142,
+    "code_files": 98,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:43.430Z"
+  },
+  "GiovanniPasq/agentic-rag-for-dummies": {
+    "sha": "f0d9a3c89adc7ebd146ffe173057fe013dd41739",
+    "last_commit_date": "2026-10-01T15:58:06+02:00",
+    "files": 39,
+    "code_files": 24,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:41.591Z"
+  },
+  "GjjvdBurg/signal2html": {
+    "sha": "24f9519af6d447207ec8a98ec35633dcc5c09c09",
+    "last_commit_date": "2023-03-19T10:30:36Z",
+    "files": 30,
+    "code_files": 19,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:37.424Z"
+  },
+  "GorvGoyl/Clone-Wars": {
+    "sha": "f005e8a2d9992fd3de2441d9a901ce2344096788",
+    "last_commit_date": "2024-08-06T09:31:36-03:00",
+    "files": 6,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:43.239Z"
+  },
+  "HybridNetworks/whatsapp-cidr": {
+    "sha": "d445a96b7d05ccaa7eea861f767c878ae1103dca",
+    "last_commit_date": "2026-01-24T01:24:44-03:00",
+    "files": 17,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:59.085Z"
+  },
+  "Iankulani/expendable_orca": {
+    "sha": "70f2234222fa21f0d50412fae8052289b1da0331",
+    "last_commit_date": "2026-10-01T00:45:27+02:00",
+    "files": 9,
+    "code_files": 5,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:49.016Z"
+  },
+  "Inzyz/whatsapp-android-to-iphone": {
+    "sha": "45ccf8a4aa600420be81bd34bef9f83c5b170ce3",
+    "last_commit_date": "2026-10-01T09:47:51Z",
+    "files": 19,
+    "code_files": 14,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:58.629Z"
+  },
+  "Jacksgong/wechat-backup-merge": {
+    "sha": "227eb8547bd67a69c38f944b3bf0eb63d58fe32f",
+    "last_commit_date": "2017-05-29T15:49:40+08:00",
+    "files": 17,
+    "code_files": 5,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:56.058Z"
+  },
+  "Jalquin/whatsapp-android-ios-migration-notes": {
+    "sha": "2065b5ee309f91aab7490c180dfeb53dfa5051a2",
+    "last_commit_date": "2026-08-23T23:36:03+02:00",
+    "files": 1,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:03.565Z"
+  },
+  "Jessecar96/hangouts-reader": {
+    "sha": "6c253da0bc6bd555dd0e687e70646a923459d8c5",
+    "last_commit_date": "2021-04-29T23:13:13-04:00",
+    "files": 3,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:08.548Z"
+  },
+  "JessyTsui/Claude-Code-Remote": {
+    "sha": "cd172b2f3361ccb60d7e691dcca768980a2eb13d",
+    "last_commit_date": "2025-12-06T16:54:29+08:00",
+    "files": 78,
+    "code_files": 44,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:08.939Z"
+  },
+  "JulesLiu390/PetGPT": {
+    "sha": "7d5e03d75f93bc2134e14b92014b0b1e0046c8c1",
+    "last_commit_date": "2026-10-14T22:45:50-04:00",
+    "files": 616,
+    "code_files": 283,
+    "readme": "readme.md",
+    "fetched_at_utc": "2026-10-15T09:25:00.728Z"
+  },
+  "KARAN0072177/NexSyncHub-prod": {
+    "sha": "c3dbf7049eb2942cdedf7f5fa5512e2296710c31",
+    "last_commit_date": "2026-07-12T18:11:29+05:30",
+    "files": 316,
+    "code_files": 275,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:05.367Z"
+  },
+  "KarlAVo/WhatsApp": {
+    "sha": "5bba9f2b1829ff3faba2893a9ac1c18d97d738a6",
+    "last_commit_date": "2017-09-20T07:32:10+02:00",
+    "files": 1,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:05.769Z"
+  },
+  "KashmalaJamshaid/NLP-implementation-on-whastapp-chats-using-python": {
+    "sha": "1b394a90ffef94dc576481801f5deb708ce77b49",
+    "last_commit_date": "2021-07-07T00:26:26-07:00",
+    "files": 4,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:05.910Z"
+  },
+  "Keshav-gehlot/WhatsApp-forensics-tool": {
+    "sha": "3f6147b610847342f3ba8456c5154a5d62590121",
+    "last_commit_date": "2026-10-05T12:34:05+05:30",
+    "files": 54,
+    "code_files": 42,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:22.918Z"
+  },
+  "Kesuek/hermes-bridge-adapter": {
+    "sha": "4a06456d4dcd17dbd0ba22a7986ed5eeb641fb66",
+    "last_commit_date": "2026-09-29T00:37:57+02:00",
+    "files": 32,
+    "code_files": 16,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:07.216Z"
+  },
+  "KnugiHK/WhatsApp-Chat-Exporter": {
+    "sha": "554c4bea6a290e9ffd867cfd326f478499077daa",
+    "last_commit_date": "2026-10-12T09:55:39Z",
+    "files": 45,
+    "code_files": 25,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:22.455Z"
+  },
+  "KnugiHK/WhatsApp-Key-DB-Extractor": {
+    "sha": "2ecff611ba8de4a7ee3efb5863a891b12425007a",
+    "last_commit_date": "2025-10-08T11:25:08Z",
+    "files": 23,
+    "code_files": 3,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:35.089Z"
+  },
+  "KnugiHK/iphone_backup_decrypt": {
+    "sha": "190d61c849045aded1863aa4bd1466e4d265f53d",
+    "last_commit_date": "2025-01-02T20:49:54+08:00",
+    "files": 9,
+    "code_files": 4,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:36.382Z"
+  },
+  "KudoAI/chatgpt.js": {
+    "sha": "43f377e0485c3ca8eaaf1cb8363fc8b03afd602c",
+    "last_commit_date": "2026-08-10T01:03:14-07:00",
+    "files": 396,
+    "code_files": 38,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:33.027Z"
+  },
+  "Kunboruto20/whalibmob": {
+    "sha": "091f6887e81495dd84053fa9105b193de27dc6c9",
+    "last_commit_date": "2026-10-12T08:28:24+03:00",
+    "files": 165,
+    "code_files": 149,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:33.926Z"
+  },
+  "Lifecycle-Innovations-Limited/claude-ops": {
+    "sha": "f3ecb09ccc4c2515b25daa3cbf464ec40deb7b87",
+    "last_commit_date": "2026-10-14T20:36:30+02:00",
+    "files": 1141,
+    "code_files": 570,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:11.750Z"
+  },
+  "LiroyvH/signal-export": {
+    "sha": "57113d3c2d0ba7706ac2c4c82d46111305ebce9e",
+    "last_commit_date": "2023-02-11T06:53:08+01:00",
+    "files": 7,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:47.040Z"
+  },
+  "LucieEveille/kiwi-mem": {
+    "sha": "b01a0c506f4f10f90f30d408c0291f16720f0718",
+    "last_commit_date": "2026-09-10T13:29:29+08:00",
+    "files": 100,
+    "code_files": 67,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:16.075Z"
+  },
+  "MPavion/whatsapp-transcriber": {
+    "sha": "aeae4e3da92002d311e04879b384397c072e68d0",
+    "last_commit_date": "2026-10-13T23:24:51+01:00",
+    "files": 9,
+    "code_files": 3,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:34.922Z"
+  },
+  "MaanasSehgal/RTCT": {
+    "sha": "2630c813bfa19336ec930b1afead0c400ef96ed7",
+    "last_commit_date": "2025-11-13T05:09:19+05:30",
+    "files": 127,
+    "code_files": 84,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:15.744Z"
+  },
+  "MaddyMcNair/AlertStream": {
+    "sha": "b1344aaafb35b29be27c39ec898b42a45b10a8b9",
+    "last_commit_date": "2026-07-26T21:25:42+05:30",
+    "files": 128,
+    "code_files": 60,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:21.906Z"
+  },
+  "MayukXT/WAren6": {
+    "sha": "4024e5d9baf106e0424eb14c84c2703743417179",
+    "last_commit_date": "2026-09-05T03:11:29+05:30",
+    "files": 159,
+    "code_files": 94,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:26.466Z"
+  },
+  "NamoVize/universal-chat-aggregator": {
+    "sha": "29f2b30933171394a8fb02c2b5487ef7fa25abee",
+    "last_commit_date": "2025-03-13T12:03:45+02:00",
+    "files": 20,
+    "code_files": 15,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:41.605Z"
+  },
+  "Neeraj-x0/X-Asena": {
+    "sha": "6ab5a772cd9c0a6bb09d59548b5f08e2ff795888",
+    "last_commit_date": "2026-08-21T14:26:08+05:30",
+    "files": 75,
+    "code_files": 57,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:15.356Z"
+  },
+  "NikhilPandey-IIIT-Surat/RescueNet-Android-APP": {
+    "sha": "bb39432b9fc74d38f8633c802e5c491c30acea9c",
+    "last_commit_date": "2026-04-23T22:14:39+05:30",
+    "files": 33,
+    "code_files": 7,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:44.297Z"
+  },
+  "NumesSanguis/naver_line_restore_chat_root": {
+    "sha": "e349f9def97c720d524b886e138fd1e6dd3d439a",
+    "last_commit_date": "2023-08-31T19:15:38+09:00",
+    "files": 12,
+    "code_files": 10,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:47.395Z"
+  },
+  "OMD-123/notification-dedup": {
+    "sha": "5d4bb0a1b00e5b1e90e195610525f88f7d90a4cb",
+    "last_commit_date": "2026-08-28T10:14:16+05:30",
+    "files": 18,
+    "code_files": 9,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:48.956Z"
+  },
+  "OnlyTerp/hermes-optimization-guide": {
+    "sha": "f865f8a78239ebd415510cc495a32cf5aa06885a",
+    "last_commit_date": "2026-09-23T22:37:22-04:00",
+    "files": 46,
+    "code_files": 3,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:25.574Z"
+  },
+  "Pavankumar-Mhaske/MultiVerse": {
+    "sha": "08dfd50b517837dc6fa1db5b620a78baa8d56084",
+    "last_commit_date": "2024-05-02T19:27:40+05:30",
+    "files": 2553,
+    "code_files": 1540,
+    "readme": "Readme.md",
+    "fetched_at_utc": "2026-10-15T09:25:51.818Z"
+  },
+  "PawanGothwaad/grixchat": {
+    "sha": "966ee5347a1d64aaed0f7b4b2ef2110c0da36ea2",
+    "last_commit_date": "2026-07-05T09:50:06+05:30",
+    "files": 223,
+    "code_files": 203,
+    "readme": null,
+    "fetched_at_utc": "2026-10-15T09:25:49.623Z"
+  },
+  "PhilippeMeyer/whatsapp-photobook": {
+    "sha": "1132fb440165c52b8fc50da7b64dc71e4d46dfce",
+    "last_commit_date": "2026-09-25T21:47:37+02:00",
+    "files": 34,
+    "code_files": 18,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:49.568Z"
+  },
+  "PhoebusSi/Alpaca-CoT": {
+    "sha": "bd46c44e0d0d88522b6d817f9610e3eb1050784d",
+    "last_commit_date": "2023-12-12T16:16:56+08:00",
+    "files": 183,
+    "code_files": 56,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:54.374Z"
+  },
+  "Prognosticate-X/clash-shadowrocket-ai-rules": {
+    "sha": "6ee3519c9bc713c1972be7b45d2a1f9f0e24f947",
+    "last_commit_date": "2026-09-26T02:35:46+08:00",
+    "files": 6,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:00.199Z"
+  },
+  "Pulse-Community-Agency/whatsapp-plusplus-hermes": {
+    "sha": "aec571e5ac5482f70be28eacf287fa21a9a1a8ab",
+    "last_commit_date": "2026-06-11T13:37:17-05:00",
+    "files": 17,
+    "code_files": 10,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:06.886Z"
+  },
+  "PurifyPioneer/WhatsAppDatabaseMerger": {
+    "sha": "8b5b5910c5e44c4fdda3f5389b52043d485ae5ce",
+    "last_commit_date": "2016-12-19T20:56:09+01:00",
+    "files": 21,
+    "code_files": 15,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:07.752Z"
+  },
+  "QwenLM/Qwen": {
+    "sha": "2df8e8ac450fa185c421a08b0090ef81826caa6e",
+    "last_commit_date": "2026-03-05T21:55:16+08:00",
+    "files": 144,
+    "code_files": 47,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:45.249Z"
+  },
+  "QwenLM/Qwen-VL": {
+    "sha": "aa00ed04091eea5fcdd32985e7915f1c53e7d599",
+    "last_commit_date": "2024-04-09T13:19:19+08:00",
+    "files": 92,
+    "code_files": 25,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:45.868Z"
+  },
+  "Rhymen/go-whatsapp": {
+    "sha": "12fb9b1f3299eaef65597288c90f409652164e53",
+    "last_commit_date": "2026-07-28T11:59:00+03:00",
+    "files": 65,
+    "code_files": 38,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:51.269Z"
+  },
+  "Rich627/whatsapp-claude-plugin": {
+    "sha": "17af8ed8af29aa099ef096ec10d61f6c277d82aa",
+    "last_commit_date": "2026-10-14T22:09:31+08:00",
+    "files": 100,
+    "code_files": 64,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:54.001Z"
+  },
+  "RobLe3/canonforge-chatgpt-archive": {
+    "sha": "53f08e642c431141caa7cdbfdfbead80c37c5958",
+    "last_commit_date": "2026-07-06T14:10:41+02:00",
+    "files": 77,
+    "code_files": 28,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:17.663Z"
+  },
+  "RocketChat/docs-old": {
+    "sha": "7a78a77941e5656976f52a042e80d363b42f924d",
+    "last_commit_date": "2023-03-17T01:41:39Z",
+    "files": 5345,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:59.123Z"
+  },
+  "RuchirSingh1000/Xeno-CRM": {
+    "sha": "6e742b4997fd2cff0b7cebdc5439eb8bcea145bc",
+    "last_commit_date": "2026-06-15T13:17:34+05:30",
+    "files": 151,
+    "code_files": 107,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:22.498Z"
+  },
+  "SANIAGRG/Noticore": {
+    "sha": "cfdb36a30464f67bc5faf53ced5b24602f6a2f16",
+    "last_commit_date": "2026-07-06T22:53:59+05:30",
+    "files": 32,
+    "code_files": 22,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:29.049Z"
+  },
+  "SamNet-dev/MTProxyMax": {
+    "sha": "3573c8e9cf8a44357d7f0324191d8c06201650df",
+    "last_commit_date": "2026-09-29T13:35:19-05:00",
+    "files": 48,
+    "code_files": 41,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:06.634Z"
+  },
+  "SecurityRonin/chat4n6": {
+    "sha": "d8de899ff8eb1293fd992e8d889e6735b0a16ef8",
+    "last_commit_date": "2026-09-03T08:31:39-07:00",
+    "files": 170,
+    "code_files": 103,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:40.433Z"
+  },
+  "SenCodeMaker/whatsapp-database-merger": {
+    "sha": "d7024285acda5e5da44e2f1af621a2b7ade1b517",
+    "last_commit_date": "2022-05-08T20:23:52+02:00",
+    "files": 4,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:38.232Z"
+  },
+  "SerCom-KC/TelegramAdminLogExtended": {
+    "sha": "aab82347eca4146c744cf37509b7e0c88312e6b2",
+    "last_commit_date": "2018-08-09T16:16:42+08:00",
+    "files": 4,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:37.318Z"
+  },
+  "Shashankls/Video-Merge-Bot": {
+    "sha": "2dfd6083e0d272455504a2400b2d9e3386ebad3f",
+    "last_commit_date": "2024-01-14T17:12:23+05:30",
+    "files": 28,
+    "code_files": 19,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:38.096Z"
+  },
+  "Shivam10025/Google_Chat1": {
+    "sha": "68f0db81894b386146494d1b57a91866c58cc591",
+    "last_commit_date": "2021-10-22T22:15:23+05:30",
+    "files": 50,
+    "code_files": 9,
+    "readme": null,
+    "fetched_at_utc": "2026-10-15T09:26:35.575Z"
+  },
+  "Simarbir2112006/pulseai-hackmol": {
+    "sha": "3acad6f36a8c3cdc7ac7cfb33db4d69e685eb88b",
+    "last_commit_date": "2026-03-29T09:51:21+05:30",
+    "files": 31,
+    "code_files": 26,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:44.305Z"
+  },
+  "SmagArt/chat-merge": {
+    "sha": "8b8940947c98d964878e803be12abb0739404c7b",
+    "last_commit_date": "2026-10-03T20:01:47+03:00",
+    "files": 18,
+    "code_files": 7,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:39.681Z"
+  },
+  "Sompote/tiger_cowork": {
+    "sha": "8fbae77d0d44dbca81eba9e3134ef711b3eb6b30",
+    "last_commit_date": "2026-07-06T10:54:30+07:00",
+    "files": 132,
+    "code_files": 53,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:51.666Z"
+  },
+  "Sonal-Tulasyan/Smart-Whatsapp-Chat-List": {
+    "sha": "be5627c77ee6016f7c22bc5d03ea9c76ffa3adb3",
+    "last_commit_date": "2022-08-03T23:45:42+05:30",
+    "files": 7,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:51.948Z"
+  },
+  "SteveSplash934/chatreplay": {
+    "sha": "dc68e8febe8c5ba80d313587c98df236bad3cb31",
+    "last_commit_date": "2026-08-01T18:05:09-07:00",
+    "files": 9,
+    "code_files": 3,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:57.924Z"
+  },
+  "SwirX/WhatsappTools": {
+    "sha": "49f73c26984bb34458cd990a7f964b695aef0b3f",
+    "last_commit_date": "2023-12-14T21:56:42+01:00",
+    "files": 18,
+    "code_files": 6,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:44.284Z"
+  },
+  "Sypthon/voice-chat-combined": {
+    "sha": "c2a5a746c90e8201cea0f0531107e13306ea596e",
+    "last_commit_date": "2026-08-26T19:46:59+07:00",
+    "files": 1072,
+    "code_files": 1013,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:59.086Z"
+  },
+  "Tahler/sms-merge-backups": {
+    "sha": "22e670641789654ba35d566eb19e7ea6aa2ac35a",
+    "last_commit_date": "2021-08-03T18:30:37-06:00",
+    "files": 4,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:01.315Z"
+  },
+  "TelegramTools/TLMerger": {
+    "sha": "c80e02ea90ec4682853eb67d9a25804df6411e34",
+    "last_commit_date": "2021-01-29T16:25:28+01:00",
+    "files": 10,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:07.879Z"
+  },
+  "TencentCloud/TIMSDK": {
+    "sha": "c43889bea635bffec6d301722156c06c97e8c597",
+    "last_commit_date": "2026-10-14T17:51:53+08:00",
+    "files": 10012,
+    "code_files": 3783,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:00.751Z"
+  },
+  "Tevin-Isaac/SakaAI-on-ICP": {
+    "sha": "54785ecd05a8ae8f42b58054da4999c75b7da382",
+    "last_commit_date": "2024-02-18T20:07:29+03:00",
+    "files": 53,
+    "code_files": 16,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:09.450Z"
+  },
+  "The-Osint-Toolbox/Telegram-OSINT": {
+    "sha": "65abb55cd8a637a67c48a2044e0941890840b6da",
+    "last_commit_date": "2026-05-17T05:49:09-04:00",
+    "files": 1,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:02.746Z"
+  },
+  "The-Swarm-Corporation/ClawSwarm": {
+    "sha": "96792d253da945681492255718dd68aec66f1b08",
+    "last_commit_date": "2026-06-20T19:52:29-04:00",
+    "files": 74,
+    "code_files": 51,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:09.311Z"
+  },
+  "TheODDYSEY/ML-Assignment": {
+    "sha": "6d4f96db65214c99c3e76bd1ad82647b82a63403",
+    "last_commit_date": "2026-01-22T23:07:53+03:00",
+    "files": 7,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:08.175Z"
+  },
+  "TheSecurityDev/Signal-Backup-V2-Merge": {
+    "sha": "b21735124987f1b5efee74b27c2d10bdec3d07d7",
+    "last_commit_date": "2026-09-18T14:10:04-05:00",
+    "files": 5,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:08.530Z"
+  },
+  "TideKnight/voxcat-chatgpt-prompt-eagle-exporter": {
+    "sha": "adea5c3987e2d73ee69d7a7ae745645bda227b8f",
+    "last_commit_date": "2026-09-22T18:09:04+08:00",
+    "files": 12,
+    "code_files": 7,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:12.572Z"
+  },
+  "Tiledesk/design-studio": {
+    "sha": "253f26784c4837f212fe05e3ec372f88cce09403",
+    "last_commit_date": "2026-10-14T17:06:38+02:00",
+    "files": 1272,
+    "code_files": 794,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:09.941Z"
+  },
+  "Trecto34/convolith": {
+    "sha": "810e9504ee0e1943f4fc6a6a3e3520d57ded30b6",
+    "last_commit_date": "2026-10-07T18:19:25-03:00",
+    "files": 166,
+    "code_files": 75,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:18.298Z"
+  },
+  "UmarEhtisham/AuditFlow-Chat": {
+    "sha": "21f7b5b27085f8a646eb90e458db0836317ce886",
+    "last_commit_date": "2025-11-15T12:20:33+05:00",
+    "files": 18,
+    "code_files": 6,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:17.837Z"
+  },
+  "Urigo/Ionic2-MeteorCLI-WhatsApp": {
+    "sha": "e1497a2adfd9c2863affb51c2521cb94cdaf2528",
+    "last_commit_date": "2017-02-26T18:09:22-02:00",
+    "files": 104,
+    "code_files": 39,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:17.937Z"
+  },
+  "Urigo/Ionic2CLI-Meteor-WhatsApp": {
+    "sha": "9b0a8134a156681558b2fbd1b839552ede23f1d3",
+    "last_commit_date": "2017-10-16T17:49:59+02:00",
+    "files": 201,
+    "code_files": 47,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:18.158Z"
+  },
+  "Uvik/dupe_buster": {
+    "sha": "eab48bf8fbd1edfaaf6b74ea9f41456949bfecb2",
+    "last_commit_date": "2015-04-06T22:25:06+02:00",
+    "files": 6,
+    "code_files": 3,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:20.818Z"
+  },
+  "Veverke/ChatWizard": {
+    "sha": "6db8b2c37d5ef38a31bf437f230c31e50ba31452",
+    "last_commit_date": "2026-09-07T13:07:50+03:00",
+    "files": 538,
+    "code_files": 417,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:18.534Z"
+  },
+  "VictorOmoboye/WhatsApp-Conversational-AI-Agent": {
+    "sha": "42743fca9b2042a9e1db316b64a0d72029845552",
+    "last_commit_date": "2025-10-10T20:40:54+01:00",
+    "files": 1,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:21.357Z"
+  },
+  "Viper-x0/X-AsenaDuplicated": {
+    "sha": "4614a316977f8a636b5fdb652637a3ded01d38ab",
+    "last_commit_date": "2024-11-25T15:57:29+05:30",
+    "files": 70,
+    "code_files": 62,
+    "readme": "README.MD",
+    "fetched_at_utc": "2026-10-15T09:27:36.978Z"
+  },
+  "WhiskeySockets/Baileys": {
+    "sha": "0af2386292907f7d9742d8d41f830d8c48208fa1",
+    "last_commit_date": "2026-08-04T20:41:35+03:00",
+    "files": 196,
+    "code_files": 145,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:27.376Z"
+  },
+  "YHernGg8/HEART": {
+    "sha": "1d00ae54beccaa2528b191355ac79bf9087d20d3",
+    "last_commit_date": "2026-05-16T10:03:24+08:00",
+    "files": 55,
+    "code_files": 34,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:36.397Z"
+  },
+  "Yak0xff/ChatMessageTableViewController": {
+    "sha": "7b752042e5df014de207051b1075def86264d9b4",
+    "last_commit_date": "2016-03-16T10:18:53+08:00",
+    "files": 110,
+    "code_files": 16,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:33.725Z"
+  },
+  "YonkoSam/whatsapp-python-chatbot": {
+    "sha": "8a1ae46805410b11d43eebf023ab23df41f9d116",
+    "last_commit_date": "2025-07-02T20:46:24+01:00",
+    "files": 19,
+    "code_files": 12,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:35.338Z"
+  },
+  "ZYKJShadow/Async": {
+    "sha": "2c18a43c0711d1f991a6eabd913831f9c82794b0",
+    "last_commit_date": "2026-05-19T13:19:21+08:00",
+    "files": 675,
+    "code_files": 571,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:46.100Z"
+  },
+  "Zenitsu272/ExTraa": {
+    "sha": "7c3cf4111a7aad00d278052a2315f5eb98d51f94",
+    "last_commit_date": "2026-09-12T02:34:10+05:30",
+    "files": 27,
+    "code_files": 11,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:47.343Z"
+  },
+  "abhinai2244/Merchant-bot": {
+    "sha": "56d4d6f0587b320b2abef73b822a4d6a345086b9",
+    "last_commit_date": "2026-09-30T21:43:46+05:30",
+    "files": 12,
+    "code_files": 6,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:57.783Z"
+  },
+  "agenticmail/agenticmail": {
+    "sha": "a3e1cf0d09291ebfc22695ebe73affd9bf6e1871",
+    "last_commit_date": "2026-09-13T02:15:00-04:00",
+    "files": 620,
+    "code_files": 320,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:58.879Z"
+  },
+  "aiming-lab/AutoResearchClaw": {
+    "sha": "be4ba4755bf1b52220f25e13b2293b5956590070",
+    "last_commit_date": "2026-08-19T11:24:41+08:00",
+    "files": 756,
+    "code_files": 429,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:57.621Z"
+  },
+  "akhil-dara/WAInsight": {
+    "sha": "12b63b7129f449f60677ee8485f32d4d8e7e61fc",
+    "last_commit_date": "2026-05-09T13:14:54+05:30",
+    "files": 166,
+    "code_files": 125,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:58.759Z"
+  },
+  "akhil-dara/sqlite-gui-analyzer": {
+    "sha": "86d3e82b30998d7472ea0dbf75859a865d483a7a",
+    "last_commit_date": "2026-10-05T16:14:28+05:30",
+    "files": 280,
+    "code_files": 240,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:57.306Z"
+  },
+  "akx/merge-sms-backup": {
+    "sha": "91fffc67a8a803e5bc9ed5ccaa465501dc7b89d8",
+    "last_commit_date": "2017-07-03T11:25:20+03:00",
+    "files": 5,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:21:52.837Z"
+  },
+  "al1enjesus/polymarket-whales": {
+    "sha": "85268ee6d1003edc613ebecbaea70f76e14bb24d",
+    "last_commit_date": "2026-03-20T12:00:31Z",
+    "files": 11,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:58.546Z"
+  },
+  "alanagoyal/messages": {
+    "sha": "cf84902e941f821036aa3370a3cc6d2bc11b7e5f",
+    "last_commit_date": "2026-01-12T10:00:07-08:00",
+    "files": 175,
+    "code_files": 48,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:03.784Z"
+  },
+  "aldinokemal/go-whatsapp-web-multidevice": {
+    "sha": "ee59c119438ee199d2f88e3809175c86ab870d9e",
+    "last_commit_date": "2026-10-14T20:31:48+07:00",
+    "files": 312,
+    "code_files": 273,
+    "readme": "readme.md",
+    "fetched_at_utc": "2026-10-15T09:28:06.570Z"
+  },
+  "alejandrocora/WhatsAppMediaEnumeration": {
+    "sha": "68cc3c17ae9eface5c9cb588a7fd591e0eb8afe5",
+    "last_commit_date": "2026-09-07T03:15:59+02:00",
+    "files": 33,
+    "code_files": 24,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:21:58.005Z"
+  },
+  "alicenjr/WhatsApp-MCP-Server": {
+    "sha": "136d41e5921db4cfa7bcbafb96d9b48f98b0958a",
+    "last_commit_date": "2025-10-19T13:17:52+05:30",
+    "files": 11,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:22:02.297Z"
+  },
+  "alicin/wamove": {
+    "sha": "989b268cbfa2e0bc3285a45161eb23dde55ecaeb",
+    "last_commit_date": "2026-09-29T18:30:24-04:00",
+    "files": 22,
+    "code_files": 17,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:07.457Z"
+  },
+  "ancsemi/Haven": {
+    "sha": "40ef9245a17a0e5ee48d2868cb2db1593e033c90",
+    "last_commit_date": "2026-10-14T23:36:05-04:00",
+    "files": 564,
+    "code_files": 329,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:08.471Z"
+  },
+  "andreavb/whatsapp-history-migrator": {
+    "sha": "a226f48c41f216a5e17981c8f93674f88bac1885",
+    "last_commit_date": "2014-04-23T13:12:58-03:00",
+    "files": 4,
+    "code_files": 2,
+    "readme": "README",
+    "fetched_at_utc": "2026-10-15T09:22:20.561Z"
+  },
+  "anirudhmalik/xhunter": {
+    "sha": "bef8b71d5d5c3099e9a8c67a5e9800a9ea6b9ece",
+    "last_commit_date": "2026-05-02T08:01:35+05:30",
+    "files": 19,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:09.150Z"
+  },
+  "anjitagargi/ChatPortFolio": {
+    "sha": "3dca405124042eee724daf8800581acd2dc18950",
+    "last_commit_date": "2024-01-22T23:30:54+05:30",
+    "files": 20,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:22:28.014Z"
+  },
+  "antiabcdefg/PhoneBackup": {
+    "sha": "b79edb4788f7cf5fca3abcd87da93cb4925bedcb",
+    "last_commit_date": "2020-10-27T17:14:36+09:00",
+    "files": 57,
+    "code_files": 15,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:22:32.716Z"
+  },
+  "antirez/smallchat": {
+    "sha": "8fc6d387ceb9e1dab83182e7b89885e0f1b43f5a",
+    "last_commit_date": "2023-11-11T10:14:30+01:00",
+    "files": 7,
+    "code_files": 4,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:08.699Z"
+  },
+  "aphexcx/titanium-backup-merger": {
+    "sha": "5fd4cb71d30ad137e8c28d718d28f003429b70f3",
+    "last_commit_date": "2018-10-18T00:43:39-07:00",
+    "files": 5,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:22:37.890Z"
+  },
+  "apocas/restai": {
+    "sha": "2ccb9d557caa6009c8f55fc38a8dc92fbe63846d",
+    "last_commit_date": "2026-08-23T12:57:11+01:00",
+    "files": 992,
+    "code_files": 851,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:10.169Z"
+  },
+  "asternic/wuzapi": {
+    "sha": "aefa4e25f29060c0c4cc9557fbfcad505b83d48a",
+    "last_commit_date": "2026-10-13T17:08:12-03:00",
+    "files": 108,
+    "code_files": 70,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:13.961Z"
+  },
+  "atilaahmettaner/tradingview-mcp": {
+    "sha": "90470ee22cc997b1fabb5046ea8ed2af87f5368f",
+    "last_commit_date": "2026-10-14T09:01:57+03:00",
+    "files": 144,
+    "code_files": 64,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:19.422Z"
+  },
+  "auanasgheps/whatsapp-backup-tools": {
+    "sha": "c083265241fc42954cc11803897caaac55098272",
+    "last_commit_date": "2026-10-13T16:15:04+02:00",
+    "files": 51,
+    "code_files": 27,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:20.759Z"
+  },
+  "awesome-gptX/awesome-gpt": {
+    "sha": "c0d99c54a9fc60de90ecce4c1b588c67cb4cf87e",
+    "last_commit_date": "2026-10-15T05:23:53Z",
+    "files": 11,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:24.320Z"
+  },
+  "ayu9x/MobileTrust-Relay": {
+    "sha": "43530f601c55bc4ddcb83083b9d4d996032ef750",
+    "last_commit_date": "2026-09-21T18:43:02+05:30",
+    "files": 117,
+    "code_files": 60,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:22:50.977Z"
+  },
+  "azalio/azalio_tech_summary": {
+    "sha": "a6fe988639bc8e8b6c5215b7f8f7218e513e2f64",
+    "last_commit_date": "2026-10-10T13:58:04+03:00",
+    "files": 36,
+    "code_files": 23,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:22:54.992Z"
+  },
+  "b1rdmania/couples-therapy-bot": {
+    "sha": "95712a85f83b8227c638238aab7a5a3e8f5d12dd",
+    "last_commit_date": "2026-04-07T13:07:31+01:00",
+    "files": 79,
+    "code_files": 29,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:22:59.311Z"
+  },
+  "badboysm890/Whatsapp-GPT3-BOT": {
+    "sha": "38ac7a00250348f33f81470ef76426d5bab8dacc",
+    "last_commit_date": "2023-01-26T15:18:01+05:30",
+    "files": 8,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:26.014Z"
+  },
+  "badman-returns/unify-chat": {
+    "sha": "7c749c6a8519c50fdfb32862e86043a7bb9bb179",
+    "last_commit_date": "2025-11-05T01:53:41+05:30",
+    "files": 132,
+    "code_files": 118,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:23:04.023Z"
+  },
+  "bakasur-te/whatsapp-dedup-dashboard": {
+    "sha": "5050abc599c7126c45ec0c6df9032d087bd2f395",
+    "last_commit_date": "2026-01-12T21:19:34+05:30",
+    "files": 18,
+    "code_files": 11,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:23:09.055Z"
+  },
+  "bepaald/signalbackup-tools": {
+    "sha": "c7a788985c1033b4fd4ea10676aba120bbd98b66",
+    "last_commit_date": "2026-10-14T16:21:56+02:00",
+    "files": 328,
+    "code_files": 290,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:30.375Z"
+  },
+  "beriktassuly/chatpack": {
+    "sha": "953050f196894c551f6fe883b306c5113006b4fa",
+    "last_commit_date": "2026-10-02T23:43:31+05:00",
+    "files": 54,
+    "code_files": 43,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:23:26.555Z"
+  },
+  "bogkonstantin/android_income_sms_gateway_webhook": {
+    "sha": "a1bb2a674eef88f9c896fdb52ca2f46c95dada13",
+    "last_commit_date": "2026-06-10T17:38:30-03:00",
+    "files": 110,
+    "code_files": 28,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:31.838Z"
+  },
+  "bytedance/deer-flow": {
+    "sha": "8d994cc1e7ee63c61283a71a169248beb4ed1c52",
+    "last_commit_date": "2026-10-15T15:26:47+08:00",
+    "files": 4000,
+    "code_files": 3297,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:33.674Z"
+  },
+  "calebnewtonusc/D1-Networking-Automation": {
+    "sha": "9bdbbc1fe52a78b6b9be232db6957eaa3cb1a6ae",
+    "last_commit_date": "2026-04-15T19:44:31-07:00",
+    "files": 63,
+    "code_files": 57,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:06.293Z"
+  },
+  "callofthev0id/n8n-automation-suite": {
+    "sha": "5b8da94dbab401c5254211ae8e9c5ad149ae0d15",
+    "last_commit_date": "2026-07-06T12:48:05-03:00",
+    "files": 14,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:05.423Z"
+  },
+  "carderne/signal-export": {
+    "sha": "0470e05b904d81660fed0c6c2e6a0298043bb577",
+    "last_commit_date": "2026-09-02T12:45:48+01:00",
+    "files": 36,
+    "code_files": 25,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:34.988Z"
+  },
+  "carterlasalle/mac_messages_mcp": {
+    "sha": "8eae89d9d9eae97333f4401ef47393d5e35f58ab",
+    "last_commit_date": "2026-10-07T15:29:17-04:00",
+    "files": 68,
+    "code_files": 30,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:35.466Z"
+  },
+  "casabre/whatsapp-merge": {
+    "sha": "652fcacccb347f286d4b7c2bea86e96423612208",
+    "last_commit_date": "2026-05-19T08:44:57+02:00",
+    "files": 40,
+    "code_files": 27,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:05.129Z"
+  },
+  "chaubeysatyam/Varta": {
+    "sha": "7f2f390f1d7c9ab15d901e92d54e122fc94ee382",
+    "last_commit_date": "2025-09-01T19:54:11+05:30",
+    "files": 35,
+    "code_files": 8,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:05.093Z"
+  },
+  "cipheraxat/notification-system": {
+    "sha": "a4d7c5624230259a34bb500aa2f81478e660bbe3",
+    "last_commit_date": "2026-02-22T23:39:08+05:30",
+    "files": 81,
+    "code_files": 57,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:05.893Z"
+  },
+  "cokaholic/TKKeyboardControl": {
+    "sha": "b02597fbde50b27fd608953177362c26de222cbc",
+    "last_commit_date": "2018-02-19T15:12:17+09:00",
+    "files": 57,
+    "code_files": 12,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:41.588Z"
+  },
+  "commune-dev/awesome-agent-protocols": {
+    "sha": "2d86dbe1e52195a7adc4236ebca596b447f3a7e1",
+    "last_commit_date": "2026-06-26T15:03:14+05:30",
+    "files": 3,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:44.454Z"
+  },
+  "csm10495/merge_and_dedupe": {
+    "sha": "f33fee45af2010389a8afd4e1775a541e6eaba06",
+    "last_commit_date": "2024-01-14T12:46:16-08:00",
+    "files": 7,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:15.661Z"
+  },
+  "cycneuramus/signal-backup-shrink": {
+    "sha": "e05d07d54350d438adafc0112c8394ba46104917",
+    "last_commit_date": "2024-07-18T17:30:27+02:00",
+    "files": 2,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:35.824Z"
+  },
+  "cyhung1/SMS_Backup_Merger": {
+    "sha": "71eeb14702f1bfb54349eb31f7e4f99cc013a3c1",
+    "last_commit_date": "2013-08-21T11:00:26-05:00",
+    "files": 7,
+    "code_files": 3,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:12.795Z"
+  },
+  "d99kris/nchat": {
+    "sha": "0bd238523e5af92cc9de863b38f8ef9a759f49ab",
+    "last_commit_date": "2026-10-03T12:57:41+08:00",
+    "files": 2749,
+    "code_files": 2359,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:47.232Z"
+  },
+  "dallyswag/sqygd": {
+    "sha": "3eb97a948b80f6dc31e2b9ef723b7d8aab579576",
+    "last_commit_date": "2014-06-22T18:56:12-04:00",
+    "files": 2,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:15.499Z"
+  },
+  "danielamitay/DAKeyboardControl": {
+    "sha": "bb137bb49c062d0fca4da354288275c8ba7837b3",
+    "last_commit_date": "2015-03-21T17:19:30-04:00",
+    "files": 20,
+    "code_files": 3,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:46.924Z"
+  },
+  "danielrosehill/WhatsApp-Export-Unpacker": {
+    "sha": "1ee6c293ca46c21e6b94e6492a2b8bc87ef739fd",
+    "last_commit_date": "2026-01-28T01:25:12+02:00",
+    "files": 25,
+    "code_files": 5,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:47.853Z"
+  },
+  "danzek/sms-backup-and-restore-parser": {
+    "sha": "7e5c89a2a1c80205b7a55f68677408cfc21bde73",
+    "last_commit_date": "2026-03-27T21:59:57-05:00",
+    "files": 10,
+    "code_files": 6,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:49.247Z"
+  },
+  "daodao97/chatmcp": {
+    "sha": "ae90beb5ae6e843e1f1b3416b705537a8ca18669",
+    "last_commit_date": "2026-09-08T07:53:37+08:00",
+    "files": 352,
+    "code_files": 160,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:51.943Z"
+  },
+  "davidakpele/notification-service": {
+    "sha": "1b83fe34bdc3db8d6ee1d1a9f6de29c86bb05d8f",
+    "last_commit_date": "2026-05-24T09:20:45+01:00",
+    "files": 1,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:15.751Z"
+  },
+  "decolua/9router": {
+    "sha": "ce4460ef79382bfddb4aa5fc0ff9f3cb0d5f95a8",
+    "last_commit_date": "2026-10-08T19:48:53+07:00",
+    "files": 1768,
+    "code_files": 1387,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:52.536Z"
+  },
+  "delltrak/watson-triage": {
+    "sha": "cd2a177b8f35452371dbd88acc4e8beae24cd6de",
+    "last_commit_date": "2026-10-07T11:42:12-03:00",
+    "files": 53,
+    "code_files": 29,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:15.199Z"
+  },
+  "denxv/TGV2RayScraper": {
+    "sha": "5cfcfb832dc36eddd6777e762f3bc7450b104895",
+    "last_commit_date": "2026-08-30T15:46:43+03:00",
+    "files": 154,
+    "code_files": 133,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:21.359Z"
+  },
+  "devadvance/sms-backup-reader-2": {
+    "sha": "d4744d89a6acf4c5c7a36116521372e51a6f1328",
+    "last_commit_date": "2026-07-12T21:28:01-07:00",
+    "files": 93,
+    "code_files": 32,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:28:55.784Z"
+  },
+  "devkitshq/notifkit": {
+    "sha": "9fd7cecf8e57c1656fd93083d70e5b26a9f22523",
+    "last_commit_date": "2026-10-11T23:32:21+05:30",
+    "files": 288,
+    "code_files": 208,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:00.101Z"
+  },
+  "dfelix/wa-export-pdf": {
+    "sha": "a2339c1dcefaf3ffe96e0c140485ca50916e1cd6",
+    "last_commit_date": "2026-10-03T11:48:51+01:00",
+    "files": 99,
+    "code_files": 46,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:02.585Z"
+  },
+  "dickyermawan/kilas": {
+    "sha": "054256cd2ea00d50197aed6ab12cfe7bc5c96af9",
+    "last_commit_date": "2026-01-13T13:40:18+07:00",
+    "files": 47,
+    "code_files": 26,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:05.587Z"
+  },
+  "dimaskiddo/go-whatsapp-multidevice-rest": {
+    "sha": "5be01f144e0fac008271a7deec8dcfc4c3f7e311",
+    "last_commit_date": "2026-04-12T00:29:29+07:00",
+    "files": 40,
+    "code_files": 25,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:11.834Z"
+  },
+  "discordwell/green2blue": {
+    "sha": "8781b3c4be0f4385d7e4e7c8d48e33a555228f53",
+    "last_commit_date": "2026-06-19T01:27:22-05:00",
+    "files": 109,
+    "code_files": 85,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:36.236Z"
+  },
+  "dmitryp-dev00j2/chatgpt-prompt-library": {
+    "sha": "c853f32199061f67ced824192a005dc18f16febe",
+    "last_commit_date": "2026-10-15T00:35:34Z",
+    "files": 7,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:23.316Z"
+  },
+  "dperez-sct/whatsckup": {
+    "sha": "83c7ec730452ffdc3e65098de8195175d0daaf20",
+    "last_commit_date": "2026-04-11T00:02:33+02:00",
+    "files": 32,
+    "code_files": 11,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:15.930Z"
+  },
+  "dsebastien/whatsapp-claude-agent": {
+    "sha": "a3b8cbf43445dabf48d2702d2f2e38477cb64eb3",
+    "last_commit_date": "2026-02-09T17:48:29+01:00",
+    "files": 55,
+    "code_files": 31,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:19.023Z"
+  },
+  "dtcarls/fantasy_football_chat_bot": {
+    "sha": "1ae2440916c2d55e6cf1fe25bf4ace5a852921f8",
+    "last_commit_date": "2026-09-07T19:41:32-04:00",
+    "files": 35,
+    "code_files": 17,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:21.725Z"
+  },
+  "ebitezion/notif-service": {
+    "sha": "116e3029a07e39e3fff086a536924a3d774645be",
+    "last_commit_date": "2026-05-25T17:30:25+01:00",
+    "files": 1,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:25.052Z"
+  },
+  "enescingoz/awesome-n8n-templates": {
+    "sha": "827110332c21cbe000ab13f6d292d5adb1f1f8db",
+    "last_commit_date": "2026-09-12T14:00:32+01:00",
+    "files": 415,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:21.395Z"
+  },
+  "enricoros/big-AGI": {
+    "sha": "4d02b195390efbec3db05bcedcc90b41654399a0",
+    "last_commit_date": "2026-10-13T11:41:07-07:00",
+    "files": 1307,
+    "code_files": 1088,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:22.286Z"
+  },
+  "envielxyz/SwayRouter": {
+    "sha": "365506718c8191135c8ca7ed57ca52af4db4ea5c",
+    "last_commit_date": "2026-10-14T00:05:23+07:00",
+    "files": 872,
+    "code_files": 762,
+    "readme": "README.id.md",
+    "fetched_at_utc": "2026-10-15T09:24:33.045Z"
+  },
+  "eon01/awesome-chatgpt": {
+    "sha": "674e977601e51d77fe5d87d6d876a69a7e0db5d3",
+    "last_commit_date": "2026-07-15T10:09:08+02:00",
+    "files": 6,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:22.688Z"
+  },
+  "ericwddev/whatsapp-link-generator": {
+    "sha": "17e6203c3ffba0e943230fc44a853072dfd94f65",
+    "last_commit_date": "2023-12-27T23:47:48-03:00",
+    "files": 6,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:34.190Z"
+  },
+  "ezhes/OSXMessageProxy": {
+    "sha": "bc8808f4b55fc4f289c84fe551c480812cc2daa5",
+    "last_commit_date": "2021-02-16T13:27:23-07:00",
+    "files": 1148,
+    "code_files": 498,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:27.170Z"
+  },
+  "farhan-beg/huggingmes-hermes-webui": {
+    "sha": "0fd977646000b47b41ce38f2db58c58440814667",
+    "last_commit_date": "2026-06-24T02:37:25+05:30",
+    "files": 12,
+    "code_files": 5,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:39.338Z"
+  },
+  "farhankk360/boulder-ai-whatsapp-bot": {
+    "sha": "d830074ebd3dd06bd4aa7be6ec8096b359f29da5",
+    "last_commit_date": "2024-07-20T04:05:23+05:00",
+    "files": 27,
+    "code_files": 14,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:38.947Z"
+  },
+  "farinchan/chatery_whatsapp": {
+    "sha": "b0fc53b0e132e9646fe34242c2d4050511afa7e1",
+    "last_commit_date": "2026-10-13T22:53:20+07:00",
+    "files": 44,
+    "code_files": 26,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:32.247Z"
+  },
+  "felipeDS91/whatsapp-api": {
+    "sha": "336b09aa5680d02c025f6d2e747d4bbc2932bb23",
+    "last_commit_date": "2026-01-24T14:42:35-03:00",
+    "files": 57,
+    "code_files": 44,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:31.600Z"
+  },
+  "ferferga/WhatsAppMigrationTools": {
+    "sha": "46dc518bc042f5ab5c12ea91b7d3632fcc4987de",
+    "last_commit_date": "2020-11-18T15:45:03+01:00",
+    "files": 24,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:33.731Z"
+  },
+  "frozenspider/chat-history-manager": {
+    "sha": "d1f6f8879e151b1309118ec4d59d0b9298c9ba81",
+    "last_commit_date": "2026-08-30T22:39:10+05:00",
+    "files": 252,
+    "code_files": 162,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:37.409Z"
+  },
+  "frozenspider/chat-history-manager-ui": {
+    "sha": "cd9dfb2d9ea18ba73efa03c11ea95af06583c1a5",
+    "last_commit_date": "2025-01-27T05:48:28+05:00",
+    "files": 64,
+    "code_files": 57,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:36.346Z"
+  },
+  "gavi/mlx-whatsapp": {
+    "sha": "992143e0f0ed53579d52c7e6bd5d12dbb5b725f4",
+    "last_commit_date": "2024-01-13T19:44:02-05:00",
+    "files": 17,
+    "code_files": 11,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:37.426Z"
+  },
+  "giacomoferretti/whatsapp-backup-downloader-decryptor": {
+    "sha": "9bb21b12ca04f1052b4ebe43438d5ce1991193b2",
+    "last_commit_date": "2025-12-17T08:06:04+01:00",
+    "files": 28,
+    "code_files": 10,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:46.804Z"
+  },
+  "gsusI/Telegram-Group-or-Channel-users-to-CSV": {
+    "sha": "38b7a7dbe0faefc080726c63cba63adcf40a9d8d",
+    "last_commit_date": "2026-09-26T08:59:49+02:00",
+    "files": 22,
+    "code_files": 13,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:45.314Z"
+  },
+  "guidone/node-red-contrib-chatbot": {
+    "sha": "0464f7648425b5f78855e8d03300877f82ab2007",
+    "last_commit_date": "2026-09-30T09:23:36+02:00",
+    "files": 821,
+    "code_files": 495,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:45.201Z"
+  },
+  "guttank2/lead-intel-pipeline": {
+    "sha": "9682a5d6d8e552811126fae909778dafeff323de",
+    "last_commit_date": "2026-03-05T17:18:54+01:00",
+    "files": 3,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:46.283Z"
+  },
+  "haniabdemai/whatsapp-voice": {
+    "sha": "49aa36c9a1152d76e483cec39c986477f21b0133",
+    "last_commit_date": "2026-07-22T12:13:12+01:00",
+    "files": 55,
+    "code_files": 42,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:47.428Z"
+  },
+  "hari161008/Ever-Dialer": {
+    "sha": "eb9e5f8c9bfc1e9fd80e847465561a231599f618",
+    "last_commit_date": "2026-10-14T21:40:13+05:30",
+    "files": 1074,
+    "code_files": 570,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:48.951Z"
+  },
+  "haythamf92/gark": {
+    "sha": "520d6770a445b669394b75c1a95f7578cd939f5c",
+    "last_commit_date": "2025-11-14T17:09:46+01:00",
+    "files": 16,
+    "code_files": 12,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:46.877Z"
+  },
+  "hcengineering/platform": {
+    "sha": "698b287e6fc427205fb59846cb0ea1609bf99415",
+    "last_commit_date": "2026-10-14T07:50:21+02:00",
+    "files": 10664,
+    "code_files": 4299,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:50.233Z"
+  },
+  "hilnik432-noob/Sadhna_whtspp": {
+    "sha": "14f953de41b8a3620035b784b7e59bcc7690af4b",
+    "last_commit_date": "2026-08-08T12:33:54+05:30",
+    "files": 33,
+    "code_files": 25,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:49.450Z"
+  },
+  "himanshuchauhan/react-native-whatsapp-ui": {
+    "sha": "d86cc7f83e0a7f90d74f4d32e1a8130be1a6445c",
+    "last_commit_date": "2017-01-20T13:22:30+05:30",
+    "files": 68,
+    "code_files": 15,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:52.176Z"
+  },
+  "hknaack/AndroidMessageMerger": {
+    "sha": "aa8d2043ed0f44c4e6ecf6ea44eb9b8cf1b7aafa",
+    "last_commit_date": "2018-06-10T18:45:43+02:00",
+    "files": 3,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:45.735Z"
+  },
+  "iOfficeAI/AionUi": {
+    "sha": "c140550d04e44f3d6f8a9830b40ae56e4689a977",
+    "last_commit_date": "2026-10-14T04:18:37Z",
+    "files": 2344,
+    "code_files": 1673,
+    "readme": "readme.md",
+    "fetched_at_utc": "2026-10-15T09:29:58.994Z"
+  },
+  "iamers/steve-agent": {
+    "sha": "426008e77104c5512b7ba803397e01e186493943",
+    "last_commit_date": "2026-08-19T09:54:18+02:00",
+    "files": 103,
+    "code_files": 19,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:48.829Z"
+  },
+  "iammohith/Voice-First-Aura-Real-Estate-Agent-V-FAREA": {
+    "sha": "edd9ad542b04ae490f5abbb72a28a5d16281ad6d",
+    "last_commit_date": "2026-06-05T21:22:47+05:30",
+    "files": 27,
+    "code_files": 19,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:50.810Z"
+  },
+  "inkbox-ai/claude-code-plugin": {
+    "sha": "a02722d42bbdc40e8a6944fccf4118c594dd5661",
+    "last_commit_date": "2026-10-08T13:56:43-07:00",
+    "files": 136,
+    "code_files": 116,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:29:59.463Z"
+  },
+  "insightriot/signal": {
+    "sha": "8316c0ba7de2c30cc3333857302c08e361727a3a",
+    "last_commit_date": "2026-10-14T18:52:11-04:00",
+    "files": 2473,
+    "code_files": 771,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:51.625Z"
+  },
+  "isabekov/WhatsApp_DB_Merger": {
+    "sha": "f083af9e20dddb75214f02886189bed9b3676976",
+    "last_commit_date": "2018-01-07T23:43:39+03:00",
+    "files": 4,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:55.085Z"
+  },
+  "itsomg134/social-media-website-that-combines-features-from-WhatsApp-and-Facebook": {
+    "sha": "28ce360868c3d4fed6fc85e4e9502d9d9c6824e8",
+    "last_commit_date": "2026-01-07T06:48:01+05:30",
+    "files": 4,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:56.280Z"
+  },
+  "itxshakil/laravel-fast2sms": {
+    "sha": "492109d3bae06bf080105c220a232b62903af309",
+    "last_commit_date": "2026-09-24T09:16:27+05:30",
+    "files": 203,
+    "code_files": 155,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:03.721Z"
+  },
+  "ivo-toby/talon": {
+    "sha": "0bf45cf332a0644fb3a13f2ad99d60102c5be972",
+    "last_commit_date": "2026-10-09T17:07:46+02:00",
+    "files": 741,
+    "code_files": 482,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:03.666Z"
+  },
+  "iyear/E5SubBot": {
+    "sha": "19fa56309140ce94f67bf46576159cfbe70d47af",
+    "last_commit_date": "2023-04-20T11:17:34+08:00",
+    "files": 30,
+    "code_files": 17,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:03.994Z"
+  },
+  "jbrowne/tb_sms_backup_merge": {
+    "sha": "71593db44629276400d0920ef4c2be315cf89c0d",
+    "last_commit_date": "2012-09-05T17:06:32-07:00",
+    "files": 3,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:56.300Z"
+  },
+  "jensstein/oandbackup": {
+    "sha": "6e1d2b1d6b47f8fbca7046edc6e8f770e5cf55e4",
+    "last_commit_date": "2019-11-10T11:12:54+01:00",
+    "files": 172,
+    "code_files": 97,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:44.469Z"
+  },
+  "jferrl/amberkeep": {
+    "sha": "858603ebaea805f9c0c790add0991e780187e040",
+    "last_commit_date": "2026-09-16T10:40:54+02:00",
+    "files": 345,
+    "code_files": 274,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:09.121Z"
+  },
+  "jhlee0409/claude-code-history-viewer": {
+    "sha": "7f48907081d93ad209b30e10ff640ea0b8ed0e24",
+    "last_commit_date": "2026-10-11T01:39:21+09:00",
+    "files": 987,
+    "code_files": 717,
+    "readme": "README.ja.md",
+    "fetched_at_utc": "2026-10-15T09:30:10.176Z"
+  },
+  "jleboube/teetime-search": {
+    "sha": "ca6c5a6f1058b2389ced71f8fc936d2d5289ab0a",
+    "last_commit_date": "2026-09-18T06:18:06-05:00",
+    "files": 38,
+    "code_files": 23,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:58.248Z"
+  },
+  "joshbalfour/SMS.db-Analyser": {
+    "sha": "bc4761b167fcabf181038a67033a3add0a2972f6",
+    "last_commit_date": "2014-01-07T01:12:43-08:00",
+    "files": 11,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:13.370Z"
+  },
+  "joshuaswanson/messages-cli": {
+    "sha": "d1a7ae34c292ed77e332245ff8b35a224765301c",
+    "last_commit_date": "2026-04-13T19:21:58+02:00",
+    "files": 31,
+    "code_files": 17,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:58.388Z"
+  },
+  "jsharkey13/iphone_backup_decrypt": {
+    "sha": "c4a3e1a2f2548ecfdcb7c523f7405acb8779e6bb",
+    "last_commit_date": "2026-09-24T22:00:11+01:00",
+    "files": 17,
+    "code_files": 10,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:14.630Z"
+  },
+  "jtmoon79/super-speedy-syslog-searcher": {
+    "sha": "2db0e282da0703492d30cbd5951dccb721808383",
+    "last_commit_date": "2026-10-14T23:58:22-07:00",
+    "files": 5376,
+    "code_files": 357,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:01.231Z"
+  },
+  "kellygold/imessage-contacts-merger": {
+    "sha": "dc49a9561fe30670033c77c96a508de4d62aae7b",
+    "last_commit_date": "2026-09-24T21:24:43+10:00",
+    "files": 3,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:06.988Z"
+  },
+  "kenn-io/msgvault": {
+    "sha": "ecbfcaa74fad33347b7f824b276056f5147066e5",
+    "last_commit_date": "2026-10-14T23:18:59-04:00",
+    "files": 4951,
+    "code_files": 4558,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:14.266Z"
+  },
+  "kesha-antonov/react-native-chat": {
+    "sha": "f12417782f4876752e5740bc1f2c0e11782bff6e",
+    "last_commit_date": "2026-09-15T19:29:25+03:00",
+    "files": 313,
+    "code_files": 228,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:14.136Z"
+  },
+  "knadh/tg-archive": {
+    "sha": "b8f3febaad1180cd581bed0ff07d582d012e8c0b",
+    "last_commit_date": "2026-03-01T10:55:57+05:30",
+    "files": 19,
+    "code_files": 9,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:22.099Z"
+  },
+  "kobie3717/baileys-antiban": {
+    "sha": "0c805095bf7576e7885932400203e984e55fa90d",
+    "last_commit_date": "2026-06-11T20:11:36+02:00",
+    "files": 285,
+    "code_files": 257,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:27.055Z"
+  },
+  "kp7742/KWhatsApp": {
+    "sha": "d2082b9d94bb7979a47ebefa64b4e38a9be7baae",
+    "last_commit_date": "2022-06-20T05:06:47-07:00",
+    "files": 60,
+    "code_files": 24,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:27.595Z"
+  },
+  "krishnarajt/Whatsapp-Chat-File-Merger": {
+    "sha": "138add0aa8534e9ccc92f3fb5090b31d363a33d9",
+    "last_commit_date": "2021-12-19T20:50:53+05:30",
+    "files": 6,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:24:59.837Z"
+  },
+  "krypton-byte/neonize": {
+    "sha": "ce082701aeb94d3fa2ede0e61f397b755051f556",
+    "last_commit_date": "2026-10-15T04:58:06Z",
+    "files": 331,
+    "code_files": 136,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:34.071Z"
+  },
+  "kx-Huang/ChatGPT-on-WeChat": {
+    "sha": "02338f77cb093a5076bb989461e17e8f699847d9",
+    "last_commit_date": "2024-11-19T13:34:36-08:00",
+    "files": 29,
+    "code_files": 4,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:39.539Z"
+  },
+  "lee-junyeol/MacMessageMerge": {
+    "sha": "98efecdf9a6eeda748a15c8cca56f6bcc37a55d2",
+    "last_commit_date": "2026-08-12T20:06:37+09:00",
+    "files": 17,
+    "code_files": 8,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:09.697Z"
+  },
+  "legion-an/django-models-logging": {
+    "sha": "885de315d18f13718d5ff6fa0b8ec832d54ea6f8",
+    "last_commit_date": "2026-04-28T17:03:18+02:00",
+    "files": 42,
+    "code_files": 35,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:39.633Z"
+  },
+  "lemuxon/mesa": {
+    "sha": "b9c67ca61dd82f769e5d0e35dbd8e566138e8c0b",
+    "last_commit_date": "2026-10-14T17:52:10+03:00",
+    "files": 235,
+    "code_files": 154,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:09.480Z"
+  },
+  "leprema29/WhaChatExporter2": {
+    "sha": "f7f557f2ee3f311cdc3f876802f336ed77d1f50f",
+    "last_commit_date": "2026-03-31T00:15:42Z",
+    "files": 56,
+    "code_files": 40,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:41.084Z"
+  },
+  "linq-team/claude-code-imessage-channel": {
+    "sha": "3f9b60755fbc90ce4557c0c6db2b4790a3c1a921",
+    "last_commit_date": "2026-07-15T16:36:42-06:00",
+    "files": 18,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:43.108Z"
+  },
+  "linuxhsj/openclaw-zero-token": {
+    "sha": "a654bcf2e6f3a3b45d2967adec75df177b87775a",
+    "last_commit_date": "2026-04-19T17:40:36+08:00",
+    "files": 17415,
+    "code_files": 15683,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:47.019Z"
+  },
+  "lobu-ai/lobu": {
+    "sha": "63cac5dd65e8938473fd6debc012a93cbd88fe70",
+    "last_commit_date": "2026-10-15T11:09:29+02:00",
+    "files": 3605,
+    "code_files": 3275,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:48.450Z"
+  },
+  "lockevod/Karoo-KSafe": {
+    "sha": "073ad27ef89ad11cc2a52e75bff5a3279b8bb622",
+    "last_commit_date": "2026-10-12T21:38:55+02:00",
+    "files": 196,
+    "code_files": 149,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:16.488Z"
+  },
+  "locphamnguyen/ZaloCRM": {
+    "sha": "86645670bced5efec199b2e5903945a225cb567a",
+    "last_commit_date": "2026-06-26T11:51:30+07:00",
+    "files": 873,
+    "code_files": 546,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:48.562Z"
+  },
+  "lrhodin/corten-matrix": {
+    "sha": "c381916f0d37dbbe3b23a99171debb4860067a2c",
+    "last_commit_date": "2026-10-09T00:28:25-04:00",
+    "files": 186,
+    "code_files": 158,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:51.633Z"
+  },
+  "ludios/whatsapp-tail-merge": {
+    "sha": "af03a6af60a6cb9268c1ff4b777858fa88d211fa",
+    "last_commit_date": "2026-08-01T12:15:24Z",
+    "files": 45,
+    "code_files": 23,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:16.762Z"
+  },
+  "lulu-sk/CodexFlow": {
+    "sha": "25879764d2ab97eecdbeb875ea93791defa9d60a",
+    "last_commit_date": "2026-08-08T03:42:36+08:00",
+    "files": 730,
+    "code_files": 620,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:17.362Z"
+  },
+  "luolongfei/freenom": {
+    "sha": "0f9aeec416e0de01f0322a5325b71cf69b80f96f",
+    "last_commit_date": "2026-08-01T10:44:12+08:00",
+    "files": 3113,
+    "code_files": 2628,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:53.125Z"
+  },
+  "lyfe00011/whatsapp-bot": {
+    "sha": "39fab86ec7601d6a3f0d4004870e75cccfbcbe25",
+    "last_commit_date": "2024-11-19T11:59:01+05:30",
+    "files": 47,
+    "code_files": 34,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:52.948Z"
+  },
+  "machiav3lli/oandbackupx": {
+    "sha": "b27516fcef24a3b48061517b89530c7400e6e5f1",
+    "last_commit_date": "2026-05-03T22:44:35+02:00",
+    "files": 1466,
+    "code_files": 369,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:44.367Z"
+  },
+  "maduranma/telegram-export-merger": {
+    "sha": "0a106bb2e95ec12dcda4c5efadd78964dea1ecb3",
+    "last_commit_date": "2025-09-12T03:35:27+02:00",
+    "files": 17,
+    "code_files": 13,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:21.191Z"
+  },
+  "mako1092/whatsapp": {
+    "sha": "12b63b7129f449f60677ee8485f32d4d8e7e61fc",
+    "last_commit_date": "2026-05-09T13:14:54+05:30",
+    "files": 166,
+    "code_files": 125,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:55.459Z"
+  },
+  "marcschwaiger/signal-backup-v2-helper": {
+    "sha": "fb7fca192d41c2f37ca23f58da382d419c3b8637",
+    "last_commit_date": "2026-05-20T19:32:04+02:00",
+    "files": 3,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:26.079Z"
+  },
+  "mario-andreschak/FLUJO": {
+    "sha": "1e9cd8db7bdc9290a9cb985db2070a0ed328f139",
+    "last_commit_date": "2026-10-15T02:56:14-05:00",
+    "files": 3840,
+    "code_files": 3064,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:59.159Z"
+  },
+  "mbhat978/Rescue-Route-AI-System": {
+    "sha": "d7157c78ffffe090792a8ebc1df94abd7673237b",
+    "last_commit_date": "2026-08-05T15:43:01+05:30",
+    "files": 78,
+    "code_files": 60,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:26.207Z"
+  },
+  "mdezube/sms-analysis": {
+    "sha": "d90e1b575d749b343c07ec707876f8d3718e7450",
+    "last_commit_date": "2020-10-22T22:17:33-04:00",
+    "files": 19,
+    "code_files": 7,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:57.350Z"
+  },
+  "meena-erian/unicom": {
+    "sha": "65a8d294156a8c254df8206ea70c34ee80886f9a",
+    "last_commit_date": "2026-07-19T22:46:17Z",
+    "files": 168,
+    "code_files": 162,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:29.701Z"
+  },
+  "meetparikh1202/pdf-merger-automation": {
+    "sha": "2884e9fb857e2da0a47500f6fe0706e6fde52266",
+    "last_commit_date": "2023-12-19T17:43:55+05:30",
+    "files": 4,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:30.694Z"
+  },
+  "melandlabs/openloomi": {
+    "sha": "2aca1016fa3065e2fee912afd0e94576d0483c66",
+    "last_commit_date": "2026-09-24T10:34:52+08:00",
+    "files": 3177,
+    "code_files": 2035,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:30:59.507Z"
+  },
+  "melgarafael/DeskcommCRM": {
+    "sha": "656e1a3493a803a445f29fdaa74078bf987124ec",
+    "last_commit_date": "2026-10-15T02:11:33-03:00",
+    "files": 8184,
+    "code_files": 6562,
+    "readme": "README.en.md",
+    "fetched_at_utc": "2026-10-15T09:30:59.262Z"
+  },
+  "mergisi/awesome-openclaw-agents": {
+    "sha": "05820c51125e86a979432e21651d34dc9b14621f",
+    "last_commit_date": "2026-05-25T13:21:04+03:00",
+    "files": 433,
+    "code_files": 24,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:03.653Z"
+  },
+  "mihailgaberov/chat": {
+    "sha": "0f043492cba329df599049f868d5afefe5dc1aab",
+    "last_commit_date": "2026-09-17T11:29:26+02:00",
+    "files": 117,
+    "code_files": 86,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:04.240Z"
+  },
+  "mikematthewsai/n8n-google-review-request-sms": {
+    "sha": "6015d61e2ca348f1306b933d9981ff61e169ab0f",
+    "last_commit_date": "2026-09-21T14:47:35-04:00",
+    "files": 13,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:29.929Z"
+  },
+  "minhaz725/whatsapp-cross-platform-merge-and-recovery": {
+    "sha": "f5118bb1f4cf768ad177110d55a3d2edfe3a7730",
+    "last_commit_date": "2026-08-08T20:08:49+06:00",
+    "files": 11,
+    "code_files": 8,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:31.773Z"
+  },
+  "minvws/DSA-WhatsApp-merger": {
+    "sha": "b87125191b8ca90ed2bed3d5d2355cc5e9d7d041",
+    "last_commit_date": "2025-06-26T10:40:50+02:00",
+    "files": 50,
+    "code_files": 9,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:32.155Z"
+  },
+  "mitensampat/alfred": {
+    "sha": "0bad5e82670249cf7dc5218742cc37cd60b8a57e",
+    "last_commit_date": "2026-09-19T13:26:56+05:30",
+    "files": 241,
+    "code_files": 190,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:03.029Z"
+  },
+  "mlapeter/claude-engram": {
+    "sha": "91edd7e532ab75f7734055ec02051ac5c299c6e7",
+    "last_commit_date": "2026-07-17T13:26:43-06:00",
+    "files": 754,
+    "code_files": 98,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:35.761Z"
+  },
+  "mlg404/whatsapp-music-bot": {
+    "sha": "f253e4ac0b98163a256cca36fe99756deab8d276",
+    "last_commit_date": "2023-11-14T22:50:44-03:00",
+    "files": 29,
+    "code_files": 16,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:06.114Z"
+  },
+  "mlomb/chat-analytics": {
+    "sha": "e13695af06b8869fb26842c4b4aa7419611479aa",
+    "last_commit_date": "2025-10-11T12:55:25-03:00",
+    "files": 340,
+    "code_files": 209,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:10.658Z"
+  },
+  "mnemocron/TelegramChatStats": {
+    "sha": "2fbd5dc70ad8b6b3ea11e454cb52d3d464c3caff",
+    "last_commit_date": "2022-12-20T14:43:37+01:00",
+    "files": 14,
+    "code_files": 6,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:09.820Z"
+  },
+  "moltis-org/moltis": {
+    "sha": "1f6d28ea750d6654d52d5899b8be67727ebf7a19",
+    "last_commit_date": "2026-09-22T08:38:21-07:00",
+    "files": 2787,
+    "code_files": 1845,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:13.833Z"
+  },
+  "mossblaser/signal_for_android_decryption": {
+    "sha": "60cf4791ef119188102ae677ccaf40067d4cedbe",
+    "last_commit_date": "2025-07-28T07:45:15+01:00",
+    "files": 6,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:46.146Z"
+  },
+  "mr-tbot/mesh-api": {
+    "sha": "ea3cf1249329043288cb8be13006eafc61c43d93",
+    "last_commit_date": "2026-07-29T02:14:53+08:00",
+    "files": 145,
+    "code_files": 84,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:37.397Z"
+  },
+  "mukulkadel/mwatoi": {
+    "sha": "3ce4539d65a7e83bb135677d0099fc91601e69b5",
+    "last_commit_date": "2022-10-18T11:03:12+05:30",
+    "files": 13,
+    "code_files": 4,
+    "readme": "Readme.md",
+    "fetched_at_utc": "2026-10-15T11:10:47.326Z"
+  },
+  "multiOTP/multiotp": {
+    "sha": "1f2f36c2d68e5225bbaefe4dc67f55153f5fa9aa",
+    "last_commit_date": "2026-04-04T01:36:40+02:00",
+    "files": 130,
+    "code_files": 63,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:11.051Z"
+  },
+  "namnoops/merjapp": {
+    "sha": "e741e6f4e3c37e16781c48e422372fa38c3a7ac9",
+    "last_commit_date": "2020-03-22T09:38:56+01:00",
+    "files": 12,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:40.694Z"
+  },
+  "nanocoai/nanoclaw": {
+    "sha": "8fbacc91b6e2671d53c17fd0c866c0e2eef21715",
+    "last_commit_date": "2026-10-14T15:57:58+02:00",
+    "files": 1248,
+    "code_files": 947,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:14.283Z"
+  },
+  "natario1/whatsapp-database-merger": {
+    "sha": "3dd3cfdbaf520e67623e656864f1e44babf7ea2a",
+    "last_commit_date": "2022-10-18T11:08:59+01:00",
+    "files": 18,
+    "code_files": 11,
+    "readme": "readme.md",
+    "fetched_at_utc": "2026-10-15T09:25:41.705Z"
+  },
+  "neiios/telegram-chat-export-merger": {
+    "sha": "3ba5c582175598a4f363477b357a47fdef3476d7",
+    "last_commit_date": "2026-02-08T18:32:45+02:00",
+    "files": 6,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:43.599Z"
+  },
+  "nextlevelbuilder/goclaw": {
+    "sha": "28afa5b63e01a1fa7ee4c2bb22ac1eac0c26444f",
+    "last_commit_date": "2026-10-04T23:31:42+07:00",
+    "files": 4649,
+    "code_files": 3910,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:16.954Z"
+  },
+  "nicksmarto/sms_viewer": {
+    "sha": "bea638c384dcf38280398068d2ea6bbed81769aa",
+    "last_commit_date": "2026-08-28T00:14:31-06:00",
+    "files": 15,
+    "code_files": 7,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:44.530Z"
+  },
+  "nikhilbadyal/docker-py-revanced": {
+    "sha": "2d92aa2f809a65c15a97ad87be53b67c2a958005",
+    "last_commit_date": "2026-10-15T12:32:00+05:30",
+    "files": 92,
+    "code_files": 43,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:19.657Z"
+  },
+  "nixfred/blip": {
+    "sha": "0f840fd6143a1ec0d57476a700b8693068905806",
+    "last_commit_date": "2026-10-12T15:51:47-04:00",
+    "files": 182,
+    "code_files": 101,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:23.074Z"
+  },
+  "njavet/unichat": {
+    "sha": "adf5d468895b309bdedd74ea625ef447177217d3",
+    "last_commit_date": "2024-06-30T16:16:45+02:00",
+    "files": 100,
+    "code_files": 61,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:45.241Z"
+  },
+  "noDiego/whatsapp-claude-gpt": {
+    "sha": "33b271127b52a4fa2ad5c7842c70cb363868db8c",
+    "last_commit_date": "2026-07-11T04:53:13-04:00",
+    "files": 37,
+    "code_files": 28,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:46.087Z"
+  },
+  "omkarnub/Kanri": {
+    "sha": "187767ba46d7b29c401ec3fba7bed063fe6ec62e",
+    "last_commit_date": "2026-10-11T20:08:24+05:30",
+    "files": 424,
+    "code_files": 276,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:25.121Z"
+  },
+  "omorandi/TiSMSDialog": {
+    "sha": "f6583014a33e1a147b2123fe5fff49428e61ef13",
+    "last_commit_date": "2014-11-24T09:38:20+01:00",
+    "files": 30,
+    "code_files": 10,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:24.501Z"
+  },
+  "openclaw/imsgcrawl": {
+    "sha": "14a0b732d5448d34320aa5f76e2b249c6fa06d57",
+    "last_commit_date": "2026-10-03T12:17:55+07:00",
+    "files": 118,
+    "code_files": 101,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:28.785Z"
+  },
+  "openclaw/telecrawl": {
+    "sha": "e3444f31aeca578273707f86e43ca6031785c240",
+    "last_commit_date": "2026-10-07T02:19:28-07:00",
+    "files": 105,
+    "code_files": 79,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:28.032Z"
+  },
+  "openclaw/wacrawl": {
+    "sha": "b4971ac2dc72303bdf4d1677782c9e3a1301182d",
+    "last_commit_date": "2026-10-01T01:48:59-07:00",
+    "files": 129,
+    "code_files": 101,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:29.032Z"
+  },
+  "opsknight-labs/OpsKnight": {
+    "sha": "4be1e13bd51e361b52ad97b77dcbcb4343ba4ae8",
+    "last_commit_date": "2026-10-14T19:05:09Z",
+    "files": 5031,
+    "code_files": 3011,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:32.079Z"
+  },
+  "p1ne/SMS-Tools": {
+    "sha": "9edafd5994d546ad12c2ff92799da48dacd921e8",
+    "last_commit_date": "2023-04-14T10:44:33+03:00",
+    "files": 29,
+    "code_files": 22,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:45.075Z"
+  },
+  "pajowu/signal-backup-decode": {
+    "sha": "31100a37269469b0145a976ac86f2969ca33497c",
+    "last_commit_date": "2021-03-21T17:56:49+01:00",
+    "files": 21,
+    "code_files": 13,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:47.305Z"
+  },
+  "parai/WhatsApp": {
+    "sha": "708907cd1a63ca44a099bfdeb7e1d9f5dbf26e04",
+    "last_commit_date": "2015-01-11T09:51:06+08:00",
+    "files": 259,
+    "code_files": 229,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:50.493Z"
+  },
+  "parvesh-rm/wabridge": {
+    "sha": "f7e15763f736791f27c8e6424890373899d0068f",
+    "last_commit_date": "2026-09-23T20:00:19+10:00",
+    "files": 84,
+    "code_files": 46,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:49.323Z"
+  },
+  "pawank0411/WhatsApp-Cleaner": {
+    "sha": "c0da31ef64c58f525e310f58629ae60b8c8e08d0",
+    "last_commit_date": "2020-10-06T18:18:04+05:30",
+    "files": 127,
+    "code_files": 23,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:34.090Z"
+  },
+  "pbeck/whatsbook": {
+    "sha": "6bca6390c88a0f07d54db1d11a7fde546859f280",
+    "last_commit_date": "2021-12-16T13:09:11+01:00",
+    "files": 6,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:35.510Z"
+  },
+  "pcsingh/WhatsApp-Chat-Analyzer": {
+    "sha": "d2f203108f9040c7f25620140f80c67ac65eb9ad",
+    "last_commit_date": "2023-06-14T22:20:42+05:30",
+    "files": 25,
+    "code_files": 6,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:36.113Z"
+  },
+  "per1ch/Telegram-Exported-Messages-Merger-Optimizer": {
+    "sha": "dad27ab07bd6e119c2e86a1eb0eb8b8e77fd8e8f",
+    "last_commit_date": "2026-03-21T01:09:03+03:00",
+    "files": 9,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:51.628Z"
+  },
+  "phantomVK/MessageKit": {
+    "sha": "24630350820a49f63300d07b39d987e0f1384b6f",
+    "last_commit_date": "2020-09-07T12:05:06+08:00",
+    "files": 129,
+    "code_files": 62,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:38.241Z"
+  },
+  "photon-hq/advanced-imessage-kit": {
+    "sha": "b942f3e8721b77fdeb404fde15a907cb5aa9e8ff",
+    "last_commit_date": "2026-06-08T16:21:27-07:00",
+    "files": 98,
+    "code_files": 82,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:38.490Z"
+  },
+  "photon-hq/dsh-imessage": {
+    "sha": "a644183adf332bff12b2fe359b3326ca1c066846",
+    "last_commit_date": "2026-08-19T02:12:02Z",
+    "files": 61,
+    "code_files": 47,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:40.123Z"
+  },
+  "pl402/wa-fuse": {
+    "sha": "d3ce0d659a3e9f76bbcf58da2c9e1ab867e33d7e",
+    "last_commit_date": "2026-10-07T11:22:27-07:00",
+    "files": 30,
+    "code_files": 22,
+    "readme": "README.es.md",
+    "fetched_at_utc": "2026-10-15T09:25:54.672Z"
+  },
+  "popstas/telegram-download-chat": {
+    "sha": "2825deb86b9480dd73e2fefe6bde55626a2dba15",
+    "last_commit_date": "2026-10-08T22:59:02+02:00",
+    "files": 172,
+    "code_files": 119,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:38.665Z"
+  },
+  "pradeep-67k/SahayakNet-AI_Disaster_Coordination_System": {
+    "sha": "316dd368bfb2ab9f772e1f139b238a4145fd5d18",
+    "last_commit_date": "2026-04-13T22:35:56+05:30",
+    "files": 134,
+    "code_files": 46,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:58.578Z"
+  },
+  "preekashya-hub/Merge-Ai": {
+    "sha": "a06554a311bdfe07051972a1f8f0749302422300",
+    "last_commit_date": "2026-10-09T15:54:34+05:30",
+    "files": 59,
+    "code_files": 27,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:25:59.036Z"
+  },
+  "pryndor/Lixplore_cli": {
+    "sha": "94f45cd089e9439e3524c534e87925886210c82e",
+    "last_commit_date": "2026-09-27T13:32:58+05:30",
+    "files": 119,
+    "code_files": 46,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:02.100Z"
+  },
+  "qTox/qTox": {
+    "sha": "2b9cbdcac1f5f140e054513d03a53b68b2ba843a",
+    "last_commit_date": "2025-02-16T11:55:03+01:00",
+    "files": 3624,
+    "code_files": 559,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:43.908Z"
+  },
+  "queelius/ctk": {
+    "sha": "99784b7582a583fbae0725a5288797739dc347dd",
+    "last_commit_date": "2026-06-21T14:19:37-05:00",
+    "files": 229,
+    "code_files": 168,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:13.558Z"
+  },
+  "radj/AndroidSMSBackupRestoreCleaner": {
+    "sha": "e9bc67ea233a6755f93a65871f330a8f1a0b52f7",
+    "last_commit_date": "2016-11-27T12:00:25+08:00",
+    "files": 6,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:56.195Z"
+  },
+  "ragibson/SMS-MMS-deduplication": {
+    "sha": "899821a5031b526579f870fb8fb3b45f7b272bf0",
+    "last_commit_date": "2026-10-10T21:14:53-04:00",
+    "files": 29,
+    "code_files": 10,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:13.640Z"
+  },
+  "raroque/boop-agent": {
+    "sha": "31979130b1371acd9defbea115279a06c63c1fb4",
+    "last_commit_date": "2026-07-13T11:41:06-05:00",
+    "files": 768,
+    "code_files": 694,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:46.959Z"
+  },
+  "rayistern/whatsapp-transfer": {
+    "sha": "f3fb235782bf1755a61a353e8589def18ba828b5",
+    "last_commit_date": "2026-07-07T12:41:48-04:00",
+    "files": 36,
+    "code_files": 18,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:48.567Z"
+  },
+  "rbouaf/restore-messages-disconnected-beeper": {
+    "sha": "cd4ef6caed28f2e56d1299acfe88a489655f8c97",
+    "last_commit_date": "2026-03-31T16:45:36-04:00",
+    "files": 4,
+    "code_files": 3,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:16.649Z"
+  },
+  "remorses/kimaki": {
+    "sha": "240e338093cdc64bbe4be4d5f9990768c980b6a5",
+    "last_commit_date": "2026-10-12T17:48:29+02:00",
+    "files": 443,
+    "code_files": 267,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:49.620Z"
+  },
+  "repaera/chat": {
+    "sha": "356d7d0634c57e145bf6deb259c102937efefe3b",
+    "last_commit_date": "2026-03-31T19:17:16Z",
+    "files": 165,
+    "code_files": 126,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:49.346Z"
+  },
+  "residentsummer/watoi": {
+    "sha": "4ede6ffdc165c986b4a3d763d114f988519da2e7",
+    "last_commit_date": "2022-01-03T16:54:35+03:00",
+    "files": 6,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:54.758Z"
+  },
+  "rexo-n/instagram_backup_sorter": {
+    "sha": "03f8cca6a3d61cb5a89530192cd1b6d3e0a0bb8d",
+    "last_commit_date": "2026-08-23T08:19:07+05:30",
+    "files": 10,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:16.934Z"
+  },
+  "riozee/miki-whatsapp-bot": {
+    "sha": "3f500941c5d35a9c72ff5194487380c3bebab605",
+    "last_commit_date": "2023-07-31T08:36:46+09:00",
+    "files": 44,
+    "code_files": 29,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:57.195Z"
+  },
+  "rkuning/chatGPT-openAI-whatsapp": {
+    "sha": "03306f85fa30ed7f35567f085b27a4e8310f7d0a",
+    "last_commit_date": "2023-02-02T10:38:00+07:00",
+    "files": 9,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:15.472Z"
+  },
+  "rmyndharis/OpenWA-plugins": {
+    "sha": "1a1b4d4183688565383ffc3ae6a4df29b3963ac9",
+    "last_commit_date": "2026-10-01T07:58:00+07:00",
+    "files": 186,
+    "code_files": 139,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:59.300Z"
+  },
+  "rociiu/talorys": {
+    "sha": "d40976b0b2feed4775ee6edd134def2f85daba1f",
+    "last_commit_date": "2026-10-15T16:55:24+08:00",
+    "files": 261,
+    "code_files": 209,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:56.443Z"
+  },
+  "rohancodesss/oath": {
+    "sha": "015f9fa55ca96ab26081ccc98cfda7ca89526b78",
+    "last_commit_date": "2026-09-24T14:33:11+05:30",
+    "files": 30,
+    "code_files": 23,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:56.967Z"
+  },
+  "roverx12345/telegram-archiver": {
+    "sha": "4d4f45c603bdf6d8e21f2d148b44c69e1b6c6a11",
+    "last_commit_date": "2026-07-09T11:16:39+08:00",
+    "files": 38,
+    "code_files": 18,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:19.289Z"
+  },
+  "rshodoskar-star/openclaw-desktop": {
+    "sha": "4f3a98d5447119542343506ec87df9ff91942ed5",
+    "last_commit_date": "2026-04-06T18:13:15+03:00",
+    "files": 349,
+    "code_files": 177,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:01.301Z"
+  },
+  "rusq/slackdump": {
+    "sha": "a30edbcdcc580997244395dd84c79cb8ce6b97be",
+    "last_commit_date": "2026-10-12T19:27:11+10:00",
+    "files": 811,
+    "code_files": 665,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:59.272Z"
+  },
+  "rusty4444/hermes-android": {
+    "sha": "8f0edca2ea98a6e1a5ddde928e2c832fd72327cc",
+    "last_commit_date": "2026-10-12T23:27:07+11:00",
+    "files": 368,
+    "code_files": 222,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:31:59.975Z"
+  },
+  "ryukenshin546-a11y/antigravity-projects-fix": {
+    "sha": "f7ba16e56461c788cd8785acc4d8c84ad26ae8ca",
+    "last_commit_date": "2026-05-22T19:09:20+07:00",
+    "files": 16,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:24.107Z"
+  },
+  "sadruzzahan/Lexor": {
+    "sha": "f50613d4d7a4798bbed666d45363e7b624e4dcc3",
+    "last_commit_date": "2026-05-05T02:16:34+06:00",
+    "files": 1127,
+    "code_files": 962,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:23.870Z"
+  },
+  "sairam356/Smart-Trading-Analzyer": {
+    "sha": "de60e8d178fc7ecfeff1dd389c1f00a4f01ce0a1",
+    "last_commit_date": "2026-03-02T02:21:09-06:00",
+    "files": 193,
+    "code_files": 140,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:25.174Z"
+  },
+  "salozubz/WhatsApp-Db-Merger": {
+    "sha": "78bbd1dd733f5766ff47ff1746768c4a1c2aec21",
+    "last_commit_date": "2026-02-07T11:53:18+03:00",
+    "files": 7,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:26.738Z"
+  },
+  "samy/sms-super-backup-deduplication": {
+    "sha": "4fa1c22fc55e4993add7c33940fb4ee0d2cac933",
+    "last_commit_date": "2023-10-03T11:30:29+02:00",
+    "files": 7,
+    "code_files": 4,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:28.332Z"
+  },
+  "sandsturm/whatsapp-converter": {
+    "sha": "d3027206064b8e65e4bd132aede853c359e1cd74",
+    "last_commit_date": "2023-08-04T17:52:43+02:00",
+    "files": 16,
+    "code_files": 10,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:06.657Z"
+  },
+  "sarao-creates/iMessage-Lyric-Delivery": {
+    "sha": "5234a1ade48f702c66c56d821534ddab84e59d57",
+    "last_commit_date": "2021-05-09T20:00:15-04:00",
+    "files": 5,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:30.672Z"
+  },
+  "sarim2000/pennywiseai-tracker": {
+    "sha": "e587839bf93b09683b28efad332efc02ad151a41",
+    "last_commit_date": "2026-10-14T22:25:58+05:30",
+    "files": 1804,
+    "code_files": 1023,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:09.822Z"
+  },
+  "satyamurti/LetsChat": {
+    "sha": "62f0f0ae22b38d8c48c5c27800005039f2030987",
+    "last_commit_date": "2020-07-28T18:18:55+05:30",
+    "files": 361,
+    "code_files": 80,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:10.650Z"
+  },
+  "sch3m4/wforensic": {
+    "sha": "5db53cfce1f6fd48d3882683d19165720421c00a",
+    "last_commit_date": "2015-04-07T07:09:08+02:00",
+    "files": 107,
+    "code_files": 46,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:10.538Z"
+  },
+  "scheinker/MessageClean": {
+    "sha": "6756ed6253c3e69ff4353ffefeca2ef2b7b6e73a",
+    "last_commit_date": "2025-10-23T17:08:36-07:00",
+    "files": 6,
+    "code_files": 3,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:35.327Z"
+  },
+  "sebnembasak/wa-rescue": {
+    "sha": "c6dc551899b6cc6f1fe90e8258e6102097c244cf",
+    "last_commit_date": "2026-10-04T18:41:45+03:00",
+    "files": 45,
+    "code_files": 26,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:30.082Z"
+  },
+  "shashotoNur/commlog-viewer": {
+    "sha": "8541d60e7c6887ca917afce76263205b501a9e06",
+    "last_commit_date": "2025-08-29T20:54:18+06:00",
+    "files": 3,
+    "code_files": 1,
+    "readme": "readme.md",
+    "fetched_at_utc": "2026-10-15T09:26:38.888Z"
+  },
+  "shohan-001/ffmpeg-video-bot": {
+    "sha": "0e5447fd046c11932f8a59c619189e6ff135f3e6",
+    "last_commit_date": "2026-01-16T13:02:00+05:30",
+    "files": 38,
+    "code_files": 28,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:39.935Z"
+  },
+  "shuxin/ios-backup-merge": {
+    "sha": "b2a9fbebea245948ff03869cc192c165e973b5af",
+    "last_commit_date": "2017-04-18T12:00:19+08:00",
+    "files": 5,
+    "code_files": 4,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:41.087Z"
+  },
+  "shuxueslpi/chatGLM-6B-QLoRA": {
+    "sha": "6597d030b1ed25c40cfa2e4f29e89699bf87387b",
+    "last_commit_date": "2023-08-22T09:28:34+08:00",
+    "files": 26,
+    "code_files": 12,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:44.832Z"
+  },
+  "sigalor/whatsapp-web-reveng": {
+    "sha": "04caed2b23680d23a3f39cf2b017c064ff1e85ed",
+    "last_commit_date": "2024-04-22T21:38:56+10:00",
+    "files": 62,
+    "code_files": 27,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:11.296Z"
+  },
+  "sindresorhus/awesome-chatgpt": {
+    "sha": "fdf528f64b40c8f4f510f0eb22831a2696e87da7",
+    "last_commit_date": "2026-02-16T01:05:30+07:00",
+    "files": 11,
+    "code_files": 0,
+    "readme": "readme.md",
+    "fetched_at_utc": "2026-10-15T09:32:14.036Z"
+  },
+  "six-ddc/ccbot": {
+    "sha": "9d7ab9721f09d748db242c22d04aa494cbebc72d",
+    "last_commit_date": "2026-07-08T12:50:08+08:00",
+    "files": 69,
+    "code_files": 46,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:14.463Z"
+  },
+  "sk7001/whatsapp-merged": {
+    "sha": "4a7365c486064e0dc0921ae63586d830de08ef63",
+    "last_commit_date": "2025-03-07T10:35:31+05:30",
+    "files": 9,
+    "code_files": 7,
+    "readme": "readme.md",
+    "fetched_at_utc": "2026-10-15T09:26:42.206Z"
+  },
+  "sllvn/ios-sms-merge": {
+    "sha": "14ba5c1d56a899a64221c673bcc3b54e69f3ccc2",
+    "last_commit_date": "2016-03-25T12:19:40-07:00",
+    "files": 6,
+    "code_files": 2,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:48.466Z"
+  },
+  "smallmain/vscode-unify-chat-provider": {
+    "sha": "a98d77d76d552149a6a7273011cd3e58aeb52ec9",
+    "last_commit_date": "2026-10-09T11:37:33Z",
+    "files": 650,
+    "code_files": 576,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:50.752Z"
+  },
+  "snackoverflowasad/chat-buddy": {
+    "sha": "eb45474a535f6181d05e7beec017076ff48c51d0",
+    "last_commit_date": "2026-06-20T20:44:06+05:30",
+    "files": 91,
+    "code_files": 54,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:16.092Z"
+  },
+  "sockysec/Telerecon": {
+    "sha": "ffa9a7ca77818d21e622cb57641125e29d1aa6e4",
+    "last_commit_date": "2024-04-22T14:06:47+12:00",
+    "files": 26,
+    "code_files": 18,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:15.906Z"
+  },
+  "sohrabezzati/telegram-downloader": {
+    "sha": "3ec7e8615e0e71dd1828f3058fd0b6db3f31aa9b",
+    "last_commit_date": "2026-10-11T14:40:05+04:30",
+    "files": 15,
+    "code_files": 10,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:49.811Z"
+  },
+  "sokie/keepsake": {
+    "sha": "89cdfb6ff94939da3bd61b7ecf1a568bcb9194a0",
+    "last_commit_date": "2026-07-21T16:01:57+02:00",
+    "files": 45,
+    "code_files": 32,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:19.101Z"
+  },
+  "solovey1/unified-sms-activate": {
+    "sha": "ce689c047a82f1d41d485ffc6cbd85a8e098585d",
+    "last_commit_date": "2026-08-14T13:07:03+03:00",
+    "files": 27,
+    "code_files": 21,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:49.648Z"
+  },
+  "somratpro/HuggingClaw": {
+    "sha": "23d83256707af4433b9e3890f38c86727a1cfa32",
+    "last_commit_date": "2026-06-24T20:47:32+06:00",
+    "files": 24,
+    "code_files": 13,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:27.861Z"
+  },
+  "spinabot/brigade": {
+    "sha": "4c2a18fba9a7224fbddd07557ad3933866f60495",
+    "last_commit_date": "2026-09-15T20:14:13+05:30",
+    "files": 1585,
+    "code_files": 1432,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:32.567Z"
+  },
+  "srikrishnacj-archived/whatsappmerge": {
+    "sha": "f996c2dfe1dd19bc799deaa9ad63c286672e73f7",
+    "last_commit_date": "2021-11-10T21:53:14+05:30",
+    "files": 22,
+    "code_files": 14,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:54.684Z"
+  },
+  "srtucker22/chatty": {
+    "sha": "f610a33021abf18593713d07d67caa541f57cc03",
+    "last_commit_date": "2018-08-26T10:37:01-07:00",
+    "files": 175,
+    "code_files": 42,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:21.055Z"
+  },
+  "ssstonebraker/aolunderground-proggies": {
+    "sha": "b3429596119d380dc4455605203de7efd6fd62d9",
+    "last_commit_date": "2026-09-08T23:28:13-05:00",
+    "files": 25135,
+    "code_files": 1931,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:34.571Z"
+  },
+  "steipete/backup-telecrawl": {
+    "error": "fatal: repository 'https://github.com/steipete/backup-telecrawl.git/' not found"
+  },
+  "stenyak/breakbot": {
+    "sha": "a73706ecdf005ec886d7a86c1c1d23e93fa35d4f",
+    "last_commit_date": "2014-09-08T12:20:06+02:00",
+    "files": 17,
+    "code_files": 10,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:33.781Z"
+  },
+  "stephenschoettler/hermes-lcm": {
+    "sha": "8d1b1e6d3d63f5fc7b209e8d7ec1dc9b814f2e54",
+    "last_commit_date": "2026-09-03T19:38:56-07:00",
+    "files": 261,
+    "code_files": 188,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:38.585Z"
+  },
+  "steveseguin/social_stream": {
+    "sha": "141a8e16e3964738e5605bd9faee7461adeadd77",
+    "last_commit_date": "2026-10-14T21:52:30-04:00",
+    "files": 5202,
+    "code_files": 1098,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:57.161Z"
+  },
+  "stillwagon89/Simple-Script-for-Exporting-iMessage-History-into-Telegram": {
+    "sha": "f119a35767c78e0e81354d8eafd1b3dc574ece32",
+    "last_commit_date": "2026-02-13T15:17:32Z",
+    "files": 1,
+    "code_files": 0,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:59.611Z"
+  },
+  "stonesam92/ChitChat": {
+    "sha": "8aa2feb58e3467546ee5c861df53de604cb2ca96",
+    "last_commit_date": "2016-03-23T23:30:00Z",
+    "files": 199,
+    "code_files": 16,
+    "readme": "Readme.markdown",
+    "fetched_at_utc": "2026-10-15T09:32:34.270Z"
+  },
+  "suitangi/Crosstalk": {
+    "sha": "e677b2c1f01b3ea78f3be4701c8e276d86212bde",
+    "last_commit_date": "2026-07-14T23:48:52-07:00",
+    "files": 44,
+    "code_files": 23,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:58.988Z"
+  },
+  "suurjaak/Skyperious": {
+    "sha": "1ab051ea4b7241ab9f909ca34b77ec8c41bc4ff1",
+    "last_commit_date": "2025-05-10T15:31:49+03:00",
+    "files": 620,
+    "code_files": 31,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:42.580Z"
+  },
+  "t413/SMS-Tools": {
+    "sha": "c0f545e16475f756656fa2ff5828bcc043943384",
+    "last_commit_date": "2014-11-13T22:12:16-08:00",
+    "files": 27,
+    "code_files": 20,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:26:58.658Z"
+  },
+  "taishi-i/awesome-ChatGPT-repositories": {
+    "sha": "a2fc5d4dc921921be69863414a59561eccf824a4",
+    "last_commit_date": "2026-10-15T02:19:18+09:00",
+    "files": 61,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:42.162Z"
+  },
+  "tarikab7/whatsapp-chat-merger": {
+    "sha": "403c98e132e8d3fbdbe054adfd53bf3d182225a9",
+    "last_commit_date": "2026-06-23T00:02:06+02:00",
+    "files": 94,
+    "code_files": 74,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:03.137Z"
+  },
+  "taxze6/flutter-chat-craft": {
+    "sha": "2efc89530ac17e7a6087ebbc5aa418d8bdeb0948",
+    "last_commit_date": "2024-04-14T20:59:37+08:00",
+    "files": 336,
+    "code_files": 165,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:47.019Z"
+  },
+  "tbvdm/sigtop": {
+    "sha": "b1014a77e703a982c5b49c9d6ab39b59e13458dd",
+    "last_commit_date": "2026-09-14T17:44:19+02:00",
+    "files": 63,
+    "code_files": 53,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:58.078Z"
+  },
+  "teamgram/teamgram-server": {
+    "sha": "708fb9536f60e15d9bf4f1c302aa4251bfefab19",
+    "last_commit_date": "2026-08-04T11:43:29+08:00",
+    "files": 1935,
+    "code_files": 1678,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:52.156Z"
+  },
+  "teidesu/inugram": {
+    "sha": "e270ad9bc9539f34cb126809cd934281f3a98afc",
+    "last_commit_date": "2026-10-14T03:25:57+02:00",
+    "files": 1626,
+    "code_files": 608,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:32:49.795Z"
+  },
+  "theetherGit/wamerge": {
+    "sha": "f65fc4206a330a5d1e405d5e4136c36eea3bf402",
+    "last_commit_date": "2026-10-08T16:45:00+05:30",
+    "files": 20,
+    "code_files": 15,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:08.777Z"
+  },
+  "theopenconversationkit/tock": {
+    "sha": "f1533a5eb7d1292f5bed735ceb87cf248b7b8315",
+    "last_commit_date": "2026-10-11T22:00:37+02:00",
+    "files": 3982,
+    "code_files": 3098,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:05.199Z"
+  },
+  "thiwaK/decrypted_whatsapp_database_merger": {
+    "sha": "3543e001eb2825e7cc2e90f76d74703cf52a0db8",
+    "last_commit_date": "2022-05-01T13:00:29+05:30",
+    "files": 2,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:09.472Z"
+  },
+  "thomasjjj/Telegram-Snowball-Sampling": {
+    "sha": "1787fe57bab718a462686d05c4a4cf38e29e7122",
+    "last_commit_date": "2026-04-22T14:31:34+01:00",
+    "files": 49,
+    "code_files": 33,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:02.306Z"
+  },
+  "tmo1/sms-db": {
+    "sha": "072105c86fd76baedf9bc32a5d877077636ae451",
+    "last_commit_date": "2021-12-07T11:31:01-05:00",
+    "files": 4,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:10.192Z"
+  },
+  "tmo1/sms-ie": {
+    "sha": "3f1a7658523cb8037cd3de57719be68b1a8237e5",
+    "last_commit_date": "2026-10-10T20:25:45-04:00",
+    "files": 229,
+    "code_files": 32,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:10.338Z"
+  },
+  "turnerlabs/sigsci_site_manager": {
+    "sha": "9707408328e61536ea78ea5cd09695a3c4416496",
+    "last_commit_date": "2022-03-03T10:55:01-08:00",
+    "files": 26,
+    "code_files": 18,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:12.694Z"
+  },
+  "tusharnankani/whatsapp-chat-data-analysis": {
+    "sha": "e45b9a47d24977440e1f0ffaec0dbaa2a8b43110",
+    "last_commit_date": "2020-10-03T20:45:47+05:30",
+    "files": 57,
+    "code_files": 1,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:17.501Z"
+  },
+  "umamanipraharshitha/Whatsapp_ai_extended-version": {
+    "sha": "20c7f9fe71df74c1b3d97cbb66068ad25a41f2ad",
+    "last_commit_date": "2026-06-30T16:17:20+05:30",
+    "files": 60,
+    "code_files": 28,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:16.339Z"
+  },
+  "uryyakir/extract-wa-media": {
+    "sha": "a795bb518ce922064f2d2895be128c0fa4f93e4c",
+    "last_commit_date": "2021-12-30T21:54:59+02:00",
+    "files": 12,
+    "code_files": 7,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:18.712Z"
+  },
+  "uxderrick/pennywatch-oss": {
+    "sha": "951809490395808bd24bd0934745a5177697f930",
+    "last_commit_date": "2026-04-10T13:30:35Z",
+    "files": 31,
+    "code_files": 22,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:22.235Z"
+  },
+  "vassovass/ConvoCraft-AI": {
+    "sha": "6cd908293b45af22662c52c2534d437f6d5f6196",
+    "last_commit_date": "2026-07-15T16:35:32+07:00",
+    "files": 53,
+    "code_files": 34,
+    "readme": "Readme.md",
+    "fetched_at_utc": "2026-10-15T09:27:19.949Z"
+  },
+  "verygoodplugins/whatsapp-mcp": {
+    "sha": "895404542017f34a900f9f572a5497c275a96440",
+    "last_commit_date": "2026-09-23T04:03:22+02:00",
+    "files": 73,
+    "code_files": 40,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:24.277Z"
+  },
+  "viktor-niderman/telegram_notify": {
+    "sha": "5dae2c9406bf7aa07cde8cf3f8552b64aab2c3c8",
+    "last_commit_date": "2026-10-04T01:32:03+04:00",
+    "files": 15,
+    "code_files": 7,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:27.525Z"
+  },
+  "vinay-18-king/Disaster-Whisper-Network-Public-Safety-": {
+    "sha": "6e50f1b1f09acac213e554e6712115f3ca69573c",
+    "last_commit_date": "2026-10-14T13:40:49+05:30",
+    "files": 37,
+    "code_files": 26,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:35.949Z"
+  },
+  "weiwill88/Local_Pdf_Chat_RAG": {
+    "sha": "38b39f641a5228673fc46a64c802307e2e6d5209",
+    "last_commit_date": "2026-08-31T18:05:50+08:00",
+    "files": 70,
+    "code_files": 24,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:24.950Z"
+  },
+  "xeals/signal-back": {
+    "sha": "7b9bc2112afa24316da1e2c515e067f69f91d5c4",
+    "last_commit_date": "2018-12-17T16:02:52+11:00",
+    "files": 23,
+    "code_files": 12,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T11:10:57.212Z"
+  },
+  "xiaowu0162/LongMemEval": {
+    "sha": "9e0b455f4ef0e2ab8f2e582289761153549043fc",
+    "last_commit_date": "2026-05-11T15:49:24-07:00",
+    "files": 25,
+    "code_files": 19,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:28.574Z"
+  },
+  "xxirfanx/zoromd": {
+    "sha": "ef4e86aff4d9a719095ff4d07a893600d110893b",
+    "last_commit_date": "2026-06-23T20:38:03+08:00",
+    "files": 226,
+    "code_files": 142,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:32.794Z"
+  },
+  "yash-ishraj/Incident-Management-System": {
+    "sha": "e53289c05849335a46989b94b1765d17e0ce45e5",
+    "last_commit_date": "2026-05-03T15:29:41+05:30",
+    "files": 41,
+    "code_files": 27,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:36.900Z"
+  },
+  "yashoswalyo/MERGE-BOT": {
+    "sha": "ce887d83dcf52faf8039281c2e3842eb645768c2",
+    "last_commit_date": "2024-04-29T22:07:54+05:30",
+    "files": 28,
+    "code_files": 19,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:37.299Z"
+  },
+  "yeeuh/iOS6-sms_db-java": {
+    "sha": "e265ef273a399a4443f47170a07d7a988e604c19",
+    "last_commit_date": "2013-09-26T10:17:39+02:00",
+    "files": 54,
+    "code_files": 24,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:37.315Z"
+  },
+  "yodifadhilabdhusshabur/chatapp-client": {
+    "sha": "55c25dc7c64761a110973b9ba8555f2633c1473e",
+    "last_commit_date": "2021-03-07T00:25:01+07:00",
+    "files": 18105,
+    "code_files": 14198,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:37.207Z"
+  },
+  "yodifadhilabdhusshabur/chatapp-serverbase": {
+    "sha": "9ae0da44060cba9f220049bdfb2289dc24854d8c",
+    "last_commit_date": "2021-03-07T00:16:25+07:00",
+    "files": 32,
+    "code_files": 26,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:42.502Z"
+  },
+  "youmssi/jiku_app": {
+    "sha": "148b537e2e17de0fbf1d00d50baa572b1c21e99c",
+    "last_commit_date": "2026-10-03T13:17:12Z",
+    "files": 874,
+    "code_files": 803,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:47.038Z"
+  },
+  "yym68686/ChatGPT-Telegram-Bot": {
+    "sha": "cf2430d98b04fbab5d5bc1029357ec1867d25fbb",
+    "last_commit_date": "2026-04-06T21:57:02+08:00",
+    "files": 34,
+    "code_files": 13,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:35.004Z"
+  },
+  "zenjahid/bKash-Sync": {
+    "sha": "0bfd9fc5e09c4e061a0ba5abe66b980ca59e45a9",
+    "last_commit_date": "2026-05-28T07:34:55+06:00",
+    "files": 65,
+    "code_files": 28,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:37.823Z"
+  },
+  "znanx/moon-bot": {
+    "sha": "c89923e435fa77254081275d4b8493c10c8e07c9",
+    "last_commit_date": "2026-10-13T18:01:05+07:00",
+    "files": 256,
+    "code_files": 236,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:33:39.141Z"
+  },
+  "zulip/zulip-archive": {
+    "sha": "7546f0c850ea07bed6e18be18fb4a8ca6ac603df",
+    "last_commit_date": "2025-12-30T10:52:28-08:00",
+    "files": 31,
+    "code_files": 15,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:47.325Z"
+  },
+  "zyjwjck/nanobot-chat-ui": {
+    "sha": "ce86bff91c761d8e5fa8451e69a16a910b5cc0cf",
+    "last_commit_date": "2026-02-15T07:29:16+08:00",
+    "files": 138,
+    "code_files": 69,
+    "readme": "README.md",
+    "fetched_at_utc": "2026-10-15T09:27:47.868Z"
+  }
+}

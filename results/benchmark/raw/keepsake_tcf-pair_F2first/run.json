@@ -1,0 +1,23 @@
+{
+  "tool": "sokie/keepsake",
+  "variant": "server/lib importExport.ts + normalize.ts (route POST /api/import/export-zip)",
+  "sha": "89cdfb6ff94939da3bd61b7ecf1a568bcb9194a0",
+  "input": "data/synthetic_fixtures/tcf-pair",
+  "order": "F2 imported first",
+  "status": "ran",
+  "env": {
+    "os": "Windows_NT 10.0.26100 x64",
+    "node": "v24.14.0",
+    "bun": "1.3.14",
+    "TZ": "UTC",
+    "whatsapp-chat-parser": "4.0.2",
+    "install": "npm ci --ignore-scripts (tool package-lock.json)"
+  },
+  "command": "TZ=UTC bun scripts/survey/bench/run-keepsake.ts <checkout> data/synthetic_fixtures/tcf-pair results/benchmark/raw/keepsake_tcf-pair_F2first F2",
+  "wrapper_stdout": "tcf-F2-secondary.txt: parsed 134, added 134, merged 0; tcf-F1-primary.txt: parsed 58, added 38, merged 20; chat 172",
+  "diagnostics_emitted": "per import: parsed entries, added and merged counts (the route returns them and stores them in the chat metadata \"sources\" list)",
+  "conflicts_reported": "n",
+  "provenance_reported": "partial: each message carries source type (\"export\"/\"wts\"/\"msgstore\"), not the file; chat metadata lists each import with added/merged counts",
+  "unparseable_input": "delegated to whatsapp-chat-parser: a line that does not start a message is appended to the previous message; an import with zero parsed messages is rejected with HTTP 400",
+  "note": "\"me\" = \"You\" (the import dialog asks which participant is the user). Second import merged into the first chat (route targetChatId path)."
+}

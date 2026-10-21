@@ -33,6 +33,7 @@
       "role": "secondary",
       "quirks": [
         "date-format-mmddyy",
+        "emoji",
         "encryption-notice-group",
         "rich-text-markup",
         "senderless-system-line",

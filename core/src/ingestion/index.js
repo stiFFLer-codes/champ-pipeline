@@ -4,7 +4,9 @@
 //
 // Maps one fragment to a sequence of structured records, each carrying the raw
 // text slice, the raw timestamp string, the raw sender token, a category, and a
-// provenance tuple <source_id, line_range, sha256>. Paper Section 3.2.
+// provenance tuple <source_id, line_range, sha256, record_sha256>. Paper
+// Section 3.2. sha256 binds the record to a file state; record_sha256 binds it
+// to its own bytes (see the provenance helper in ingestFragment).
 //
 // Three rules this stage obeys, and the reasons they are not negotiable:
 //
@@ -48,8 +50,19 @@ const SENDER_SPLIT = ': ';
 
 const ATTACHMENT = /^(.*\S)\s\(file attached\)$/;
 
-function sha256File(buf) {
+function sha256Hex(buf) {
   return crypto.createHash('sha256').update(buf).digest('hex');
+}
+
+// Byte offset at which each line starts, aligned with splitLines(): a leading
+// UTF-8 BOM is skipped, and only LF ends a line (a CR before it stays part of
+// the line's bytes). starts[k + 1], when it exists, is where line k's
+// terminator ends.
+function lineByteStarts(buf) {
+  let i = buf[0] === 0xef && buf[1] === 0xbb && buf[2] === 0xbf ? 3 : 0;
+  const starts = [i];
+  for (; i < buf.length; i++) if (buf[i] === 0x0a) starts.push(i + 1);
+  return starts;
 }
 
 function splitLines(text) {
@@ -101,15 +114,28 @@ function detectAttachment(rawBody, continuationLines) {
 /**
  * Ingest one fragment file.
  * @param {string} filePath path to a chat export
- * @param {{sourceId?: string}} [opts] override the source identifier
- * @returns {{sourceId: string, sha256: string, lineCount: number, records: object[]}}
+ * @param {{sourceId?: string}} [opts] override the source identifier (two
+ *        exports named "WhatsApp Chat with X.txt" need distinct ones)
+ * @returns {{sourceId: string, idSource: string, sha256: string, lineCount: number, records: object[]}}
  */
 function ingestFragment(filePath, opts) {
   const options = opts || {};
   const buf = fs.readFileSync(filePath); // read-only: nothing is written back
-  const digest = sha256File(buf);
+  const digest = sha256Hex(buf);
   const sourceId = options.sourceId || path.basename(filePath);
   const lines = splitLines(buf.toString('utf8'));
+  const byteStarts = lineByteStarts(buf);
+
+  // record_sha256 hashes the record's raw bytes in the file: from the first
+  // byte of its first line through the terminator (LF or CRLF) of its last
+  // line, or to end of file if that line has none. Raw bytes, not decoded
+  // text, so invalid UTF-8 and CRLF are bound exactly as found.
+  const provenance = (s, e) => ({
+    source_id: sourceId,
+    line_range: [s + 1, e + 1], // 1-indexed, inclusive
+    sha256: digest,
+    record_sha256: sha256Hex(buf.subarray(byteStarts[s], byteStarts[e + 1] ?? buf.length)),
+  });
 
   // Pass 1: find where each record starts. A line matching RECORD_HEAD opens a
   // record; anything else continues the record above it.
@@ -124,7 +150,7 @@ function ingestFragment(filePath, opts) {
   // belonging to no record. That is malformed input, not something to discard.
   if (lines.length > 0 && (starts.length === 0 || starts[0] > 0)) {
     const end = starts.length === 0 ? lines.length : starts[0];
-    records.push(makeUnparsed(lines.slice(0, end), 0, end - 1, sourceId, digest, 0));
+    records.push(makeUnparsed(lines.slice(0, end), provenance(0, end - 1), 0));
   }
 
   for (let s = 0; s < starts.length; s++) {
@@ -148,20 +174,19 @@ function ingestFragment(filePath, opts) {
       attachment,
       multiline: continuation.length > 0,
       rawText: lines.slice(startLine, endLine + 1).join('\n'),
-      provenance: {
-        source_id: sourceId,
-        line_range: [startLine + 1, endLine + 1], // 1-indexed, inclusive
-        sha256: digest,
-      },
+      provenance: provenance(startLine, endLine),
     });
   }
 
   assertNonLossy(records, lines.length, sourceId);
 
-  return { sourceId, sha256: digest, lineCount: lines.length, records };
+  // idSource says whether source_id is the file name or a declared id, so a
+  // reader of Omega knows which of the two a provenance entry names.
+  const idSource = options.sourceId ? 'declared' : 'file-name';
+  return { sourceId, idSource, sha256: digest, lineCount: lines.length, records };
 }
 
-function makeUnparsed(sliceLines, startLine, endLine, sourceId, digest, index) {
+function makeUnparsed(sliceLines, provenance, index) {
   return {
     index,
     category: 'unparsed',
@@ -172,11 +197,7 @@ function makeUnparsed(sliceLines, startLine, endLine, sourceId, digest, index) {
     attachment: null,
     multiline: sliceLines.length > 1,
     rawText: sliceLines.join('\n'),
-    provenance: {
-      source_id: sourceId,
-      line_range: [startLine + 1, endLine + 1],
-      sha256: digest,
-    },
+    provenance,
   };
 }
 

@@ -1,0 +1,344 @@
+{
+  "experiment": "E7 representative report",
+  "config": {
+    "seed": 51,
+    "size": 10,
+    "start": "2024-01-16T01:00:00.000Z",
+    "preDays": 3,
+    "windowDays": 10,
+    "postDays": 3,
+    "deltaDays": 1,
+    "epsilonDays": 1,
+    "attachmentRate": 0,
+    "knobs": {"a":[{"k":2,"where":"boundary"}],"b":{"where":"inside"},"d":{"form":"double-filename"}}
+  },
+  "mode": "strict (no --infer), one-to-one, dt_granularity 0, dt_conflict 60000 ms",
+  "command": "node scripts/generate-synthetic-fixtures.js --scenario <config as JSON> --out <dir> && node scripts/reconstruct.js --json <dir>/scenario-F1-primary.txt <dir>/scenario-F2-secondary.txt",
+  "ground_truth_messages": 15,
+  "omega": {
+    "spec": "CARTA 1.1",
+    "implementation": {
+      "name": "champ-pipeline-core",
+      "version": "0.2.0",
+      "runtime": {"node":"v24.14.0","icu":"78.2","tz":"2025c"}
+    },
+    "fragments": [
+      {
+        "id": "scenario-F1-primary.txt",
+        "idSource": "file-name",
+        "sha256": "06adb88bfc807ea6ef4d5b8e1e955ad6ca4b00cf6b0d28aa0837dfb6bab98bf4",
+        "zone": {"name":"+00:00","kind":"fixed-offset","source":"default"},
+        "normalized": 8,
+        "quarantined": 1,
+        "canonicalisationsApplied": {"attachment-marker":1,"double-filename":0,"trailing-period":0},
+        "inference": null
+      },
+      {
+        "id": "scenario-F2-secondary.txt",
+        "idSource": "file-name",
+        "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+        "zone": {"name":"+00:00","kind":"fixed-offset","source":"default"},
+        "normalized": 13,
+        "quarantined": 0,
+        "canonicalisationsApplied": {"attachment-marker":1,"double-filename":1,"trailing-period":0},
+        "inference": null
+      }
+    ],
+    "normalization": {
+      "yearWindowPivot": 70,
+      "yearWindow": "two-digit years below 70 are 20xx, the rest 19xx",
+      "typeTaxonomy": ["message.text","message.attachment","message.empty","system"],
+      "reasonCodes": [
+        {
+          "code": "UNSUPPORTED_FORMAT",
+          "meaning": "text that does not open with a record head and belongs to no record"
+        },
+        {"code":"INVALID_ENCODING","meaning":"the record contains bytes that are not valid UTF-8"},
+        {
+          "code": "MALFORMED_TIMESTAMP",
+          "meaning": "the timestamp names no instant: unparseable, an impossible date or clock value, or a local time skipped by a DST transition in the declared zone"
+        },
+        {
+          "code": "AMBIGUOUS_DATE_FORMAT",
+          "meaning": "the date reads validly as both day-month-year and month-day-year"
+        },
+        {
+          "code": "AMBIGUOUS_LOCAL_TIME",
+          "meaning": "the local time occurs twice in the declared zone (a DST fall-back), so it names two instants"
+        },
+        {"code":"UNRESOLVED_SENDER","meaning":"a message line with an empty sender"}
+      ],
+      "reasonPrecedence": "a record failing several checks carries the first failing code in reasonCodes order; the others are kept in alsoFailed",
+      "canonicalisations": {
+        "attachment-marker": "the \"<file> (file attached)\" line becomes attachment {ref, form, stem}; body is the caption (the remaining lines)",
+        "double-filename": "trailing continuation lines repeating the attachment filename are dropped from the caption",
+        "trailing-period": "stem = filename minus its final extension or bare trailing period; Synthesis compares stems when a trailing-period rendering is involved"
+      },
+      "zones": "each fragment's clock is read in its declared zone (fixed offset, or IANA name resolved per instant via Intl); undeclared means +00:00, reported as source \"default\""
+    },
+    "params": {
+      "dtGranularityMs": 0,
+      "dtConflictMs": 60000,
+      "clustering": "one-to-one",
+      "similarity": "two observations are the same message when |t_utc difference| <= dtGranularityMs, senders are equal, canonical bodies are equal, and attachments are congruent",
+      "fieldPrecedence": "single representative: the first member under orderTieBreak",
+      "orderTieBreak": "t_utc, then fragment sha256, then sourceSeq (then source_id, reachable only between byte-identical fragments)",
+      "zoneAdvisory": {
+        "stepMinutes": 15,
+        "maxOffsetHours": 26,
+        "minSupport": 3,
+        "minDistinctKeys": 3,
+        "maxExamples": 3,
+        "rule": "for each pair of fragments (in sha256 order), with key = (sender, canonical body, attachment stem), support S(d) = sum over keys k and instants t of min(count_first(k, t), count_second(k, t + d)), the size of the multiset intersection of the two fragments' (key, instant) observations at shift d, where d = t_utc(second) - t_utc(first) and |d| <= maxOffsetHours; candidate offsets are the nonzero d that are multiples of stepMinutes, control offsets the nonzero d that are not; report every candidate d with S(d) >= minSupport, S(d) > S(0), S(d) > the largest control support, and support from at least minDistinctKeys distinct keys, ordered by support (ties: smaller |d|, then negative first). Report-only: U is not changed"
+      },
+      "clusteringProcedure": "runs of mutually similar observations (complete linkage) split so that a cluster holds at most one observation per fragment: the k-th observation of the run in each fragment, in source order, joins the k-th cluster; differing per-fragment counts are reported as dedup_ambiguity",
+      "attachmentCongruence": "both absent; or same filename; or same stem when either is a trailing-period rendering"
+    },
+    "provenance_tuple": "source_id: the fragment's file name, or the id declared for it (fragments[].idSource says which); line_range: first and last line, 1-indexed, inclusive; sha256: SHA-256 of the whole fragment file; record_sha256: SHA-256 of the record's raw bytes, from the first byte of its first line through the line terminator (LF or CRLF) of its last line, excluding a leading BOM",
+    "provenance_map": {
+      "u000001": [
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [1,1],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "98ddd53e89c88a40afb29aad0103bc78a29ccbff01b41dc3590966823c2dbb5f"
+        }
+      ],
+      "u000002": [
+        {
+          "source_id": "scenario-F1-primary.txt",
+          "line_range": [1,1],
+          "sha256": "06adb88bfc807ea6ef4d5b8e1e955ad6ca4b00cf6b0d28aa0837dfb6bab98bf4",
+          "record_sha256": "2f42e57c17188cd240b14118fd69a7f8b51a8862741f3eaf1d44a5eeeeef3b12"
+        }
+      ],
+      "u000003": [
+        {
+          "source_id": "scenario-F1-primary.txt",
+          "line_range": [2,2],
+          "sha256": "06adb88bfc807ea6ef4d5b8e1e955ad6ca4b00cf6b0d28aa0837dfb6bab98bf4",
+          "record_sha256": "712778b126165a63589800f661d3354a2bcb774cbab0febfcf219a69a8e011b4"
+        },
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [2,2],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "8ac779ccad966969a25945c0aaedcdaae1f1ff75b0b43d3dfb903f0097400283"
+        }
+      ],
+      "u000004": [
+        {
+          "source_id": "scenario-F1-primary.txt",
+          "line_range": [3,3],
+          "sha256": "06adb88bfc807ea6ef4d5b8e1e955ad6ca4b00cf6b0d28aa0837dfb6bab98bf4",
+          "record_sha256": "45f8e7eaf44219e83dc6552596975a61a5c516c402bdc2d74fb43391d98af89a"
+        },
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [3,3],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "497430e0c2d8492273df740a5e5ded6de313d95c726b633ca7d33b49fefd27c3"
+        }
+      ],
+      "u000005": [
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [4,4],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "d4e72a6afad90985b4ff734b60c1de93e6f44f3a91239862b8905d31b8fdd9f7"
+        }
+      ],
+      "u000006": [
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [5,5],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "d5f75a8e1f08f911c41e76ee8225e87b5d67a9e2b5d7a885078105f6892e8801"
+        }
+      ],
+      "u000007": [
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [6,6],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "350a0536f033e7bd33a084aeecb1876ade3b47df39a7670b6e64ecb8c9cf8faa"
+        }
+      ],
+      "u000008": [
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [7,7],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "21cc4385320a0baded3575e2d063c51c7428bc1ce452f13d8e636a1b683fbb91"
+        }
+      ],
+      "u000009": [
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [8,8],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "201be7152e55c5fecd9d698bfae90600322236f5b499ff51d26b8da28d09889a"
+        }
+      ],
+      "u000010": [
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [9,9],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "c83df9f0425b8a467cfa9e3aecbd2c73b57d49209a2fad0886dcd7d3e7cba664"
+        }
+      ],
+      "u000011": [
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [10,10],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "d2408221e76a674f59fa588c574265067faf73ebe6f9f2522808127abf14cb76"
+        }
+      ],
+      "u000012": [
+        {
+          "source_id": "scenario-F1-primary.txt",
+          "line_range": [4,4],
+          "sha256": "06adb88bfc807ea6ef4d5b8e1e955ad6ca4b00cf6b0d28aa0837dfb6bab98bf4",
+          "record_sha256": "6ebd14dcb2c0e4626678ecef11f89199ffd20b2bc2c3fb0e349ea837fb749e8a"
+        },
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [11,11],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "44156a1ce92b53b9e4159e099fa13cf065699f77288421d0b35988cd973299f3"
+        }
+      ],
+      "u000013": [
+        {
+          "source_id": "scenario-F1-primary.txt",
+          "line_range": [5,5],
+          "sha256": "06adb88bfc807ea6ef4d5b8e1e955ad6ca4b00cf6b0d28aa0837dfb6bab98bf4",
+          "record_sha256": "7f59a770cb26ae0988d57ab513123fc81ad9b20a0cff13d3aff47238f601b0ce"
+        },
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [12,13],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "47133028afd3d8179f662ba7c72027ac10f2b2779b26e9b402eec118da95306a"
+        }
+      ],
+      "u000014": [
+        {
+          "source_id": "scenario-F1-primary.txt",
+          "line_range": [6,6],
+          "sha256": "06adb88bfc807ea6ef4d5b8e1e955ad6ca4b00cf6b0d28aa0837dfb6bab98bf4",
+          "record_sha256": "7c814b58ced60023374b46a5f48d5ffc2f17b7e72ec60b4d156bdd3768487723"
+        },
+        {
+          "source_id": "scenario-F2-secondary.txt",
+          "line_range": [14,14],
+          "sha256": "f32277e17266b3c0dba4c73d7ececa675977226e5d0e6699230ef1b22c8c123f",
+          "record_sha256": "3bd7095722c7b99fcd62c8895cc4733ce729622c7de39817635d122331396c9c"
+        }
+      ],
+      "u000015": [
+        {
+          "source_id": "scenario-F1-primary.txt",
+          "line_range": [7,7],
+          "sha256": "06adb88bfc807ea6ef4d5b8e1e955ad6ca4b00cf6b0d28aa0837dfb6bab98bf4",
+          "record_sha256": "7c814b58ced60023374b46a5f48d5ffc2f17b7e72ec60b4d156bdd3768487723"
+        }
+      ],
+      "u000016": [
+        {
+          "source_id": "scenario-F1-primary.txt",
+          "line_range": [8,8],
+          "sha256": "06adb88bfc807ea6ef4d5b8e1e955ad6ca4b00cf6b0d28aa0837dfb6bab98bf4",
+          "record_sha256": "2f65ab14ae631832451bf49a036a926936db4509057b344a5371af0a445d393b"
+        }
+      ]
+    },
+    "quarantine": [
+      {
+        "reason": "AMBIGUOUS_DATE_FORMAT",
+        "alsoFailed": [],
+        "sourceSeq": 8,
+        "record": {
+          "index": 8,
+          "category": "message",
+          "rawTimestamp": "01/02/24, 12:32 am",
+          "rawSender": "You",
+          "rawBody": "Same time next week? 🎉",
+          "rawSystemText": null,
+          "attachment": null,
+          "multiline": false,
+          "rawText": "01/02/24, 12:32 am - You: Same time next week? 🎉",
+          "provenance": {
+            "source_id": "scenario-F1-primary.txt",
+            "line_range": [9,9],
+            "sha256": "06adb88bfc807ea6ef4d5b8e1e955ad6ca4b00cf6b0d28aa0837dfb6bab98bf4",
+            "record_sha256": "b0f6ec54c39aea6f6d0e31caac7784a00de31ed049de7a971c390ea3a305e032"
+          }
+        },
+        "provenance": {
+          "source_id": "scenario-F1-primary.txt",
+          "line_range": [9,9],
+          "sha256": "06adb88bfc807ea6ef4d5b8e1e955ad6ca4b00cf6b0d28aa0837dfb6bab98bf4",
+          "record_sha256": "b0f6ec54c39aea6f6d0e31caac7784a00de31ed049de7a971c390ea3a305e032"
+        }
+      }
+    ],
+    "conflicts": [
+      {
+        "kind": "within-cluster",
+        "disagreements": [{"field":"attachment.form","values":["double-filename","standard"]}],
+        "observations": [
+          {
+            "source_id": "scenario-F1-primary.txt",
+            "line_range": [5,5],
+            "tUtc": 1706572860000,
+            "type": "message.attachment"
+          },
+          {
+            "source_id": "scenario-F2-secondary.txt",
+            "line_range": [12,13],
+            "tUtc": 1706572860000,
+            "type": "message.attachment"
+          }
+        ]
+      },
+      {
+        "kind": "cross-cluster",
+        "reason": "sender-disagreement",
+        "records": ["u000003","u000004"],
+        "bucket": 1705574220000
+      }
+    ],
+    "dedup_ambiguities": [
+      {
+        "kind": "dedup_ambiguity",
+        "tUtc": 1706576400000,
+        "sender": "You",
+        "countsByFragment": {"scenario-F1-primary.txt":2,"scenario-F2-secondary.txt":1},
+        "resolvedAs": "k-th with k-th in source order",
+        "records": ["u000014","u000015"],
+        "observations": [
+          {"source_id":"scenario-F1-primary.txt","line_range":[6,6]},
+          {"source_id":"scenario-F1-primary.txt","line_range":[7,7]},
+          {"source_id":"scenario-F2-secondary.txt","line_range":[14,14]}
+        ]
+      }
+    ],
+    "advisories": [],
+    "stats": {
+      "fragments": 2,
+      "normalizedRecordsIn": 21,
+      "unifiedRecords": 16,
+      "duplicatesCollapsed": 5,
+      "quarantined": 1,
+      "quarantineByReason": {"AMBIGUOUS_DATE_FORMAT":1},
+      "conflicts": 2,
+      "conflictsByKind": {"within-cluster":1,"cross-cluster":1},
+      "dedupAmbiguities": 1,
+      "advisories": 0,
+      "datingOfUnifiedRecords": {"direct":16,"inferred":0,"mixed":0}
+    }
+  }
+}

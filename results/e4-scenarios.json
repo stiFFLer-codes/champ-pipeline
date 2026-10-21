@@ -1,0 +1,665 @@
+{
+  "experiment": "E4 scenario table",
+  "base": {
+    "size": 120,
+    "deltaDays": 7,
+    "epsilonDays": 7
+  },
+  "mode": "--infer, dt_granularity 0, dt_conflict 60000 ms",
+  "rows": [
+    {
+      "row": "a",
+      "clustering": "one-to-one",
+      "input": "a: k=3 identical inside the overlap, k=2 identical outside it",
+      "config": {
+        "size": 120,
+        "deltaDays": 7,
+        "epsilonDays": 7,
+        "seed": 11,
+        "knobs": {
+          "a": [
+            {
+              "k": 3,
+              "where": "inside"
+            },
+            {
+              "k": 2,
+              "where": "outside"
+            }
+          ]
+        }
+      },
+      "knob_instances": [
+        {
+          "knob": "a",
+          "placed": true,
+          "items": [
+            "m0000121",
+            "m0000122",
+            "m0000123"
+          ],
+          "expect": {
+            "unifiedDelta": 0,
+            "unifiedDeltaComplete": -2,
+            "entries": {},
+            "holderCounts": {
+              "0": 3,
+              "1": 3
+            },
+            "pairingMatchesGroundTruth": true
+          }
+        },
+        {
+          "knob": "a",
+          "placed": true,
+          "items": [
+            "m0000124",
+            "m0000125"
+          ],
+          "expect": {
+            "unifiedDelta": 0,
+            "unifiedDeltaComplete": -1,
+            "entries": {},
+            "holderCounts": {
+              "0": 2
+            },
+            "pairingMatchesGroundTruth": true
+          }
+        }
+      ],
+      "baseline": {
+        "ground_truth_messages": 120,
+        "unified": 122,
+        "entries": {},
+        "dating_mixed": 0
+      },
+      "ground_truth_messages": 125,
+      "system_lines": 2,
+      "expected_unified": 127,
+      "expected_entries": {},
+      "expected_dating_mixed": 0,
+      "actual_unified": 127,
+      "actual_entries": {},
+      "actual_dating_mixed": 0,
+      "oracle_diff": [],
+      "pass": true
+    },
+    {
+      "row": "a",
+      "clustering": "complete",
+      "input": "a: the same scenario under complete linkage (CARTA 1.0)",
+      "config": {
+        "size": 120,
+        "deltaDays": 7,
+        "epsilonDays": 7,
+        "seed": 11,
+        "knobs": {
+          "a": [
+            {
+              "k": 3,
+              "where": "inside"
+            },
+            {
+              "k": 2,
+              "where": "outside"
+            }
+          ]
+        }
+      },
+      "knob_instances": [
+        {
+          "knob": "a",
+          "placed": true,
+          "items": [
+            "m0000121",
+            "m0000122",
+            "m0000123"
+          ],
+          "expect": {
+            "unifiedDelta": 0,
+            "unifiedDeltaComplete": -2,
+            "entries": {},
+            "holderCounts": {
+              "0": 3,
+              "1": 3
+            },
+            "pairingMatchesGroundTruth": true
+          }
+        },
+        {
+          "knob": "a",
+          "placed": true,
+          "items": [
+            "m0000124",
+            "m0000125"
+          ],
+          "expect": {
+            "unifiedDelta": 0,
+            "unifiedDeltaComplete": -1,
+            "entries": {},
+            "holderCounts": {
+              "0": 2
+            },
+            "pairingMatchesGroundTruth": true
+          }
+        }
+      ],
+      "baseline": {
+        "ground_truth_messages": 120,
+        "unified": 122,
+        "entries": {},
+        "dating_mixed": 0
+      },
+      "ground_truth_messages": 125,
+      "system_lines": 2,
+      "expected_unified": 124,
+      "expected_entries": {},
+      "expected_dating_mixed": 0,
+      "actual_unified": 124,
+      "actual_entries": {},
+      "actual_dating_mixed": 0,
+      "oracle_diff": [],
+      "pass": true
+    },
+    {
+      "row": "a-boundary",
+      "clustering": "one-to-one",
+      "input": "a: k=3 identical in the minute holding a boundary of the overlap (2 copies before it, 1 after)",
+      "config": {
+        "size": 120,
+        "deltaDays": 7,
+        "epsilonDays": 7,
+        "seed": 12,
+        "knobs": {
+          "a": [
+            {
+              "k": 3,
+              "where": "boundary"
+            }
+          ]
+        }
+      },
+      "knob_instances": [
+        {
+          "knob": "a",
+          "placed": true,
+          "items": [
+            "m0000121",
+            "m0000122",
+            "m0000123"
+          ],
+          "expect": {
+            "unifiedDelta": 0,
+            "unifiedDeltaComplete": -2,
+            "entries": {
+              "dedup_ambiguity": 1
+            },
+            "holderCounts": {
+              "0": 1,
+              "1": 3
+            },
+            "pairingMatchesGroundTruth": false
+          }
+        }
+      ],
+      "baseline": {
+        "ground_truth_messages": 120,
+        "unified": 122,
+        "entries": {},
+        "dating_mixed": 0
+      },
+      "ground_truth_messages": 123,
+      "system_lines": 2,
+      "expected_unified": 125,
+      "expected_entries": {
+        "dedup_ambiguity": 1
+      },
+      "expected_dating_mixed": 0,
+      "actual_unified": 125,
+      "actual_entries": {
+        "dedup_ambiguity": 1
+      },
+      "actual_dating_mixed": 0,
+      "oracle_diff": [],
+      "pass": true
+    },
+    {
+      "row": "a-boundary-disjoint",
+      "clustering": "one-to-one",
+      "input": "a: k=2 identical in the minute of a boundary, delta = epsilon = 0 (1 copy in each fragment)",
+      "config": {
+        "size": 120,
+        "deltaDays": 0,
+        "epsilonDays": 0,
+        "seed": 13,
+        "knobs": {
+          "a": [
+            {
+              "k": 2,
+              "where": "boundary"
+            }
+          ]
+        }
+      },
+      "knob_instances": [
+        {
+          "knob": "a",
+          "placed": true,
+          "items": [
+            "m0000121",
+            "m0000122"
+          ],
+          "expect": {
+            "unifiedDelta": -1,
+            "unifiedDeltaComplete": -1,
+            "entries": {},
+            "holderCounts": {
+              "0": 1,
+              "1": 1
+            },
+            "pairingMatchesGroundTruth": false
+          }
+        }
+      ],
+      "baseline": {
+        "ground_truth_messages": 120,
+        "unified": 122,
+        "entries": {},
+        "dating_mixed": 0
+      },
+      "ground_truth_messages": 122,
+      "system_lines": 2,
+      "expected_unified": 123,
+      "expected_entries": {},
+      "expected_dating_mixed": 0,
+      "actual_unified": 123,
+      "actual_entries": {},
+      "actual_dating_mixed": 0,
+      "oracle_diff": [],
+      "pass": true
+    },
+    {
+      "row": "b",
+      "clustering": "one-to-one",
+      "input": "b: one body from two senders in one minute, inside the overlap",
+      "config": {
+        "size": 120,
+        "deltaDays": 7,
+        "epsilonDays": 7,
+        "seed": 14,
+        "knobs": {
+          "b": {
+            "where": "inside"
+          }
+        }
+      },
+      "knob_instances": [
+        {
+          "knob": "b",
+          "placed": true,
+          "items": [
+            "m0000121",
+            "m0000122"
+          ],
+          "expect": {
+            "unifiedDelta": 0,
+            "entries": {
+              "conflict:sender-disagreement": 1
+            }
+          }
+        }
+      ],
+      "baseline": {
+        "ground_truth_messages": 120,
+        "unified": 122,
+        "entries": {},
+        "dating_mixed": 0
+      },
+      "ground_truth_messages": 122,
+      "system_lines": 2,
+      "expected_unified": 124,
+      "expected_entries": {
+        "conflict:sender-disagreement": 1
+      },
+      "expected_dating_mixed": 0,
+      "actual_unified": 124,
+      "actual_entries": {
+        "conflict:sender-disagreement": 1
+      },
+      "actual_dating_mixed": 0,
+      "oracle_diff": [],
+      "pass": true
+    },
+    {
+      "row": "c",
+      "clustering": "one-to-one",
+      "input": "c: two messages in one minute, written in opposite orders by the two fragments",
+      "config": {
+        "size": 120,
+        "deltaDays": 7,
+        "epsilonDays": 7,
+        "seed": 15,
+        "knobs": {
+          "c": {}
+        }
+      },
+      "knob_instances": [
+        {
+          "knob": "c",
+          "placed": true,
+          "items": [
+            "m0000121",
+            "m0000122"
+          ],
+          "expect": {
+            "unifiedDelta": 0,
+            "entries": {
+              "conflict:ordering-unsatisfiable": 1
+            }
+          }
+        }
+      ],
+      "baseline": {
+        "ground_truth_messages": 120,
+        "unified": 122,
+        "entries": {},
+        "dating_mixed": 0
+      },
+      "ground_truth_messages": 122,
+      "system_lines": 2,
+      "expected_unified": 124,
+      "expected_entries": {
+        "conflict:ordering-unsatisfiable": 1
+      },
+      "expected_dating_mixed": 0,
+      "actual_unified": 124,
+      "actual_entries": {
+        "conflict:ordering-unsatisfiable": 1
+      },
+      "actual_dating_mixed": 0,
+      "oracle_diff": [],
+      "pass": true
+    },
+    {
+      "row": "d",
+      "clustering": "one-to-one",
+      "input": "d: one attachment doubled-filename in F2, one trailing-period in F2; both standard in F1",
+      "config": {
+        "size": 120,
+        "deltaDays": 7,
+        "epsilonDays": 7,
+        "seed": 16,
+        "knobs": {
+          "d": [
+            {
+              "form": "double-filename"
+            },
+            {
+              "form": "trailing-period"
+            }
+          ]
+        }
+      },
+      "knob_instances": [
+        {
+          "knob": "d",
+          "placed": true,
+          "items": [
+            "m0000121"
+          ],
+          "expect": {
+            "unifiedDelta": 0,
+            "entries": {
+              "conflict:within-cluster:attachment.form": 1
+            }
+          }
+        },
+        {
+          "knob": "d",
+          "placed": true,
+          "items": [
+            "m0000122"
+          ],
+          "expect": {
+            "unifiedDelta": 0,
+            "entries": {
+              "conflict:within-cluster:attachment.form": 1
+            }
+          }
+        }
+      ],
+      "baseline": {
+        "ground_truth_messages": 120,
+        "unified": 122,
+        "entries": {},
+        "dating_mixed": 0
+      },
+      "ground_truth_messages": 122,
+      "system_lines": 2,
+      "expected_unified": 124,
+      "expected_entries": {
+        "conflict:within-cluster:attachment.form": 2
+      },
+      "expected_dating_mixed": 0,
+      "actual_unified": 124,
+      "actual_entries": {
+        "conflict:within-cluster:attachment.form": 2
+      },
+      "actual_dating_mixed": 0,
+      "oracle_diff": [],
+      "pass": true
+    },
+    {
+      "row": "e",
+      "clustering": "one-to-one",
+      "input": "e: one body with \" (rev)\" appended in F2 (synthetic variant, not WhatsApp's edit rendering)",
+      "config": {
+        "size": 120,
+        "deltaDays": 7,
+        "epsilonDays": 7,
+        "seed": 17,
+        "knobs": {
+          "e": {}
+        }
+      },
+      "knob_instances": [
+        {
+          "knob": "e",
+          "placed": true,
+          "items": [
+            "m0000121"
+          ],
+          "expect": {
+            "unifiedDelta": 1,
+            "entries": {}
+          }
+        }
+      ],
+      "baseline": {
+        "ground_truth_messages": 120,
+        "unified": 122,
+        "entries": {},
+        "dating_mixed": 0
+      },
+      "ground_truth_messages": 121,
+      "system_lines": 2,
+      "expected_unified": 124,
+      "expected_entries": {},
+      "expected_dating_mixed": 0,
+      "actual_unified": 124,
+      "actual_entries": {},
+      "actual_dating_mixed": 0,
+      "oracle_diff": [],
+      "pass": true
+    },
+    {
+      "row": "f",
+      "clustering": "one-to-one",
+      "input": "f: F2 rendered in +05:30, declared +00:00",
+      "config": {
+        "size": 120,
+        "deltaDays": 7,
+        "epsilonDays": 7,
+        "seed": 18,
+        "formats": [
+          {
+            "dateOrder": "dmy",
+            "clock": "12h",
+            "zone": "+00:00"
+          },
+          {
+            "dateOrder": "mdy",
+            "clock": "24h",
+            "zone": "+05:30"
+          }
+        ],
+        "knobs": {
+          "f": {
+            "fragment": 1,
+            "declaredZone": "+00:00"
+          }
+        }
+      },
+      "knob_instances": [
+        {
+          "knob": "f",
+          "placed": true,
+          "items": [],
+          "expect": {
+            "unifiedDelta": 8,
+            "entries": {
+              "advisory:zone_offset_suspected": 1
+            },
+            "shift": "+05:30 rendered, +00:00 declared"
+          }
+        }
+      ],
+      "baseline": {
+        "ground_truth_messages": 120,
+        "unified": 122,
+        "entries": {},
+        "dating_mixed": 0
+      },
+      "ground_truth_messages": 120,
+      "system_lines": 2,
+      "expected_unified": 130,
+      "expected_entries": {
+        "advisory:zone_offset_suspected": 1
+      },
+      "expected_dating_mixed": 0,
+      "actual_unified": 130,
+      "actual_entries": {
+        "advisory:zone_offset_suspected": 1
+      },
+      "actual_dating_mixed": 0,
+      "oracle_diff": [],
+      "pass": true
+    },
+    {
+      "row": "g",
+      "clustering": "one-to-one",
+      "input": "g: +-1 min on F2's copy of every overlap message, p = 1 (hypothetical clock disagreement)",
+      "config": {
+        "size": 120,
+        "deltaDays": 7,
+        "epsilonDays": 7,
+        "seed": 19,
+        "knobs": {
+          "g": {
+            "p": 1
+          }
+        }
+      },
+      "knob_instances": [
+        {
+          "knob": "g",
+          "placed": true,
+          "items": [
+            "m0000024",
+            "m0000108",
+            "m0000109",
+            "m0000110"
+          ],
+          "expect": {
+            "unifiedDelta": 4,
+            "entries": {},
+            "note": "at dt_granularity >= 60000 ms these deduplicate"
+          }
+        }
+      ],
+      "baseline": {
+        "ground_truth_messages": 120,
+        "unified": 122,
+        "entries": {},
+        "dating_mixed": 0
+      },
+      "ground_truth_messages": 120,
+      "system_lines": 2,
+      "expected_unified": 126,
+      "expected_entries": {},
+      "expected_dating_mixed": 0,
+      "actual_unified": 126,
+      "actual_entries": {},
+      "actual_dating_mixed": 0,
+      "oracle_diff": [],
+      "pass": true
+    },
+    {
+      "row": "h",
+      "clustering": "one-to-one",
+      "input": "h: F2 in +05:30 (declared); one message whose date is ambiguous in one zone and not in the other",
+      "config": {
+        "size": 120,
+        "deltaDays": 7,
+        "epsilonDays": 7,
+        "seed": 20,
+        "formats": [
+          {
+            "dateOrder": "dmy",
+            "clock": "12h",
+            "zone": "+00:00"
+          },
+          {
+            "dateOrder": "mdy",
+            "clock": "24h",
+            "zone": "+05:30"
+          }
+        ],
+        "knobs": {
+          "h": {}
+        }
+      },
+      "knob_instances": [
+        {
+          "knob": "h",
+          "placed": true,
+          "items": [
+            "m0000121"
+          ],
+          "expect": {
+            "unifiedDelta": 0,
+            "entries": {},
+            "datingMixedDelta": 1,
+            "strictQuarantinedDelta": 1
+          }
+        }
+      ],
+      "baseline": {
+        "ground_truth_messages": 120,
+        "unified": 122,
+        "entries": {},
+        "dating_mixed": 0
+      },
+      "ground_truth_messages": 121,
+      "system_lines": 2,
+      "expected_unified": 123,
+      "expected_entries": {},
+      "expected_dating_mixed": 1,
+      "actual_unified": 123,
+      "actual_entries": {},
+      "actual_dating_mixed": 1,
+      "oracle_diff": [],
+      "pass": true
+    }
+  ]
+}

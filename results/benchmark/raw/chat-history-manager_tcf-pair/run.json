@@ -1,0 +1,7 @@
+{
+  "tool": "frozenspider/chat-history-manager",
+  "sha": "d1f6f8879e151b1309118ec4d59d0b9298c9ba81",
+  "input": "data/synthetic_fixtures/tcf-pair",
+  "status": "blocked",
+  "note": "not run: no Rust toolchain, C/C++ linker, OpenSSL or protoc on this machine (README \"How to build\"); merging is exposed only through the gRPC merge service (src/main.rs:27-38 has no merge command). By code reading the WhatsApp text loader would reject both fragments before any merge: crates/loaders/src/loader/whatsapp_text.rs:86-88 requires exactly two senders (the pair has four), :15,20 require a two-digit-hour 24h clock (F1 is 12h), :18 requires the file name \"WhatsApp Chat with <name>.txt\"."
+}

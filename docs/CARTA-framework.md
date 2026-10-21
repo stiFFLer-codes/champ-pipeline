@@ -1,5 +1,24 @@
 # CARTA Framework — Formal Definition
 
+> **Version note (added 2026-10-16).** This document describes **CARTA 1.0**
+> and has not been rewritten. `champ-pipeline-core` 0.2.0 implements CARTA 1.1
+> and states `spec: "CARTA 1.1"` in Ω. The changes from 1.0 to 1.1, taken from
+> the commit messages:
+>
+> | Change in CARTA 1.1 | Commit |
+> | --- | --- |
+> | Provenance is `<source_id, line_range, sha256, record_sha256>`; `record_sha256` hashes the record's raw bytes (first byte of its first line through the terminator of its last line, excluding a leading BOM). | `6ca34eb` |
+> | Each fragment's clock is read in its declared zone (fixed offset, or IANA name resolved per instant, so DST applies); the default `+00:00` is reported as defaulted. A skipped local time is `MALFORMED_TIMESTAMP`; a repeated one is the new `AMBIGUOUS_LOCAL_TIME`. | `c7b047f` |
+> | Attachments are `{ref, form, stem}` and the trailing-period rendering is canonicalised; congruence compares stems only when a trailing-period rendering is involved. | `409639b` |
+> | Inference rescues only records whose sole failure is `AMBIGUOUS_DATE_FORMAT`. | `c6ff9fe` |
+> | Order tie-break: t_utc, then fragment sha256, then sourceSeq (no longer the file name). | `8440606` |
+> | Default clustering is one-to-one: at most one observation per fragment per cluster, with differing per-fragment repeat counts reported as `dedup_ambiguity`. Complete linkage (1.0) and single linkage remain selectable. Two fragments sharing a source_id are refused. | `80136e6` |
+> | Invariant 2 checks every provenance entry, in U and in Q, against the ingested fragments by source_id and sha256. | `73af6e8` |
+> | Ω states the spec, the implementation and runtime, each fragment (id, sha256, zone, counts, canonicalisations, inference report), the normalization policy, every parameter and the meaning of the provenance tuple; quarantine is collected in sha256 order. | `d4eef99` |
+> | A fragment's id can be declared (`--source-id`); Ω records `fragments[].idSource`. | `a53ce1e` |
+> | Ω carries a report-only zone-offset advisory (`advisories`): first a modal pair count within ±14 h, then multiset-intersection support with control offsets, at least 3 distinct keys and a ±26 h window. | `92a0df7`, `4464da6` |
+> | The TCF split is half-open (F1: t < t_f or t ≥ t_r; F2: t_f − δ ≤ t < t_r + ε), so δ = ε = 0 gives disjoint fragments. | `4974f1b` |
+
 ## 1. Temporal Communication Fragmentation (TCF)
 
 ### 1.1 Definition

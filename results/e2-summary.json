@@ -1,0 +1,127 @@
+{
+  "experiment": "E2 property tests",
+  "configs": 5000,
+  "generator": "randomConfig(s) in scripts/experiments/e2-properties.js; mulberry32 seeded with s",
+  "p5_applies_when": "--infer, no knob in {a, e, f, g} placed, every fragment holds an unambiguous date",
+  "fragments": {
+    "2": 1717,
+    "3": 1629,
+    "4": 1654
+  },
+  "knobs": {
+    "a": {
+      "requested": 1497,
+      "placed": 1497
+    },
+    "b": {
+      "requested": 1408,
+      "placed": 1407
+    },
+    "c": {
+      "requested": 1539,
+      "placed": 1533
+    },
+    "d": {
+      "requested": 1501,
+      "placed": 1496
+    },
+    "e": {
+      "requested": 1529,
+      "placed": 1523
+    },
+    "f": {
+      "requested": 1542,
+      "placed": 1542
+    },
+    "g": {
+      "requested": 1536,
+      "placed": 1357
+    },
+    "h": {
+      "requested": 1463,
+      "placed": 982
+    }
+  },
+  "by_mode": {
+    "infer": {
+      "configs": 5000,
+      "errors": [],
+      "P1": {
+        "applied": 5000,
+        "held": 5000
+      },
+      "P2": {
+        "applied": 5000,
+        "held": 5000
+      },
+      "P3": {
+        "applied": 5000,
+        "held": 5000
+      },
+      "P4": {
+        "applied": 5000,
+        "held": 5000
+      },
+      "P5": {
+        "applied": 1244,
+        "held": 1244
+      },
+      "P6": {
+        "applied": 5000,
+        "held": 5000
+      }
+    },
+    "strict": {
+      "configs": 5000,
+      "errors": [],
+      "P1": {
+        "applied": 5000,
+        "held": 5000
+      },
+      "P2": {
+        "applied": 5000,
+        "held": 5000
+      },
+      "P3": {
+        "applied": 5000,
+        "held": 5000
+      },
+      "P4": {
+        "applied": 5000,
+        "held": 5000
+      },
+      "P5": {
+        "applied": 0,
+        "held": 0
+      },
+      "P6": {
+        "applied": 5000,
+        "held": 5000
+      }
+    }
+  },
+  "failing_seeds": {
+    "infer_P1": [],
+    "infer_P2": [],
+    "infer_P3": [],
+    "infer_P4": [],
+    "infer_P5": [],
+    "infer_P6": [],
+    "strict_P1": [],
+    "strict_P2": [],
+    "strict_P3": [],
+    "strict_P4": [],
+    "strict_P5": [],
+    "strict_P6": []
+  },
+  "advisory_facts_infer": {
+    "configs_with_f": 1542,
+    "configs_with_f_and_matching_advisory": 1470,
+    "configs_with_f_no_matching_advisory": 72,
+    "of_which_shift_over_14h": 6,
+    "of_which_fewer_than_3_shared": 51,
+    "configs_without_f": 3458,
+    "configs_without_f_with_advisory": 0,
+    "configs_with_f_and_other_advisory": 0
+  }
+}

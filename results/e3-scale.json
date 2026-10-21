@@ -1,0 +1,84 @@
+{
+  "experiment": "E3 scale (feasibility)",
+  "mode": "--infer, one-to-one, dt_granularity 0",
+  "rows": [
+    {
+      "size": 100000,
+      "config": {
+        "seed": 1,
+        "size": 100000,
+        "deltaDays": 14,
+        "epsilonDays": 7,
+        "windowDays": 1400,
+        "attachmentRate": 0.05
+      },
+      "ground_truth_messages": 100000,
+      "overlap_messages": 1414,
+      "observations": 101416,
+      "files": [
+        {
+          "file": "scenario-F1-primary.txt",
+          "lines": 4151,
+          "bytes": 250680
+        },
+        {
+          "file": "scenario-F2-secondary.txt",
+          "lines": 97265,
+          "bytes": 5643185
+        }
+      ],
+      "counts": {
+        "recordsIn": 101416,
+        "unified": 100002,
+        "unifiedMessages": 100000,
+        "collapsed": 1414,
+        "quarantined": 0,
+        "conflicts": 0,
+        "dedupAmbiguities": 0,
+        "advisories": 0
+      },
+      "u_messages_equal_ground_truth": true,
+      "reps_completed": 3,
+      "identical_output_across_reps": true
+    },
+    {
+      "size": 1000000,
+      "config": {
+        "seed": 1,
+        "size": 1000000,
+        "deltaDays": 14,
+        "epsilonDays": 7,
+        "windowDays": 1400,
+        "attachmentRate": 0.05
+      },
+      "ground_truth_messages": 1000000,
+      "overlap_messages": 14272,
+      "observations": 1014274,
+      "files": [
+        {
+          "file": "scenario-F1-primary.txt",
+          "lines": 41135,
+          "bytes": 2476696
+        },
+        {
+          "file": "scenario-F2-secondary.txt",
+          "lines": 973139,
+          "bytes": 56463574
+        }
+      ],
+      "counts": {
+        "recordsIn": 1014274,
+        "unified": 1000002,
+        "unifiedMessages": 1000000,
+        "collapsed": 14272,
+        "quarantined": 0,
+        "conflicts": 0,
+        "dedupAmbiguities": 0,
+        "advisories": 0
+      },
+      "u_messages_equal_ground_truth": true,
+      "reps_completed": 3,
+      "identical_output_across_reps": true
+    }
+  ]
+}

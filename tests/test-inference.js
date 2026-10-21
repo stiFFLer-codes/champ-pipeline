@@ -16,10 +16,10 @@ const { inferFragmentDateOrder } = require('../core/src/inference');
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'champ-infer-'));
 let n = 0;
-function run(content, opts) {
+function run(content, opts, policy) {
   const p = path.join(tmp, `${n++}.txt`);
   fs.writeFileSync(p, content, 'utf8');
-  return inferFragmentDateOrder(normalizeFragment(ingestFragment(p)), opts);
+  return inferFragmentDateOrder(normalizeFragment(ingestFragment(p), policy), opts);
 }
 
 // --- it applies when the fragment can settle itself -------------------------
@@ -59,9 +59,12 @@ function run(content, opts) {
   const inf = r.inference;
   assert.strictEqual(inf.evidence.witnessCount, 2);
   assert.deepStrictEqual(inf.evidence.byOrder, { DMY: 2 });
-  assert.strictEqual(inf.evidence.sample.length, 2);
-  // Witnesses are located by line range, so a reader can return to the bytes.
-  assert.deepStrictEqual(inf.evidence.sample[0].line_range, [1, 1]);
+  // Every witness and every rescued record is located by line range, so a
+  // reader can return to the bytes.
+  assert.deepStrictEqual(inf.evidence.witnesses,
+    [{ line_range: [1, 1], dateOrder: 'DMY' }, { line_range: [2, 2], dateOrder: 'DMY' }]);
+  assert.deepStrictEqual(inf.rescued, [[3, 3]]);
+  assert.strictEqual(inf.minWitnesses, 1);
   assert.ok(/established by 2 record/.test(inf.reason));
 }
 
@@ -135,6 +138,36 @@ function run(content, opts) {
   assert.strictEqual(r.quarantine.length, 1);
   assert.strictEqual(r.quarantine[0].reason, REASON.UNSUPPORTED_FORMAT,
     'a record quarantined for another reason must be left alone');
+}
+
+{
+  // A record that is date-ambiguous AND senderless carries AMBIGUOUS_DATE_FORMAT
+  // as its primary code by precedence. Settling the date would leave it
+  // senderless, so it is not a candidate and must stay quarantined. (Before
+  // CARTA 1.1 it was rescued into U with sender null.)
+  const r = run('25/01/24, 09:00 - You: witness\n03/04/24, 09:01 - : body\n');
+  assert.strictEqual(r.inference.applied, true);
+  assert.strictEqual(r.inference.candidates, 0);
+  assert.strictEqual(r.inference.resolved, 0);
+  assert.strictEqual(r.records.length, 1);
+  assert.strictEqual(r.quarantine.length, 1);
+  assert.strictEqual(r.quarantine[0].reason, REASON.AMBIGUOUS_DATE_FORMAT);
+  assert.deepStrictEqual(r.quarantine[0].alsoFailed, [REASON.UNRESOLVED_SENDER]);
+}
+
+{
+  // The order settles 03/11/24 as 3 November, but in New York 01:30 that day
+  // happened twice (DST ended). The record stays in Q, now for the reason that
+  // still applies, and the report says so.
+  const r = run('25/01/24, 09:00 - You: witness\n03/11/24, 01:30 - You: amb\n', undefined,
+    { zone: 'America/New_York' });
+  assert.strictEqual(r.inference.order, 'DMY');
+  assert.strictEqual(r.inference.resolved, 0);
+  assert.strictEqual(r.quarantine.length, 1);
+  assert.strictEqual(r.quarantine[0].reason, REASON.AMBIGUOUS_LOCAL_TIME);
+  assert.strictEqual(r.quarantine[0].dateOrderInferred, 'DMY');
+  assert.deepStrictEqual(r.inference.requarantined, [{ line_range: [2, 2], reason: REASON.AMBIGUOUS_LOCAL_TIME }]);
+  assert.deepStrictEqual(r.stats.byReason, { AMBIGUOUS_LOCAL_TIME: 1 });
 }
 
 // --- conservation across the step -------------------------------------------

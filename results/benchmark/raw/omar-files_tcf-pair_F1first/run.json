@@ -1,0 +1,21 @@
+{
+  "tool": "Akif-b-Atif/The-Omar-Files",
+  "variant": "Pipeline/control.py merge (2_normalize_export.py + 3_merge_export.py)",
+  "sha": "27faf12e3e007ece86a0dab794c50be6ceedf3de",
+  "input": "data/synthetic_fixtures/tcf-pair",
+  "order": "F1 merged first",
+  "status": "ran",
+  "env": {
+    "os": "Windows_NT 10.0.26100 x64",
+    "node": "v24.14.0",
+    "bun": "1.3.14",
+    "python": "3.12.10"
+  },
+  "command": "cd <copy of checkout>/Pipeline && python control.py merge <first> <second>  (Pipeline/identities.json written by the wrapper: 4 senders, each mapped to itself)",
+  "wrapper_stdout": "Done. 58 lines written (nothing dropped).\r\n  Of those: 0 media/deleted/call placeholders, 0 unparsed line(s) flagged for review.\r\nSaved to: <tmp>\\run\\omar-files_tcf-pair_F1first\\Pipeline\\normalized_exports\\tcf-F1-primary_normalized.txt\r\nCreated Full_Archive.txt with 58 line(s).\r\n\r\nDone. 134 lines written (nothing dropped).\r\n  Of those: 0 media/deleted/call placeholders, 0 unparsed line(s) flagged for review.\r\nSaved to: <tmp>\\run\\omar-files_tcf-pair_F1first\\Pipeline\\normalized_exports\\tcf-F2-secondary_normalized.txt\r\nMerged tcf-F2-secondary_normalized.txt into Full_Archive.txt\r\n  125 new message(s) added, 9 already-present message(s) skipped (9 exact duplicate, 0 placeholder superseded by archive).\r\n  Archive now has 183 total lines.\r\n\r\n=== Normalizing tcf-F1-primary.txt ===\r\n\r\n=== Merging tcf-F1-primary_normalized.txt into Full_Archive.txt ===\r\n\r\n=== Normalizing tcf-F2-secondary.txt ===\r\n\r\n=== Merging tcf-F2-secondary_normalized.txt into Full_Archive.txt ===\r\n\r\nMerged 2 export(s) into Full_Archive.txt.",
+  "diagnostics_emitted": "per export: lines written, placeholders, unparsed lines; per merge: added / skipped-duplicate counts (stdout and Pipeline/logs/merge_log.json)",
+  "conflicts_reported": "n",
+  "provenance_reported": "n (merge_log.json names the source file of each merge batch, not of each record)",
+  "unparseable_input": "retained: a line matching no pattern is kept verbatim as \"[UNPARSED - review this line] ...\" and appended at the archive end; continuation lines join the previous message",
+  "note": "the tool resolves sender labels through Pipeline/identities.json and asks on stdin for unknown ones; the wrapper supplies an identity map (label -> same label) so that no prompt occurs and no label changes."
+}

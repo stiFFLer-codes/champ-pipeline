@@ -3,10 +3,18 @@
 // CLI for CARTA Ingestion + Normalization on one or more fragments.
 //
 //   node scripts/normalize.js <fragment.txt> [...]
-//   node scripts/normalize.js --offset -330 <fragment.txt>   declared UTC offset
+//   node scripts/normalize.js --zone Asia/Kolkata <f1> --zone +01:00 <f2>
+//                                                            declared zone per
+//                                                            fragment
 //   node scripts/normalize.js --json <fragment.txt>
+//   node scripts/normalize.js --source-id phone-A <fragment.txt>
+//                                                            id for the ONE
+//                                                            fragment after it
 //   node scripts/normalize.js --infer <fragment.txt>        + fragment-scope
 //                                                             date inference
+//
+// --zone applies to every fragment after it until the next --zone; fragments
+// before any --zone get the default (+00:00), and the output says which.
 //
 // --infer runs the SEPARATE, DECLARED step of Section 3.3 over Q_k. It is off
 // by default: a run without it is still conforming, it just quarantines more.
@@ -22,22 +30,28 @@ const { inferFragmentDateOrder } = require('../core/src/inference');
 function main() {
   const argv = process.argv.slice(2);
   const json = argv.includes('--json');
+  const infer = argv.includes('--infer');
   const files = [];
-  const policy = {};
+  let zone;
+  let sourceId;
   for (let i = 0; i < argv.length; i++) {
-    if (argv[i] === '--json') continue;
-    if (argv[i] === '--infer') continue;
-    if (argv[i] === '--offset') { policy.utcOffsetMinutes = Number(argv[++i]); continue; }
-    files.push(argv[i]);
+    if (argv[i] === '--json' || argv[i] === '--infer') continue;
+    if (argv[i] === '--zone') { zone = argv[++i]; continue; }
+    if (argv[i] === '--source-id') {
+      sourceId = argv[++i];
+      if (!sourceId) { console.error('--source-id needs an id'); process.exit(1); }
+      continue;
+    }
+    files.push({ file: argv[i], policy: zone === undefined ? {} : { zone }, sourceId });
+    sourceId = undefined;
   }
-  if (files.length === 0) {
-      console.error('Usage: node scripts/normalize.js [--json] [--infer] [--offset <minutes>] <fragment.txt> [...]');
+  if (files.length === 0 || sourceId !== undefined) {
+    console.error('Usage: node scripts/normalize.js [--json] [--infer] [--zone <IANA name | +HH:MM>] [--source-id <id>] <fragment.txt> [...]');
     process.exit(1);
   }
 
-  const infer = argv.includes('--infer');
-  const out = files.map((f) => {
-    const n = normalizeFragment(ingestFragment(f), policy);
+  const out = files.map(({ file, policy, sourceId: id }) => {
+    const n = normalizeFragment(ingestFragment(file, { sourceId: id }), policy);
     return infer ? inferFragmentDateOrder(n) : n;
   });
   if (json) {
@@ -46,16 +60,10 @@ function main() {
   }
 
   for (const r of out) {
-    const total = r.records.length + r.quarantine.length;
-    const s = r.stats || { ingested: total, normalized: r.records.length, quarantined: r.quarantine.length, byReason: {} };
-    if (r.inference) {
-      s.normalized = r.records.length;
-      s.quarantined = r.quarantine.length;
-      s.byReason = {};
-      for (const q of r.quarantine) s.byReason[q.reason] = (s.byReason[q.reason] || 0) + 1;
-    }
+    const s = r.stats;
     const pct = s.ingested ? ((s.quarantined / s.ingested) * 100).toFixed(1) : '0.0';
     console.log(path.basename(r.sourceId));
+    console.log(`  zone        ${r.zone.name} (${r.zone.kind}, ${r.zone.source})`);
     console.log(`  ingested    ${s.ingested}`);
     console.log(`  normalized  ${s.normalized}`);
     console.log(`  quarantined ${s.quarantined}  (${pct}%)`);
@@ -73,7 +81,6 @@ function main() {
       console.log(`      ${inf.reason}`);
       console.log(`      candidates ${inf.candidates}, resolved ${inf.resolved}, still quarantined ${inf.stillQuarantined}`);
     }
-    console.log(`  declared utcOffsetMinutes ${r.policy.utcOffsetMinutes}`);
     console.log('');
   }
 }

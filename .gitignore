@@ -73,3 +73,6 @@ grill-me-output.txt
 
 # --- Peer-review artefact (input to a revision pass, not project content) ---
 /peer-review-report.docx
+
+# --- IJMADA journal manuscript build (its own local git repo; not public) ---
+/submission/

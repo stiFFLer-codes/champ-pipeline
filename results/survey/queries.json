@@ -1,0 +1,1694 @@
+{
+  "platform": "GitHub REST API, GET /search/repositories (unauthenticated)",
+  "order": "best match (no sort parameter)",
+  "qualifier": "in:name,description,readme",
+  "forks": "excluded by API default (no fork: qualifier)",
+  "queries": [
+    {
+      "id": "q01",
+      "terms": "whatsapp merge",
+      "q": "whatsapp merge in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q01-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T08:47:10.158Z",
+          "httpDate": "Thu, 15 Oct 2026 08:47:13 GMT",
+          "requestId": "DE0D:21DBCB:DA8A54:1415065:6AD0930E",
+          "sha256": "17489fad0750405a0769ef4032a830ed8a8eadbe733845de6a4bf114fd8747bd",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q01-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T08:47:20.166Z",
+          "httpDate": "Thu, 15 Oct 2026 08:47:23 GMT",
+          "requestId": "DC5F:206510:D9F339:140CCD9:6AD09318",
+          "sha256": "37d8af565729daca60a7771f1f43398d49dc32ac166a8fe5f4f5565b6eb78005",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q01-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T08:47:30.185Z",
+          "httpDate": "Thu, 15 Oct 2026 08:47:34 GMT",
+          "requestId": "DFBF:5544E:DB97FC:142781D:6AD09322",
+          "sha256": "4a73eed5e25328ffeabb0066eea98b5d3ab4f1750a27fa8c8a4972296be3c11b",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q01-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T08:47:40.785Z",
+          "httpDate": "Thu, 15 Oct 2026 08:47:43 GMT",
+          "requestId": "C336:2F5281:E102AA:14808AB:6AD0932D",
+          "sha256": "1c1c28f91e2c25c512f52b21f820c0d9dafb5c5d3f59a5c6a8570b7d579e2aee",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q01-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T08:47:50.421Z",
+          "httpDate": "Thu, 15 Oct 2026 08:47:53 GMT",
+          "requestId": "F9B5:24DB8A:DAD0BD:141D99E:6AD09337",
+          "sha256": "4f7b693555576c4dc22e108f1ac3809953a27069ce21bcebb1e7bb54830cc578",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q01-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T08:48:00.648Z",
+          "httpDate": "Thu, 15 Oct 2026 08:48:03 GMT",
+          "requestId": "FDC5:379A04:DBEBCF:1431173:6AD09341",
+          "sha256": "31f9854907b5636dd900d802c71d3f238fb67b977355bcca313ed408467396cf",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q01-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T08:48:10.445Z",
+          "httpDate": "Thu, 15 Oct 2026 08:48:13 GMT",
+          "requestId": "CF76:21DBCB:DB2E60:1423BC9:6AD0934B",
+          "sha256": "1fe274c30d1a7a4b7904bc978b8bf1c689ab8d7ca9bac3aedcc5cd892924c518",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q01-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T08:48:20.683Z",
+          "httpDate": "Thu, 15 Oct 2026 08:48:23 GMT",
+          "requestId": "E384:1AA062:DB5AC3:14279B6:6AD09355",
+          "sha256": "b30600b42e8dc3e95da97d060e3c324b5ae6c145c0fdb43935062fa2654ac685",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q01-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T08:48:30.637Z",
+          "httpDate": "Thu, 15 Oct 2026 08:48:33 GMT",
+          "requestId": "E110:38D92:DC95BB:143B605:6AD0935F",
+          "sha256": "8ffef2f28f5d12a0797fc4bf674fbfc09504c605fcba9914fe7a2ec45e1ad628",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q01-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T08:48:40.340Z",
+          "httpDate": "Thu, 15 Oct 2026 08:48:43 GMT",
+          "requestId": "CA21:21DBCB:DB826A:142B3A2:6AD09368",
+          "sha256": "15df03ccfd3716a495644a1c03f7095e83117b750f242001d20bd0d47f0b30da",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 43090,
+      "retrieved": 1000
+    },
+    {
+      "id": "q02",
+      "terms": "whatsapp merger",
+      "q": "whatsapp merger in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q02-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merger%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T08:48:50.564Z",
+          "httpDate": "Thu, 15 Oct 2026 08:48:54 GMT",
+          "requestId": "C5F1:26BE47:DFAE3C:146EEBD:6AD09374",
+          "sha256": "728c1c50c3e461f44daefca93c0486d0113803a2a1b501bada380d50119a3c96",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q02-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merger%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T08:49:01.474Z",
+          "httpDate": "Thu, 15 Oct 2026 08:49:04 GMT",
+          "requestId": "F546:206510:DB0DB8:1426026:6AD0937E",
+          "sha256": "ef44d907510c866169b0a544b8346adcc45f5c0a6131c7c67dc86a18a3214034",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q02-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merger%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T08:49:11.311Z",
+          "httpDate": "Thu, 15 Oct 2026 08:49:15 GMT",
+          "requestId": "EB56:C3537:D9FA1A:14156D8:6AD09387",
+          "sha256": "4671e8131ef544ff1fd817cedf8694d1e15c16b2717853f58cead1ce794ddf61",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q02-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merger%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T08:49:22.549Z",
+          "httpDate": "Thu, 15 Oct 2026 08:49:25 GMT",
+          "requestId": "E46C:26BE47:E0065F:1476E10:6AD09393",
+          "sha256": "547d475c05a8734f2278f3d60ca637a91bd7a17674d0e1f48601d1f2bc64b971",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q02-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merger%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T08:49:32.563Z",
+          "httpDate": "Thu, 15 Oct 2026 08:49:35 GMT",
+          "requestId": "D334:3C3989:D9DA55:1415239:6AD0939D",
+          "sha256": "bcc233d3f9d56bff1c22c53f5ee76616322da6582c1e936c6b155631bc26cd23",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q02-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merger%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T08:49:42.121Z",
+          "httpDate": "Thu, 15 Oct 2026 08:49:45 GMT",
+          "requestId": "FFE6:3C3989:D9F6AD:1417B86:6AD093A6",
+          "sha256": "cb26e98b0b0e25f982d7ac4d6b58d95580fea4b6c8c17cf57dcae8a8cb11f445",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q02-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merger%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T08:49:52.133Z",
+          "httpDate": "Thu, 15 Oct 2026 08:49:55 GMT",
+          "requestId": "F3E6:114CC7:DB8E69:1433A47:6AD093B0",
+          "sha256": "3c989bbdac2c15a79f86182954aba22139090a0153e8cbac89db10542d409dea",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q02-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merger%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T08:50:02.241Z",
+          "httpDate": "Thu, 15 Oct 2026 08:50:05 GMT",
+          "requestId": "F2AD:21DBCB:DC6691:143FD6F:6AD093BA",
+          "sha256": "50d72d7713b39e795d92c76569fa35d048507a9be1c63ad04e06512cdb29fe4a",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q02-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merger%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T08:50:12.284Z",
+          "httpDate": "Thu, 15 Oct 2026 08:50:16 GMT",
+          "requestId": "D4FC:2E57E:DDAB48:1456C92:6AD093C5",
+          "sha256": "edd48ded3278b321c1b92e6d8ad91b23fb22590d10e4ab362ebb006041507cbc",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q02-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20merger%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T08:50:23.181Z",
+          "httpDate": "Thu, 15 Oct 2026 08:50:26 GMT",
+          "requestId": "EBC2:2F5281:E2C155:14A8FAE:6AD093CF",
+          "sha256": "dc648b239ecca0e73d65fbc3fc7326bc11eee4aff59af65abc682817ea142ade",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 1020,
+      "retrieved": 1000
+    },
+    {
+      "id": "q03",
+      "terms": "merge whatsapp backup",
+      "q": "merge whatsapp backup in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q03-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20backup%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T08:50:33.377Z",
+          "httpDate": "Thu, 15 Oct 2026 08:50:35 GMT",
+          "requestId": "E3B1:2E57E:DDE2C9:145BC8F:6AD093D9",
+          "sha256": "b3e0994657f8ab640e692fd96f640f64ab130742aee735ab00cf897d031cd5a4",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q03-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20backup%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T08:50:42.529Z",
+          "httpDate": "Thu, 15 Oct 2026 08:50:45 GMT",
+          "requestId": "C2EF:38D92:DE0D6F:145D1C4:6AD093E3",
+          "sha256": "d43b5c38aac8b4da8c1cc05151d4ee183e721fbcfeb67adbcf49f55d225b9015",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q03-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20backup%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T08:50:51.810Z",
+          "httpDate": "Thu, 15 Oct 2026 08:50:54 GMT",
+          "requestId": "C34E:32CA92:35771E7:36ACCCD:6AD093EC",
+          "sha256": "db5cfd24fbc605a561d5a9b29f2be948ffb380844b8abf111d09664fe3e35cda",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q03-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20backup%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T08:51:01.727Z",
+          "httpDate": "Thu, 15 Oct 2026 08:51:05 GMT",
+          "requestId": "F5CD:5544E:DDE8B5:145CCED:6AD093F6",
+          "sha256": "a418b032fc313ce495b00cda14bbf5609148b4b764e302ea1f5884c41829595f",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q03-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20backup%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T08:51:11.919Z",
+          "httpDate": "Thu, 15 Oct 2026 08:51:16 GMT",
+          "requestId": "E3C3:22167F:DB1978:1431C80:6AD09401",
+          "sha256": "b2d8764c26e9aab17960e07809f50578254b7a3371ff2afd238c61ea277b8d06",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q03-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20backup%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T08:51:23.205Z",
+          "httpDate": "Thu, 15 Oct 2026 08:51:27 GMT",
+          "requestId": "C057:32CA92:357CAEE:36B25F5:6AD0940D",
+          "sha256": "1aa4cbc9f6d7de9698e343f706f69377c3839b82d0942fc86804ac253e4dc7c7",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q03-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20backup%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T08:51:34.635Z",
+          "httpDate": "Thu, 15 Oct 2026 08:51:37 GMT",
+          "requestId": "F26B:87436:DE47B7:1466A7A:6AD09417",
+          "sha256": "85ac190e4e27b8e892a99d59a1d36eeaf4d13c3f9b8fc48d7e672c14cf6426c1",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q03-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20backup%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T08:51:44.527Z",
+          "httpDate": "Thu, 15 Oct 2026 08:51:47 GMT",
+          "requestId": "E6EE:2ECDB1:DB7C22:143B7DB:6AD09421",
+          "sha256": "637918a7f30223bbeb1a12f311cc5201628c346634576230ccb21b6a03f46d0c",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q03-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20backup%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T08:51:54.444Z",
+          "httpDate": "Thu, 15 Oct 2026 08:51:57 GMT",
+          "requestId": "DCAE:141A62:DF5F65:1479F34:6AD0942B",
+          "sha256": "9b342af30e4a23d1cb00b4b48d74faef6db299f15c0d009f0c688863ce3564d3",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q03-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20backup%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T08:52:04.725Z",
+          "httpDate": "Thu, 15 Oct 2026 08:52:08 GMT",
+          "requestId": "E964:2F5281:E3DE4E:14C29E1:6AD09435",
+          "sha256": "0e549efa63d473d0b8cbec3571e09c94703f3da609352f4eb008352160ebc08d",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 7972,
+      "retrieved": 1000
+    },
+    {
+      "id": "q04",
+      "terms": "merge whatsapp chats",
+      "q": "merge whatsapp chats in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q04-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20chats%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T08:52:14.715Z",
+          "httpDate": "Thu, 15 Oct 2026 08:52:17 GMT",
+          "requestId": "ECD6:26BE47:E1E79A:14A239E:6AD0943F",
+          "sha256": "110972f0aa08e2078a2cc63b8452262b01e1d0403749a1bdf24a769d12bd0999",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q04-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20chats%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T08:52:24.437Z",
+          "httpDate": "Thu, 15 Oct 2026 08:52:27 GMT",
+          "requestId": "C140:1AA062:DE0E1F:1465BA1:6AD09449",
+          "sha256": "9fae900fbe1fa279b837afb696aab0167ab9a30cf6db0a86bb3711f89f7e5fca",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q04-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20chats%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T08:52:34.207Z",
+          "httpDate": "Thu, 15 Oct 2026 08:52:37 GMT",
+          "requestId": "CC11:114CC7:DD5052:145C413:6AD09452",
+          "sha256": "c3e164a4ad5d0c3fea2c41ce4927a52bca67b94cc96e4efd02882464b7ec140d",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q04-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20chats%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T08:52:44.285Z",
+          "httpDate": "Thu, 15 Oct 2026 08:52:47 GMT",
+          "requestId": "CABD:16CF0A:DF10FB:1477D8E:6AD0945C",
+          "sha256": "875342064b1857d397b9ba51264a16916106e95b876769c02b824588d3589d71",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q04-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20chats%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T08:52:54.214Z",
+          "httpDate": "Thu, 15 Oct 2026 08:52:57 GMT",
+          "requestId": "FD7B:66F0A:4BE4F8:6E711C:6AD09466",
+          "sha256": "0639adf87004d22ff38b0efd33f9c5664eb7e987e89538d8939dcb5c9b455896",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q04-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20chats%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T08:53:03.830Z",
+          "httpDate": "Thu, 15 Oct 2026 08:53:07 GMT",
+          "requestId": "E0A9:C3537:DC8DED:14509F7:6AD09470",
+          "sha256": "f8249c9a6b603f898ffe33ce434f003ce36c1295808ef69716a30a2f887d3909",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q04-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20chats%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T08:53:13.895Z",
+          "httpDate": "Thu, 15 Oct 2026 08:53:17 GMT",
+          "requestId": "E040:379A04:DF54A8:14800A0:6AD0947A",
+          "sha256": "92a1e6d96a38d1f1622f7df9aaba5588953a798ac1bab88f0a14df1a234e153e",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q04-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20chats%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T08:53:23.732Z",
+          "httpDate": "Thu, 15 Oct 2026 08:53:26 GMT",
+          "requestId": "F9B7:5544E:DF7E70:14814BB:6AD09484",
+          "sha256": "a94f345f36fa9bca4b013d45fa1102b1887331eec16180988547449d544ada97",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q04-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20chats%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T08:53:33.622Z",
+          "httpDate": "Thu, 15 Oct 2026 08:53:36 GMT",
+          "requestId": "C490:66F0A:4C563E:6F1742:6AD0948E",
+          "sha256": "5c58362fe6d47759bc0e5e4b1dd68b4fd0843d309c19f0d02e5f85dacb9adc08",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q04-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20whatsapp%20chats%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T08:53:43.564Z",
+          "httpDate": "Thu, 15 Oct 2026 08:53:46 GMT",
+          "requestId": "D644:5544E:DFB8E1:148693B:6AD09498",
+          "sha256": "3d030b674cf6bb37c05ea22cc68e284265d6c602e6baf466e5ec53da58564469",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 16083,
+      "retrieved": 1000
+    },
+    {
+      "id": "q05",
+      "terms": "whatsapp msgstore merge",
+      "q": "whatsapp msgstore merge in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q05-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20msgstore%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T08:53:53.443Z",
+          "httpDate": "Thu, 15 Oct 2026 08:53:55 GMT",
+          "requestId": "FBC9:E9CCE:DEDD42:147A1F2:6AD094A1",
+          "sha256": "846005a80d636fb1580ae90f91493b72cbd28be6011768fc0767a5a5c7ec24a5",
+          "items": 54,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 54,
+      "retrieved": 54
+    },
+    {
+      "id": "q06",
+      "terms": "whatsapp chat export merge",
+      "q": "whatsapp chat export merge in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q06-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20chat%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T08:54:02.037Z",
+          "httpDate": "Thu, 15 Oct 2026 08:54:05 GMT",
+          "requestId": "DAC6:30A0F3:DED77C:147B190:6AD094AA",
+          "sha256": "5802d5e214eb897826a6d828589cdf60f6c742a69d7ab9ab8b27d33f03fff350",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q06-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20chat%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T08:54:12.168Z",
+          "httpDate": "Thu, 15 Oct 2026 08:54:15 GMT",
+          "requestId": "F233:2C8F92:DEEAEB:147BE4B:6AD094B4",
+          "sha256": "609a49d57774549c176682ff417456cfc60c38fd25f8b2c606b136fd007e25e7",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q06-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20chat%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T08:54:22.130Z",
+          "httpDate": "Thu, 15 Oct 2026 08:54:25 GMT",
+          "requestId": "ED05:22167F:DD291D:1461EA6:6AD094BE",
+          "sha256": "545a3bd323f03e1bdd087dbd66a6b832c516793aafd1833d2b02d0bfc39ddf18",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q06-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20chat%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T08:54:32.168Z",
+          "httpDate": "Thu, 15 Oct 2026 08:54:36 GMT",
+          "requestId": "E307:2ECDB1:DD5354:1466978:6AD094C9",
+          "sha256": "c48cb62354c24e832d3d1ca3a17f6428b879deab4e046dbf20fec9a2214c8be8",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q06-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20chat%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T08:54:43.212Z",
+          "httpDate": "Thu, 15 Oct 2026 08:54:46 GMT",
+          "requestId": "C154:87436:E06002:1497931:6AD094D3",
+          "sha256": "9612ff5f259ee7bc175687d97a4e2e8a2a7f6ab35ebb47bd0fb5778073a430ed",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q06-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20chat%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T08:54:53.053Z",
+          "httpDate": "Thu, 15 Oct 2026 08:54:56 GMT",
+          "requestId": "FCA7:1AA062:DFBC05:148CEBC:6AD094DD",
+          "sha256": "f7184d82ce078aa19b58a4d634c2eece19967208abdacba03ae6175814fa63c4",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q06-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20chat%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T08:55:03.240Z",
+          "httpDate": "Thu, 15 Oct 2026 08:55:06 GMT",
+          "requestId": "EAE2:24DB8A:DF8EDD:148BD13:6AD094E7",
+          "sha256": "1882821d369ea84ff9c2224a6d638d84f5956e8079728bf547df38655780a65e",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q06-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20chat%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T08:55:12.777Z",
+          "httpDate": "Thu, 15 Oct 2026 08:55:15 GMT",
+          "requestId": "D10A:14758A:E1DF0E:14B0E68:6AD094F1",
+          "sha256": "d8797f4c8274808ea9caa4ba7d86b953c998072c05240e77eeb9bc801f6fbfa3",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q06-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20chat%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T08:55:22.565Z",
+          "httpDate": "Thu, 15 Oct 2026 08:55:27 GMT",
+          "requestId": "CACE:26BE47:E40633:14D3AFA:6AD094FB",
+          "sha256": "dc8b02cae1408a6476c1c295b239a5f86430e6ea19ce492c32073788d8609c0b",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q06-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=whatsapp%20chat%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T08:55:33.785Z",
+          "httpDate": "Thu, 15 Oct 2026 08:55:38 GMT",
+          "requestId": "D844:22167F:DDF57B:1474C05:6AD09506",
+          "sha256": "b448842c40ef707f4a392bce3947920bed8f413491ed600f4f2f7e9ce80c8db8",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 7785,
+      "retrieved": 1000
+    },
+    {
+      "id": "q07",
+      "terms": "combine whatsapp chat",
+      "q": "combine whatsapp chat in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q07-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=combine%20whatsapp%20chat%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T08:55:44.758Z",
+          "httpDate": "Thu, 15 Oct 2026 08:55:47 GMT",
+          "requestId": "CA97:2C8F92:DFF4A8:149450A:6AD09511",
+          "sha256": "533a69fd7e4e34065de6e345cb8d5f92244e4642692ace3d66e707c32869a3db",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q07-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=combine%20whatsapp%20chat%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T08:55:54.627Z",
+          "httpDate": "Thu, 15 Oct 2026 08:55:57 GMT",
+          "requestId": "C41D:14758A:E25943:14BC16E:6AD0951B",
+          "sha256": "e43871db7ebc2f18ca0d5c7034f0b986bee92e116165683716ce0fc524996f45",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q07-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=combine%20whatsapp%20chat%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T08:56:04.419Z",
+          "httpDate": "Thu, 15 Oct 2026 08:56:07 GMT",
+          "requestId": "E125:66F0A:4E080E:7191EF:6AD09524",
+          "sha256": "1e689ee28187a07df0ffe75e1214c5158976f74d40bb31be00ab3d876e1fb3ef",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q07-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=combine%20whatsapp%20chat%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T08:56:14.202Z",
+          "httpDate": "Thu, 15 Oct 2026 08:56:18 GMT",
+          "requestId": "D49D:32CA92:35B0380:36E606B:6AD0952F",
+          "sha256": "d0acf8bcede528adc7b40fca4aa25539a06b475f42d861cbc6b7ab953c6e86a9",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q07-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=combine%20whatsapp%20chat%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T08:56:25.038Z",
+          "httpDate": "Thu, 15 Oct 2026 08:56:28 GMT",
+          "requestId": "CD3D:22167F:DE8760:14822B2:6AD09539",
+          "sha256": "87e2f6aebff1a7a629b1acc81b0161318bcff4f78a683cd4af11b0a7d3cf87a0",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q07-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=combine%20whatsapp%20chat%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T08:56:34.958Z",
+          "httpDate": "Thu, 15 Oct 2026 08:56:38 GMT",
+          "requestId": "ED2A:32CA92:35B3DA0:36E9A89:6AD09543",
+          "sha256": "7e59174d9bd9ff4718c88b37a9310861498811029cdfac9c67e03ade57933cbf",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q07-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=combine%20whatsapp%20chat%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T08:56:45.140Z",
+          "httpDate": "Thu, 15 Oct 2026 08:56:48 GMT",
+          "requestId": "DC9C:1008D3:E250B3:14BD670:6AD0954D",
+          "sha256": "26eb5e508d4a07feb141ad72be0cb6812a94afd56f5e4c4bedbcada5e083fbe5",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q07-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=combine%20whatsapp%20chat%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T08:56:55.506Z",
+          "httpDate": "Thu, 15 Oct 2026 08:56:59 GMT",
+          "requestId": "E573:30A0F3:E0D096:14A8F1E:6AD09558",
+          "sha256": "7e662b6d02c027bdb27d26076105a6c12877569c89767439b29556c2a0423550",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q07-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=combine%20whatsapp%20chat%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T08:57:05.724Z",
+          "httpDate": "Thu, 15 Oct 2026 08:57:09 GMT",
+          "requestId": "F752:1AA062:E13BF4:14AFBDE:6AD09562",
+          "sha256": "9b0eff7014f596fe936866c6f42bf8f472966898db371195ec8e110e147463ce",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q07-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=combine%20whatsapp%20chat%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T08:57:16.243Z",
+          "httpDate": "Thu, 15 Oct 2026 08:57:20 GMT",
+          "requestId": "F13D:E9CCE:E12A08:14AF984:6AD0956C",
+          "sha256": "d49a55a64977d16519f4b8470779cc720ba2d0b854b464da68e8415d37532fed",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 17304,
+      "retrieved": 1000
+    },
+    {
+      "id": "q08",
+      "terms": "signal backup merge",
+      "q": "signal backup merge in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q08-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=signal%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T08:57:27.134Z",
+          "httpDate": "Thu, 15 Oct 2026 08:57:29 GMT",
+          "requestId": "C227:356C10:E1AAD5:14BB485:6AD09577",
+          "sha256": "bebbb247991ee45af396139c951b4d246dc2295d25708f92212f0511d6d5e37a",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q08-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=signal%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T08:57:37.223Z",
+          "httpDate": "Thu, 15 Oct 2026 08:57:40 GMT",
+          "requestId": "D7ED:30A0F3:E1451C:14B36F5:6AD09581",
+          "sha256": "88afdba9d65d2d50aab3bfbf8dcf7a652abbbfb6930a714ce91cff5d7cf7f29b",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q08-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=signal%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T08:57:47.021Z",
+          "httpDate": "Thu, 15 Oct 2026 08:57:49 GMT",
+          "requestId": "CDDE:8832E:3638C4C:376EC2B:6AD0958B",
+          "sha256": "cc3a2950ececa0e8a40eaeb5d59a738c0a603d844c75f1afb6499c6877237b45",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q08-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=signal%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T08:57:56.661Z",
+          "httpDate": "Thu, 15 Oct 2026 08:57:59 GMT",
+          "requestId": "F480:5544E:E293EF:14C8E3A:6AD09595",
+          "sha256": "d4964fb3acd3862b21043225e323f034d022cf3037c2b050176af9d0b3334af0",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q08-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=signal%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T08:58:06.957Z",
+          "httpDate": "Thu, 15 Oct 2026 08:58:09 GMT",
+          "requestId": "FFAF:89788:E3C3D0:14DE0C2:6AD0959F",
+          "sha256": "30e98b77539ef3c2fb5b3e01db982a2970175bc66eac4f91f46d9998d2896bf6",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q08-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=signal%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T08:58:16.546Z",
+          "httpDate": "Thu, 15 Oct 2026 08:58:20 GMT",
+          "requestId": "E08E:25509:E36C5E:14DA55A:6AD095A9",
+          "sha256": "3ee3f6953e3d75353e26702f92fc967d80dec31c89ced10e73078a408d01a439",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q08-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=signal%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T08:58:26.757Z",
+          "httpDate": "Thu, 15 Oct 2026 08:58:30 GMT",
+          "requestId": "DC41:206510:E14BD0:14B6E00:6AD095B3",
+          "sha256": "c810a0d6a6fa1bbd75f10731700fac2bd0750f6f97c92f8dd6795d4bd5545223",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q08-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=signal%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T08:58:36.927Z",
+          "httpDate": "Thu, 15 Oct 2026 08:58:40 GMT",
+          "requestId": "D878:2ECDB1:E0031A:14A505A:6AD095BD",
+          "sha256": "588eec2191b2ca03aac208f3222e7834304fd787c59df377dbd6b87dea2751f0",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q08-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=signal%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T08:58:46.897Z",
+          "httpDate": "Thu, 15 Oct 2026 08:58:50 GMT",
+          "requestId": "DBEA:C3537:E06F12:14AA613:6AD095C7",
+          "sha256": "56190ae31241539bbd137a506f94236b6c00424d9cd9bf1656675de25561b96e",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q08-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=signal%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T08:58:57.169Z",
+          "httpDate": "Thu, 15 Oct 2026 08:59:00 GMT",
+          "requestId": "FFD4:2C8F92:E216A9:14C57D9:6AD095D1",
+          "sha256": "c7a60267420361f61c1a954ac4a52cdc46dde3596b21f17ab1f11256c35bc77e",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 27115,
+      "retrieved": 1000
+    },
+    {
+      "id": "q09",
+      "terms": "telegram export merge",
+      "q": "telegram export merge in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q09-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=telegram%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T08:59:07.139Z",
+          "httpDate": "Thu, 15 Oct 2026 08:59:10 GMT",
+          "requestId": "E1B3:E9CCE:E26147:14CB923:6AD095DB",
+          "sha256": "f076726686739884662df414604541a79a2671093526f1ddba89fb72490b81a6",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q09-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=telegram%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T08:59:17.629Z",
+          "httpDate": "Thu, 15 Oct 2026 08:59:21 GMT",
+          "requestId": "E6E8:26BE47:E6A028:150FA26:6AD095E6",
+          "sha256": "7049e2b4de8a378ad5f7204afcde7edf93922ca300051a5c81af1f26bed9e7d7",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q09-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=telegram%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T08:59:28.749Z",
+          "httpDate": "Thu, 15 Oct 2026 08:59:31 GMT",
+          "requestId": "CEDF:C3537:E0E3FE:14B4CEA:6AD095F1",
+          "sha256": "21a683faa469296ce2a0d2c71285079ae5823940a57c82fb7e4e6ed50c621a0e",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q09-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=telegram%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T08:59:38.669Z",
+          "httpDate": "Thu, 15 Oct 2026 08:59:41 GMT",
+          "requestId": "FF38:356C10:E31961:14DC342:6AD095FB",
+          "sha256": "168c49f2ba549f7c585669e20edd391d9dd52360d546053d1dfa80f7377c515a",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q09-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=telegram%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T08:59:48.360Z",
+          "httpDate": "Thu, 15 Oct 2026 08:59:51 GMT",
+          "requestId": "D49B:38D92:E42EB3:14EA733:6AD09604",
+          "sha256": "1db087b9d877fb12d72a276122e92d58c24cff7fd289eddd1a5a3e828f0ef943",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q09-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=telegram%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T08:59:58.263Z",
+          "httpDate": "Thu, 15 Oct 2026 09:00:01 GMT",
+          "requestId": "F85D:2C8F92:E2C255:14D4E14:6AD0960E",
+          "sha256": "b5667babd06a97baa697c7e045d16831dee3362315fa2dae371232a760ceaf8b",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q09-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=telegram%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T09:00:08.176Z",
+          "httpDate": "Thu, 15 Oct 2026 09:00:11 GMT",
+          "requestId": "C498:5544E:E408CA:14EA4F5:6AD09618",
+          "sha256": "a6df366fdba56e4d1111c7baeeb1a7ab4c9c469e5ffc89db94f1ecaff29d45c8",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q09-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=telegram%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T09:00:18.353Z",
+          "httpDate": "Thu, 15 Oct 2026 09:00:22 GMT",
+          "requestId": "F8E9:8832E:3653545:37896FA:6AD09624",
+          "sha256": "2e4ae17cfc40e5c0f03a08af0e813193f569c4a4bb3d76eda404b42d2ddafdd1",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q09-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=telegram%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T09:00:29.422Z",
+          "httpDate": "Thu, 15 Oct 2026 09:00:32 GMT",
+          "requestId": "FFBA:C3537:E19106:14C46DC:6AD0962D",
+          "sha256": "30ecc9f4144f5c6edb485a6f256b038203852f4e1ec3cf83a87f8d6e87775e96",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q09-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=telegram%20export%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T09:00:40.003Z",
+          "httpDate": "Thu, 15 Oct 2026 09:00:44 GMT",
+          "requestId": "D506:206510:E2CA56:14D9395:6AD09639",
+          "sha256": "3f9ca81ecf176b071ce921da614653c0aeb23ddd2e64f33ae8266f2284ecf508",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 17263,
+      "retrieved": 1000
+    },
+    {
+      "id": "q10",
+      "terms": "chat history merge",
+      "q": "chat history merge in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q10-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20history%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T09:00:51.340Z",
+          "httpDate": "Thu, 15 Oct 2026 09:00:54 GMT",
+          "requestId": "F1C4:114CC7:E2D61A:14DC3E1:6AD09643",
+          "sha256": "d36d7784d834bc918383449b2bb7d0ece61ffface311daf32355c0b2a8cc6c26",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q10-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20history%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T09:01:01.141Z",
+          "httpDate": "Thu, 15 Oct 2026 09:01:05 GMT",
+          "requestId": "F0E7:C3537:E1F251:14CD290:6AD0964F",
+          "sha256": "07bed1a92071fc75acd166b03f88079e80108c5bf3cb8412d940bedac7ec5c8a",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q10-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20history%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T09:01:12.185Z",
+          "httpDate": "Thu, 15 Oct 2026 09:01:14 GMT",
+          "requestId": "CEFA:2ECDB1:E1B7C6:14CC7A9:6AD09658",
+          "sha256": "f6a55bb0c9ebdec8ae324dc719db19f7f2390f367a024130245f2095d4b5553b",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q10-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20history%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T09:01:22.069Z",
+          "httpDate": "Thu, 15 Oct 2026 09:01:25 GMT",
+          "requestId": "F20C:2E57E:E52464:1503943:6AD09662",
+          "sha256": "9e3369cdd98d27eaa580c6dc50a87fe128ef5cfda80a67aad2f2030af03b0c53",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q10-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20history%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T09:01:31.961Z",
+          "httpDate": "Thu, 15 Oct 2026 09:01:35 GMT",
+          "requestId": "C38D:379A04:E4E429:1500F4B:6AD0966C",
+          "sha256": "b8a0ad2737a942c23d411487f5e2fc379742135cbc8d57575ef714713d00a071",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q10-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20history%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T09:01:41.971Z",
+          "httpDate": "Thu, 15 Oct 2026 09:01:44 GMT",
+          "requestId": "ECC3:1AA062:E44A3D:14F62F3:6AD09676",
+          "sha256": "85ff0074b159007cba93fef18424b070bf0b0483e38b65f0c2f69937fc115bbb",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q10-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20history%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T09:01:51.735Z",
+          "httpDate": "Thu, 15 Oct 2026 09:01:54 GMT",
+          "requestId": "D576:8832E:3664A21:379AC63:6AD09680",
+          "sha256": "a2439fcb020d4cd19c964ec3e1f2a6fe9b1186f693ec4aefb4170d8c68e97b12",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q10-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20history%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T09:02:01.938Z",
+          "httpDate": "Thu, 15 Oct 2026 09:02:05 GMT",
+          "requestId": "F5BE:206510:E3AD7B:14EDB9F:6AD0968A",
+          "sha256": "730d6571cbab893e6ea01970bb0a27666073ed1184e74b8ef7f1130992b72508",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q10-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20history%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T09:02:12.053Z",
+          "httpDate": "Thu, 15 Oct 2026 09:02:14 GMT",
+          "requestId": "F60B:114CC7:E3BBFA:14F0FBF:6AD09694",
+          "sha256": "7a21d9d4016f124558b2fa1e9c02a72f7ecdd0a358763ae3aef05fe3fb667fcc",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q10-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20history%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T09:02:21.833Z",
+          "httpDate": "Thu, 15 Oct 2026 09:02:24 GMT",
+          "requestId": "E380:21DBCB:E48706:14FC591:6AD0969E",
+          "sha256": "99683f6351320200f892ac546d9f6c3dc87fd4d70d1833853c16eb6867e37cea",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 116199,
+      "retrieved": 1000
+    },
+    {
+      "id": "q11",
+      "terms": "merge chat backups",
+      "q": "merge chat backups in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q11-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20chat%20backups%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T09:02:31.696Z",
+          "httpDate": "Thu, 15 Oct 2026 09:02:34 GMT",
+          "requestId": "D02E:4C45E:E3EA07:14F3670:6AD096A8",
+          "sha256": "4873c37b45156597a24c6273d37be53880e89dd5ecf79d6e8292a0f0b405ab71",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q11-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20chat%20backups%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T09:02:41.593Z",
+          "httpDate": "Thu, 15 Oct 2026 09:02:44 GMT",
+          "requestId": "D471:21DBCB:E4C1CF:15019A8:6AD096B2",
+          "sha256": "9cad49db0db3d95a9e905a60951ef2ce78f28fca17c39eeaccc92fc7ac4b8037",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q11-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20chat%20backups%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T09:02:53.296Z",
+          "httpDate": "Thu, 15 Oct 2026 09:02:56 GMT",
+          "requestId": "E08F:16CF0A:E5FC12:1517627:6AD096BD",
+          "sha256": "611cd037c7f53aff291255b377fae1b2d019fb363f9261739829bc075adb09ca",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q11-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20chat%20backups%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T09:03:03.328Z",
+          "httpDate": "Thu, 15 Oct 2026 09:03:07 GMT",
+          "requestId": "EC68:66F0A:52921E:782588:6AD096C8",
+          "sha256": "e0ef1bd1da6e83501f19929ac385362bd8b387decf61eb953d5c699f81d3de19",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q11-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20chat%20backups%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T09:03:14.416Z",
+          "httpDate": "Thu, 15 Oct 2026 09:03:17 GMT",
+          "requestId": "F2E5:206510:E47C41:150074F:6AD096D3",
+          "sha256": "9dd95ded7a86da38c4990a4cd0582292d095dda7777765fe3d45942015c85377",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q11-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20chat%20backups%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T09:03:24.826Z",
+          "httpDate": "Thu, 15 Oct 2026 09:03:28 GMT",
+          "requestId": "E701:141A62:E72476:152D802:6AD096DD",
+          "sha256": "59ec7aa5039b2f43e90ead4bec6dd80f28f235c3b662367cb541b673cfdc7b64",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q11-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20chat%20backups%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T09:03:35.282Z",
+          "httpDate": "Thu, 15 Oct 2026 09:03:38 GMT",
+          "requestId": "F621:C3537:E3AEEB:14F54BA:6AD096E7",
+          "sha256": "198e256d09f436add55228a0a835b5817a4282b8ae44a1fa90db7a0cacbff4eb",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q11-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20chat%20backups%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T09:03:44.934Z",
+          "httpDate": "Thu, 15 Oct 2026 09:03:48 GMT",
+          "requestId": "FCD4:2E57E:E6C469:1528FB4:6AD096F1",
+          "sha256": "cb445b19c1fc9c2b21d7d61836129daed583eef05d4431f6e94a86a37b1d8d7e",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q11-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20chat%20backups%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T09:03:55.436Z",
+          "httpDate": "Thu, 15 Oct 2026 09:03:58 GMT",
+          "requestId": "E25A:24DB8A:E57B03:1514BE7:6AD096FC",
+          "sha256": "21b984fe95a164634417d2e76b02fb1a2d596353b1b3b7c3c42d53d9e3e5228f",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q11-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=merge%20chat%20backups%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T09:04:05.540Z",
+          "httpDate": "Thu, 15 Oct 2026 09:04:08 GMT",
+          "requestId": "CAED:87436:E6C668:152AE5C:6AD09706",
+          "sha256": "3b75ffec027b03ff5189e30f10e9d3c526b2b773ba5aaec6109885b346b2951a",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 35872,
+      "retrieved": 1000
+    },
+    {
+      "id": "q12",
+      "terms": "sms backup merge",
+      "q": "sms backup merge in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q12-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T09:04:15.892Z",
+          "httpDate": "Thu, 15 Oct 2026 09:04:18 GMT",
+          "requestId": "F93E:114CC7:E526FD:1511EF2:6AD09710",
+          "sha256": "6ef334d699f77fe2870143c28f33ceb91004194acb41f7612d726dd91b12ef44",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q12-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T09:04:25.771Z",
+          "httpDate": "Thu, 15 Oct 2026 09:04:28 GMT",
+          "requestId": "E8E7:8832E:367FD1B:37B602D:6AD0971A",
+          "sha256": "2c8006b54aa079023c5c107f2baa964936c7f495a53046b2f53b86509d145c3f",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q12-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T09:04:35.698Z",
+          "httpDate": "Thu, 15 Oct 2026 09:04:38 GMT",
+          "requestId": "CC6D:38D92:E771EA:1535D1B:6AD09724",
+          "sha256": "15934622e2016bb8a6d5b2362d460f1d0e544b63e348380e4042f4e82ff5589c",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q12-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T09:04:45.627Z",
+          "httpDate": "Thu, 15 Oct 2026 09:04:50 GMT",
+          "requestId": "F95A:14758A:E84A28:154537E:6AD0972E",
+          "sha256": "4fab6c705d92272e9de36e80da16d3a712bf993bcfbef3b665e6a3fa56d143b6",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q12-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T09:04:57.155Z",
+          "httpDate": "Thu, 15 Oct 2026 09:05:01 GMT",
+          "requestId": "DBDD:2E57E:E79738:153C4DE:6AD09739",
+          "sha256": "836959f344163675b86ec0029f441e8c764e9e5a0281a69da7ddd1e45a3625dc",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q12-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T09:05:07.919Z",
+          "httpDate": "Thu, 15 Oct 2026 09:05:11 GMT",
+          "requestId": "F668:30A0F3:E64F75:1527F38:6AD09744",
+          "sha256": "08a8054af3be2ab4e78b0d42d390092525d13f338f351e87fe104788b779a741",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q12-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T09:05:18.349Z",
+          "httpDate": "Thu, 15 Oct 2026 09:05:22 GMT",
+          "requestId": "F247:8832E:3689921:37BFD1B:6AD0974E",
+          "sha256": "83c8db9130834f83604b8f945f631fb99ede534ef5075a02dd36840db65b550a",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q12-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T09:05:29.179Z",
+          "httpDate": "Thu, 15 Oct 2026 09:05:34 GMT",
+          "requestId": "E866:24DB8A:E69807:152E988:6AD0975A",
+          "sha256": "7408716a9669b01c1a00930d465451357d4beb001546067b89e44ca3da192a59",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q12-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T09:05:40.811Z",
+          "httpDate": "Thu, 15 Oct 2026 09:05:44 GMT",
+          "requestId": "D82F:3C3989:E483D4:150D3A7:6AD09765",
+          "sha256": "54042969ebb18d4320a581dbf58fa453d60b13c4e953b9d7839faa1f1d36cba5",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q12-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20backup%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T09:05:51.630Z",
+          "httpDate": "Thu, 15 Oct 2026 09:05:55 GMT",
+          "requestId": "D5C3:25509:E8A1C1:1552307:6AD09770",
+          "sha256": "047dda9072c8281ffcc8da1acf84281289138f62b36ef53d08166a4fdcc1bfaf",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 6551,
+      "retrieved": 1000
+    },
+    {
+      "id": "q13",
+      "terms": "sms deduplication",
+      "q": "sms deduplication in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q13-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20deduplication%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T09:06:02.568Z",
+          "httpDate": "Thu, 15 Oct 2026 09:06:05 GMT",
+          "requestId": "FD3D:4C45E:E65979:152C125:6AD0977B",
+          "sha256": "5b12c815429aa789fa318ce2cf6d0e16d78cd8ec4ba9d7c3e758386a675b7fcc",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q13-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20deduplication%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T09:06:12.770Z",
+          "httpDate": "Thu, 15 Oct 2026 09:06:16 GMT",
+          "requestId": "FF26:1AA062:E75AF1:153DC26:6AD09785",
+          "sha256": "a20e5eb9158fed3630c0d926aa6cf7d5d591f1c7a16d8072502b85b303670621",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q13-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20deduplication%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T09:06:23.389Z",
+          "httpDate": "Thu, 15 Oct 2026 09:06:28 GMT",
+          "requestId": "FBB6:16CF0A:E87B53:155149F:6AD09790",
+          "sha256": "99e947f78ea4e7abf3ace5ddea339a13de8c5daf29d8aeead3159bf5839f1cba",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q13-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20deduplication%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T09:06:35.160Z",
+          "httpDate": "Thu, 15 Oct 2026 09:06:39 GMT",
+          "requestId": "FB86:8832E:36982C1:37CE79D:6AD0979B",
+          "sha256": "2de3d2b3449e2ddeab37ab8252208ede1b9d9a089cfd832a4f072b2224af9d57",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q13-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20deduplication%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T09:06:46.593Z",
+          "httpDate": "Thu, 15 Oct 2026 09:06:50 GMT",
+          "requestId": "DB5D:5544E:E894AC:15539F2:6AD097A7",
+          "sha256": "4abb6587b5e23d33f409f5e96bcbe2888f360ace8a5660728f2f0a7693fa0191",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q13-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20deduplication%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T09:06:57.678Z",
+          "httpDate": "Thu, 15 Oct 2026 09:07:03 GMT",
+          "requestId": "EABD:C3537:E61400:152C898:6AD097B2",
+          "sha256": "e6c84a0c3b01fb4087faabfd3f922ebcfda1263096c3c36e5394a2b03cce55d2",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q13-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20deduplication%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T09:07:09.881Z",
+          "httpDate": "Thu, 15 Oct 2026 09:07:14 GMT",
+          "requestId": "FB52:206510:E7348E:153FA80:6AD097BE",
+          "sha256": "d39228f70bca877ba2a195aef3adf0c9581183b6aa12d33a979de386e8465648",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q13-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20deduplication%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T09:07:21.582Z",
+          "httpDate": "Thu, 15 Oct 2026 09:07:25 GMT",
+          "requestId": "D892:E9CCE:E7E3EA:154BBA2:6AD097CA",
+          "sha256": "0e290110b5c80c2376295921e3ae0a9e0fbe7665557c551ac76c88daf04af63d",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q13-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20deduplication%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T09:07:32.653Z",
+          "httpDate": "Thu, 15 Oct 2026 09:07:37 GMT",
+          "requestId": "D381:66F0A:55A5D3:7C9F5B:6AD097D5",
+          "sha256": "adb89ca48315d4f3f35db7e0934df71cd7baaacd50dd492f338111998fb4aadb",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q13-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=sms%20deduplication%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T09:07:44.425Z",
+          "httpDate": "Thu, 15 Oct 2026 09:07:49 GMT",
+          "requestId": "DFB1:1008D3:E98D34:1565B35:6AD097E0",
+          "sha256": "27b03a837fd9f51394b94df98a1ec73f8852f76d182b598dd03e55ba4bdd639c",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 6511,
+      "retrieved": 1000
+    },
+    {
+      "id": "q14",
+      "terms": "imessage merge",
+      "q": "imessage merge in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q14-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=imessage%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T09:07:55.843Z",
+          "httpDate": "Thu, 15 Oct 2026 09:07:58 GMT",
+          "requestId": "F2B1:1AA062:E87CC1:1557D47:6AD097EC",
+          "sha256": "5c8de9091eb7e1ee487b02c4896a8e699ab04b93ea016515f474ce22685cce66",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q14-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=imessage%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T09:08:05.697Z",
+          "httpDate": "Thu, 15 Oct 2026 09:08:09 GMT",
+          "requestId": "ED9B:22167F:E63D81:15353CE:6AD097F6",
+          "sha256": "e48369335b3d73a7b3fb979e18d81b73ff6462d0c20c94ea10888c3575cd65d1",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q14-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=imessage%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T09:08:15.851Z",
+          "httpDate": "Thu, 15 Oct 2026 09:08:19 GMT",
+          "requestId": "E010:2ECDB1:E69901:153CFB8:6AD09800",
+          "sha256": "de1b23fca537ada9f56749be9358ad25ba7de418fa6b0c6129f23e44538d59c6",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q14-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=imessage%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T09:08:26.492Z",
+          "httpDate": "Thu, 15 Oct 2026 09:08:31 GMT",
+          "requestId": "E3CE:8832E:36ABD5B:37E2361:6AD0980C",
+          "sha256": "46b8c178a6f3d9b603e473c6bd3c2eb489a8eb1817fe604b0b4983587e8faf24",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q14-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=imessage%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T09:08:37.888Z",
+          "httpDate": "Thu, 15 Oct 2026 09:08:41 GMT",
+          "requestId": "FB0B:141A62:EAAAE7:157F41F:6AD09816",
+          "sha256": "1e1238497a6c6d33d1f4d521278f4f1a19880df4ec53f4449556c25e00bc27ee",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q14-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=imessage%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T09:08:48.494Z",
+          "httpDate": "Thu, 15 Oct 2026 09:08:52 GMT",
+          "requestId": "E15B:1008D3:EA4050:1575E4F:6AD09821",
+          "sha256": "52197284df8564410ae18b280225642e5b01c28c28e7b8d5200867124988d6f5",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q14-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=imessage%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T09:08:59.587Z",
+          "httpDate": "Thu, 15 Oct 2026 09:09:03 GMT",
+          "requestId": "D37D:2ECDB1:E7139E:1548143:6AD0982C",
+          "sha256": "a122420e35f51efa599e4e733c023facb9bc74452da2ee1cafc751feb4031ece",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q14-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=imessage%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T09:09:10.628Z",
+          "httpDate": "Thu, 15 Oct 2026 09:09:14 GMT",
+          "requestId": "EB67:2E57E:EA6BD8:157DF72:6AD09837",
+          "sha256": "2885eb6c34d8ceae85d3eeed62292e63f330ed5846ba45f6d1fe5098838eb49d",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q14-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=imessage%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T09:09:21.409Z",
+          "httpDate": "Thu, 15 Oct 2026 09:09:25 GMT",
+          "requestId": "C1FE:32CA92:363F33F:3775872:6AD09841",
+          "sha256": "5a458ba46f4ff73dbc5f6e0c23d5900ec6ab261d3824c2f916cd7d12d25bbf03",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q14-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=imessage%20merge%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T09:09:32.003Z",
+          "httpDate": "Thu, 15 Oct 2026 09:09:35 GMT",
+          "requestId": "C22B:206510:E8C7D3:1563F7F:6AD0984C",
+          "sha256": "46a973d3cc6849555654241d9e8fd3c37ecd399b2985d35f8c18f150cd9a929b",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 3048,
+      "retrieved": 1000
+    },
+    {
+      "id": "q15",
+      "terms": "chat archive deduplicate",
+      "q": "chat archive deduplicate in:name,description,readme",
+      "pages": [
+        {
+          "page": 1,
+          "file": "q15-p1.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20archive%20deduplicate%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=1",
+          "queriedAtUtc": "2026-10-15T09:09:42.478Z",
+          "httpDate": "Thu, 15 Oct 2026 09:09:45 GMT",
+          "requestId": "EFCC:356C10:E9F5B0:157B020:6AD09857",
+          "sha256": "9f661ef747ffd73bd4632a62591a57ec568b0143bb8a875a5eef760ae1f9b97e",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 2,
+          "file": "q15-p2.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20archive%20deduplicate%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=2",
+          "queriedAtUtc": "2026-10-15T09:09:51.971Z",
+          "httpDate": "Thu, 15 Oct 2026 09:09:54 GMT",
+          "requestId": "FD30:8832E:36BB054:37F17C2:6AD09860",
+          "sha256": "2d192ed446d7a256f8559111716ca3738d86347e379b16e5cf1da18aee571295",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 3,
+          "file": "q15-p3.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20archive%20deduplicate%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=3",
+          "queriedAtUtc": "2026-10-15T09:10:01.811Z",
+          "httpDate": "Thu, 15 Oct 2026 09:10:05 GMT",
+          "requestId": "CE07:206510:E91E13:156BAA8:6AD0986A",
+          "sha256": "ab188a54591a12ffa041c9fa7fd84cc4110b47efc785acc7ef77fb2ef776cdbb",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 4,
+          "file": "q15-p4.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20archive%20deduplicate%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=4",
+          "queriedAtUtc": "2026-10-15T09:10:12.179Z",
+          "httpDate": "Thu, 15 Oct 2026 09:10:15 GMT",
+          "requestId": "C92D:2ECDB1:E7E17F:155AAB1:6AD09874",
+          "sha256": "e23bc2965dd7b8268766efe7ff120063f4b4ebcaaad66361f34f2d5010231ed2",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 5,
+          "file": "q15-p5.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20archive%20deduplicate%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=5",
+          "queriedAtUtc": "2026-10-15T09:10:22.057Z",
+          "httpDate": "Thu, 15 Oct 2026 09:10:25 GMT",
+          "requestId": "D69F:38D92:EB56D8:158FF22:6AD0987E",
+          "sha256": "078bc686864d0943633dff5555af851d7d3d74e3e19549c783c3101a86473c22",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 6,
+          "file": "q15-p6.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20archive%20deduplicate%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=6",
+          "queriedAtUtc": "2026-10-15T09:10:31.967Z",
+          "httpDate": "Thu, 15 Oct 2026 09:10:35 GMT",
+          "requestId": "DAC6:30A0F3:E9F6DF:157C71D:6AD09888",
+          "sha256": "b6868180d84defa5d37c0f2140957cb1719f0fac66c9db2bb271d640c0bc5f5f",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 7,
+          "file": "q15-p7.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20archive%20deduplicate%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=7",
+          "queriedAtUtc": "2026-10-15T09:10:42.167Z",
+          "httpDate": "Thu, 15 Oct 2026 09:10:45 GMT",
+          "requestId": "CD50:206510:E992AB:15762C4:6AD09892",
+          "sha256": "06155320c4ace834a8911bb6759ca155afc454f770d51d20ff605ce66b3aa460",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 8,
+          "file": "q15-p8.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20archive%20deduplicate%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=8",
+          "queriedAtUtc": "2026-10-15T09:10:52.811Z",
+          "httpDate": "Thu, 15 Oct 2026 09:10:56 GMT",
+          "requestId": "DDD4:16CF0A:EB7F45:159690D:6AD0989D",
+          "sha256": "ee88be22668409591e40700890b199c15bb6ee1395cb487fba5df18f4295f747",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 9,
+          "file": "q15-p9.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20archive%20deduplicate%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=9",
+          "queriedAtUtc": "2026-10-15T09:11:03.866Z",
+          "httpDate": "Thu, 15 Oct 2026 09:11:08 GMT",
+          "requestId": "F4E2:2E57E:EBB7EF:159BC20:6AD098A8",
+          "sha256": "7a065c26eeab7dceca1b17e930b62280b0f74608efec5bf5d9b5826791217af7",
+          "items": 100,
+          "incomplete_results": false
+        },
+        {
+          "page": 10,
+          "file": "q15-p10.json.gz",
+          "url": "https://api.github.com/search/repositories?q=chat%20archive%20deduplicate%20in%3Aname%2Cdescription%2Creadme&per_page=100&page=10",
+          "queriedAtUtc": "2026-10-15T09:11:15.490Z",
+          "httpDate": "Thu, 15 Oct 2026 09:11:19 GMT",
+          "requestId": "D560:206510:E9F368:157EDD3:6AD098B4",
+          "sha256": "057d7d10e2ae3a4cde9d6419e1ce2f0ed7873bee6c9a49f632bfb5f31c72cd0a",
+          "items": 100,
+          "incomplete_results": false
+        }
+      ],
+      "total_count": 7785,
+      "retrieved": 1000
+    }
+  ]
+}

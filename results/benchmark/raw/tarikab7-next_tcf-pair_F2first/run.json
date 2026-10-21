@@ -1,0 +1,20 @@
+{
+  "tool": "tarikab7/whatsapp-chat-merger",
+  "variant": "src/lib/whatsapp-parser.ts (Next.js app in the same repository)",
+  "sha": "403c98e132e8d3fbdbe054adfd53bf3d182225a9",
+  "input": "data/synthetic_fixtures/tcf-pair",
+  "order": "F2 loaded first",
+  "status": "ran",
+  "env": {
+    "os": "Windows_NT 10.0.26100 x64",
+    "node": "v24.14.0",
+    "bun": "1.3.14",
+    "TZ": "UTC"
+  },
+  "command": "TZ=UTC bun scripts/survey/bench/run-tarikab7-next.ts <checkout> data/synthetic_fixtures/tcf-pair results/benchmark/raw/tarikab7-next_tcf-pair_F2first F2",
+  "wrapper_stdout": "parsed tcf-F2-secondary.txt=134 tcf-F1-primary.txt=0; merged 134, shown 134",
+  "diagnostics_emitted": "none (the parse and merge code writes no message, warning or log)",
+  "conflicts_reported": "n (output has no conflict field)",
+  "provenance_reported": "partial: each record carries sourceId (and duplicateOf for flagged copies); no file line or hash",
+  "unparseable_input": "lines matching no header pattern are appended to the previous message body, or dropped if no message precedes them; no notice"
+}

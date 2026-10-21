@@ -6,11 +6,11 @@ authors:
     family-names: "Sapariya"
     affiliation: "Independent Researcher"
     orcid: "https://orcid.org/0009-0003-9346-3775"
-version: "0.1.0"
-date-released: "2026-09-02"
+version: "0.2.0"
+date-released: "2026-10-21"
 repository-code: "https://github.com/stiFFLer-codes/champ-pipeline"
 license: MIT
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.22260522"
+    value: "10.5281/zenodo.22260521"
     description: "Concept DOI (all versions)"

@@ -1,6 +1,6 @@
 # CHAMP-Pipeline
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22260522.svg)](https://doi.org/10.5281/zenodo.22260522)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22260521.svg)](https://doi.org/10.5281/zenodo.22260521)
 
 Reference implementation and formal specification of **CARTA** (Chat Archive
 Reconstruction & Temporal Access) — a platform-agnostic framework for
@@ -22,8 +22,8 @@ manuscript as **Temporal Communication Fragmentation (TCF)**.
 Phase II-A (minimal conforming implementation) is complete: the pipeline runs
 end to end — ingestion → normalization → fragment-scope date inference →
 synthesis — and reconstructs a synthetic fragment pair to its known ground
-truth. `node tests/run-all.js` passes 5 checks. The associated arXiv preprint
-is drafted and builds clean under pdflatex; submission is pending.
+truth. `node tests/run-all.js` passes 5 checks. The associated manuscript is
+under revision at IJMADA.
 
 The full CHAMP-Pipeline build (additional formats, a reference UI, CI) remains
 deferred future work. See [`STATE.md`](STATE.md) and [`PROJECT_PLAN.md`](PROJECT_PLAN.md).
@@ -52,15 +52,51 @@ node scripts/reconstruct.js --infer --expect data/synthetic_fixtures/tcf-pair/ma
 
 # individual stages
 node scripts/ingest.js --json <fragment.txt> ...
-node scripts/normalize.js [--offset <min>] [--infer] <fragment.txt>
+node scripts/normalize.js [--zone <IANA name | +HH:MM>] [--infer] <fragment.txt>
 ```
+
+Options of `reconstruct.js` (the stage scripts take `--zone` and `--source-id` the same way):
+
+| Option | Effect |
+| --- | --- |
+| `--zone <IANA name \| +HH:MM>` | The zone the fragments after it were exported in, until the next `--zone`. Fragments before any `--zone` are read as `+00:00`; Ω records each fragment's zone and whether it was declared or defaulted. |
+| `--source-id <id>` | The id of the one fragment after it (it does not carry over). Without it a fragment's id is its file name, and two fragments with the same file name are refused. Ω records which applied (`fragments[].idSource`). |
+| `--clustering one-to-one\|complete\|single` | How duplicate observations are grouped. `one-to-one` (default) puts at most one observation per fragment in a record and reports differing per-fragment counts as `dedup_ambiguity`; `complete` is the CARTA 1.0 complete linkage; `single` is connected components. |
+| `--infer` | Fragment-scope date-order inference before Synthesis. |
+| `--dt <ms>` | Deduplication window (default 0, exact match). |
+| `--json` | Print the full (U, Ω) as JSON. |
+| `--expect <manifest.json>` | Check the run against a `tcf-pair` manifest and exit non-zero on a mismatch. |
 
 Regenerate the fixtures:
 
 ```sh
 node scripts/generate-synthetic-fixtures.js                         # the 5 parsing-edge-case fixtures
 node scripts/generate-synthetic-fixtures.js --tcf-pair --delta 14 --epsilon 7   # the committed fragment pair
+node scripts/generate-synthetic-fixtures.js --scenario <config.json> --out <dir>  # a scenario
 ```
+
+`--scenario` reads a JSON config (seed, size, 2-4 fragments, δ, ε, timeline
+lengths, per-fragment date order, clock and zone, and knobs (a)-(h) for
+repeats, sender disagreement, ordering, attachment forms, a synthetic body
+variant, a misdeclared zone, clock jitter and zone-dependent date ambiguity) and writes
+`scenario-F<i>-primary|secondary.txt` plus a `manifest.json` with the ground
+truth and the expected outcome. The parameters and their defaults are
+`SCENARIO_DEFAULTS` in `scripts/generate-synthetic-fixtures.js`.
+
+## Reproduce the paper's numbers
+
+```sh
+node scripts/experiments/run-all.js
+```
+
+This runs experiments E1, E2, E4, E5, E7, E8 and then E3 (alone, last),
+writes their deterministic outputs to `results/` and their timings to
+`results/timing/`, and regenerates `results/paper-numbers.json`, the one file
+the paper's numbers are taken from. Name experiments to run only those, e.g.
+`node scripts/experiments/run-all.js e4 e7` (paper-numbers still runs last).
+E1 is the longest: about an hour on a 2-core laptop. `node tests/run-all.js`
+then checks the corpus, committed-pair and survey numbers in
+`results/paper-numbers.json` against a fresh computation.
 
 ## Running the tests
 
@@ -85,7 +121,7 @@ in `scripts/`.
 
 See [`CITATION.cff`](CITATION.cff). Manuscript: *When Chats Split Apart:
 Formalizing Temporal Communication Fragmentation and the CARTA Reconstruction
-Framework*, Maitreya Sapariya (arXiv preprint, forthcoming).
+Framework*, Maitreya Sapariya (under revision at IJMADA).
 
 ## License
 

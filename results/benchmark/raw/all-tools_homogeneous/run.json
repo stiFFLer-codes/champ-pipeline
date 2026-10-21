@@ -1,0 +1,6 @@
+{
+  "tool": "all runnable tools",
+  "input": "homogeneous-format pair (not generated)",
+  "status": "blocked",
+  "note": "generator --tcf-pair hard-codes F1 dmy/12h and F2 mdy/24h (scripts/generate-synthetic-fixtures.js:436-437); a same-format pair needs a generator change, see WP3_REPORT.md."
+}

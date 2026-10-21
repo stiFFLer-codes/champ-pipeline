@@ -43,10 +43,19 @@
 // (A fourth case, the established order yielding an invalid date, turns out to
 // be unreachable: ambiguity requires both fields in 1..12, which is a valid
 // (day, month) pair either way. It is a loud guard in the code, not a branch.)
+//
+// One case is reachable and handled: the order settles the DATE, but under the
+// fragment's declared zone the local time falls in a DST gap or overlap. The
+// record stays in Q under that reason, and the report lists it.
 
 const {
-  resolveTimestamp, canonicalBody, classifyType, REASON, DEFAULT_POLICY,
+  resolveTimestamp, canonicalRecord, REASON, DEFAULT_POLICY,
 } = require('../normalization');
+
+// A record is a candidate only when the date ordering is the ONLY thing wrong
+// with it. A record that is also, say, senderless was quarantined for that
+// too; settling its date would not make it interpretable, so it stays in Q.
+const isCandidate = (q) => q.reason === REASON.AMBIGUOUS_DATE_FORMAT && q.alsoFailed.length === 0;
 
 // How many witnesses the fragment must supply before its convention is treated
 // as established. One is enough in principle; requiring it to be declared is
@@ -74,18 +83,25 @@ function inferFragmentDateOrder(normalized, opts) {
     applied: false,
     order: null,
     reason: null,
+    minWitnesses: options.minWitnesses,
     evidence: {
       witnessCount: witnesses.length,
       byOrder: counts,
-      // A handful of concrete witnesses, located by line range so a reader can
-      // go back to the bytes rather than take the count on trust.
-      sample: witnesses.slice(0, 5).map((w) => ({
+      // Every witness, located by line range so a reader can go back to the
+      // bytes rather than take the count on trust.
+      witnesses: witnesses.map((w) => ({
         line_range: w.provenance.line_range,
         dateOrder: w.dateOrder,
       })),
     },
-    candidates: normalized.quarantine.filter((q) => q.reason === REASON.AMBIGUOUS_DATE_FORMAT).length,
+    candidates: normalized.quarantine.filter(isCandidate).length,
     resolved: 0,
+    // The records the order was applied to, by line range: the report's half
+    // of the mark each rescued record carries.
+    rescued: [],
+    // Candidates whose date the order settled but whose local time the
+    // declared zone does not map to exactly one instant.
+    requarantined: [],
     stillQuarantined: 0,
   };
 
@@ -103,13 +119,7 @@ function inferFragmentDateOrder(normalized, opts) {
 
   if (!report.applied) {
     report.stillQuarantined = normalized.quarantine.length;
-    return {
-      sourceId: normalized.sourceId,
-      records: normalized.records,
-      quarantine: normalized.quarantine,
-      inference: report,
-      policy,
-    };
+    return Object.assign({}, normalized, { inference: report, policy });
   }
 
   // --- apply, and mark everything it touches --------------------------------
@@ -117,11 +127,18 @@ function inferFragmentDateOrder(normalized, opts) {
   const quarantine = [];
 
   for (const q of normalized.quarantine) {
-    if (q.reason !== REASON.AMBIGUOUS_DATE_FORMAT) {
+    if (!isCandidate(q)) {
       quarantine.push(q);
       continue;
     }
     const ts = resolveTimestamp(q.record.rawTimestamp, policy, report.order);
+    if (!ts.ok && ts.zone) {
+      // The date is settled; the local time is not. Still uninterpretable, now
+      // for a different reason, which is the one Q must carry.
+      quarantine.push(Object.assign({}, q, { reason: ts.reason, dateOrderInferred: report.order }));
+      report.requarantined.push({ line_range: q.provenance.line_range, reason: ts.reason });
+      continue;
+    }
     if (!ts.ok) {
       // Unreachable, and deliberately loud rather than silently re-quarantining.
       //
@@ -129,7 +146,8 @@ function inferFragmentDateOrder(normalized, opts) {
       // are in 1..12, which is a valid (day, month) pair under BOTH orderings --
       // every month has a 12th. Its time component is valid too, because
       // resolveTimestamp checks the clock before it ever reaches the ordering
-      // question. So applying either order must succeed.
+      // question. So applying either order must yield a valid date (the zone
+      // step, which can fail, was handled above).
       //
       // If this ever throws, one of those two premises has changed and the
       // right response is to fix the premise, not to quarantine the record and
@@ -140,20 +158,10 @@ function inferFragmentDateOrder(normalized, opts) {
           `line ${q.provenance.line_range[0]}`
       );
     }
-    records.push({
-      tUtc: ts.tUtc,
-      dateOrder: ts.dateOrder,
-      // Reuses Normalization's own field construction rather than restating
-      // it: a rescued record must be schema-identical to one that resolved
-      // unaided, or the `inferred` mark would not be the only difference.
-      sender: q.record.rawSender ? q.record.rawSender.trim() : null,
-      type: classifyType(q.record),
-      body: canonicalBody(q.record),
-      attachment: q.record.attachment
-        ? { ref: q.record.attachment.rawRef, form: q.record.attachment.form }
-        : null,
-      sourceSeq: q.sourceSeq,
-      provenance: q.provenance,
+    // Normalization's own record construction, not a restatement of it: a
+    // rescued record must be schema-identical to one that resolved unaided,
+    // or the `inferred` mark would not be the only difference.
+    records.push(Object.assign(canonicalRecord(q.record, ts, q.sourceSeq), {
       // The mark that keeps this distinguishable from a record that was never
       // in doubt. Section 3.3's requirement, and the reason this step is
       // permitted rather than forbidden.
@@ -163,8 +171,9 @@ function inferFragmentDateOrder(normalized, opts) {
         by: 'fragment-scope-inference',
         basis: `${report.evidence.witnessCount} unambiguous record(s) in ${normalized.sourceId}`,
       },
-    });
+    }));
     report.resolved++;
+    report.rescued.push(q.provenance.line_range);
   }
 
   report.stillQuarantined = quarantine.length;
@@ -183,7 +192,12 @@ function inferFragmentDateOrder(normalized, opts) {
   // consumer should not see rescued records bolted on at the end.
   records.sort((x, y) => x.sourceSeq - y.sourceSeq);
 
-  return { sourceId: normalized.sourceId, records, quarantine, inference: report, policy };
+  const byReason = {};
+  for (const q of quarantine) byReason[q.reason] = (byReason[q.reason] || 0) + 1;
+  const stats = Object.assign({}, normalized.stats,
+    { normalized: records.length, quarantined: quarantine.length, byReason });
+
+  return Object.assign({}, normalized, { records, quarantine, inference: report, policy, stats });
 }
 
 module.exports = { inferFragmentDateOrder, DEFAULT_MIN_WITNESSES };

@@ -1,0 +1,38 @@
+{
+  "experiment": "E8: zone-offset advisory, false alarms and detection",
+  "frozen": "this file and the rule (core/src/synthesis/index.js, ZONE_ADVISORY and zoneOffsetSupport) were committed together before E8 was run",
+  "rule": { "stepMinutes": 15, "maxOffsetHours": 26, "minSupport": 3, "minDistinctKeys": 3 },
+  "mode": { "infer": true, "clustering": "one-to-one", "dtGranularityMs": 0, "dtConflictMs": 60000 },
+  "seeds": { "from": 1, "to": 50 },
+  "falseAlarms": {
+    "what": "(i) zones correct: every fragment rendered and declared +00:00, so every advisory is a false alarm",
+    "base": { "fragments": 2, "attachmentRate": 0.05, "preDays": 30, "windowDays": 120, "postDays": 30,
+      "formats": [{ "dateOrder": "dmy", "clock": "12h", "zone": "+00:00" }, { "dateOrder": "mdy", "clock": "24h", "zone": "+00:00" }] },
+    "grid": {
+      "geometry": [{ "name": "disjoint", "deltaDays": 0, "epsilonDays": 0 }, { "name": "d14e7", "deltaDays": 14, "epsilonDays": 7 }],
+      "size": [10000, 50000],
+      "repeatBursts": [0, 500, 5000]
+    },
+    "burst": { "knob": "a", "k": [2, 3], "where": "any", "spread": 5, "common": true,
+      "note": "the E5 repeat process: 2-3 messages from one sender with one common short body, within 0-5 minutes, anywhere on the timeline; repeatBursts is its count" },
+    "metrics": [
+      "false_alarm_rate per (geometry, size, repeatBursts) cell = runs with at least one advisory / runs",
+      "advisories per run, and for each advisory: offset, support, supportAtZero, maxControlSupport, distinctKeys"
+    ]
+  },
+  "detection": {
+    "what": "(ii) one misdeclared zone: F2 rendered in renderZone and declared as declaredZone; F1 rendered and declared +00:00",
+    "zones": ["+00:00", "+05:30", "-05:00", "+01:00", "+09:45", "-03:30", "+14:00", "-12:00"],
+    "zonesSource": "scripts/experiments/e2-properties.js ZONES",
+    "pairs": "every ordered (renderZone, declaredZone) from zones with renderZone != declaredZone: 56",
+    "base": { "fragments": 2, "size": 1000, "deltaDays": 14, "epsilonDays": 7, "attachmentRate": 0.05, "preDays": 30, "windowDays": 120, "postDays": 30,
+      "formats": [{ "dateOrder": "dmy", "clock": "12h", "zone": "+00:00" }, { "dateOrder": "mdy", "clock": "24h", "zone": "<renderZone>" }],
+      "knobs": { "f": { "fragment": 1, "declaredZone": "<declaredZone>" } } },
+    "metrics": [
+      "detection_rate per pair and per shift (renderZone - declaredZone) = runs with an advisory naming the F1/F2 pair at that shift, with its sign / runs",
+      "runs with an advisory at any other offset",
+      "reason for each miss, the first that applies, computed with zoneOffsetSupport at the true shift: F1 or F2 has no record with an instant; support < minSupport; distinct keys < minDistinctKeys; support <= support at zero; support <= best control support"
+    ]
+  },
+  "outputs": ["results/e8-false-alarms.csv", "results/e8-detection.csv", "results/e8-summary.json", "results/timing/e8.json"]
+}

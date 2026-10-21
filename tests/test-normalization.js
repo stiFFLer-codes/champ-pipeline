@@ -134,8 +134,22 @@ function one(content, policy) {
   const r = one('15/01/24, 09:00 - Contact C: DOC-1.pdf (file attached)\n');
   const rec = r.records[0];
   assert.strictEqual(rec.type, TYPE.ATTACHMENT);
-  assert.strictEqual(rec.attachment.ref, 'DOC-1.pdf');
+  assert.deepStrictEqual(rec.attachment, { ref: 'DOC-1.pdf', form: 'standard', stem: 'DOC-1' });
+  assert.strictEqual(rec.body, '', 'the export marker line is the attachment, not the body');
   assert.strictEqual(rec.sender, 'Contact C');
+}
+{
+  // The body of an attachment message is its caption. The three export
+  // variants of one attachment canonicalise to the same caption and stem.
+  const std = norm('15/01/24, 09:00 - A: IMG-1.jpg (file attached)\nnice view\n').records[0];
+  const dbl = norm('15/01/24, 09:00 - A: IMG-1.jpg (file attached)\nnice view\nIMG-1.jpg\n').records[0];
+  const tp = norm('15/01/24, 09:00 - A: IMG-1. (file attached)\nnice view\n').records[0];
+  for (const r of [std, dbl, tp]) {
+    assert.strictEqual(r.body, 'nice view');
+    assert.strictEqual(r.attachment.stem, 'IMG-1');
+  }
+  assert.deepStrictEqual([std, dbl, tp].map((r) => r.attachment.form),
+    ['standard', 'double-filename', 'trailing-period']);
 }
 {
   const r = one('15/01/24, 09:00 - Contact B created group "Beta"\n');
@@ -149,15 +163,45 @@ function one(content, policy) {
   assert.strictEqual(r.records[0].type, TYPE.EMPTY);
 }
 
-// --- declared policy: the UTC offset ----------------------------------------
+// --- declared policy: the fragment's zone ------------------------------------
 
 {
-  // The export carries no offset. It is a declared parameter, and declaring a
-  // different one must move the instant -- otherwise the declaration is decorative.
-  const utc = one('15/01/24, 12:00 - You: hi\n').records[0].tUtc;
-  const ist = one('15/01/24, 12:00 - You: hi\n', { utcOffsetMinutes: 330 }).records[0].tUtc;
-  assert.strictEqual(utc - ist, 330 * 60000);
-  assert.strictEqual(new Date(ist).toISOString(), '2024-01-15T06:30:00.000Z');
+  // The export carries no zone. Undeclared, it is +00:00 and says so.
+  const r = one('15/01/24, 12:00 - You: hi\n');
+  assert.deepStrictEqual(r.zone, { name: '+00:00', kind: 'fixed-offset', source: 'default' });
+  assert.strictEqual(new Date(r.records[0].tUtc).toISOString(), '2024-01-15T12:00:00.000Z');
+}
+{
+  // Declaring a zone must move the instant -- otherwise it is decorative.
+  const r = one('15/01/24, 12:00 - You: hi\n', { zone: '+05:30' });
+  assert.deepStrictEqual(r.zone, { name: '+05:30', kind: 'fixed-offset', source: 'declared' });
+  assert.strictEqual(new Date(r.records[0].tUtc).toISOString(), '2024-01-15T06:30:00.000Z');
+}
+{
+  // An IANA zone applies the offset in force at that instant: London is UTC+0
+  // in January and UTC+1 (BST) in July.
+  const z = { zone: 'Europe/London' };
+  assert.strictEqual(new Date(one('15/01/24, 12:00 - You: hi\n', z).records[0].tUtc).toISOString(),
+    '2024-01-15T12:00:00.000Z');
+  assert.strictEqual(new Date(one('15/07/24, 12:00 - You: hi\n', z).records[0].tUtc).toISOString(),
+    '2024-07-15T11:00:00.000Z');
+  assert.strictEqual(one('15/07/24, 12:00 - You: hi\n', z).zone.kind, 'iana');
+}
+{
+  // 31 March 2024, 01:30 never happened in London (clocks went 01:00 -> 02:00):
+  // no instant reads that way. 27 October 2024, 01:30 happened twice (02:00 ->
+  // 01:00): two instants an hour apart. Neither is guessed at.
+  const z = { zone: 'Europe/London' };
+  assert.strictEqual(one('31/03/24, 01:30 - You: hi\n', z).quarantine[0].reason, REASON.MALFORMED_TIMESTAMP);
+  assert.strictEqual(one('27/10/24, 01:30 - You: hi\n', z).quarantine[0].reason, REASON.AMBIGUOUS_LOCAL_TIME);
+  // The hour either side of each transition is unaffected.
+  assert.strictEqual(norm('31/03/24, 00:59 - You: a\n31/03/24, 02:00 - You: b\n27/10/24, 00:59 - You: c\n27/10/24, 02:00 - You: d\n', z)
+    .records.length, 4);
+}
+{
+  // An unknown zone is refused, not silently treated as UTC.
+  assert.throws(() => norm('15/01/24, 12:00 - You: hi\n', { zone: 'Mars/Olympus_Mons' }), /unknown time zone/);
+  assert.throws(() => norm('15/01/24, 12:00 - You: hi\n', { zone: '+15:00' }), /out of range/);
 }
 
 // --- stage guarantees -------------------------------------------------------
