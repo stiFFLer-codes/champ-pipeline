@@ -1423,5 +1423,7 @@
   "survey.paper_tools.EkriirkE/WAMerge": "include (I)",
   "survey.paper_tools.SecurityRonin/chat4n6": "comparator (FOR)",
   "survey.paper_tools.tarikab7/whatsapp-chat-merger": "include (I)",
-  "survey.paper_tools.ragibson/SMS-MMS-deduplication": "include (I)"
+  "survey.paper_tools.ragibson/SMS-MMS-deduplication": "include (I)",
+  "release.version_doi": "10.5281/zenodo.23526491",
+  "release.concept_doi": "10.5281/zenodo.22260521"
 }
