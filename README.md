@@ -25,8 +25,8 @@ synthesis — and reconstructs a synthetic fragment pair to its known ground
 truth. `node tests/run-all.js` passes 5 checks. The associated manuscript is
 under revision at IJMADA.
 
-The full CHAMP-Pipeline build (additional formats, a reference UI, CI) remains
-deferred future work. See [`STATE.md`](STATE.md) and [`PROJECT_PLAN.md`](PROJECT_PLAN.md).
+The full CHAMP-Pipeline build (additional formats and a reference viewer) remains
+deferred future work.
 
 ## Repository layout
 

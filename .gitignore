@@ -76,3 +76,27 @@ grill-me-output.txt
 
 # --- IJMADA journal manuscript build (its own local git repo; not public) ---
 /submission/
+
+# --- Internal working files (local only; never published) ---
+# Revision drafts, work-package reports, reviewer text and release runbooks.
+# Superseded by submission/ and by the paper under paper/.
+/CARTA_*_draft_*.md
+/carta_manuscript_draft_*.md
+/carta_cards_and_references.md
+/REVIEWER_FEEDBACK.md
+/REVISION_RECON.md
+/RELEASE_PLAN.md
+/WP*_REPORT.md
+/WP*_PROMPT.md
+/WP*_VERIFY*.md
+/WP11_AUDIT.md
+/IJMADA-presubmission-review.docx
+
+# --- Internal documents kept locally but removed from the tracked tree ---
+# History still holds them; these rules stop them being re-added by accident.
+/CLAUDE.md
+/STATE.md
+/PROJECT_PLAN.md
+/docs/DRAFT_PAPER.md
+/docs/PAPER_BLUEPRINT.md
+/frontend/TODO.md

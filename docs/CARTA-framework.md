@@ -1,5 +1,9 @@
 # CARTA Framework — Formal Definition
 
+> **Current specification.** The code in this repository implements **CARTA 1.1**.
+> The text below specifies CARTA 1.0; the version note lists every change made
+> between the two.
+
 > **Version note (added 2026-10-16).** This document describes **CARTA 1.0**
 > and has not been rewritten. `champ-pipeline-core` 0.2.0 implements CARTA 1.1
 > and states `spec: "CARTA 1.1"` in Ω. The changes from 1.0 to 1.1, taken from
