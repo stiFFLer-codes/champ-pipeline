@@ -164,16 +164,6 @@ a concept DOI that always resolves to the latest version:
 - Concept DOI (all versions): [10.5281/zenodo.22260521](https://doi.org/10.5281/zenodo.22260521)
 - This release (v0.2.0): [10.5281/zenodo.23526491](https://doi.org/10.5281/zenodo.23526491)
 
-## Use of AI assistance
-
-AI coding and research assistants were used in preparing this work: for drafting
-and revising code, tests and documentation, for assembling the LaTeX source, and
-for checking bibliographic metadata against Crossref, DataCite, arXiv and HAL.
-Every citation was checked against a retrieved record rather than accepted from
-model output. The framework, its claims, and the decisions about what this
-project does and does not assert are the author's, and the author takes full
-responsibility for the content, including any errors that remain.
-
 ## License
 
 MIT — see [`LICENSE`](LICENSE).
