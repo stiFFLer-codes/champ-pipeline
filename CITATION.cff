@@ -1,6 +1,7 @@
 cff-version: 1.2.0
-message: If you use this software, please cite it as below.
+message: If you use this software, please cite the version DOI below, or the concept DOI to point at the latest release.
 title: "CHAMP-Pipeline: Chat History Archival & Merge Pipeline (Specification and Reference Implementation of the CARTA Framework)"
+abstract: "CHAMP-Pipeline is the reference implementation and formal specification of CARTA (Chat Archive Reconstruction & Temporal Access), a platform-agnostic three-phase framework (Ingestion, Normalization, Synthesis) for reconstructing a chat history that has fragmented across two irreconcilable device backups. Synthesis returns the unified history U together with a provenance and reconciliation report Omega. The repository contains the pipeline, a seeded generator for synthetic WhatsApp-format fragments, the experiments reported in the accompanying manuscript, and their committed outputs. All data in the repository are synthetic; no real chat data are included."
 authors:
   - given-names: "Maitreya"
     family-names: "Sapariya"
@@ -8,9 +9,22 @@ authors:
     orcid: "https://orcid.org/0009-0003-9346-3775"
 version: "0.2.0"
 date-released: "2026-10-21"
+type: software
 repository-code: "https://github.com/stiFFLer-codes/champ-pipeline"
+url: "https://github.com/stiFFLer-codes/champ-pipeline"
 license: MIT
+keywords:
+  - temporal communication fragmentation
+  - chat archive reconstruction
+  - data provenance
+  - data quality
+  - data governance
+  - digital forensics
+  - reproducibility
 identifiers:
   - type: doi
     value: "10.5281/zenodo.22260521"
     description: "Concept DOI (all versions)"
+  - type: doi
+    value: "10.5281/zenodo.23526491"
+    description: "Version DOI (v0.2.0)"
