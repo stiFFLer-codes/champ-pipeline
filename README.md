@@ -1,24 +1,30 @@
 # CHAMP-Pipeline
 
+[![Article DOI](https://img.shields.io/badge/article-10.68485%2Fijmada.20266168-blue.svg)](https://doi.org/10.68485/ijmada.20266168)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22260521.svg)](https://doi.org/10.5281/zenodo.22260521)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node.js 24](https://img.shields.io/badge/node-24-brightgreen.svg)](.nvmrc)
 [![tests](https://github.com/stiFFLer-codes/champ-pipeline/actions/workflows/tests.yml/badge.svg)](https://github.com/stiFFLer-codes/champ-pipeline/actions/workflows/tests.yml)
 
-**CHAMP-Pipeline** is the reference implementation and formal specification of
-**CARTA** (Chat Archive Reconstruction & Temporal Access), a platform-agnostic
-framework for reconstructing a chat history that has fragmented across two
-irreconcilable device backups. The accompanying paper names that failure mode
-**Temporal Communication Fragmentation (TCF)** and reports this implementation
-and the experiments it makes runnable.
+**CHAMP-Pipeline** is the reference implementation of **CARTA** (Chat Archive
+Reconstruction and Temporal Access), a platform-agnostic framework for
+reconstructing one chat history from several independently preserved archives of
+the same account. The accompanying article names that failure mode **Temporal
+Communication Fragmentation (TCF)** and evaluates this implementation.
 
-## Paper status
+## Paper
 
-**Under revision at the *International Journal of Management and Data Analytics*
-(IJMADA).** The manuscript is *When Chats Split Apart: Formalizing Temporal
-Communication Fragmentation and the CARTA Reconstruction Framework* (Maitreya
-Sapariya). No version of it has been accepted for publication; this repository
-reports the software the manuscript describes.
+Published in the *International Journal of Management and Data Analytics*:
+
+> Sapariya, M. (2026). When Chats Split Apart: Formalizing Temporal Communication
+> Fragmentation and the CARTA Reconstruction Framework. *International Journal of
+> Management and Data Analytics, 6*(1), 449–470.
+> https://doi.org/10.68485/ijmada.20266168
+
+The article cites release v0.2.0 of this repository
+(https://doi.org/10.5281/zenodo.23526491), and every number it reports is in
+`results/paper-numbers.json` at that release. Section 3 of the article is the
+reference text for CARTA 1.1.
 
 ## What TCF and CARTA are
 
@@ -26,8 +32,8 @@ TCF is the state a single messaging account reaches when its history splits
 across two archives, each internally complete, that the platform will not
 recombine: the timeline bifurcates when the primary device fails, both branches
 keep accumulating with no synchronisation between them, and no platform operation
-yields their union. CARTA is a three-phase contract — **Ingestion → Normalization
-→ Synthesis** — with typed inter-stage data and explicit reporting obligations.
+yields their union. CARTA is a three-phase contract (**Ingestion → Normalization
+→ Synthesis**) with typed inter-stage data and explicit reporting obligations.
 Synthesis returns the unified history **U** and a report **Ω** that states what
 was merged, what was set aside and why, so that a reconstruction which dropped
 something is distinguishable from one that dropped nothing.
@@ -58,7 +64,7 @@ five checks in total.
 `node scripts/experiments/run-all.js` regenerates **E1, E2, E4, E5, E7 and E8,
 and then E3 on its own last**. It writes their deterministic outputs to
 `results/`, their timings to `results/timing/`, and regenerates
-`results/paper-numbers.json` — the single file the paper's numbers are taken
+`results/paper-numbers.json`, the single file the paper's numbers are taken
 from. Name experiments to run a subset, e.g. `node scripts/experiments/run-all.js
 e4 e7` (paper-numbers still runs last). E1 is the longest at roughly an hour on a
 2-core laptop.
@@ -135,40 +141,34 @@ truth and the expected outcome. The parameters and their defaults are
 | `tests/` | Self-checking test files; `run-all.js` runs every check |
 | `data/synthetic_fixtures/` | Generated WhatsApp-export fixtures, including the `tcf-pair/` fragment pair with a ground-truth manifest |
 | `docs/` | The CARTA specification and the source-evidence note for claims about other software |
-| `paper/` | LaTeX source of the full manuscript |
+| `paper/` | A pointer to the published article (the pre-review LaTeX draft is superseded) |
 | `results/` | Committed experiment outputs, benchmark and survey data, and `paper-numbers.json` |
-| `frontend/` | Reserved package name for the deferred reference viewer |
 
 ## Data and ethics
 
 Every fixture is produced by `scripts/generate-synthetic-fixtures.js` from a seed.
-The repository contains **no real personal chat data**, anywhere — no messages,
+The repository contains **no real personal chat data**, anywhere: no messages,
 contacts, phone numbers, media or archives, in code, tests, examples, results or
 history. No data were collected from people and no human subjects were involved,
 so no ethics approval applies. The benchmark runs third-party tools on the same
 synthetic fragment pair. The incident that motivates the work is described in the
-manuscript; it is not stored here.
-
-## Building the paper
-
-```sh
-cd paper
-pdflatex main && bibtex main && pdflatex main && pdflatex main
-```
+article; it is not stored here.
 
 ## Citing
 
-Cite the software through [`CITATION.cff`](CITATION.cff). The archived record has
-a concept DOI that always resolves to the latest version:
+Cite the article for the method and the results, and the software for the code.
+[`CITATION.cff`](CITATION.cff) carries both, and GitHub's "Cite this repository"
+button shows the article.
 
 - Concept DOI (all versions): [10.5281/zenodo.22260521](https://doi.org/10.5281/zenodo.22260521)
 - This release (v0.2.0): [10.5281/zenodo.23526491](https://doi.org/10.5281/zenodo.23526491)
 
 ## License
 
-MIT — see [`LICENSE`](LICENSE).
+MIT. See [`LICENSE`](LICENSE).
 
 ## Author
 
-**Maitreya Sapariya** — Independent Researcher
+**Maitreya Sapariya**, Department of Information Technology, A. D. Patel Institute
+of Technology (ADIT), CVM University, Gujarat, India
 [ORCID 0009-0003-9346-3775](https://orcid.org/0009-0003-9346-3775)
