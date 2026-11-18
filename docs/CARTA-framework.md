@@ -1,3 +1,5 @@
+> The published article (https://doi.org/10.68485/ijmada.20266168, Section 3) is the reference text for CARTA 1.1. This document is the original CARTA 1.0 specification, kept with the version note below.
+
 # CARTA Framework — Formal Definition
 
 > **Current specification.** The code in this repository implements **CARTA 1.1**.
