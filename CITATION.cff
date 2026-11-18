@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the article below. To cite the code itself, use the version DOI."
 title: "CHAMP-Pipeline: Chat History Archival & Merge Pipeline (Specification and Reference Implementation of the CARTA Framework)"
-abstract: "CHAMP-Pipeline is the reference implementation and formal specification of CARTA (Chat Archive Reconstruction & Temporal Access), a platform-agnostic three-phase framework (Ingestion, Normalization, Synthesis) for reconstructing one chat history from several independently preserved archives of the same account. Synthesis returns the unified history U together with a provenance and reconciliation report Omega. The repository contains the pipeline, a seeded generator for synthetic WhatsApp-format fragments, the experiments reported in the accompanying manuscript, and their committed outputs. All data in the repository are synthetic; no real chat data are included."
+abstract: "CHAMP-Pipeline is the reference implementation of CARTA (Chat Archive Reconstruction & Temporal Access), a platform-agnostic three-phase framework (Ingestion, Normalization, Synthesis) for reconstructing one chat history from several independently preserved archives of the same account. Synthesis returns the unified history U together with a provenance and reconciliation report Omega. The repository contains the pipeline, a seeded generator for synthetic WhatsApp-format fragments, the experiments reported in the accompanying article, and their committed outputs. All data in the repository are synthetic; no real chat data are included."
 authors:
   - given-names: "Maitreya"
     family-names: "Sapariya"
