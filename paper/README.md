@@ -1,0 +1,1 @@
+The peer-reviewed article is published at https://doi.org/10.68485/ijmada.20266168 (CC BY 4.0). The pre-review LaTeX draft that used to be here is superseded. It remains in the git history and in the archived v0.1.0 and v0.2.0 releases on Zenodo.
